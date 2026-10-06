@@ -78,7 +78,7 @@ footer p{margin:6px 0}
   <header>
     <div class="kicker">Japan data breach timeline · since Fable 5</div>
     <h1>漏洩カミングアウトタイムライン</h1>
-    <p class="lead">Claude Fable 5 のリリース（2026年6月10日）以降に公表された、日本の企業・組織の情報漏洩／不正アクセス事案を時系列で並べました。各事案には出典へのリンクを付けています。</p>
+    <p class="lead">Claude Fable 5 のリリース（2026年6月10日）以降に公表された、日本の企業・組織の情報漏洩／不正アクセス事案を時系列で並べました。主要なAIモデルの登場（◆）も同じ時間軸に重ねています。各項目には出典へのリンクを付けています。</p>
     <div class="stats" id="stats"></div>
     <div class="chart"><h2>月別の公表件数（本サイト掲載分）</h2><div class="bars" id="bars"></div></div>
   </header>
@@ -91,12 +91,13 @@ footer p{margin:6px 0}
       <option value="size">件数の多い順</option>
     </select>
     <div id="types" style="display:flex;flex-wrap:wrap;gap:6px"></div>
+    <button class="chip" type="button" id="aiBtn" aria-pressed="true"><span class="dot" style="background:var(--mile);border-radius:2px;transform:rotate(45deg)"></span>AIモデル</button>
   </div>
 
   <main id="list"></main>
 
   <footer>
-    <p><b>注意：</b>Fable 5 のリリース日は時期の区切りとして使っているだけです。掲載事案と Fable 5 を含む AI の悪用との因果関係を示すものではありません。原因はそれぞれの組織が公表した内容（または未公表）に従ってください。</p>
+    <p><b>注意：</b>Fable 5 のリリース日は時期の区切りとして使っているだけです。AIモデルの登場日も同様に、掲載事案と Fable 5 を含む AI の悪用との因果関係を示すものではありません。原因はそれぞれの組織が公表した内容（または未公表）に従ってください。</p>
     <p>公表日・件数はセキュリティニュースのまとめ記事や報道をもとにした初報ベースの値です。続報で訂正されることがあります。正確な情報は各組織の一次発表を確認してください。掲載は網羅的ではありません。</p>
     <p>最終更新: <span id="updated"></span> ／ データは <code>data.js</code> で管理しています。</p>
   </footer>
@@ -110,6 +111,7 @@ footer p{margin:6px 0}
     human: "人為ミス・内部", vendor: "委託先・連鎖"
   };
   const enabled = new Set(Object.keys(TYPES));
+  let showAI = true;
   const $ = id => document.getElementById(id);
   const fmt = n => n.toLocaleString("ja-JP");
   const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
@@ -155,8 +157,8 @@ footer p{margin:6px 0}
   };
 
   const card = x => x.mile
-    ? `<div class="item mile"><div class="top"><span class="date">${x.date}</span><span class="org">${esc(x.title)}</span></div>
-       <p class="sum">${esc(x.note)}</p><div class="src">出典: <a href="${x.src}" target="_blank" rel="noopener">${esc(x.srcName)}</a></div></div>`
+    ? `<div class="item mile"><div class="top"><span class="date">${x.date}</span><span class="org">${esc(x.title)}</span><span class="tag" style="--tc:var(--mile)">${esc(x.vendor)}</span></div>
+       ${x.note ? `<p class="sum">${esc(x.note)}</p>` : ""}<div class="src">出典: <a href="${x.src}" target="_blank" rel="noopener">${esc(x.srcName)}</a></div></div>`
     : `<div class="item" style="--tc:var(--c-${x.type})"><div class="top"><span class="date">${x.date}</span>
        <span class="org">${esc(x.org)}</span><span class="tag">${TYPES[x.type]}</span></div>
        <p class="sum">${esc(x.summary)}</p><div class="count">${esc(x.count)}</div>
@@ -171,7 +173,7 @@ footer p{margin:6px 0}
       $("list").innerHTML = rows.length ? `<div class="tl">${rows.map(card).join("")}</div>` : `<p class="empty">該当なし</p>`;
       return;
     }
-    if (!q) rows = rows.concat(miles.map(m => ({ ...m, mile: true })));
+    if (showAI) rows = rows.concat(miles.filter(m => !q || (m.vendor + m.title + m.note).toLowerCase().includes(q)).map(m => ({ ...m, mile: true })));
     rows.sort((a, b) => a.date.localeCompare(b.date) || (b.mile ? 1 : 0) - (a.mile ? 1 : 0));
     if (sort === "desc") rows.reverse();
     const groups = {};
@@ -182,6 +184,7 @@ footer p{margin:6px 0}
     }).join("");
     $("list").innerHTML = html || `<p class="empty">該当なし</p>`;
   }
+  $("aiBtn").onclick = e => { showAI = !showAI; e.currentTarget.setAttribute("aria-pressed", showAI); render(); };
   $("q").oninput = render;
   $("sort").onchange = render;
   $("updated").textContent = window.UPDATED;

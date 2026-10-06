@@ -3,10 +3,28 @@
 // type: access=不正アクセス / ransom=ランサムウェア / config=設定・認証不備 / human=人為ミス・内部 / vendor=委託先経由
 // n: ソート用の概算最大件数（不明は null）
 
+// 主要AIモデルの登場など（vendor: 開発元）
+const M = (date, vendor, title, note, src, srcName) => ({ date, vendor, title, note, src, srcName });
+const AIW = ["https://www.businessinsider.jp/article/2608-how-much-did-major-generative-ai-service-fees/", "BUSINESS INSIDER JAPAN 2026年8月版"];
+const AIS = ["https://www.businessinsider.jp/article/2609-how-much-did-major-generative-ai-service-fees/", "BUSINESS INSIDER JAPAN 2026年9月版"];
+
 window.MILESTONES = [
-  { date: "2026-06-10", title: "Claude Fable 5 リリース", note: "Anthropic が Mythos 級モデルを一般公開。", src: "https://forest.watch.impress.co.jp/docs/news/2116968.html", srcName: "窓の杜" },
-  { date: "2026-06-12", title: "Fable 5 / Mythos 5 全世界で一時停止", note: "米国政府の輸出管理指令による（米国時間）。", src: "https://forest.watch.impress.co.jp/docs/news/2116968.html", srcName: "窓の杜" },
-  { date: "2026-07-02", title: "Fable 5 提供再開が報道される", note: "米政府の要求への対策を経て復活。", src: "https://www.itmedia.co.jp/news/articles/2607/02/news095.html", srcName: "ITmedia NEWS" }
+  M("2026-06-10", "Anthropic", "Claude Fable 5 リリース", "Mythos 級モデルを一般公開。", "https://forest.watch.impress.co.jp/docs/news/2116968.html", "窓の杜"),
+  M("2026-06-12", "Anthropic", "Fable 5 / Mythos 5 全世界で一時停止", "米国政府の輸出管理指令による（米国時間）。", "https://forest.watch.impress.co.jp/docs/news/2116968.html", "窓の杜"),
+  M("2026-07-02", "Anthropic", "Fable 5 提供再開が報道される", "米政府の要求への対策を経て復活。", "https://www.itmedia.co.jp/news/articles/2607/02/news095.html", "ITmedia NEWS"),
+  M("2026-07-08", "SpaceXAI", "Grok 4.5 公開", "", ...AIW),
+  M("2026-07-09", "OpenAI", "GPT-5.6 ファミリー一般公開", "Sol・Terra・Luna の3モデル構成。", ...AIW),
+  M("2026-07-21", "Google", "Gemini 3.6 Flash 公開", "Gemini 3.5 Flash-Lite、Gemini 3.5 Flash Cyber も同日公開。", ...AIW),
+  M("2026-07-24", "Anthropic", "Claude Opus 5 リリース", "", ...AIW),
+  M("2026-08-12", "SpaceXAI", "Grok 4.6 公開", "コンテキスト 500k トークン。", ...AIW),
+  M("2026-08-14", "Google", "Gemini 3.7 Flash 公開", "", ...AIS),
+  M("2026-09-01", "Anthropic", "Claude Fable 5.1 リリース", "", "https://emergent.sh/news/claude-fable-5-1-release-date", "Emergent"),
+  M("2026-09-02", "Google", "Gemini 3.8 Flash 公開", "", ...AIS),
+  M("2026-09-03", "OpenAI", "GPT-6 Astra リリース", "GPT-6 世代の最上位モデル。サイバーセキュリティ分野の性能もうたう。", "https://japan-ai.co.jp/media/10406/", "JAPAN AI"),
+  M("2026-09-21", "SpaceXAI", "Grok 4.7 公開", "", ...AIS),
+  M("2026-09-22", "Anthropic", "Claude Opus 5.5 リリース", "Fable 5.1 並みの性能を Opus 5 比 約40%低いコストで。", "https://blog.serverworks.co.jp/2026/09/25/190000", "サーバーワークスエンジニアブログ"),
+  M("2026-09-22", "OpenAI", "GPT-6 Sol / Luna 追加", "", "https://japan-ai.co.jp/media/10406/", "JAPAN AI"),
+  M("2026-09-28", "Anthropic", "Claude Sonnet 5.5 リリース", "", "https://aiprofitboardroom.com/blog/sonnet-5-5-release-date/", "AI Profit Boardroom")
 ];
 
 const S = {
