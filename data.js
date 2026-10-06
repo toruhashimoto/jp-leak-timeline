@@ -1,7 +1,21 @@
 // 情報漏洩・不正アクセス公表タイムライン データ
-// date: 初回公表日（まとめ記事・報道ベース。一次情報で要確認）
-// type: access=不正アクセス / ransom=ランサムウェア / config=設定・認証不備 / human=人為ミス・内部 / vendor=委託先経由
-// n: ソート用の概算最大件数（不明は null）
+//
+// ■ インシデント（INCIDENTS）の主なフィールド
+//   reportedDate : 報道まとめ記事に載った日付（二次情報。公式の公表日とは限らない）
+//   type         : 掲載上の大分類 access / ransom / config / human / vendor
+//   n            : ソート用の概算最大件数（不明は null）
+//   events       : 公式発表に明記された日付のイベント列（下記 E()）。発生・検知・公表の日数は lib.js がここから計算する
+//   causes       : 公式発表で明示された原因・侵入経路のタグ（lib.js の CAUSES）。空配列は「未分類」で、「原因不明」ではない
+//   causeText    : 原因に関する公式発表の原文（短い引用）
+//   officialUrl  : 公式発表（第1報）の URL
+//   listedDate   : 初報が 2026-06-10 より前で、続報によって掲載している場合の続報の日付
+//   dataNote     : 日付の扱いに関する補足
+//
+// ■ イベント種別（E の第1引数）
+//   incident 発生 / exposure 閲覧可能な状態の開始（設定不備など。侵入とは区別する）
+//   anomaly 異常を検知 / access_confirmed 不正アクセスを確認 / leak_possible 漏洩の可能性を認識
+//   leak_confirmed 漏洩を確認 / vendor_notified 委託先・第三者等から報告 / disclosed 公表 / update 続報
+//   date は公式発表に日付まで明記されたものだけ。「上旬」「頃」など曖昧なときは null にして raw に原文を残す
 
 // 主要AIモデルの登場など（vendor: 開発元）
 const M = (date, vendor, title, note, src, srcName) => ({ date, vendor, title, note, src, srcName });
@@ -37,8 +51,9 @@ const S = {
   ys10: ["https://yasashii-cybersecurity.com/ai-attack-cost-drop-autumn-breaches-2026", "やさしいサイバーセキュリティ"]
 };
 
-const I = (date, org, summary, count, n, type, src, extra) =>
-  ({ date, org, summary, count, n, type, src: src[0], srcName: src[1], ...(extra || {}) });
+const I = (reportedDate, org, summary, count, n, type, src) =>
+  ({ reportedDate, org, summary, count, n, type, src: src[0], srcName: src[1],
+     events: [], causes: [], causeText: null, officialUrl: null, ...(window.TIMELINES[org] || {}) });
 
 window.INCIDENTS = [
   // ---- 2026年6月 ----

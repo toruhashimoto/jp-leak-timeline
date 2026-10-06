@@ -63,6 +63,14 @@ select.chip{padding:5px 10px}
 .count{font-size:14px;font-weight:700;color:var(--tc)}
 .src{font-size:12px;color:var(--muted)}
 .src a{color:inherit}
+.flow{margin:8px 0 6px;font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;align-items:center;gap:2px 6px}
+.flow .st{color:var(--ink);white-space:nowrap}
+.flow .st small{color:var(--muted)}
+.flow .arr{font-family:"JetBrains Mono",monospace;white-space:nowrap}
+.flow .arr b{color:var(--ink)}
+.flow .key{font-weight:700;color:var(--ink);margin-right:6px}
+.unofficial{font-size:11px;color:var(--muted)}
+.note{margin:4px 0;font-size:12px;color:var(--muted)}
 .item.mile{background:var(--mile-soft);border-color:transparent}
 .item.mile::before{background:var(--mile);border-radius:3px;transform:rotate(45deg)}
 .item.mile .org{color:var(--mile)}
@@ -89,6 +97,7 @@ footer p{margin:6px 0}
       <option value="asc">古い順</option>
       <option value="desc">新しい順</option>
       <option value="size">件数の多い順</option>
+      <option value="disclose">検知→公表の日数順</option>
     </select>
     <div id="types" style="display:flex;flex-wrap:wrap;gap:6px"></div>
     <button class="chip" type="button" id="aiBtn" aria-pressed="true"><span class="dot" style="background:var(--mile);border-radius:2px;transform:rotate(45deg)"></span>AIモデル</button>
@@ -98,11 +107,14 @@ footer p{margin:6px 0}
 
   <footer>
     <p><b>注意：</b>Fable 5 のリリース日は時期の区切りとして使っているだけです。AIモデルの登場日も同様に、掲載事案と Fable 5 を含む AI の悪用との因果関係を示すものではありません。原因はそれぞれの組織が公表した内容（または未公表）に従ってください。</p>
-    <p>公表日・件数はセキュリティニュースのまとめ記事や報道をもとにした初報ベースの値です。続報で訂正されることがあります。正確な情報は各組織の一次発表を確認してください。掲載は網羅的ではありません。</p>
+    <p>「発生」「検知」「公表」の日付は、各組織の公式発表に明記された日付だけを使っています。記載がない・「上旬」など曖昧な場合は日数を計算しません。「検知」は異常の検知、不正アクセスの確認、漏洩の可能性の認識、委託先からの報告のうち最も早い日で、どれに当たるかを括弧内に示しています。設定不備などで情報が「閲覧可能な状態」になった日は、侵入とは意味が違うため「発生」とは区別し、日数計算の起点にしていません。タイムラインは公式の公表日（第1報）で並べています。初報が2026年6月10日より前で続報によって掲載した事案は続報の日付で並べ、「続報」と表示しています。公式の公表日が確認できない事案は報道まとめの日付で並べ、「報道ベース」と表示しています。</p>
+    <p>件数はセキュリティニュースのまとめ記事や報道をもとにした初報ベースの値です。続報で訂正されることがあります。正確な情報は各組織の一次発表を確認してください。掲載は網羅的ではありません。</p>
     <p>最終更新: <span id="updated"></span> ／ データは <code>data.js</code> で管理しています。</p>
   </footer>
 </div>
 
+<script src="lib.js"></script>
+<script src="timelines.js"></script>
 <script src="data.js"></script>
 <script>
 (() => {
@@ -115,7 +127,12 @@ footer p{margin:6px 0}
   const $ = id => document.getElementById(id);
   const fmt = n => n.toLocaleString("ja-JP");
   const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-  const inc = window.INCIDENTS, miles = window.MILESTONES;
+  const L = window.LeakLib;
+  // 表示用ビュー：導出した時間軸を付け、タイムライン位置は公式公表日（なければ報道日）
+  const inc = window.INCIDENTS.map(x => { const t = L.derive(x); return { ...x, t, date: t.timelineDate }; });
+  const miles = window.MILESTONES;
+  const md = d => `${d.startsWith("2026") ? "" : d.slice(0, 4) + "/"}${+d.slice(5, 7)}/${+d.slice(8)}`;
+  const span = d => d === null ? "" : d === 0 ? "当日" : `${d}日`;
 
   // テーマ切替（閲覧者ごとの好みのみ保存）
   const root = document.documentElement;
@@ -134,7 +151,9 @@ footer p{margin:6px 0}
     [inc.length, "掲載事案数"],
     [days, "Fable 5 リリースからの日数"],
     [(inc.length / days * 7).toFixed(1), "1週間あたりの公表件数"],
-    [big, "100万件超の事案"]
+    [big, "100万件超の事案"],
+    ...(() => { const s = L.summarize(inc.map(x => x.t.daysToDisclose));
+      return s.n ? [[`${s.median}日`, `検知→公表の中央値（日付判明 ${s.n}件）`]] : []; })()
   ].map(([v, l]) => `<div class="stat"><b>${v}</b><span>${l}</span></div>`).join("")
    + `<div class="stat"><b style="font-size:18px">${esc(top.org)}</b><span>最大規模：${esc(top.count)}</span></div>`;
 
@@ -156,20 +175,44 @@ footer p{margin:6px 0}
     render();
   };
 
+  // 発生 → 検知 → 公表 の時間軸。確定日のない区間は日数を出さない
+  function flow(x) {
+    const { incident, detected, disclosed, daysToDetect, daysToDisclose, vague } = x.t;
+    if (!incident && !detected && !disclosed && !vague.length) return "";
+    const vagueOf = types => vague.find(e => types.includes(e.type));
+    const point = (label, ev, types) => {
+      if (ev) return `<span class="st">${label} ${md(ev.date)}${label === "検知" ? ` <small>（${L.EVENT_LABELS[ev.type]}）</small>` : ""}</span>`;
+      const v = vagueOf(types);
+      return `<span class="st">${label} <small>${v ? `「${esc(v.raw)}」` : "不明"}</small></span>`;
+    };
+    // 設定不備などで「閲覧可能な状態」になった日は侵入（発生）と区別し、日数計算の起点にしない
+    const exposure = !incident && L.earliest(x.events, ["exposure"]);
+    const exposureVague = !incident && !exposure && vagueOf(["exposure"]);
+    const start = exposure ? `<span class="st">閲覧可能になった日 ${md(exposure.date)}</span>`
+      : exposureVague ? `<span class="st">閲覧可能になった時期 <small>「${esc(exposureVague.raw)}」</small></span>`
+      : point("発生", incident, ["incident"]);
+    const arr = d => `<span class="arr">${d === null ? "→" : `→ <b>${span(d)}</b> →`}</span>`;
+    const key = daysToDisclose === null ? "" : `<span class="key">検知 → 公表：${span(daysToDisclose)}</span>`;
+    return `<div class="flow">${key}${start}${arr(daysToDetect)}${point("検知", detected, L.DETECT_TYPES)}${arr(daysToDisclose)}${point("公表", disclosed, ["disclosed"])}</div>`;
+  }
+
   const card = x => x.mile
     ? `<div class="item mile"><div class="top"><span class="date">${x.date}</span><span class="org">${esc(x.title)}</span><span class="tag" style="--tc:var(--mile)">${esc(x.vendor)}</span></div>
        ${x.note ? `<p class="sum">${esc(x.note)}</p>` : ""}<div class="src">出典: <a href="${x.src}" target="_blank" rel="noopener">${esc(x.srcName)}</a></div></div>`
-    : `<div class="item" style="--tc:var(--c-${x.type})"><div class="top"><span class="date">${x.date}</span>
+    : `<div class="item" style="--tc:var(--c-${x.type})"><div class="top"><span class="date">${x.date}${x.t.officialDate ? "" : ` <span class="unofficial">報道ベース</span>`}${x.t.followUp ? ` <span class="unofficial">続報</span>` : ""}</span>
        <span class="org">${esc(x.org)}</span><span class="tag">${TYPES[x.type]}</span></div>
        <p class="sum">${esc(x.summary)}</p><div class="count">${esc(x.count)}</div>
-       <div class="src">出典: <a href="${x.src}" target="_blank" rel="noopener">${esc(x.srcName)}</a></div></div>`;
+       ${flow(x)}
+       ${x.dataNote ? `<p class="note">${esc(x.dataNote)}</p>` : ""}
+       <div class="src">出典: ${x.officialUrl ? `<a href="${x.officialUrl}" target="_blank" rel="noopener">公式発表</a> ／ ` : ""}<a href="${x.src}" target="_blank" rel="noopener">${esc(x.srcName)}</a></div></div>`;
 
   function render() {
     const q = $("q").value.trim().toLowerCase(), sort = $("sort").value;
     let rows = inc.filter(x => enabled.has(x.type) &&
       (!q || (x.org + x.summary + x.count).toLowerCase().includes(q)));
-    if (sort === "size") {
-      rows.sort((a, b) => (b.n || -1) - (a.n || -1));
+    if (sort === "size" || sort === "disclose") {
+      const k = sort === "size" ? (x => x.n) : (x => x.t.daysToDisclose);
+      rows.sort((a, b) => (k(b) ?? -1) - (k(a) ?? -1));
       $("list").innerHTML = rows.length ? `<div class="tl">${rows.map(card).join("")}</div>` : `<p class="empty">該当なし</p>`;
       return;
     }
