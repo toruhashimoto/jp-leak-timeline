@@ -437,6 +437,144 @@
         E("disclosed", "2026-10-05", "2026年10月5日 大和証券株式会社 …漏洩の可能性について", "@")
       ],
       causes: ["vendor"], causeText: null
+    },
+
+    // ---- 2026-10-07 更新分 ----
+    "EPARKリラク＆エステ（PeakManager）": {
+      officialUrl: "https://www.epark-relax.co.jp/news/225",
+      events: [
+        E("access_confirmed", "2026-07-27", "2026年7月27日、不正な方法によりPeakManagerの一部データベースへのアクセス", "@"),
+        E("leak_possible", "2026-07-27", "外部へ漏えいした可能性があることが2026年7月27日に判明", "@"),
+        E("disclosed", "2026-07-31", "不正アクセスによる個人情報漏えいの可能性に関するお知らせ（第一報）2026/07/31", "@"),
+        E("update", "2026-08-04", "株式会社EPARKリラク＆エステの不正アクセスによる情報漏えいについて（親会社 株式会社EPARK）", "https://epark.jp/news/427/"),
+        E("leak_confirmed", null, "データベース内の情報が外部へ転送されたことが確認されました", "https://www.epark-relax.co.jp/news/231"),
+        E("update", "2026-09-24", "不正アクセスと個人情報漏えいに関するお知らせ（第二報）2026/09/24", "https://www.epark-relax.co.jp/news/231")
+      ],
+      causes: [], causeText: null,
+      dataNote: "侵入経路と手法は第二報で「公表を差し控え」とされています。件数はレコード数で、人数ではありません。"
+    },
+    "佐川急便（お荷物問い合わせサービス）": {
+      officialUrl: "https://www2.sagawa-exp.co.jp/information/detail/419/",
+      events: [
+        E("access_confirmed", "2026-09-30", "9月30日（水）に第三者による不正アクセスを確認", "@"),
+        E("disclosed", "2026-09-30", "「お荷物問い合わせサービス」への不正アクセスの発生について(第1報）", "@"),
+        E("leak_possible", null, "お客さまの個人情報が外部に流出した可能性があることが判明", "https://www2.sagawa-exp.co.jp/information/detail/420/"),
+        E("update", "2026-10-01", "個人情報流出の可能性について（第2報）2026年10月1日", "https://www2.sagawa-exp.co.jp/information/detail/420/")
+      ],
+      causes: [], causeText: null,
+      dataNote: "「約100日分」は流出した可能性のあるデータの範囲で、侵入の期間ではありません。2026年7月のスマートクラブの件とは別の事案です。"
+    },
+    "第一ライフグループ・第一生命保険": {
+      officialUrl: "https://www.dai-ichi-life.co.jp/information/pdf/index_192.pdf",
+      events: [
+        E("access_confirmed", "2026-09-24", "2026年9月24日、両社が利用する従業員向け人事システムへの不正アクセスを検知", "@"),
+        E("leak_possible", null, "外部へ流出した可能性があることを確認いたしました", "@"),
+        E("disclosed", "2026-10-02", "2026年10月２日 退職された皆さまへのお知らせ", "@")
+      ],
+      causes: [], causeText: "第三者による不正アクセスを受けたため",
+      dataNote: "確認できた公式文書は退職者向けのお知らせのみです。"
+    },
+    "JOGMEC": {
+      officialUrl: "https://www.jogmec.go.jp/news/information/information_00706.html",
+      events: [
+        E("vendor_notified", null, "外部機関から弊機構に対する情報提供があり", "@"),
+        E("leak_possible", "2026-09-09", "漏えいした可能性があることが2026年9月9日に判明", "@"),
+        E("disclosed", "2026-10-02", "2026年10月2日 …漏えいの可能性に関するお詫びとご報告", "@")
+      ],
+      causes: [], causeText: "情報システムに対する外部からの不正アクセスが原因と考えていますが…引き続き調査",
+      dataNote: "件数は公式発表の2区分（約1,100件、約7,400件）を合計した値です。"
+    },
+    "日本経済新聞社": {
+      officialUrl: "https://www.nikkei.co.jp/nikkeiinfo/news/information/1547.html",
+      events: [
+        E("incident", null, "アカウントが7月下旬以降、外部から不正にログインされ", "@"),
+        E("vendor_notified", null, "8月上旬にグーグル社からの通知により判明", "@"),
+        E("disclosed", "2026-10-04", "2026.10.04 不正ログインによる情報漏洩について", "@")
+      ],
+      causes: [], causeText: null
+    },
+    "日経BP": {
+      officialUrl: "https://www.nikkeibp.co.jp/atcl/newsrelease/corp/100200417/",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日に、当社従業員のメールアカウントへの不正アクセスがあり", "@"),
+        E("disclosed", "2026-10-04", "2026年10月04日 メール不正アクセスによる個人情報の漏えいについて", "@")
+      ],
+      causes: ["phishing", "credential"], causeText: "フィッシングメールから、認証情報を入手されました"
+    },
+    "大起水産（公式アプリ）": {
+      officialUrl: "https://www.daiki-suisan.co.jp/files/optionallink/00000164_file.pdf",
+      events: [
+        E("access_confirmed", "2026-09-15", "2026年9月15日に本件を確認後、外部からの不正アクセスを防止するための対策", "@"),
+        E("disclosed", "2026-10-05", "不正アクセスによる個人情報漏えいのおそれに関するお詫びとお知らせ 2026年10月5日", "@"),
+        E("update", "2026-10-06", "【2026年10月6日更新】", "@")
+      ],
+      causes: [], causeText: null
+    },
+    "GMOリサーチ&AI（infoQ）": {
+      officialUrl: "https://gmo-research.ai/pressroom/notice/notice-20261005",
+      events: [
+        E("incident", "2026-10-02", "10月2日（金）以降 第三者による不正アクセス", "@"),
+        E("access_confirmed", "2026-10-03", "10月3日（土）午前 …不正アクセスが行われていたことを確認", "@"),
+        E("leak_confirmed", null, "会員の皆さまの個人情報が外部に持ち出されたことを確認", "@"),
+        E("disclosed", "2026-10-05", "2026年10月05日 お詫びとお知らせ", "@")
+      ],
+      causes: ["vuln"], causeText: "当社サイトで使用していたソフトウェアの脆弱性を悪用して侵入"
+    },
+    "物語コーポレーション（焼肉きんぐ公式アプリ）": {
+      officialUrl: "https://www.monogatari.co.jp/news/261005_news/",
+      events: [
+        E("access_confirmed", "2026-10-02", "2026年10月2日（金）、…第三者からの不正アクセスが確認されました", "@"),
+        E("leak_confirmed", "2026-10-03", "会員情報が漏えいしたことを10月3日（土）に確認", "@"),
+        E("disclosed", "2026-10-05", "2026.10.05 お知らせ", "@")
+      ],
+      causes: [], causeText: "第三者による不正アクセスによるものと確認",
+      dataNote: "公式発表の冒頭と経緯欄で書き方が異なります。経緯欄（10月2日に不正アクセスを確認、10月3日に漏えいを確認）を使っています。"
+    },
+    "ミスターマックス（MrMaxアプリ・オンラインストア）": {
+      officialUrl: "https://www.mrmax.co.jp/info/incident_20261006/",
+      events: [
+        E("anomaly", "2026-10-03", "2026年10月3日(土)夕方、当社のサーバーに対する不審なアクセスを確認", "@"),
+        E("leak_confirmed", null, "その後の調査の結果…個人情報の一部が流出したことが判明", "@"),
+        E("disclosed", "2026-10-06", "2026年10月6日 不正アクセスによる情報流出に関するお詫びとお知らせ", "@")
+      ],
+      causes: [], causeText: "第三者が本サービスを構成するソフトウェアの機能を不正に利用してサーバーに侵入"
+    },
+    "楽天ドライブ": {
+      officialUrl: "https://support.rakuten-drive.com/hc/ja/articles/62934949147929",
+      events: [
+        E("incident", "2026-01-29", "時期：2026年1月29日（木）から同年9月17日（木）", "@"),
+        E("disclosed", "2026-10-06", "2026年10月06日（ページの公開日時）", "@")
+      ],
+      causes: ["credential"], causeText: "一部システムの管理用アカウントの認証情報を不正に取得し、システムにアクセス",
+      dataNote: "3つの事象（①②は8月27日、③は1月29日〜9月17日）が含まれ、発生日は最も早いものです。検知日は記載されていません。"
+    },
+    "シチズン時計": {
+      officialUrl: "https://www.citizen.co.jp/release/news/detail/2026/20261006.html",
+      events: [
+        E("incident", "2026-10-02", "不正アクセスは2026年10月2日20時33分頃から10月3日8時1分頃にかけて発生", "@"),
+        E("vendor_notified", "2026-10-03", "2026年10月3日、…不正に取得された可能性があるとの報告を受けました", "@"),
+        E("disclosed", "2026-10-06", "2026年10月6日 シチズン時計株式会社", "@")
+      ],
+      causes: ["vendor"], causeText: "委託先事業者であるSC社のサーバーに対する第三者による不正アクセス"
+    },
+    "旭化成セラピューティクス": {
+      officialUrl: "https://www.asahi-kasei.co.jp/pharma/oshirase_20261006.html",
+      events: [
+        E("vendor_notified", "2026-10-02", "2026年10月2日、当社は、…医薬情報ネット…より…報告を受けました", "@"),
+        E("disclosed", "2026-10-06", "プレスリリース 2026年10月6日 旭化成セラピューティクス株式会社", "@")
+      ],
+      causes: ["vendor"], causeText: "会員データベースにサイバー攻撃による不正アクセスが確認され",
+      dataNote: "公式発表に合計はありません。報道では3区分を足した「最大55万8,700人」とされていますが、メールアドレス等の約4万4,000名は医療従事者の内数と読めるため、ここでは約51万4,700名としています。"
+    },
+    "IDCフロンティア": {
+      officialUrl: "https://www.idcf.jp/news/topics/20261007001",
+      events: [
+        E("incident", "2026-10-07", "2026年10月7日（水）午前3時40分頃から継続中", "https://www.idcf.jp/news/topics/20261007002"),
+        E("disclosed", "2026-10-07", "2026年10月7日 …第三者からの不正アクセスにより、サービスの一部に障害", "@"),
+        E("update", "2026-10-07", "【第2報】…第三者からのランサムウェア攻撃によるものであることが判明", "https://www.idcf.jp/news/topics/20261007002")
+      ],
+      causes: ["ransomware"], causeText: "第三者からのランサムウェア攻撃",
+      dataNote: "495は障害の影響を受けた顧客数で、漏洩件数ではありません。"
     }
   };
 
