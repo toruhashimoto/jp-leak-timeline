@@ -398,7 +398,8 @@
         E("access_confirmed", "2026-09-28", "9月28日（月）に…不正アクセスを受けたことを確認", "@"),
         E("disclosed", "2026-09-29", "2026年09月29日 …不正アクセスの発生について", "@"),
         E("leak_possible", null, "情報の一部が漏えいした可能性があることが判明", "https://www.yamato-hd.co.jp/important/info_260929_1.html"),
-        E("update", "2026-10-02", "【第2報】2026年10月02日", "https://www.yamato-hd.co.jp/important/info_260929_1.html")
+        E("update", "2026-10-02", "【第2報】2026年10月02日", "https://www.yamato-hd.co.jp/important/info_260929_1.html"),
+        E("update", "2026-10-09", "【第3報】「クロネコ代金後払いサービス」再開のお知らせ", "https://www.yamato-hd.co.jp/important/info_260929_1.html")
       ],
       causes: [], causeText: null
     },
@@ -456,11 +457,13 @@
     "佐川急便（お荷物問い合わせサービス）": {
       officialUrl: "https://www2.sagawa-exp.co.jp/information/detail/419/",
       events: [
+        E("anomaly", "2026-09-30", "発覚日時：2026年9月30日（水）午前7時30分", "https://www2.sagawa-exp.co.jp/information/detail/426/"),
         E("access_confirmed", "2026-09-30", "9月30日（水）に第三者による不正アクセスを確認", "@"),
         E("disclosed", "2026-09-30", "「お荷物問い合わせサービス」への不正アクセスの発生について(第1報）", "@"),
         E("leak_possible", null, "お客さまの個人情報が外部に流出した可能性があることが判明", "https://www2.sagawa-exp.co.jp/information/detail/420/"),
         E("update", "2026-10-01", "個人情報流出の可能性について（第2報）2026年10月1日", "https://www2.sagawa-exp.co.jp/information/detail/420/"),
-        E("update", "2026-10-08", "よくあるご質問（FAQ）（10月8日更新）", "https://www2.sagawa-exp.co.jp/information/detail/425/")
+        E("update", "2026-10-08", "よくあるご質問（FAQ）（10月8日更新）", "https://www2.sagawa-exp.co.jp/information/detail/425/"),
+        E("update", "2026-10-09", "個人情報流出の可能性について（第4報）2026年10月9日", "https://www2.sagawa-exp.co.jp/information/detail/426/")
       ],
       causes: [], causeText: null,
       dataNote: "「約100日分」は流出した可能性のあるデータの範囲で、侵入の期間ではありません。2026年7月のスマートクラブの件とは別の事案です。"
@@ -573,10 +576,11 @@
         E("incident", "2026-10-07", "2026年10月7日（水）午前3時40分頃から継続中", "https://www.idcf.jp/news/topics/20261007002"),
         E("disclosed", "2026-10-07", "2026年10月7日 …第三者からの不正アクセスにより、サービスの一部に障害", "@"),
         E("update", "2026-10-07", "【第2報】…第三者からのランサムウェア攻撃によるものであることが判明", "https://www.idcf.jp/news/topics/20261007002"),
-        E("update", "2026-10-08", "【第3報】当社サービスの一部システムへの不正アクセスによる障害について", "https://www.idcf.jp/news/topics/20261008001")
+        E("update", "2026-10-08", "【第3報】当社サービスの一部システムへの不正アクセスによる障害について", "https://www.idcf.jp/news/topics/20261008001"),
+        E("update", "2026-10-09", "【第4報】不正アクセスによる障害への対応体制について", "https://www.idcf.jp/news/topics/20261009001")
       ],
       causes: ["ransomware"], causeText: "第三者からのランサムウェア攻撃",
-      dataNote: "495は障害の影響を受けた顧客数で、漏洩件数ではありません。第3報（10月8日）時点でも漏えいは確認されておらず、侵入経路は調査中です。影響ゾーンの顧客データは「取り出しや復元が困難な見通し」とされています。"
+      dataNote: "495は障害の影響を受けた顧客数で、漏洩件数ではありません。IDCフロンティア自身は第4報（10月9日）時点でも漏えいを確認していませんが、利用企業のビューカード、JR東日本、JR九州は10月9日にメールアドレスなどが閲覧・取得された可能性を公表しています。影響ゾーンの顧客データは「取り出しや復元が困難な見通し」とされています。"
     },
 
     // ---- 2026-10-08 更新分 ----
@@ -649,10 +653,11 @@
       officialUrl: "https://www.nissui.co.jp/news/2026100702.html",
       events: [
         E("incident", "2026-10-07", "本日、…日水物流株式会社…でシステム障害が発生しました", "@"),
-        E("disclosed", "2026-10-07", "日水物流株式会社におけるシステム障害について（第1報）2026年10月07日", "@")
+        E("disclosed", "2026-10-07", "日水物流株式会社におけるシステム障害について（第1報）2026年10月07日", "@"),
+        E("update", "2026-10-09", "（第2報）本日10月9日より一部の入出荷業務を再開", "https://www.nissui.co.jp/news/20261009.html")
       ],
-      causes: ["vendor"], causeText: "委託先のデータセンターへの第三者による不正アクセスとみられています",
-      dataNote: "システム障害の発表で、個人情報や顧客データの流出は確認中とされています。発生日はシステム障害の発生日です。"
+      causes: ["vendor"], causeText: "委託先である株式会社IDCフロンティアが第三者による不正アクセスを受けたことに伴い",
+      dataNote: "システム障害の発表です。第2報で、被害を受けたサーバーに個人情報や顧客情報は含まれないと確認したとしています。発生日はシステム障害の発生日です。"
     },
     "東京都小平市": {
       officialUrl: "https://x.com/kodaira_tokyo/status/2107976770385224041",
@@ -662,6 +667,158 @@
       ],
       causes: ["ransomware", "vendor"], causeText: "保守管理を受託している事業者が使用するクラウド基盤サービスが第三者によるランサムウェア攻撃を受け",
       dataNote: "市の公式Xアカウントの投稿（添付画像）による発表で、公表日は投稿日時です。10月7日の投稿では「システムトラブル」とだけ案内していました。現時点で情報漏洩は確認されていないとしています。"
+    },
+
+    // ---- 2026-10-10 更新分 ----
+    "ローソン": {
+      officialUrl: "https://www.lawson.co.jp/contents/cont07/1533174_3310.html",
+      events: [
+        E("incident", "2026-09-12", "9月12日(土)～9月14日(月)の間に「ローソンID」", "@"),
+        E("access_confirmed", "2026-10-07", "2026年10月7日（水）に実施した調査の中で…判明しました", "@"),
+        E("leak_confirmed", null, "調査の結果、以下の個人情報が漏えいしたことを確認", "@"),
+        E("disclosed", "2026-10-08", "2026年10月8日", "@")
+      ],
+      causes: [], causeText: "アプリ上で利用者本人に対し情報を表示するためのセキュリティ機構が第三者による不正アクセスを受け",
+      dataNote: "「ローソンアプリ予約」への不正アクセスは9月17日に発生しています（26件）。"
+    },
+    "第一興商": {
+      officialUrl: "https://www.dkkaraoke.co.jp/news/newsletter/261008_2.html",
+      events: [
+        E("vendor_notified", "2026-10-05", "当社は10月5日にNCG社から報告を受けました", "@"),
+        E("leak_possible", null, "漏えいしたおそれを否定できない状況です", "@"),
+        E("disclosed", "2026-10-08", "お知らせ 2026年10月08日 株式会社第一興商", "@"),
+        E("update", "2026-10-09", "お問い合わせ窓口（フリーダイヤル）開設のお知らせ", "https://www.dkkaraoke.co.jp/news/newsletter/261009_1.html")
+      ],
+      causes: ["vendor"], causeText: "同社従業員の端末がマルウェアに感染し、当社のお客様情報が漏えいしたおそれがある",
+      dataNote: "委託先（日本コロムビアグループ）側で端末の感染が判明した日（10月1〜2日）は委託先の日付なので、第一興商の検知日としては扱っていません。実際の外部漏えいは確認されていないとしています。"
+    },
+    "ユーザベース（NewsPicks）": {
+      officialUrl: "https://corp.newspicks.com/info/20261008",
+      events: [
+        E("anomaly", "2026-10-08", "2026年10月8日 12:48：不正アクセスを検知。対策本部を設置。", "@"),
+        E("access_confirmed", "2026-10-08", "2026年10月8日 14:01：…第三者による不正アクセスと判断", "@"),
+        E("disclosed", "2026-10-08", "2026年10月8日", "@"),
+        E("update", "2026-10-09", "【第二報】2026年10月9日", "https://corp.newspicks.com/info/20261009")
+      ],
+      causes: ["vuln"], causeText: "NewsPicks が業務で利用する管理ツールの脆弱性を突いたもの",
+      dataNote: "件数は第二報で示された項目別の最大想定件数で、人数の合計は示されていません。"
+    },
+    "オープンスマイル（ワラウ）": {
+      officialUrl: "https://www.warau.jp/service/info/permalink/3130/",
+      events: [
+        E("anomaly", "2026-10-04", "2026年10月4日、当社サーバーへの不正アクセスを検知し", "@"),
+        E("leak_confirmed", "2026-10-06", "10月6日、期限切れの連携トークンが外部に流出したことが判明", "@"),
+        E("disclosed", "2026-10-08", "2026年10月8日", "@")
+      ],
+      causes: ["vuln"], causeText: "原因となった当社システムの脆弱性を修正いたしました",
+      dataNote: "氏名・メールアドレス・パスワード・ポイント・口座情報は流出していないとしています。10月10日未明から、新たな不正アクセスの検知を理由に全サービスを停止する緊急メンテナンスを告知していますが、本件との関係は書かれていません。"
+    },
+    "ハイホー（hi-ho）": {
+      officialUrl: "https://hi-ho.co.jp/%e3%80%90%e9%87%8d%e8%a6%81%e3%81%aa%e3%81%8a%e7%9f%a5%e3%82%89%e3%81%9b%e3%80%91%e3%81%8a%e5%ae%a2%e6%a7%98%e6%83%85%e5%a0%b1%e3%81%b8%e3%81%ae%e7%ac%ac%e4%b8%89%e8%80%85%e3%81%ab%e3%82%88%e3%82%8b",
+      events: [
+        E("disclosed", "2026-10-08", "掲載日：2026年10月8日", "@")
+      ],
+      causes: ["credential"], causeText: "電話による勧誘を行い、その過程で、お客様ご本人からマイページへのログインに必要な情報を聞き出していた",
+      dataNote: "公式発表に発生日・判明日の記載はありません。"
+    },
+    "ウイングアーク1st": {
+      officialUrl: "https://corp.wingarc.com/public/202610/news3042.html",
+      events: [
+        E("vendor_notified", "2026-10-06", "2026年10月6日に…「コミューン株式会社」…から、第三者による不正アクセスが発生した旨の報告", "@"),
+        E("disclosed", "2026-10-08", "2026.10.08", "@")
+      ],
+      causes: ["vendor"], causeText: "当該サイトの管理者アカウントが不正に利用され、一部の会員情報が取得・閲覧された可能性",
+      dataNote: "コミューン（Commune）事案の委託元です。"
+    },
+    "ブックオフグループホールディングス": {
+      officialUrl: "https://ssl4.eir-parts.net/doc/9278/tdnet/2893077/00.pdf",
+      events: [
+        E("access_confirmed", "2026-10-06", "2026年10月6日（火）、当社子会社の会員管理システムへの第三者による不正アクセスを確認", "@"),
+        E("leak_confirmed", null, "調査の結果、同システムで管理している会員情報が外部から取得されたことが判明", "@"),
+        E("disclosed", "2026-10-09", "2026年10月9日", "@")
+      ],
+      causes: [], causeText: null,
+      dataNote: "原因の記載はなく、対応として「脆弱性を是正し」とあるのみです。件数は会員番号の件数で、実際の人数ではありません。"
+    },
+    "アドベンチャー（skyticket）": {
+      officialUrl: "https://skyticket.jp/news/maintenance/67603",
+      events: [
+        E("incident", "2026-10-02", "（1）発生期間：2026年10月2日～10月4日", "@"),
+        E("access_confirmed", "2026-10-05", "（1）発覚日：2026年10月5日", "@"),
+        E("disclosed", "2026-10-09", "2026年10月9日 株式会社アドベンチャー", "@")
+      ],
+      causes: [], causeText: "一部の管理機能を不正に操作され",
+      dataNote: "3件をまとめた公表で、時間軸は最大の案件（1）のものです。案件（2）業務管理システムの脆弱性悪用（9月20日発生・9月28日発覚、17,780件）と、案件（3）予約完了ページがログインなしで閲覧できた状態（8月3日〜10月1日、約12,000件）は含めていません。対象者へのメール通知は10月8日19時ごろから始まっています。"
+    },
+    "リゾートトラスト": {
+      officialUrl: "https://www.resorttrust.co.jp/wp_api/wp-content/uploads/2026/10/20261009.pdf",
+      events: [
+        E("incident", "2026-10-05", "10月5日、20時30分頃から23時30分頃までの間に…異常な作動", "@"),
+        E("anomaly", "2026-10-06", "翌10月6日に認知し", "@"),
+        E("leak_confirmed", "2026-10-07", "10月7日に不正アクセスによる情報漏洩があったことが確認されました", "@"),
+        E("disclosed", "2026-10-09", "2026年10月9日", "@")
+      ],
+      causes: [], causeText: null,
+      dataNote: "公式発表に合計件数はありません（報道では約6万2千件）。メールアドレス・カード・口座・本人確認書類は含まれないとしています。"
+    },
+    "コミューン（Commune）": {
+      officialUrl: "https://communeinc.com/ja/news/2026oct09",
+      events: [
+        E("incident", "2026-10-05", "2026年10月5日（月）18時ごろから、当社サービスが第三者による不正アクセスを受けました", "@"),
+        E("anomaly", "2026-10-06", "当社は10月6日（火）にこれを検知し、通信遮断および防御措置を実施", "@"),
+        E("leak_confirmed", null, "その後の調査の結果、一部のコミュニティにおいて…漏えいしたことが判明", "@"),
+        E("disclosed", "2026-10-09", "2026.10.09", "@")
+      ],
+      causes: [], causeText: "外部の第三者が当社システムの不備を突き、不正アクセスを行った",
+      dataNote: "委託元の企業・自治体も10月8〜9日に相次いで公表しています（本サイトではSansan、LINEヤフー、ウイングアーク1st、スズキを掲載）。会員情報の漏えいは10月7日13時17分〜14時36分とされています。"
+    },
+    "Sansan": {
+      officialUrl: "https://jp.corp-sansan.com/news/2026/1009.html",
+      events: [
+        E("vendor_notified", "2026-10-06", "2026年10月6日…コミューン株式会社…から、第三者による不正アクセスを受けたとの報告", "@"),
+        E("disclosed", "2026-10-09", "2026. 10. 09", "@")
+      ],
+      causes: ["vendor"], causeText: "本件はコミューン社のシステムに対する攻撃により発生したものです"
+    },
+    "LINEヤフー": {
+      officialUrl: "https://www.lycorp.co.jp/ja/privacy-security/announcement/020892/",
+      events: [
+        E("vendor_notified", "2026-10-06", "2026年10月6日、コミューン株式会社より…不正アクセスが行われた旨の連絡", "@"),
+        E("disclosed", "2026-10-09", "2026年10月9日", "@")
+      ],
+      causes: ["vendor"], causeText: "コミューン株式会社が提供するシステム上の不備が第三者に悪用されたことにより発生"
+    },
+    "スズキ": {
+      officialUrl: "https://www.suzuki.co.jp/release/d/2026/1009/",
+      events: [
+        E("incident", "2026-10-05", "2026年10月5日から6日にかけて…第三者による不正アクセスが発生", "@"),
+        E("vendor_notified", "2026-10-07", "当社は7日に事案に関する調査報告を受領しました", "@"),
+        E("disclosed", "2026-10-09", "2026年10月9日", "@")
+      ],
+      causes: ["vendor"], causeText: "サービス提供事業者であるコミューン株式会社のサービスに対して第三者による不正アクセスが発生"
+    },
+    "ビューカード": {
+      officialUrl: "https://www.jreast.co.jp/card/news/pdf/20261009.pdf",
+      events: [
+        E("leak_possible", "2026-10-07", "メールアドレスが漏えいした可能性があることが、2026年10月7日に判明", "@"),
+        E("disclosed", "2026-10-09", "2026年10月9日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社IDCフロンティアで発生した不正アクセスに伴い"
+    },
+    "JR東日本": {
+      officialUrl: "https://www.jreast.co.jp/press/2026/20261009_ho02.pdf",
+      events: [
+        E("disclosed", "2026-10-09", "2026年10月9日 東日本旅客鉄道株式会社", "@")
+      ],
+      causes: ["vendor"], causeText: "IDCフロンティア社で発生した不正アクセスに伴い",
+      dataNote: "大人の休日倶楽部はメールアドレスに加え会員番号・カード有効期限・生年月日も対象です。報道の「計609万件」はビューカードの約403万件を足した数字です。"
+    },
+    "JR九州": {
+      officialUrl: "https://www.jrkyushu.co.jp/common/inc/news/newtopics/__icsFiles/afieldfile/2026/10/09/202691009_mail_address_access_1.pdf",
+      events: [
+        E("disclosed", "2026-10-09", "2026年10月9日 九州旅客鉄道株式会社", "@")
+      ],
+      causes: ["vendor"], causeText: "IDCフロンティア社で発生した不正アクセスに伴い、お客さまの電子メールアドレスが漏えいした可能性"
     }
   };
 
