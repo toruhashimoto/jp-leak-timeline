@@ -17,8 +17,9 @@
 //   leak_confirmed 漏洩を確認 / vendor_notified 委託先・第三者等から報告 / disclosed 公表 / update 続報
 //   date は公式発表に日付まで明記されたものだけ。「上旬」「頃」など曖昧なときは null にして raw に原文を残す
 
-// 主要AIモデルの登場など（vendor: 開発元）
-const M = (date, vendor, title, note, src, srcName) => ({ date, vendor, title, note, src, srcName });
+// 主要AIモデルの登場など（vendor: 開発元、region: "cn" は中国系の開発元）
+const M = (date, vendor, title, note, src, srcName, region) => ({ date, vendor, title, note, src, srcName, region: region || "us" });
+const CN = (date, vendor, title, note, src, srcName) => M(date, vendor, title, note, src, srcName, "cn");
 const AIW = ["https://www.businessinsider.jp/article/2608-how-much-did-major-generative-ai-service-fees/", "BUSINESS INSIDER JAPAN 2026年8月版"];
 const AIS = ["https://www.businessinsider.jp/article/2609-how-much-did-major-generative-ai-service-fees/", "BUSINESS INSIDER JAPAN 2026年9月版"];
 
@@ -38,7 +39,17 @@ window.MILESTONES = [
   M("2026-09-21", "SpaceXAI", "Grok 4.7 公開", "", ...AIS),
   M("2026-09-22", "Anthropic", "Claude Opus 5.5 リリース", "Fable 5.1 並みの性能を Opus 5 比 約40%低いコストで。", "https://blog.serverworks.co.jp/2026/09/25/190000", "サーバーワークスエンジニアブログ"),
   M("2026-09-22", "OpenAI", "GPT-6 Sol / Luna 追加", "", "https://japan-ai.co.jp/media/10406/", "JAPAN AI"),
-  M("2026-09-28", "Anthropic", "Claude Sonnet 5.5 リリース", "", "https://aiprofitboardroom.com/blog/sonnet-5-5-release-date/", "AI Profit Boardroom")
+  M("2026-09-28", "Anthropic", "Claude Sonnet 5.5 リリース", "", "https://aiprofitboardroom.com/blog/sonnet-5-5-release-date/", "AI Profit Boardroom"),
+  M("2026-09-29", "Anthropic", "Anthropic が GLM-5.3 のサイバー攻撃能力の評価を公表", "攻撃コードの自律構築能力を確認したとする評価。実際の攻撃への利用を示すものではない。", "https://www.sbbit.jp/article/cont1/187163", "ビジネス+IT"),
+
+  // ---- 中国系 ----
+  CN("2026-06-16", "Zhipu AI（Z.ai）", "GLM-5.2 公開", "重みを MIT ライセンスで公開。公開日は資料により6月13日〜22日と幅がある。", "https://www.secondtalent.com/resources/every-glm-ai-model-explained-compared/", "Second Talent"),
+  CN("2026-07-16", "Moonshot AI", "Kimi K3 公開", "総パラメータ 2.8T。API は即日、重みは7月27日に公開予定とされた。", "https://howaiworks.ai/blog/moonshot-kimi-k3-release-announcement", "How AI Works"),
+  CN("2026-08-03", "Alibaba", "Qwen3.8-Max 公開", "Qwen シリーズの最上位モデル。Max 系として初めて重みの公開を予告。", "https://www.alibabagroup.com/document-2021044032125272064", "Alibaba Group"),
+  CN("2026-08-13", "DeepSeek", "DeepSeek V4-Pro 正式版（0813）公開", "プレビュー版の正式版。MIT ライセンスで重みを公開。", "https://technews.tw/2026/08/13/deepseek-v4-pro-0813/", "TechNews 科技新報"),
+  CN("2026-08-14", "Zhipu AI（Z.ai）", "GLM-5.3 公開", "コーディング・エージェント・サイバーセキュリティを強化。公開時は重みを非公開とした。", "https://www.unite.ai/z-ai-launches-glm-5-3-with-frontier-coding-and-a-cyber-capability-that-outgrew-its-training/", "Unite.AI"),
+  CN("2026-08-29", "Zhipu AI（Z.ai）", "GLM-5.3 の重みを公開", "Hugging Face と ModelScope で公開（日本時間）。独自の GLM-5.3 License。", "https://gigazine.net/gsc_news/en/20260829-glm-5-3-open/", "GIGAZINE"),
+  CN("2026-09-10", "DeepSeek", "DeepSeek V4.1 Flash 公開", "MIT ライセンスで重みを公開。9月14日から V4-Pro へのリクエストを V4.1 Flash に切り替え。", "https://thebridge.jp/2026/09/deepseek-v4-1-flash-launch", "BRIDGE")
 ];
 
 const S = {
