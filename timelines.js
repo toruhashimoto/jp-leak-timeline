@@ -747,7 +747,8 @@
       events: [
         E("incident", "2026-10-02", "（1）発生期間：2026年10月2日～10月4日", "@"),
         E("access_confirmed", "2026-10-05", "（1）発覚日：2026年10月5日", "@"),
-        E("disclosed", "2026-10-09", "2026年10月9日 株式会社アドベンチャー", "@")
+        E("disclosed", "2026-10-09", "2026年10月9日 株式会社アドベンチャー", "@"),
+        E("update", "2026-10-10", "【重要】メールサーバー障害の復旧に関するお知らせ", "https://skyticket.jp/news/maintenance/67616")
       ],
       causes: [], causeText: "一部の管理機能を不正に操作され",
       dataNote: "3件をまとめた公表で、時間軸は最大の案件（1）のものです。案件（2）業務管理システムの脆弱性悪用（9月20日発生・9月28日発覚、17,780件）と、案件（3）予約完了ページがログインなしで閲覧できた状態（8月3日〜10月1日、約12,000件）は含めていません。対象者へのメール通知は10月8日19時ごろから始まっています。"
@@ -821,6 +822,230 @@
         E("disclosed", "2026-10-09", "2026年10月9日 九州旅客鉄道株式会社", "@")
       ],
       causes: ["vendor"], causeText: "IDCフロンティア社で発生した不正アクセスに伴い、お客さまの電子メールアドレスが漏えいした可能性"
+    },
+
+    // ---- 2026-10-10 夕方更新分：新規 ----
+    "ディップ（バイトル）": {
+      officialUrl: "https://www.dip-net.co.jp/news/2192",
+      events: [
+        E("incident", "2026-10-06", "2026年10月6日、…第三者からの不正アクセスを受け", "@"),
+        E("access_confirmed", "2026-10-06", "2026年10月6日、Webサイトの一部機能において第三者からの不正アクセスを確認", "@"),
+        E("disclosed", "2026-10-09", "2026年10月09日（公開日）", "@")
+      ],
+      causes: [], causeText: "システムの一部機能における仕様の不備を突いた、海外からの不正アクセス",
+      dataNote: "対象の会員には、公表前の10月6日にバイトル・バイトルNEXTのサイト上で通知しています。対外公表日は会社のニュースリリース（10月9日）として扱っています。"
+    },
+    "ココナラ": {
+      officialUrl: "https://coconala.co.jp/news-20261009/",
+      events: [
+        E("access_confirmed", "2026-10-08", "2026年10月8日 2時05分 当社システムにおいて不正なアクセスを検知", "@"),
+        E("leak_confirmed", "2026-10-08", "2026年10月8日 15時00分頃 個人情報が外部に持ち出された形跡を確認", "@"),
+        E("disclosed", "2026-10-09", "2026年10月9日 株式会社ココナラ", "@")
+      ],
+      causes: [], causeText: null,
+      dataNote: "件数は書類の件数で、人数ではありません。「脆弱性の修正を完了」との記載はありますが、原因としては明示されていません。"
+    },
+    "エネコム": {
+      officialUrl: "https://www.enecom.co.jp/information/3920/",
+      events: [
+        E("access_confirmed", "2026-10-06", "2026年10月6日（火）、第三者が外部から不正アクセスを行っていたことを確認", "@"),
+        E("leak_confirmed", null, "複数の電子ファイルが外部に流出した形跡があることを確認", "@"),
+        E("disclosed", "2026-10-09", "ニュースリリース 2026年10月9日", "@")
+      ],
+      causes: [], causeText: null,
+      dataNote: "光回線サービス「メガ・エッグ」の顧客情報の漏えいは、現時点で確認されていないとしています。"
+    },
+    "キッセイ商事": {
+      officialUrl: "https://www.kissei.co.jp/news/uploaded/8799a42c0104c787a0519f1fabd3b2a5.pdf",
+      events: [
+        E("anomaly", "2026-10-07", "2026年10月7日21:50頃、キッセイ商事関係者宛てに、第三者からデータ窃取…を通知するメール", "@"),
+        E("leak_possible", null, "流出の可能性を否定できない状況です", "@"),
+        E("disclosed", "2026-10-09", "各位 2026年10月9日", "@")
+      ],
+      causes: [], causeText: null,
+      dataNote: "親会社キッセイ薬品工業との連名の発表です。攻撃者からの通知メールで判明したもので、システム障害は起きていないとしています。"
+    },
+    "郡山地方広域消防組合": {
+      officialUrl: "https://www.shobo.koriyama.fukushima.jp/information/files/21d66502c523042e01bcb2b7da835dc3bceadb77.pdf",
+      events: [
+        E("incident", "2026-10-07", "10月７日（水）、…委託先事業者が利用するクラウドシステムが不正アクセスを受け", "@"),
+        E("vendor_notified", "2026-10-07", "8時53分 委託先事業者から…障害が発生している旨のメールを受信", "@"),
+        E("leak_possible", "2026-10-08", "講習申込者のメールアドレスが漏洩したおそれがあることが発覚", "@"),
+        E("disclosed", "2026-10-09", "2026年10月９日 報道資料", "@")
+      ],
+      causes: ["vendor"], causeText: "委託先事業者（株式会社プロシーズ）が利用するクラウドシステムが不正アクセスを受け",
+      dataNote: "委託先が使うクラウドの事業者名は書かれていません。"
+    },
+
+    // ---- 2026-10-10 夕方更新分：委託先・連鎖の追加 ----
+    "オリックス生命保険": {
+      officialUrl: "https://www.orixlife.co.jp/b3cd698c38a74ebea491976d56455ecd/77eb698f1d9543a39440e414940f9f4d/n261008.pdf",
+      events: [
+        E("leak_possible", null, "当社のお客さま情報が漏えいした可能性があることが判明しました", "@"),
+        E("disclosed", "2026-10-08", "2026年10月8日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社スカラコミュニケーションズ（以下、SC社）が不正アクセスを受け",
+      dataNote: "問い合わせ内容には申告された医療情報なども含まれます。"
+    },
+    "フューチャーショップ": {
+      officialUrl: "https://www.future-shop.jp/news/2026/10/08.html",
+      events: [
+        E("disclosed", "2026-10-08", "2026.10.08", "@"),
+        E("update", "2026-10-09", "第一報から新たに確認された事実はございません", "https://www.future-shop.jp/news/2026/10/09.html")
+      ],
+      causes: ["vendor"], causeText: "第三者によるランサムウェア攻撃が発生した旨の公表",
+      dataNote: "宛先メールアドレスや本文中の氏名・誕生日などが対象基盤上にあり、流出の有無を含めて調査中としています。"
+    },
+    "高島屋": {
+      officialUrl: "https://www.takashimaya.co.jp/aboutinfo/excuse/top/info_detail.html?id=5921",
+      events: [
+        E("disclosed", "2026-10-09", "2026年10月9日 株式会社 高島屋", "@")
+      ],
+      causes: ["vendor"], causeText: "同クラウド基盤への第三者による不正アクセスとの報告",
+      dataNote: "高島屋オンライン会員などの情報がIDCFクラウドに保持されていたとしつつ、10月9日時点で流出は確認されていないとしています。"
+    },
+    "Peach Aviation": {
+      officialUrl: "https://www.flypeach.com/news/20261009",
+      events: [
+        E("vendor_notified", null, "本日、同社より一次調査に関する報告を受領いたしました", "@")
+      ],
+      causes: ["vendor"], causeText: "「IDCFクラウド」（東日本第1リージョン）が第三者からのランサムウェア攻撃を受けた",
+      dataNote: "ページに掲載日の記載がないため、公表日は登録していません（URLは20261009）。約189万件は配信システム上にあった件数で、外部流出は確認されていないとしています。"
+    },
+    "VALX": {
+      officialUrl: "https://corp.valx.jp/news/451vhhqdf29c/",
+      events: [
+        E("incident", "2026-10-06", "2026年10月6日19時18分頃から20時17分頃まで、不正アクセスが行われた", "@"),
+        E("leak_possible", null, "2,950名分の会員一覧情報が第三者に閲覧・取得された可能性", "@"),
+        E("disclosed", "2026-10-08", "2026年10月8日 VALX株式会社", "@")
+      ],
+      causes: ["vendor"], causeText: "同社システム上の複数の不備が悪用され、攻撃者が管理者になりすます"
+    },
+    "青森県（青森びいき）": {
+      officialUrl: "https://www.pref.aomori.lg.jp/release/files/2026/81562.pdf",
+      events: [
+        E("vendor_notified", "2026-10-06", "コミューン社が第三者による不正アクセスを確認、県へ報告", "@"),
+        E("leak_confirmed", "2026-10-07", "管理者アカウントへの不正アクセスにより一部の会員情報が閲覧されたことを確認", "@"),
+        E("disclosed", "2026-10-08", "令和８年１０月８日", "@")
+      ],
+      causes: ["vendor"], causeText: "青森びいき管理者アカウントへの不正アクセス"
+    },
+    "ヤマハ": {
+      officialUrl: "https://www.yamaha.com/ja/news_release/2026/26100901/",
+      events: [
+        E("incident", "2026-10-06", "10月6日11時59分頃から同日20時36分頃にかけて行われ", "https://www.yamaha.com/ja/news_release/files/news/26100901/pdf/2610090101.pdf"),
+        E("vendor_notified", "2026-10-06", "当社は2026年10月6日、コミューン社から、…連絡を受けました", "https://www.yamaha.com/ja/news_release/files/news/26100901/pdf/2610090101.pdf"),
+        E("leak_confirmed", null, "約1,600名分の…会員情報が漏えいしました", "https://www.yamaha.com/ja/news_release/files/news/26100901/pdf/2610090101.pdf"),
+        E("disclosed", "2026-10-09", "2026年10月9日", "@")
+      ],
+      causes: ["vendor"], causeText: "同社が管理するサーバーへの不正アクセス"
+    },
+    "湖池屋": {
+      officialUrl: "https://koikeya.co.jp/images/pdf/info_20261009.pdf",
+      events: [
+        E("incident", "2026-10-05", "2026年10月５日(月)、…第三者による不審なアクセスが判明", "@"),
+        E("leak_confirmed", null, "10月7日(水)にコミュニティの管理者権限が不正に利用され", "@"),
+        E("disclosed", "2026-10-09", "2026年10月9日 株式会社 湖池屋", "@")
+      ],
+      causes: ["vendor"], causeText: "コミュニティの管理者権限が不正に利用され",
+      dataNote: "10月7日が管理者権限の不正利用の日か、漏えいが判明した日か、文面から特定できないため日付を付けていません。"
+    },
+    "森永乳業": {
+      officialUrl: "https://www.morinagamilk.co.jp/information/newsentry-4168.html",
+      events: [
+        E("incident", "2026-10-06", "2026年10月6日、…「Commune」に対し、第三者による不正アクセスが行われた", "@"),
+        E("leak_possible", null, "会員291名の会員一覧情報が第三者に閲覧・取得された可能性", "@"),
+        E("disclosed", "2026-10-09", "2026年10月9日", "@")
+      ],
+      causes: ["vendor"], causeText: "システム上の複数の不備が第三者に悪用されたことにより発生"
+    },
+    "バンダイナムコエクスペリエンス": {
+      officialUrl: "https://wanganmaxi-official.com/wanganmaxi6rrplus/jp/news/035.html",
+      events: [
+        E("leak_possible", null, "お客様の会員情報が漏洩した可能性があることが確認されました", "@"),
+        E("disclosed", "2026-10-09", "2026年10月9日", "@")
+      ],
+      causes: ["vendor"], causeText: "外部からの不正アクセス"
+    },
+    "カルビー": {
+      officialUrl: "https://www.calbee.co.jp/notice/pdf/69-54565.pdf",
+      events: [
+        E("leak_confirmed", null, "会員情報の一部が、外部から閲覧・取得されたことが判明", "@"),
+        E("disclosed", "2026-10-09", "2026年10月9日 カルビー株式会社", "@")
+      ],
+      causes: ["vendor"], causeText: "外部からの不正アクセス"
+    },
+    "LIXIL": {
+      officialUrl: "https://www.lixil.co.jp/announce/notice-info-leak.htm",
+      events: [
+        E("incident", "2026-10-06", "2026年10月6日（火）ごろ、外部からの不正アクセスが確認されました", "@"),
+        E("leak_possible", null, "漏えいの可能性がある情報（いずれも登録されている場合）", "@"),
+        E("disclosed", "2026-10-09", "2026年10月9日", "@")
+      ],
+      causes: ["vendor"], causeText: "コミューン社が提供するシステム上の複数の不備が第三者に悪用された"
+    },
+    "ZENB JAPAN": {
+      officialUrl: "https://zenb.jp/blogs/news/20261009",
+      events: [
+        E("incident", "2026-10-05", "不正アクセスは10月5日（月）18時ごろから、10月6日（火）21時ごろまで", "@"),
+        E("vendor_notified", "2026-10-07", "10月7日（水）、コミューン社より…連絡を受けました", "@"),
+        E("leak_confirmed", "2026-10-08", "10月8日（木）に漏えいした事実があることが判明しました", "@"),
+        E("disclosed", "2026-10-09", "2026/10/09", "@")
+      ],
+      causes: ["vendor"], causeText: "管理者になりすました第三者によって会員情報が閲覧・取得された"
+    },
+    "ちとせ研究所": {
+      officialUrl: "https://chitose-bio.com/jp/news/12177/",
+      events: [
+        E("incident", "2026-10-06", "2026年10月6日、本サイトの管理者アカウント1件が第三者に不正利用され", "@"),
+        E("vendor_notified", "2026-10-07", "翌10月7日、同社から当社に対し、本件に関する通知", "@"),
+        E("disclosed", "2026-10-09", "2026.10.09", "@")
+      ],
+      causes: ["vendor"], causeText: "全コミュニティ共通のログイン用の署名鍵を入手し、コミュニティの管理者になりすまし"
+    },
+    "高知県（高知の知）": {
+      officialUrl: "https://doppuri.kochi-tabi.jp/news/information.html?id=77",
+      events: [
+        E("leak_possible", null, "会員情報が第三者によって閲覧・取得された可能性がございます", "@"),
+        E("disclosed", "2026-10-09", "（2026年10月9日 16:20時点）", "@")
+      ],
+      causes: ["vendor"], causeText: "管理者アカウントへのなりすましが行われ",
+      dataNote: "発表者は、高知県観光政策課内に事務局を置く「どっぷり高知旅キャンペーン推進委員会」です。"
+    },
+    "日本能率協会マネジメントセンター": {
+      officialUrl: "https://www.jmam.co.jp/assets/images/topics/toki-labo_20261009.pdf",
+      events: [
+        E("incident", "2026-10-06", "第三者による不正アクセスが2026年10月6日（火）に発生", "@"),
+        E("vendor_notified", "2026-10-07", "との報告を、同月7日（水）に受けました", "@"),
+        E("disclosed", "2026-10-09", "2026年10月9日", "@")
+      ],
+      causes: ["vendor"], causeText: "当該サイトの管理者アカウントが不正に利用され"
+    },
+    "パナソニック": {
+      officialUrl: "https://www.panasonic.com/jp/about/news/20261009.html",
+      events: [
+        E("leak_confirmed", null, "コミュニティ会員情報の一部が第三者に漏えいしたとの報告を受領", "@"),
+        E("disclosed", "2026-10-09", "2026年10月9日 パナソニック株式会社", "@")
+      ],
+      causes: ["vendor"], causeText: "同社システムに対する不正アクセスを原因として"
+    },
+    "ソフトブレーン": {
+      officialUrl: "https://www.softbrain.co.jp/news/topics/2026/20261009_1817/",
+      events: [
+        E("vendor_notified", "2026-10-06", "2026年10月6日に…「コミューン株式会社」…から…報告を受けました", "@"),
+        E("disclosed", "2026-10-09", "2026年10月09日", "@")
+      ],
+      causes: ["vendor"], causeText: "本サイトの管理者アカウントが不正に利用され"
+    },
+    "ユニファ": {
+      officialUrl: "https://unifa-e.com/news/info/20261009-info",
+      events: [
+        E("incident", "2026-10-05", "2026年10月5日から6日にかけて、…第三者による不正アクセスが発生", "@"),
+        E("vendor_notified", "2026-10-07", "当社は7日に事案に関する調査報告を受領しました", "@"),
+        E("leak_possible", null, "1,450名分の会員情報が閲覧・取得された可能性", "@"),
+        E("disclosed", "2026-10-09", "2026.10.09", "@")
+      ],
+      causes: ["vendor"], causeText: "コミューン社のシステムにおきまして不正アクセスが発生"
     }
   };
 
