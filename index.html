@@ -79,6 +79,29 @@ select.chip{padding:5px 10px}
 footer{color:var(--muted);font-size:12px;padding:40px 0 60px;border-top:1px solid var(--line);margin-top:48px}
 footer p{margin:6px 0}
 .theme{position:absolute;top:16px;right:16px}
+.viz{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;margin:12px 0 0}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px;margin-bottom:12px}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:13px;padding:5px 14px;border-radius:999px;cursor:pointer}
+.seg button[aria-selected="true"]{background:var(--ink);color:var(--bg)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;color:var(--muted);margin-bottom:8px;align-items:center}
+.legend span{display:inline-flex;align-items:center;gap:5px}
+.legend .sep{margin-left:6px;padding-left:12px;border-left:1px solid var(--line)}
+.cv{position:relative;height:340px}
+.vnote{font-size:12px;color:var(--muted);margin:8px 0 0}
+.scrollx{overflow-x:auto}
+#chainSvg{display:block;min-width:600px;width:100%}
+#chainSvg .lh{font-size:13px;font-weight:700;fill:var(--ink)}
+#chainSvg .lo{font-size:12px;fill:var(--ink)}
+#chainSvg .lm{font-size:11px;fill:var(--muted)}
+#chainSvg .ln{stroke:var(--line);stroke-width:2}
+#chainSvg .ln.dash{stroke-dasharray:3 3;stroke-width:1.5}
+#chainSvg .axis{stroke:var(--line)}
+#chainSvg .hub-start{fill:var(--surface);stroke:var(--muted);stroke-width:1.5}
+#chainSvg .hub-disc{fill:var(--ink)}
+#chainSvg .mem{fill:var(--c-vendor);stroke:var(--surface);stroke-width:2}
+.single{list-style:none;padding:0;margin:12px 0 0;font-size:13px}
+.single li{padding:6px 0;border-top:1px solid var(--line)}
+.lmh{color:var(--muted);font-size:12px}
 </style>
 </head>
 <body>
@@ -90,6 +113,27 @@ footer p{margin:6px 0}
     <p class="lead">Claude Fable 5 のリリース（2026年6月10日）以降に公表された、日本の企業・組織の情報漏洩／不正アクセス事案を時系列で並べました。主要なAIモデルの登場（◆。中国系は緑）も同じ時間軸に重ねています。各項目には出典へのリンクを付けています。</p>
     <div class="stats" id="stats"></div>
     <div class="chart"><h2>月別の公表件数（本サイト掲載分）</h2><div class="bars" id="bars"></div></div>
+    <section class="viz" aria-label="グラフ">
+      <div class="seg" role="tablist">
+        <button type="button" role="tab" id="tab-count" aria-controls="v-count" aria-selected="true">流出件数</button>
+        <button type="button" role="tab" id="tab-chain" aria-controls="v-chain" aria-selected="false">委託先・連鎖</button>
+      </div>
+      <div id="v-count" role="tabpanel" aria-labelledby="tab-count">
+        <div class="legend" id="countLegend"></div>
+        <div class="cv" id="countCanvasWrap"><canvas id="countChart" role="img" aria-label="公表日ごとの漏洩件数を対数目盛で示した散布図。塗りは漏洩を確認、白抜きは可能性または確認の記載なし。">公表日ごとの漏洩件数の散布図。各事案の件数は下の一覧で確認できます。</canvas></div>
+        <p class="vnote" id="countNote"></p>
+      </div>
+      <div id="v-chain" role="tabpanel" aria-labelledby="tab-chain" hidden>
+        <div class="legend">
+          <span><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="4.5" fill="none" stroke="var(--muted)" stroke-width="1.5"/></svg>委託先で発生</span>
+          <span><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><rect x="1" y="1" width="10" height="10" rx="2" fill="var(--ink)"/></svg>委託先本体の公表</span>
+          <span><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="5" fill="var(--c-vendor)"/></svg>利用企業の公表（+日数は委託先での発生から）</span>
+        </div>
+        <div class="scrollx"><svg id="chainSvg" role="img" xmlns="http://www.w3.org/2000/svg"></svg></div>
+        <ul class="single" id="chainSingle"></ul>
+        <p class="vnote">公式発表で委託先の名前や同じ事案であることが確認できたものだけをつないでいます。東京都小平市は委託先の名前が公式発表にないため含めていません。</p>
+      </div>
+    </section>
   </header>
 
   <div class="controls">
@@ -115,9 +159,9 @@ footer p{margin:6px 0}
   </footer>
 </div>
 
-<script src="lib.js"></script>
-<script src="timelines.js"></script>
-<script src="data.js"></script>
+<script src="lib.js?v=20261010c"></script>
+<script src="timelines.js?v=20261010c"></script>
+<script src="data.js?v=20261010c"></script>
 <script>
 (() => {
   const TYPES = {
@@ -143,6 +187,7 @@ footer p{margin:6px 0}
     const dark = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
     root.dataset.theme = dark ? "light" : "dark";
     try { localStorage.setItem("theme", root.dataset.theme); } catch (e) {}
+    document.dispatchEvent(new Event("themechange"));
   };
 
   // 統計
@@ -237,5 +282,7 @@ footer p{margin:6px 0}
   render();
 })();
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script src="viz.js?v=20261010c"></script>
 </body>
 </html>

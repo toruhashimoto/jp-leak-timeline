@@ -31,7 +31,9 @@
         E("disclosed", "2026-06-23", "報道発表資料 2026年6月23日", "@"),
         E("update", "2026-07-06", "報道発表資料 2026年7月6日", "https://newsroom.kddi.com/news/assets/2026/kddi_nr_s-73_4619/kddi_nr_s-73_4619_pdf_01.pdf")
       ],
-      causes: ["vuln"], causeText: "第三者製のソフトウェアの脆弱性を悪用されたことによるもの"
+      causes: ["vuln"], causeText: "第三者製のソフトウェアの脆弱性を悪用されたことによるもの",
+      certainty: "confirmed",
+      dataNote: "第1報は「最大1,422万件の漏えいの可能性」。7月6日の続報で、メールアドレス12,231,954件（7月21日に訂正）とパスワード7,616,173件の漏えいを確認しています。"
     },
     "アフラック生命保険": {
       officialUrl: "https://www.aflac.co.jp/static/corp/profile/news/2026/20260630.pdf",

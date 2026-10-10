@@ -10,6 +10,7 @@
 //   officialUrl  : 公式発表（第1報）の URL
 //   listedDate   : 初報が 2026-06-10 より前で、続報によって掲載している場合の続報の日付
 //   dataNote     : 日付の扱いに関する補足
+//   certainty    : 漏洩の確度の上書き（confirmed / possible）。省略時は events から判定する（lib.js の certaintyOf）
 //
 // ■ イベント種別（E の第1引数）
 //   incident 発生 / exposure 閲覧可能な状態の開始（設定不備など。侵入とは区別する）
@@ -177,6 +178,21 @@ window.INCIDENTS = [
   I("2026-10-09", "ビューカード", "IDCフロンティアへの不正アクセスに伴い、メール配信用外部サービスから会員のメールアドレスが閲覧・取得された可能性", "メールアドレス 約403万件", 4030000, "vendor", S.ws10),
   I("2026-10-09", "JR東日本", "IDCフロンティアへの不正アクセスに伴い、えきねっと・大人の休日倶楽部のメール配信用外部サービスからデータが閲覧・取得された可能性", "えきねっと会員 約167万件、大人の休日倶楽部会員 約39万件（最大）", 1670000, "vendor", S.ws10),
   I("2026-10-09", "JR九州", "IDCフロンティアへの不正アクセスに伴い、メールマガジン配信用外部サービスのメールアドレスが閲覧・取得された可能性", "JR九州Web会員 約130万件（最大）", 1300000, "vendor", S.ws10)
+];
+
+// 委託先・連鎖。hubOrg は委託先自身の事案（INCIDENTS の org）、members は影響を公表した利用企業。
+// 公式発表で委託先の名前や同一事案であることが確認できたものだけを入れる。
+window.CHAINS = [
+  { key: "scala", label: "スカラコミュニケーションズ（i-ask）", hubOrg: "スカラ（スカラコミュニケーションズ i-ask）",
+    members: ["大和証券", "シチズン時計", "損害保険ジャパン", "東武鉄道"] },
+  { key: "idcf", label: "IDCフロンティア（IDCFクラウド）", hubOrg: "IDCフロンティア",
+    members: ["日水物流（ニッスイグループ）", "ビューカード", "JR東日本", "JR九州"] },
+  { key: "commune", label: "コミューン（Commune）", hubOrg: "コミューン（Commune）",
+    members: ["ウイングアーク1st", "Sansan", "LINEヤフー", "スズキ"] },
+  { key: "kddi", label: "KDDI（ISP向けメールシステム）", hubOrg: "KDDI", members: ["J:COM"] },
+  { key: "murata", label: "村田製作所（親会社のIT環境）", hubOrg: null, members: ["ムラタメイク"] },
+  { key: "ncg", label: "日本コロムビアグループ（委託先）", hubOrg: null, members: ["第一興商"] },
+  { key: "iyaku", label: "医薬情報ネット（委託先）", hubOrg: null, members: ["旭化成セラピューティクス"] }
 ];
 
 window.UPDATED = "2026-10-10";
