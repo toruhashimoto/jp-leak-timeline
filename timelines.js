@@ -1046,6 +1046,105 @@
         E("disclosed", "2026-10-09", "2026.10.09", "@")
       ],
       causes: ["vendor"], causeText: "コミューン社のシステムにおきまして不正アクセスが発生"
+    },
+
+    // ---- 2026-10-11 更新分 ----
+    "渋谷未来デザイン": {
+      officialUrl: "https://fds.or.jp/news/1091/",
+      events: [
+        E("leak_possible", null, "メールアドレスやニックネーム、アカウント名等が参照された可能性", "@"),
+        E("disclosed", "2026-10-11", "弊社コミュニティサイトへの不正アクセスに関するお知らせ 2026年10月11日", "@")
+      ],
+      causes: ["vendor"], causeText: "コミューン株式会社の管理者アカウント1件が、第三者により不正利用",
+      dataNote: "一般社団法人渋谷未来デザインの発表です。不正利用が発覚した10月6日はコミューン側の日付なので、検知日としては扱っていません。"
+    },
+
+    // ---- 2026-10-11 更新分：取りこぼしの追加 ----
+    "手間いらず": {
+      officialUrl: "https://www.temairazu.co.jp/pdf/1206/news-update",
+      events: [
+        E("anomaly", "2026-09-21", "2026年9月21日（月）深夜頃より、複数の宿泊施設から", "@"),
+        E("access_confirmed", null, "調査の過程で、当社システムへの不正アクセスがあったことを確認", "@"),
+        E("leak_possible", null, "宿泊者情報の一部が第三者に閲覧または取得された可能性を否定できない", "@"),
+        E("disclosed", "2026-09-28", "2026年9月28日 手間いらず株式会社", "@"),
+        E("update", "2026-10-07", "2026年10月７日 …（第二報）", "https://www.temairazu.co.jp/pdf/1210/news-update")
+      ],
+      causes: [], causeText: null,
+      dataNote: "宿泊予約者に不審なメッセージが届いたという宿泊施設からの連絡が発端です。システムを使う宿泊施設側にも影響が及ぶ事案です。"
+    },
+    "ユニリタ": {
+      officialUrl: "https://www.unirita.co.jp/news/2026/media_20260929.html",
+      events: [
+        E("anomaly", "2026-09-28", "2026年9月28日13:30頃、…webサイトにて公表されている事実を確認", "@"),
+        E("leak_possible", "2026-09-28", "情報漏洩の疑いがあることを2026年9月28日午後に確認", "@"),
+        E("disclosed", "2026-09-29", "2026年9月29日 株式会社ユニリタ", "@"),
+        E("leak_confirmed", null, "その後の調査で…一部のデータが窃取された事実を確認", "https://www.unirita.co.jp/dcms_media/other/261009_kaiji001.pdf"),
+        E("update", "2026-10-09", "2026年10月9日 …不正アクセスの発生および情報漏えいに関するお知らせ", "https://www.unirita.co.jp/dcms_media/other/261009_kaiji001.pdf")
+      ],
+      causes: [], causeText: null,
+      dataNote: "外部のWebサイトにデータ窃取の主張が掲載されたことで判明しました。攻撃者名やランサムウェアであることは公式発表には書かれていません。"
+    },
+    "修道学園": {
+      officialUrl: "https://www.shudo-u.ac.jp/gakuen/information/b53fil000000008q.html",
+      events: [
+        E("access_confirmed", "2026-09-26", "2026年9月26日、本学園が管理するサーバーに対する第三者による不正アクセスを確認", "@"),
+        E("leak_possible", null, "外部に漏えいした可能性のおそれがあることが判明", "@"),
+        E("disclosed", "2026-09-30", "2026/09/30", "@"),
+        E("update", "2026-10-08", "2026/10/08 …（第２報）", "https://www.shudo-u.ac.jp/gakuen/information/mh85jl0000000021.html")
+      ],
+      causes: [], causeText: null,
+      dataNote: "広島修道大学と修道中学校・高等学校などを運営する学校法人の発表です。第2報で、学生の情報は含まれないとされました。"
+    },
+    "関西国際大学": {
+      officialUrl: "https://www.kuins.ac.jp/news/2026/09/post_1448.html",
+      events: [
+        E("access_confirmed", null, "学内システムの一部に対して、第三者による不正アクセスを確認", "@"),
+        E("disclosed", "2026-09-30", "2026年9月30日", "@"),
+        E("leak_confirmed", null, "複数のファイルが外部に取得されたことが確認されました", "https://www.kuins.ac.jp/news/2026/10/post_1450.html"),
+        E("update", "2026-10-06", "2026年10月6日 … 【第2報】", "https://www.kuins.ac.jp/news/2026/10/post_1450.html")
+      ],
+      causes: [], causeText: null
+    },
+    "アクティブ": {
+      officialUrl: "https://www.active-pro.jp/news/4303/",
+      events: [
+        E("incident", "2026-10-02", "2026年10月2日：…不審なアクセス（SQLインジェクション攻撃）が発生", "@"),
+        E("access_confirmed", "2026-10-03", "2026年10月3日：…不正アクセスの痕跡を確認しました", "@"),
+        E("leak_possible", null, "顧客データおよび受注データが出力された形跡を確認しました", "@"),
+        E("disclosed", "2026-10-06", "2026.10.06", "@")
+      ],
+      causes: ["vuln"], causeText: "特定のWebページに対する不審なアクセス（SQLインジェクション攻撃）",
+      dataNote: "高松市の業務用冷凍食品メーカー、株式会社アクティブの通販サイトです。"
+    },
+    "埼玉県（渋沢MIX）": {
+      officialUrl: "https://www.pref.saitama.lg.jp/a0803/news/page/news2026100702.html",
+      events: [
+        E("incident", "2026-10-06", "令和８年１０月６日（火）１８時３０分頃に、…メールが送信される事案", "https://www.pref.saitama.lg.jp/documents/288630/1007_pressrelease02.pdf"),
+        E("disclosed", "2026-10-07", "令和８年１０月７日 産業労働部 イノベーション創造課", "https://www.pref.saitama.lg.jp/documents/288630/1007_pressrelease02.pdf")
+      ],
+      causes: [], causeText: "管理システムの脆弱性を攻撃されたものと考えられますが、詳細については調査中",
+      dataNote: "原因は「考えられます」という推定の表現なので、原因タグは付けていません。"
+    },
+    "大手前病院": {
+      officialUrl: "https://otemae.kkr.or.jp/news/20261008_10834.html",
+      events: [
+        E("access_confirmed", null, "当院が使用するメールアカウントに対して第三者による不正アクセスが確認され", "@"),
+        E("leak_possible", null, "職員等に係る個人情報について、漏えいの可能性がある事案", "@"),
+        E("disclosed", "2026-10-08", "令和8年10月8日 国家公務員共済組合連合会 大手前病院", "@")
+      ],
+      causes: [], causeText: null
+    },
+    "千葉西総合病院": {
+      officialUrl: "https://www.chibanishi-hp.or.jp/archives/news/important/24310",
+      events: [
+        E("incident", "2026-10-05", "2026年10月5日夜間帯の勤務中に動画を撮影し", "https://www.chibanishi-hp.or.jp/archives/news/important/24345"),
+        E("anomaly", "2026-10-08", "2026年10月８日15時18分～30分ころ … 動画の存在を確認", "https://www.chibanishi-hp.or.jp/archives/news/important/24345"),
+        E("disclosed", "2026-10-08", "2026年10月8日 医療法人徳洲会千葉西総合病院 病院長", "@"),
+        E("update", "2026-10-09", "【第2報】… 2026年10月9日", "https://www.chibanishi-hp.or.jp/archives/news/important/24345"),
+        E("update", "2026-10-10", "【第3報】… 2026年10月10日", "https://www.chibanishi-hp.or.jp/archives/news/important/24370")
+      ],
+      causes: ["insider"], causeText: "当院職員によるSNSへの不適切な動画投稿",
+      dataNote: "サイバー攻撃ではなく、職員による動画の無断投稿です。病院が「個人情報が漏洩した」として公表しているため掲載しています。"
     }
   };
 
