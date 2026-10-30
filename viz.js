@@ -105,7 +105,18 @@
     $("chainPick").innerHTML = allLanes.map(c =>
       `<button type="button" class="chip" data-k="${esc(c.key)}" aria-pressed="${c.key === chainPick}">${esc(c.label)}（${c.rows.length}）</button>`).join("");
     $("chainPick").onclick = e => { const b = e.target.closest("[data-k]"); if (!b) return; chainPick = b.dataset.k; drawChain(); };
-    const lanes = allLanes.filter(c => c.key === chainPick);
+    // 利用組織が多い委託先は、公表日ごとに1行へまとめる（行の高さが読めなくなるため）
+    const AGG_MIN = 40;
+    const lanes = allLanes.filter(c => c.key === chainPick).map(c => {
+      if (c.rows.length <= AGG_MIN) return c;
+      const byDate = {};
+      c.rows.forEach(r => (byDate[r.date] ||= []).push(r));
+      const rows = Object.keys(byDate).sort().map(d => ({
+        agg: true, date: d, lag: byDate[d][0].lag, count: byDate[d].length,
+        org: byDate[d].map(r => r.org).join("、")
+      }));
+      return { ...c, rows, aggregated: true, total: c.rows.length };
+    });
     const singles = chains.filter(c => c.rows.length < 2);
 
     const dates = allLanes.flatMap(c => [c.startDate, c.hubDisclosed, ...c.rows.map(r => r.date)]).filter(Boolean).sort();
@@ -122,7 +133,7 @@
     lanes.forEach(c => {
       y += 22;
       out.push(T(8, y, esc(c.label), "lh"));
-      out.push(T(X1, y, `利用企業 ${c.rows.length}社・公表は${c.spanDays + 1}日間に分散`, "lm", "end"));
+      out.push(T(X1, y, `利用組織 ${c.total || c.rows.length}・公表は${c.spanDays + 1}日間に分散${c.aggregated ? "（公表日ごとにまとめて表示）" : ""}`, "lm", "end"));
       y += 10;
       // 委託先本体：発生 → 公表
       y += 22;
@@ -139,9 +150,9 @@
       c.rows.forEach(r => {
         y += 22;
         const xm = xOf(r.date);
-        out.push(T(16, y + 4, esc(short(r.org)), "lo"));
+        out.push(T(16, y + 4, r.agg ? `${md(r.date)} 公表 ${r.count}組織` : esc(short(r.org)), "lo"));
         if (xs !== null) out.push(`<line x1="${xs}" y1="${y}" x2="${xm}" y2="${y}" class="ln dash"/>`);
-        out.push(`<circle cx="${xm}" cy="${y}" r="5" class="mem"><title>${esc(r.org)} 公表 ${md(r.date)}${r.lag !== null ? `（発生から${r.lag}日）` : ""}</title></circle>`);
+        out.push(`<circle cx="${xm}" cy="${y}" r="${r.agg ? Math.min(4 + Math.sqrt(r.count), 11) : 5}" class="mem"><title>${esc(r.org)} 公表 ${md(r.date)}${r.lag !== null ? `（発生から${r.lag}日）` : ""}</title></circle>`);
         if (r.lag !== null) out.push(xm > X1 - 40 ? T(xm - 10, y + 4, `+${r.lag}日`, "lm", "end") : T(xm + 10, y + 4, `+${r.lag}日`, "lm"));
       });
       y += 12;

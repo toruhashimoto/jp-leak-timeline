@@ -697,10 +697,12 @@
       events: [
         E("incident", "2026-10-07", "本日、…日水物流株式会社…でシステム障害が発生しました", "@"),
         E("disclosed", "2026-10-07", "日水物流株式会社におけるシステム障害について（第1報）2026年10月07日", "@"),
-        E("update", "2026-10-09", "（第2報）本日10月9日より一部の入出荷業務を再開", "https://www.nissui.co.jp/news/20261009.html")
+        E("update", "2026-10-09", "（第2報）本日10月9日より一部の入出荷業務を再開", "https://www.nissui.co.jp/news/20261009.html"),
+        E("update", "2026-10-14", "日水物流株式会社におけるシステム障害について（第3報）2026年10月14日", "https://www.nissui.co.jp/news/20261014.html"),
+        E("update", "2026-10-20", "（第4報）本日10月20日、日水物流の全17拠点において通常の入出荷業務に移行", "https://www.nissui.co.jp/news/20261020.html")
       ],
       causes: ["vendor"], causeText: "委託先である株式会社IDCフロンティアが第三者による不正アクセスを受けたことに伴い",
-      dataNote: "システム障害の発表です。第2報で、被害を受けたサーバーに個人情報や顧客情報は含まれないと確認したとしています。発生日はシステム障害の発生日です。"
+      dataNote: "システム障害の発表です。第2報で、被害を受けたサーバーに個人情報や顧客情報は含まれないと確認したとしています。発生日はシステム障害の発生日です。10月14日の第3報でも、被害を受けたサーバーにニッスイグループが管理する個人情報や顧客情報は含まれないとしています。10月20日の第4報で、全17拠点が通常の入出荷業務に移行したとしています。"
     },
     "東京都小平市": {
       officialUrl: "https://x.com/kodaira_tokyo/status/2107976770385224041",
@@ -878,9 +880,11 @@
     "JR九州": {
       officialUrl: "https://www.jrkyushu.co.jp/common/inc/news/newtopics/__icsFiles/afieldfile/2026/10/09/202691009_mail_address_access_1.pdf",
       events: [
-        E("disclosed", "2026-10-09", "2026年10月9日 九州旅客鉄道株式会社", "@")
+        E("disclosed", "2026-10-09", "2026年10月9日 九州旅客鉄道株式会社", "@"),
+        E("update", "2026-10-15", "（続報）…漏えいの事実は確認されませんでした", "https://www.jrkyushu.co.jp/common/inc/news/newtopics/__icsFiles/afieldfile/2026/10/15/202691015_mail_address_access.pdf")
       ],
-      causes: ["vendor"], causeText: "IDCフロンティア社で発生した不正アクセスに伴い、お客さまの電子メールアドレスが漏えいした可能性"
+      causes: ["vendor"], causeText: "IDCフロンティア社で発生した不正アクセスに伴い、お客さまの電子メールアドレスが漏えいした可能性",
+      dataNote: "10月15日の続報で、IDCフロンティアの調査の結果、JR九州Web会員約130万件の電子メールアドレスについて漏えいの事実は確認されなかったとの報告を受けたとしています。"
     },
 
     // ---- 2026-10-10 夕方更新分：新規 ----
@@ -950,10 +954,11 @@
       officialUrl: "https://www.future-shop.jp/news/2026/10/08.html",
       events: [
         E("disclosed", "2026-10-08", "2026.10.08", "@"),
-        E("update", "2026-10-09", "第一報から新たに確認された事実はございません", "https://www.future-shop.jp/news/2026/10/09.html")
+        E("update", "2026-10-09", "第一報から新たに確認された事実はございません", "https://www.future-shop.jp/news/2026/10/09.html"),
+        E("update", "2026-10-15", "【重要・第三報】…メール配信データの外部への流出はなかったものと判断", "https://www.future-shop.jp/news/2026/10/15-2.html")
       ],
       causes: ["vendor"], causeText: "第三者によるランサムウェア攻撃が発生した旨の公表",
-      dataNote: "宛先メールアドレスや本文中の氏名・誕生日などが対象基盤上にあり、流出の有無を含めて調査中としています。"
+      dataNote: "宛先メールアドレスや本文中の氏名・誕生日などが対象基盤上にあり、流出の有無を含めて調査中としています。10月15日の第三報で、IDCフロンティアの調査結果（10月14日）に基づき、「future Scenario Cast」「futureCartRecovery」で預かっていたメール配信データの外部流出はなかったものと判断したとしています。"
     },
     "高島屋": {
       officialUrl: "https://www.takashimaya.co.jp/aboutinfo/excuse/top/info_detail.html?id=5921",
@@ -1447,11 +1452,13 @@
       officialUrl: "https://www.peachjohn.co.jp/information/detail/137",
       events: [
         E("leak_possible", null, "一部のお客様のメールアドレスが漏えいした可能性があることが判明", "@"),
-        E("disclosed", "2026-10-14", "2026.10.14", "@")
+        E("disclosed", "2026-10-14", "2026.10.14", "@"),
+        E("update", "2026-10-16", "【第2報】…「メールアドレスの漏えいはなかった」旨の報告を受けております", "https://www.peachjohn.co.jp/information/detail/138"),
+        E("update", "2026-10-26", "メールマガジン配信再開のお知らせ 2026.10.26", "https://www.peachjohn.co.jp/information/detail/139")
       ],
       causes: ["vendor"], causeText: null,
       certainty: "possible",
-      dataNote: "対象はメールアドレスのみ（氏名・住所・電話番号・カード番号は当該配信サービスで不使用）。メールマガジン配信は停止。"
+      dataNote: "対象はメールアドレスのみ（氏名・住所・電話番号・カード番号は当該配信サービスで不使用）。メールマガジン配信は停止。10月16日の第2報で、サービス提供事業者とセキュリティ専門会社の調査の結果「メールアドレスの漏えいはなかった」との報告を受けたとしています。10月26日には配信システムを変更してメールマガジンの配信を再開しました。"
     },
     "スズキ二輪（スズキワールドホームページ）": {
       officialUrl: "https://suzukiworld.jp/post/2026/10/post-70.html",
@@ -1834,11 +1841,15 @@
       officialUrl: "https://www.cuenote.jp/information/news/unauthorizedaccess.html",
       events: [
         E("access_confirmed", "2026-10-16", "2026年10月16日(金)未明に当社担当者が一部システムにおいて", "@"),
-        E("disclosed", "2026-10-19", "2026年10月19日に掲載した内容に補足説明を追記", "@")
+        E("disclosed", "2026-10-19", "2026年10月19日に掲載した内容に補足説明を追記", "@"),
+        E("access_confirmed", "2026-10-25", "新たに42システムに不正アクセス、データ出力記録があることを確認", "https://www.ymir.co.jp/info/ymir-information20261027.html"),
+        E("update", "2026-10-26", "当社システムへの不正なアクセスに関するご報告（第二報）", "https://www.ymir.co.jp/info/ymir-information20261027.html")
       ],
-      causes: ["vuln"], causeText: "プログラムの脆弱性により",
+      causes: ["vuln", "credential"], causeText: "ライブラリの脆弱性により、49システムで情報漏洩が発生",
       certainty: "confirmed",
-      dataNote: "公式ページは第一報の2026年10月19日19:05更新版。件数は「延べ」の試算値で人数ではない。後日の続報で件数が更新されたとの報道あり（未検証）。"
+      dataNote: "公式ページは第一報の2026年10月19日19:05更新版。件数は「延べ」の試算値で人数ではない。後日の続報で件数が更新されたとの報道あり（未検証）。2026年10月26日の第二報で、漏えい確認システムがCuenote FC 49システム（延べ51,628,280件）とCuenote BASE 1システム（契約者情報190件）の計50システムに拡大。16システムは件数調査中で増加の可能性あり。攻撃者は脆弱性を突いてサポート・品質管理担当者の認証情報やログインセッション情報を取得し不正ログインしたと記載。cuenote.jpの最新情報ページは2026.10.26 17時更新が最新（10/30時点で第三報なし）。",
+      count: "51,628,280件（延べ件数）／Cuenote FC 49システム（ほかCuenote BASE契約者情報190件）",
+      n: 51628280
     },
     "エイチ・ツー・オー リテイリング／阪急阪神百貨店（H2O ID）": {
       officialUrl: "https://data.swcms.net/file/h2o-retailing/ja/news/auto_20261019552921/pdfFile.pdf",
@@ -2626,11 +2637,15 @@
       events: [
         E("incident", "2026-10-16", "不正取得が行われたのは10月16日午後とみられています", "@"),
         E("vendor_notified", "2026-10-26", "データが外部に出力された形跡が確認されたとの連絡を26日に受けました", "@"),
-        E("disclosed", "2026-10-26", "2026-10-26", "@")
+        E("disclosed", "2026-10-26", "2026-10-26", "@"),
+        E("update", "2026-10-27", "(10月27日午後5時追記あり)", "@"),
+        E("update", "2026-10-29", "外部に流出したおそれがある情報は延べ7万921件であることが判明", "https://www.asahi.com/corporate/info/17004624")
       ],
       causes: ["vendor"], causeText: null,
       certainty: "possible",
-      dataNote: "取得できた公式ページは10月27日午後5時の追記版までで、件数は確認中とされていた。報道では10月29日に延べ70,921件（9割超はメールアドレスのみ）と公表されたとされるが、公式ページでは未確認のため n は空欄。"
+      dataNote: "取得できた公式ページは10月27日午後5時の追記版までで、件数は確認中とされていた。報道では10月29日に延べ70,921件（9割超はメールアドレスのみ）と公表されたとされるが、公式ページでは未確認のため n は空欄。10月29日付の続報で、流出したおそれのある情報が延べ7万921件と判明（9割超はメールアドレスのみ、一部に氏名・学校名等）。対象者には個別連絡。",
+      count: "延べ7万921件",
+      n: 70921
     },
     "ヤクルト本社": {
       officialUrl: "https://www.yakult.co.jp/maintenance/",
@@ -2963,11 +2978,14 @@
         E("vendor_notified", "2026-10-20", "2026年10月20日、ユミルリンク株式会社より", "@"),
         E("vendor_notified", "2026-10-27", "2026年10月27日、ユミルリンク株式会社よりお客様の個人情報について", "@"),
         E("leak_confirmed", null, "当社のお客様に関する個人情報が漏えいしたことを確認いたしました", "@"),
-        E("disclosed", "2026-10-28", "2026.10.28", "@")
+        E("disclosed", "2026-10-28", "2026.10.28", "@"),
+        E("update", "2026-10-30", "対象者および対象件数の特定ならびに漏えい情報の訂正について", "https://www.animate.co.jp/news/53522/")
       ],
       causes: ["vendor"], causeText: null,
       certainty: "confirmed",
-      dataNote: "10/20時点では影響なしとの報告だったが、10/27に第三者に閲覧・取得されたとの連絡。氏名・住所・電話番号・カード情報・パスワードは漏えいしていない。"
+      dataNote: "10/20時点では影響なしとの報告だったが、10/27に第三者に閲覧・取得されたとの連絡。氏名・住所・電話番号・カード情報・パスワードは漏えいしていない。10月30日の続報で対象件数140,443件を特定。漏えい項目は第一報の「メールアドレス、性別、都道府県、会員コード」から「メールアドレスのみ」に訂正され、対象も一部のアニメイト通販メルマガ登録者（10/14〜10/16配信分）とポケドラのキャンペーン応募者に訂正。11月2日から個別連絡予定。",
+      count: "140,443件",
+      n: 140443
     },
     "鹿児島銀行・南日本銀行・鹿児島相互信用金庫・鹿児島信用金庫（Payどん）": {
       officialUrl: "https://www.kagin.co.jp/important/emergency_20261029_3.html",
@@ -3105,6 +3123,5706 @@
       causes: ["vendor"], causeText: null,
       certainty: "possible",
       dataNote: "初回掲載日は取得本文に印字がないためdisclosedは省略。nは延べ件数（重複除き6,096件）。"
+    },
+
+    // ---- 2026-10-31 追加分（Studio・blastmail の利用組織） ----
+    "ジュン（メールマガジン）": {
+      officialUrl: "https://www.jun.co.jp/news/1/",
+      events: [
+        E("incident", "2026-10-07", "2026年10月7日（水）、…クラウド基盤…において、システム障害が発生", "@"),
+        E("disclosed", "2026-10-08", "（第1報）…2026.10.08", "@"),
+        E("update", "2026-10-13", "（第2報）…現在のところ外部への流出は確認されておりません", "https://www.jun.co.jp/news/2/"),
+        E("update", "2026-10-14", "（第3報）…メールアドレスの外部への流出はなかったものと判断", "https://www.jun.co.jp/news/3_1/")
+      ],
+      causes: ["vendor"], causeText: "同クラウド基盤への第三者による不正アクセスが原因との報告",
+      dataNote: "第1報で、障害が発生したクラウド基盤に顧客のメールアドレスの一部が保管されていたとし、「外部に流出した可能性も考えられる」として調査中としていました。10月14日の第3報で、IDCフロンティアの調査結果と委託先の報告を踏まえ、流出はなかったものと判断したとしています。"
+    },
+    "日本ICTテレコムユーザー協会（eラーニング）": {
+      officialUrl: "https://www.jtua.or.jp/jtua_news/44237/",
+      events: [
+        E("leak_possible", null, "eラーニング受講者のメールアドレス等の漏えいの可能性について", "@"),
+        E("disclosed", "2026-10-09", "公開日：2026/10/09", "@"),
+        E("update", "2026-10-16", "【終報】…過去受講者のメールアドレスは、流出のおそれがないことが確認", "https://www.jtua.or.jp/jtua_news/44310/")
+      ],
+      causes: ["vendor"], causeText: "弊社の業務委託先IDCFrontier社のクラウドサービスの一部のシステムに対する第三者からの不正アクセス",
+      dataNote: "初報では個人情報の漏えいは「確認中」で、主な対象は申込時のメールアドレスとしていました。10月16日の終報で、IDCフロンティアの第5報を受け、過去受講者のメールアドレスは流出のおそれがないことが確認できたとしています。"
+    },
+    "レック（ラヴィ・ファクトリー）": {
+      officialUrl: "https://www.lecg.co.jp/news/1731/",
+      events: [
+        E("leak_possible", null, "外部への流出の可能性を否定できない状況となっております", "@"),
+        E("disclosed", "2026-10-12", "2026.10.12 当社利用クラウドサービスへの不正アクセスに関するお知らせ", "@"),
+        E("update", "2026-10-16", "【続報】…対象となる情報の範囲について", "https://www.lecg.co.jp/news/1758/")
+      ],
+      causes: ["vendor"], causeText: "「IDCFクラウド」において、第三者によるランサムウェア攻撃が発生",
+      certainty: "possible",
+      dataNote: "10月16日の続報で対象情報を、名前またはご両家名、挙式日・挙式場名、2026年8月以降にアップロードした制作用画像データ、工場から直送した顧客の届け先（受取人名・郵便番号・住所・電話番号）と特定。IDCフロンティアが外部へのデータ流出はなかったと判断した旨を紹介していますが、レック自身の結論は書かれていません。2026年10月14日に個人情報保護委員会へ報告済み。"
+    },
+    "栗山町（防災情報メール）": {
+      officialUrl: "https://www.town.kuriyama.hokkaido.jp/soshiki/28/38097.html",
+      events: [
+        E("disclosed", "2026-10-13", "更新日：2026年10月13日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "公表日の記載がなく、ページの更新日を disclosed として記録。"
+    },
+    "斜里町（ほっとメールしゃり）": {
+      officialUrl: "https://www.town.shari.hokkaido.jp/kurashinojoho/bosai_kishojoho/4366.html",
+      events: [
+        E("disclosed", "2026-10-13", "第1報・10月13日発出", "@"),
+        E("update", "2026-10-14", "第2報・10月14日発出", "@"),
+        E("update", "2026-10-15", "第3報・10月15日発出", "@")
+      ],
+      causes: ["vendor"], causeText: "配信システムへの不正アクセス事案",
+      certainty: "possible",
+      dataNote: "斜里町の利用者の漏えい有無・件数は未確認と記載。第1報本文に令和8年10月13日の記載あり。"
+    },
+    "沼田町（メールぬまた）": {
+      officialUrl: "https://www.town.numata.hokkaido.jp/section/soumu/c77jgl0000001lxt.html",
+      events: [
+        E("disclosed", "2026-10-13", "最終更新日：2026年10月13日", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN」が不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "公表日の記載がなく、ページの更新日を disclosed として記録。"
+    },
+    "宮崎県（防災・防犯情報メールサービス）": {
+      officialUrl: "https://www.pref.miyazaki.lg.jp/kiki-kikikanri/press/2026/10/20261013181842.html",
+      events: [
+        E("leak_possible", "2026-10-13", "メールアドレス等が漏えいした可能性があることが、本日判明", "@"),
+        E("disclosed", "2026-10-13", "報道発表日：2026年10月13日", "@")
+      ],
+      causes: ["vendor"], causeText: "同システムに対して第三者による不正アクセスが行われ",
+      certainty: "possible",
+      dataNote: "38,959件は登録件数（漏えいの有無・範囲は確認中）。「本日判明」は報道発表日（10月13日）を指す。"
+    },
+    "宮崎市（防災情報配信システム）": {
+      officialUrl: "https://www.city.miyazaki.miyazaki.jp/life/fire_department/news/418334.html",
+      events: [
+        E("disclosed", "2026-10-13", "【第1報】…（令和8年10月13日）", "@"),
+        E("update", "2026-10-14", "【第2報】…（令和8年10月14日）", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスにより個人情報が漏洩した可能性",
+      certainty: "possible",
+      dataNote: "第1報・第2報とも同一ページに掲載。漏洩の有無・範囲は事業者が調査中。"
+    },
+    "さつま町（安全安心メール）": {
+      officialUrl: "https://www.satsuma-net.jp/info_taisetu/10321.html",
+      events: [
+        E("disclosed", "2026-10-13", "更新日：2026年10月13日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスにより、登録者の皆様の個人情報が漏洩した可能性",
+      certainty: "possible",
+      dataNote: "日付は更新日のみ。"
+    },
+    "糸満市（防災メール）": {
+      officialUrl: "https://www.city.itoman.lg.jp/soshiki/5/40278.html",
+      events: [
+        E("disclosed", "2026-10-13", "更新日：2026年10月13日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "10月11日16時30分は運営会社側の不審な挙動の発生時刻。日付は更新日のみ（タイトルに【更新】）。"
+    },
+    "倶知安町（防災メール）": {
+      officialUrl: "https://www.town.kutchan.hokkaido.jp/Living_Information/bouhan-bousai-syobo/bousai_info/5808/",
+      events: [
+        E("disclosed", "2026-10-13", "登録情報の流出について（R8.10.13)", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN」）のサーバーが不正アクセスを受けました",
+      certainty: "possible",
+      dataNote: "本文に日付記載なし。タイトル末尾の「（R8.10.13)」をdisclosedとした。"
+    },
+    "富谷市（安全安心メール）": {
+      officialUrl: "https://www.tomiya-city.miyagi.jp/information/2026/10/3b9ac2a8f423dcba24a3ac3de956a57cfb0b99ad.html",
+      events: [
+        E("disclosed", "2026-10-13", "更新日：2026年10月13日", "@")
+      ],
+      causes: ["vendor"], causeText: "委託先事業者（…SpeeCAN RAIDEN）が不正アクセスを受けたことによります",
+      certainty: "possible",
+      dataNote: "更新日のみ記載のため更新日をdisclosedとした。"
+    },
+    "北塩原村（きたしおばら防災無線メール）": {
+      officialUrl: "https://www.vill.kitashiobara.fukushima.jp/soshiki/somukikaku/10096.html",
+      events: [
+        E("disclosed", "2026-10-13", "更新日：2026年10月13日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "同社システムに対し、第三者による不正アクセス事案が発生し",
+      certainty: "possible",
+      dataNote: "更新日のみ記載のため更新日をdisclosedとした。漏洩可能性のある情報の種別は記載なし。"
+    },
+    "棚倉町（登録制メール）": {
+      officialUrl: "https://www.town.tanagura.fukushima.jp/jumin/bousai-saigaiinfo/bousai-info/page001132.html",
+      events: [
+        E("disclosed", "2026-10-13", "【更新日】2026年10月13日", "@")
+      ],
+      causes: ["vendor"], causeText: "運営会社（株式会社アルカディア）が第三者による不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "更新日のみ記載のため更新日をdisclosedとした。"
+    },
+    "福島県立ふたば未来学園中学校・高等学校": {
+      officialUrl: "https://futabamiraigakuen-h.fcs.ed.jp/plugin/blogs/show/1/3/5615",
+      events: [
+        E("disclosed", "2026-10-13", "2026年10月13日 13時27分", "@")
+      ],
+      causes: ["vendor"], causeText: "同社のシステム（SpeeCAN RAIDENおよびライデン・スクール）に対する第三者からの不正アクセス",
+      certainty: "possible",
+      dataNote: "学校ブログ記事。ページ内の10月11日16時30分・10月12日3時頃はアルカディア側の日時のため記録せず。"
+    },
+    "北茨城市（防災メール）": {
+      officialUrl: "https://www.city.kitaibaraki.lg.jp/docs/2026101300052/",
+      events: [
+        E("disclosed", "2026-10-13", "公開日 2026年10月13日", "@")
+      ],
+      causes: ["vendor"], causeText: "システム運営会社から、第３者による不正アクセスがあり",
+      certainty: "possible",
+      dataNote: "本文にアルカディアの名称はないが候補元からアルカディア案件。"
+    },
+    "那須烏山市（防災・行政情報メール）": {
+      officialUrl: "https://www.city.nasukarasuyama.lg.jp/safety-security/disaster-fire/page006959.html",
+      events: [
+        E("leak_possible", null, "不正アクセスに伴い、個人情報漏洩の可能性があります", "@"),
+        E("disclosed", "2026-10-13", "【更新日】2026年10月13日", "@")
+      ],
+      causes: ["vendor"], causeText: "防災・行政情報メール「SpeeCAN RAIDEN」が不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日のみのため、それを公表日として記録。3,802件は登録者数であり、漏洩可能性の対象件数として明記されたものではない。"
+    },
+    "塩谷町（防災情報配信サービス）": {
+      officialUrl: "https://www.town.shioya.tochigi.jp/info/2866",
+      events: [
+        E("disclosed", "2026-10-13", "更新日2026年10月13日 更新", "@")
+      ],
+      causes: ["vendor"], causeText: "防災情報配信サービス「SpeeCAN RAIDEN」が不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "印字された更新日は2026年10月13日だが、本文に10月15日のアルカディア第9報が追記されており、更新日が実際の最終更新を反映していない可能性がある。10月11日は事業者（アルカディア）側の事象としてページに記載された日時。"
+    },
+    "館林市（たてばやし情報配信メール）": {
+      officialUrl: "https://www.city.tatebayashi.gunma.jp/s014/anzen/020/130/010/20261013181814.html",
+      events: [
+        E("disclosed", "2026-10-13", "10月13日公開情報", "@"),
+        E("update", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN」が第三者による不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "漏えい可能性は事業者の発表として記載。本市登録者情報への影響は「現在、サービス提供事業者に確認」中とされている。公表日はページ内の「10月13日公開情報」による（年は更新日から）。"
+    },
+    "南房総市（安全安心メール）": {
+      officialUrl: "https://www.city.minamiboso.chiba.jp/0000025184.html",
+      events: [
+        E("disclosed", "2026-10-13", "[公開日：2026年10月13日]", "@"),
+        E("leak_possible", null, "第三者による不正アクセスが行われ、個人情報が漏洩した可能性が判明", "https://www.city.minamiboso.chiba.jp/0000025194.html"),
+        E("update", "2026-10-14", "[更新日：2026年10月14日]（第2報）", "https://www.city.minamiboso.chiba.jp/0000025194.html")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアのシステムに対し、第三者による不正アクセスが行われ",
+      certainty: "possible",
+      dataNote: "第1報（10月13日）はサービス緊急停止のみで、漏洩可能性と件数は第2報（https://www.city.minamiboso.chiba.jp/0000025194.html、公開日10月13日・更新日10月14日）に記載。"
+    },
+    "茂原市（安全・安心メール）": {
+      officialUrl: "https://www.city.mobara.chiba.jp/emergencyinfo/0000000386.html",
+      events: [
+        E("disclosed", "2026-10-13", "[2026年10月13日 19時08分]", "@")
+      ],
+      causes: ["vendor"], causeText: "茂原市安全・安心メールを業務委託している会社が不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "漏洩可能性は表題で示され、漏洩し得る情報項目・件数の記載なし。添付PDFはアルカディアの発表文。"
+    },
+    "長柄町（防災メール）": {
+      officialUrl: "https://www.town.nagara.chiba.jp/soshiki/1/18691.html",
+      events: [
+        E("disclosed", "2026-10-13", "更新日：2026年10月13日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "長柄町防災メールを業務委託している会社が不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日のみのため、それを公表日として記録。漏洩可能性は表題とリンク先（アルカディア発表）で示され、情報項目・件数の記載なし。"
+    },
+    "綾瀬市（あやせ安全・安心メール）": {
+      officialUrl: "https://www.city.ayase.kanagawa.jp/soshiki/kikikanrika/bosai_bohan_anzen_anshin/1/25245.html",
+      events: [
+        E("incident", "2026-10-11", "発生日時 令和8年10月11日（日曜日）", "@"),
+        E("disclosed", "2026-10-13", "第1報（令和8年10月13日）", "@"),
+        E("update", "2026-10-15", "第2報（令和8年10月15日）", "@"),
+        E("update", "2026-10-21", "第3報（令和8年10月21日）", "@"),
+        E("update", "2026-10-26", "更新日：2026年10月26日", "@")
+      ],
+      causes: ["vendor"], causeText: "「あやせ安全・安心メールサービス」に対し、第3者からの不正アクセスがあり",
+      certainty: "possible"
+    },
+    "砺波市（市緊急メール）": {
+      officialUrl: "https://www.city.tonami.lg.jp/info/92713p/",
+      events: [
+        E("disclosed", "2026-10-13", "公開日時：2026年10月13日 18時28分", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスにより",
+      certainty: "possible",
+      dataNote: "漏洩の可能性は事業者の発表を引用する形。漏洩項目の記載なし。"
+    },
+    "南砺市（なんと!緊急メールサービス）": {
+      officialUrl: "https://www.city.nanto.toyama.jp/soshiki/somu/7/7657.html",
+      events: [
+        E("disclosed", "2026-10-13", "更新日：2026年10月13日", "@")
+      ],
+      causes: ["vendor"], causeText: "同社のサーバーが第三者による不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "公表日は更新日のみ。"
+    },
+    "入善町（緊急情報メール配信サービス）": {
+      officialUrl: "https://www.town.nyuzen.toyama.jp/gyosei/machizukuri/anzen_anshin/3/6969.html",
+      events: [
+        E("disclosed", "2026-10-13", "以下、2026年10月13日（火曜日）時点の掲載内容", "@"),
+        E("update", "2026-10-15", "更新日：2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN」が不正アクセスを受けたことに伴い",
+      certainty: "possible",
+      dataNote: "10月15日の復旧告知に、10月13日時点の掲載内容を併記。漏洩項目の記載なし。"
+    },
+    "小矢部市（防災・緊急メール配信サービス）": {
+      officialUrl: "https://www.city.oyabe.toyama.jp/kurashi/1002236/1002243/1007998.html",
+      events: [
+        E("disclosed", "2026-10-13", "更新日 2026年10月13日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスにより",
+      certainty: "possible",
+      dataNote: "公表日は更新日のみ。"
+    },
+    "鯖江市（緊急情報一斉配信システム）": {
+      officialUrl: "https://www.city.sabae.fukui.jp/anzen_anshin/bosai/oshirase/CmsAdmin202610131.html",
+      events: [
+        E("disclosed", "2026-10-13", "…個人情報漏えいの可能性について（R8.10.13）", "@"),
+        E("update", "2026-10-16", "鯖江市緊急情報一斉配信システムの運用再開について（R8.10.16）", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスを受けたため",
+      certainty: "possible",
+      dataNote: "最終更新日は2026年10月16日。漏えい項目の記載なし。"
+    },
+    "大野市（福井県）（防災メール）": {
+      officialUrl: "https://www.city.ono.fukui.jp/kurashi/bousai-anzen/bousai/joho/1013bosaimail.html",
+      events: [
+        E("disclosed", "2026-10-13", "最終更新日： 2026年10月13日", "@")
+      ],
+      causes: ["vendor"], causeText: "不正アクセスにより",
+      certainty: "possible",
+      dataNote: "公表日は最終更新日のみ。漏えいの可能性は事業者の発表を引用する形。"
+    },
+    "伊豆の国市（Eメール配信サービス）": {
+      officialUrl: "https://www.city.izunokuni.shizuoka.jp/system/e-mail/index.html",
+      events: [
+        E("disclosed", "2026-10-13", "（2026年10月13日17時時点）Eメール配信サービスの停止について", "@"),
+        E("update", "2026-10-15", "（2026年10月15日10時時点）…メールアドレス情報の漏洩の可能性について", "@"),
+        E("update", "2026-10-16", "更新日：2026年10月16日", "@")
+      ],
+      causes: ["vendor"], causeText: "管理会社に、第三者による不正アクセスが行われ",
+      certainty: "possible",
+      dataNote: "10月13日の初報は配信停止のみで、漏洩可能性の記載は10月15日の追記から。本文は「管理会社」とのみ記載（送信元はraiden3.ktaiwork.jp）。"
+    },
+    "菊川市（茶こちゃんメール）": {
+      officialUrl: "https://www.city.kikugawa.shizuoka.jp/anzen/fuseiakusesu.html",
+      events: [
+        E("disclosed", "2026-10-13", "茶こちゃんメール登録アドレスへの不審メールに注意ください（令和8年10月13日）", "@"),
+        E("update", "2026-10-23", "更新日：2026年10月23日", "@")
+      ],
+      causes: ["vendor"], causeText: "管理会社に、不正アクセスが確認されました",
+      certainty: "possible",
+      dataNote: "本文は「管理会社」とのみ記載（アルカディアのお知らせへリンク）。10月26日からの配信再開の記載あり（更新日は10月23日）。"
+    },
+    "日野町（日野めーる）": {
+      officialUrl: "https://www.town.shiga-hino.lg.jp/0000009014.html",
+      events: [
+        E("disclosed", "2026-10-13", "公開日：2026年10月13日", "@"),
+        E("update", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "契約している事業者のメール配信システム（SpeeCANRAIDEN）が不正アクセスを受けた",
+      certainty: "possible"
+    },
+    "加古川市（職員メール配信システム）": {
+      officialUrl: "https://www.city.kakogawa.lg.jp/soshikikarasagasu/bousai/kikikanrisitsu/sizensaigai/kikikanrikakaranooshirase/51199.html",
+      events: [
+        E("disclosed", "2026-10-13", "更新日：2026年10月13日", "@")
+      ],
+      causes: ["vendor"], causeText: "職員メール配信システムを運用する事業者において、外部からの不正アクセス",
+      certainty: "possible",
+      dataNote: "市民の個人情報の漏えいは確認されていないとしている。防災ネットかこがわは別事業者で対象外。ページは事業者名を明記していない。disclosedは更新日。"
+    },
+    "大和郡山市": {
+      officialUrl: "https://www.city.yamatokoriyama.lg.jp/soshiki/saigai/oshirase/18155.html",
+      events: [
+        E("disclosed", "2026-10-13", "更新日：2026年10月13日", "@")
+      ],
+      causes: ["vendor"], causeText: "防災情報配信サービス「SpeeCAN RAIDEN」が不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "disclosedは更新日。"
+    },
+    "下関市（防災メール）": {
+      officialUrl: "https://www.city.shimonoseki.lg.jp/soshiki/9/164253.html",
+      events: [
+        E("incident", "2026-10-11", "不正アクセス：令和８年１０月１１日（日）１６：３０", "@"),
+        E("disclosed", "2026-10-13", "更新日：2026年10月13日更新（記者発表資料）", "@")
+      ],
+      causes: ["vendor"], causeText: "システム業者が不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "件数は防災メールの登録件数で、漏洩の事実は調査中と記載。"
+    },
+    "和木町（防災メール）": {
+      officialUrl: "https://www.town.waki.lg.jp/soshiki/1/9902.html",
+      events: [
+        E("disclosed", "2026-10-13", "更新日：2026年10月13日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "システム業者が不正アクセスを受けたもの",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日（掲載日）のみのため、それを公表日として記録。件数は登録件数で、「現時点で個人情報漏洩の有無は不明」とも記載。"
+    },
+    "今治市（いまばり火災メール・職員参集メール等）": {
+      officialUrl: "https://www.city.imabari.ehime.jp/kouhou/info/004/",
+      events: [
+        E("vendor_notified", "2026-10-13", "令和8年10月13日…運営事業者から…不正アクセスが発生したとの報告", "@"),
+        E("disclosed", "2026-10-13", "令和8年10月13日（ページ冒頭の日付）", "@"),
+        E("update", null, "漏えいの可能性がある情報（10月14日16時00分追加）", "@")
+      ],
+      causes: ["vendor"], causeText: "運営事業者（株式会社アルカディア）において、第三者による不正アクセスが発生し",
+      certainty: "possible",
+      dataNote: "追加情報の日付「10月14日」は年の記載がないため date は null。「現時点では個人情報の流出や悪用は確認されていません」とも記載。"
+    },
+    "長崎市（防災情報メール）": {
+      officialUrl: "https://www.city.nagasaki.lg.jp/page/93192.html",
+      events: [
+        E("vendor_notified", "2026-10-13", "令和8年10月13日…株式会社アルカディアから本市に対し…報告", "@"),
+        E("disclosed", "2026-10-13", "更新日：2026年10月13日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN」に対し、第三者による不正アクセスがあった",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日のみのため、それを公表日として記録。"
+    },
+    "大分県（県民安全・安心メール）": {
+      officialUrl: "https://www.pref.oita.jp/soshiki/13550/bosaimeil.html",
+      events: [
+        E("disclosed", "2026-10-13", "更新日：2026年10月13日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "システム業者が不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日のみのため、それを公表日として記録。事業者名の記載はないが「システム業者が不正アクセスを受け」と記載。"
+    },
+    "JR東海（JR東海MARKET・いいもの探訪／IDCF経由のメール配信）": {
+      officialUrl: "https://jr-central.co.jp/news/release/_pdf/000046064.pdf",
+      events: [
+        E("incident", "2026-10-07", "２０２６年１０月７日（水）株式会社ＩＤＣフロンティアで発生した不正アクセス", "@"),
+        E("leak_possible", null, "メールアドレス等の個人情報が漏えいした可能性のあること", "@"),
+        E("disclosed", "2026-10-13", "２０２６年１０月１３日 東海旅客鉄道株式会社", "@"),
+        E("update", "2026-10-15", "両サイトの「個人情報の漏えいの事実は確認されなかった」旨の報告", "@")
+      ],
+      causes: ["vendor"], causeText: "当該事業者が株式会社ＩＤＣフロンティアの運営するクラウドを利用しており",
+      dataNote: "10月13日に個人情報保護委員会へ報告。対象はメールアドレスと、配信メール本文に記載された氏名・住所・電話番号・注文内容・配送先等。約15,000件はIDCフロンティアが不正アクセスを確認した10月7日時点のデータ件数です。10月15日の更新（同じPDFに追記）で、委託先のシステム運営事業者からIDCフロンティアの調査結果を踏まえ「個人情報の漏えいの事実は確認されなかった」との報告を受けたとしています。エクスプレス予約・スマートEX（Cuenote経由）とは別の事案です。"
+    },
+    "スカパーJSAT（スカパー！メンバーズ／IDCF経由のメール配信）": {
+      officialUrl: "https://www.skyperfectjsat.space/jp/news/20261013",
+      events: [
+        E("leak_possible", null, "メールアドレス漏えいの可能性があることが判明いたしました", "@"),
+        E("disclosed", "2026-10-13", "2026年10月13日", "@"),
+        E("update", "2026-10-16", "メールアドレスの閲覧、漏えいはなかったとの結論に至りました", "https://www.skyperfectjsat.space/jp/news/20261016_2")
+      ],
+      causes: ["vendor"], causeText: "株式会社IDCフロンティアのクラウド基盤において発生した不正アクセスによるもの",
+      dataNote: "対象はスカパー！メンバーズ会員（一部退会者含む）のメールアドレス。10月16日の調査結果報告で、業務委託先との詳細調査の結果、メールアドレスの閲覧・漏えいはなかったと結論づけたとしています。SATELLITE CRAYON PROJECT（Studio経由）とは別の事案です。"
+    },
+    "NTT ExCパートナー（LStep）": {
+      officialUrl: "https://www.nttexc.co.jp/news/detail20261013/",
+      events: [
+        E("incident", "2026-10-07", "2026年10月7日、…利用しているメール配信サービスに障害が発生", "@"),
+        E("vendor_notified", null, "第三者による不正アクセスが発生した旨の報告を受けました", "@"),
+        E("leak_possible", null, "一部のお客さまのメールアドレスが漏えいした可能性があることが判明", "@"),
+        E("disclosed", "2026-10-13", "2026年10月13日、…漏えいした可能性についてお知らせしました", "https://www.nttexc.co.jp/news/detail20261015/"),
+        E("update", "2026-10-15", "【第２報】…当該情報の流出を示す事実は確認できませんでした", "https://www.nttexc.co.jp/news/detail20261015/")
+      ],
+      causes: ["vendor"], causeText: "同社が利用するIDCフロンティア社のサービス環境において、第三者による不正アクセスが発生",
+      dataNote: "初報ページには掲載日の記載がなく、公表日は第2報の本文（「2026年10月13日、…お知らせしました」）と新着情報一覧の日付によるものです。対象はメールアドレスのみ。10月15日の第2報で、IDCフロンティアとメールサービス事業者の報告を踏まえ、メールアドレスの漏えいを示す事実は無いと判断したとしています。"
+    },
+    "DRC医薬（公式オンラインショップ メールマガジン）": {
+      officialUrl: "https://drciyaku.jp/news_261013_2.html",
+      events: [
+        E("vendor_notified", null, "第三者による不正アクセスが発生したとの報告を受けました", "@"),
+        E("disclosed", "2026-10-13", "2026年10月13日 DRC医薬株式会社", "@"),
+        E("update", "2026-10-15", "（第二報）…「外部へのデータの流出はなかった」と判断している旨が公表", "https://drciyaku.jp/news_261015.html")
+      ],
+      causes: ["vendor"], causeText: "当該配信サービスを提供する事業者が利用しているクラウド基盤（株式会社IDCフロンティア社の「IDCFクラウド」）に対して第三者による不正アクセスが発生",
+      dataNote: "対象はDMを可としている会員のメールアドレスと氏名（カード情報・電話番号・パスワード・住所は含まれない）。配信サービスはフューチャーショップのfutureshop経由です。10月15日の第二報では、IDCフロンティアが外部へのデータ流出はなかったと判断した旨を伝えていますが、DRC医薬自身の結論は書かれていません。"
+    },
+    "中央競馬ピーアール・センター（ターフィーショップオンライン）": {
+      officialUrl: "https://shop.prc.jp/shop/t/t1011/",
+      events: [
+        E("disclosed", "2026-10-13", "2026年10月13日 株式会社中央競馬ピーアール・センター", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社IDCフロンティアが公表した第三者による不正アクセス事案の影響",
+      dataNote: "件数は配信用サーバに記録されていた人数で、漏えい件数ではありません（9月25日・10月2日のメルマガ受信者のメールアドレス、9月24日〜10月7日10時頃の再入荷通知受信者の氏名・メールアドレス）。委託先を通じてIDCフロンティア等から情報漏えいの事実は確認されていないとの報告を受けたとしています。配信は10月7日10時頃から停止。"
+    },
+    "千歳市消防本部（NET119・招集通知システム）": {
+      officialUrl: "https://www.city.chitose.lg.jp/c50/1002703/1002722/1007015.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日 2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディア（以下、委託事業者）において、外部からの不正アクセスが発生",
+      certainty: "possible",
+      dataNote: "招集通知システムは令和7年9月11日に運用廃止済み。公表日の記載がなく、ページの更新日を disclosed として記録。"
+    },
+    "雨竜町（防災情報等配信サービス）": {
+      officialUrl: "https://www.town.uryu.hokkaido.jp/docs/4953.html",
+      events: [
+        E("disclosed", "2026-10-14", "2026年10月14日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアの配信システムに第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "公表日の記載がなく、ページの更新日を disclosed として記録。"
+    },
+    "当別町（防災情報メール）": {
+      officialUrl: "https://www.town.tobetsu.hokkaido.jp/soshiki/kiki/55911.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "配信システム「SpeeCAN RAIDEN」に第三者による不正アクセスが確認され",
+      certainty: "possible",
+      dataNote: "ページに「令和8年10月11日…不正アクセスが確認され」とあるが事業者側の確認日のため events に含めず。一部登録者に不審なメール到達を確認。公表日の記載がなく、ページの更新日を disclosed として記録。"
+    },
+    "大空町（メール配信サービス）": {
+      officialUrl: "https://www.town.ozora.hokkaido.jp/soshiki/1010/16/4091.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスがあり",
+      certainty: "possible",
+      dataNote: "町は停止対象サービスを利用しておらず、点検で不正プログラムなしと記載。公表日の記載がなく、ページの更新日を disclosed として記録。"
+    },
+    "上士幌町（SpeeCAN RAIDEN）": {
+      officialUrl: "https://www.kamishihoro.jp/entry/00007093",
+      events: [
+        E("disclosed", "2026-10-14", "令和8年10月14日 13時 更新", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN」が不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "町独自の@InfoCanalは無関係と記載。ページ見出しには「15日(木)16時更新」ともある。公表日の記載がなく、ページの更新日を disclosed として記録。"
+    },
+    "芦別市（あしべつ防災メール39・高齢者SOSネットワーク）": {
+      officialUrl: "https://www.city.ashibetsu.hokkaido.jp/docs/3134965.html",
+      events: [
+        E("disclosed", "2026-10-14", "2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスがあり",
+      certainty: "possible",
+      dataNote: "ページ記載の日付（公開日）を disclosed として記録。"
+    },
+    "深川市（防災メール）": {
+      officialUrl: "https://www.city.fukagawa.lg.jp/cms/section/soumu/ai39rj0000001m2e.html",
+      events: [
+        E("disclosed", "2026-10-14", "最終更新日: 2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスがあり",
+      certainty: "possible",
+      dataNote: "公表日の記載がなく、ページの更新日を disclosed として記録。"
+    },
+    "北広島市（一斉連絡サービス・NET119）": {
+      officialUrl: "https://www.city.kitahiroshima.hokkaido.jp/hotnews/detail/00160585.html",
+      events: [
+        E("vendor_notified", "2026-10-13", "令和8年10月13日（火）…「株式会社アルカディア」より…報告", "@"),
+        E("disclosed", "2026-10-14", "令和8年（2026年）10月14日（水） 10時00分", "@"),
+        E("update", "2026-10-15", "令和8年（2026年）10月15日（木） 11時15分 追記", "@")
+      ],
+      causes: ["vendor"], causeText: "当該システムへの不正アクセスがあり",
+      certainty: "possible",
+      dataNote: "NET119は札幌圏消防指令センター利用分。合計は記載なし（n は最大の単独数値）。"
+    },
+    "小樽市（登録制メール・職員参集メール・NET119）": {
+      officialUrl: "https://www.city.otaru.lg.jp/docs/2026101400011/",
+      events: [
+        E("disclosed", "2026-10-14", "公開日 2026年10月14日", "@"),
+        E("update", "2026-10-26", "更新日 2026年10月26日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアのシステムに対し第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "合計は記載なし（n は最大の単独数値）。"
+    },
+    "奈井江町（災害時一斉情報配信サービス）": {
+      officialUrl: "https://www.town.naie.hokkaido.jp/oshirase/2314/",
+      events: [
+        E("vendor_notified", "2026-10-13", "令和8年10月13日14時12分に株式会社アルカディアから奈井江町へ連絡", "@"),
+        E("disclosed", "2026-10-14", "2026年10月14日(水)", "@")
+      ],
+      causes: ["vendor"], causeText: "運営する事業者への第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "事業者側の経緯（令和8年10月11日16時30分 不審な挙動確認、12日3時ごろ応急措置）は事業者の日付のため events に含めず。現時点で流出は未確認と記載。"
+    },
+    "芽室町（めむろ安心メール）": {
+      officialUrl: "https://www.memuro.net/administration/soshiki/soumu/2026-1014-1551-15.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN」が不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "公表日の記載がなく、ページの更新日を disclosed として記録。"
+    },
+    "新得町（防災情報メール）": {
+      officialUrl: "https://www.shintoku-town.jp/oshirase/3652/",
+      events: [
+        E("disclosed", "2026-10-14", "2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN」が不正アクセスを受けた",
+      certainty: "possible"
+    },
+    "平取町（防災情報メール）": {
+      officialUrl: "https://www.town.biratori.hokkaido.jp/kinkyu_joho/2949.html",
+      events: [
+        E("disclosed", "2026-10-14", "公開日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "提供事業者において、不正アクセスが確認され",
+      certainty: "possible",
+      dataNote: "経過表の10月11日16時30分（不審な挙動確認）等は事業者側の日付のため events に含めず。対象者数は不明と記載。"
+    },
+    "占冠村（緊急情報配信システム）": {
+      officialUrl: "https://www.vill.shimukappu.lg.jp/shimukappu/section/soumu/e2be5g0000001sia.html",
+      events: [
+        E("vendor_notified", "2026-10-13", "令和8年10月13日（火）…「株式会社アルカディア」より…報告", "@"),
+        E("disclosed", "2026-10-14", "最終更新日: 2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "当該システムへの不正アクセスがあり",
+      certainty: "possible",
+      dataNote: "公表日の記載がなく、ページの更新日を disclosed として記録。"
+    },
+    "えびの市（防災情報一斉配信システム）": {
+      officialUrl: "https://www.city.ebino.lg.jp/sumai_kankyo_anzen/bosai_anzen/bosai/2/7783.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスにより個人情報が漏洩した可能性",
+      certainty: "possible",
+      dataNote: "日付は更新日のみ。"
+    },
+    "五ヶ瀬町（防災行政情報メールサービス）": {
+      officialUrl: "https://www.town.gokase.miyazaki.jp/kakuka/soumu/chiikijyoho/2318.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "運営する事業者への第三者による不正アクセスが行われ",
+      certainty: "possible",
+      dataNote: "日付は更新日のみ。事業者名はリンク先（SpeeCAN RAIDEN公式ブログ）で示される。"
+    },
+    "姶良市（防災・地域情報メール）": {
+      officialUrl: "https://www.city.aira.lg.jp/bosai/kurashi/bosai/bosai_mail.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスにより、登録者の皆様のメールアドレス等が漏えいした可能性",
+      certainty: "possible",
+      dataNote: "日付は更新日のみ。"
+    },
+    "枕崎市（防災・一般情報提供メール）": {
+      officialUrl: "https://www.city.makurazaki.lg.jp/soshiki/soumu/30301.html",
+      events: [
+        E("disclosed", "2026-10-14", "2026年10月14日（当初のお知らせ）", "@"),
+        E("update", "2026-10-23", "2026年10月23日", "@"),
+        E("update", "2026-10-26", "掲載日：2026年10月26日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "同社が管理するサーバーが第三者からの不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "同一ページに複数回の追記。令和8年10月16日に市から個人情報保護委員会へ報告と記載。10月23日付の追記の日付は掲載位置から判断。"
+    },
+    "東串良町（防災登録制メール）": {
+      officialUrl: "https://www.higashikushira.com/docs/2026101400011/",
+      events: [
+        E("disclosed", "2026-10-14", "公開日 2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスにより、登録者の皆様の個人情報が漏えいした可能性",
+      certainty: "possible"
+    },
+    "伊仙町（防災情報メール）": {
+      officialUrl: "https://www.town.isen.kagoshima.jp/bousai/fuseiakuseu.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCANRAIDEN」において、第三者による不正アクセスが行われ",
+      certainty: "possible",
+      dataNote: "日付は更新日のみ。"
+    },
+    "志布志市（安全安心メール）": {
+      officialUrl: "https://www.city.shibushi.lg.jp/soshiki/2/35426.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスにより、登録者の皆様の個人情報が漏洩した可能性",
+      certainty: "possible",
+      dataNote: "日付は更新日のみ。"
+    },
+    "浦添市（防災行政速報メール）": {
+      officialUrl: "https://www.city.urasoe.lg.jp/doc/2026101400097/",
+      events: [
+        E("disclosed", "2026-10-14", "公開日 2026年10月14日", "@"),
+        E("update", "2026-10-16", "2026年10月16日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "同社が不正アクセスを受けたことに伴い",
+      certainty: "possible"
+    },
+    "中城村（防災メール）": {
+      officialUrl: "https://www.vill.nakagusuku.okinawa.jp/bousai/musen/1792043709/",
+      events: [
+        E("disclosed", "2026-10-14", "[掲載開始日：2026年10月14日]", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者からの不正アクセスがあったことが確認",
+      certainty: "possible"
+    },
+    "宮城県東部消防指令センター（NET119）": {
+      officialUrl: "http://isyoubou.jp/net%EF%BC%91%EF%BC%91%EF%BC%99%E7%B7%8A%E6%80%A5%E9%80%9A%E5%A0%B1%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%AB%E9%96%A2%E3%81%99%E3%82%8B%E7%99%BB%E9%8C%B2%E6%83%85%E5%A0%B1%E3%81%AE%E6%BC%8F/",
+      events: [
+        E("leak_possible", "2026-10-14", "同日午後５時20分に同社へ問い合わせを行い…漏えいしている可能性があることが判明", "@"),
+        E("disclosed", "2026-10-14", "2026年10月14日", "@"),
+        E("update", "2026-10-28", "最終更新日時 : 2026年10月28日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアのサーバーが、第三者による不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "掲載は石巻地区広域行政事務組合消防本部サイト。10月28日の最終更新は内容変更か不明。10月11日は事業者が不審な挙動を確認した日。"
+    },
+    "大崎地域広域行政事務組合消防本部（NET119）": {
+      officialUrl: "https://osakikoiki.jp/fire119-doc/2026101400011/",
+      events: [
+        E("leak_possible", "2026-10-14", "令和8年10月14日…個人情報漏えいの可能性が確認されました", "@"),
+        E("disclosed", "2026-10-14", "公開日 2026年10月14日", "@"),
+        E("update", "2026-10-16", "更新日 2026年10月16日", "@")
+      ],
+      causes: ["vendor"], causeText: "外部からの不正アクセスによる個人情報漏えいの可能性",
+      certainty: "possible"
+    },
+    "秋田市消防本部（NET119）": {
+      officialUrl: "https://www.city.akita.lg.jp/shobo/oshirase/1053565.html",
+      events: [
+        E("incident", "2026-10-11", "令和8年10月11日（日曜日）、運用管理委託業者において第三者による不正アクセスが確認", "@"),
+        E("leak_possible", "2026-10-14", "同月14日（水曜日）確認", "@"),
+        E("disclosed", "2026-10-14", "更新日 令和8年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "運用管理委託業者において第三者による不正アクセスが確認",
+      certainty: "possible",
+      dataNote: "日付は更新日のみ。"
+    },
+    "伊達地方消防組合（NET119）": {
+      officialUrl: "https://www.date119.jp/?p=28519",
+      events: [
+        E("leak_possible", "2026-10-13", "発覚日時 令和 8 年 10 月 13 日（水）18 時 47 分", "https://www.date119.jp/control/wp-content/uploads/2026/10/%E3%80%90%E4%BC%8A%E9%81%94%E5%9C%B0%E6%96%B9%E6%B6%88%E9%98%B2%E7%B5%84%E5%90%88%E3%80%91%E4%B8%8D%E6%AD%A3%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%81%AB%E3%82%88%E3%82%8B%E5%80%8B%E4%BA%BA%E6%83%85%E5%A0%B1%E6%BC%8F%E3%81%88%E3%81%84%E3%81%AE%E5%8F%AF%E8%83%BD%E6%80%A7%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6.pdf"),
+        E("disclosed", "2026-10-14", "令和８年１０月１４日（木）", "https://www.date119.jp/control/wp-content/uploads/2026/10/%E3%80%90%E4%BC%8A%E9%81%94%E5%9C%B0%E6%96%B9%E6%B6%88%E9%98%B2%E7%B5%84%E5%90%88%E3%80%91%E4%B8%8D%E6%AD%A3%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%81%AB%E3%82%88%E3%82%8B%E5%80%8B%E4%BA%BA%E6%83%85%E5%A0%B1%E6%BC%8F%E3%81%88%E3%81%84%E3%81%AE%E5%8F%AF%E8%83%BD%E6%80%A7%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6.pdf")
+      ],
+      causes: ["vendor"], causeText: "インターネット・サービスが不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "日付は添付PDF（伊達地方消防組合「不正アクセスによる個人情報漏えいの可能性について」）による。PDFの曜日表記（13日（水）・14日（木））は暦と1日ずれている。119RAIDENは詳細調査で対象外と判明と記載。"
+    },
+    "甲府地区広域行政事務組合消防本部（NET119）": {
+      officialUrl: "https://www.kfd.or.jp/?p=15617",
+      events: [
+        E("disclosed", "2026-10-14", "2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者によるシステムへの不正アクセスを受け",
+      certainty: "possible"
+    },
+    "山梨国中地域消防指令センター（NET119）": {
+      officialUrl: "https://kuninaka119.jp/%E3%83%86%E3%82%B9%E3%83%88/",
+      events: [
+        E("disclosed", "2026-10-14", "2026.10.14", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者によるシステムへの不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "甲府地区消防本部と同文の別組織のお知らせ。"
+    },
+    "大垣消防組合（NET119）": {
+      officialUrl: "https://www.ogaki-syoubou.or.jp/back/275_back_msg.html",
+      events: [
+        E("disclosed", "2026-10-14", "2026.10.14", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが行われた形跡があり",
+      certainty: "possible"
+    },
+    "衣浦東部広域連合消防局（NET119・職員用災害情報メール）": {
+      officialUrl: "http://www.kinutoh.jp/shobo/shobo/kouhou/kouhoushisaku/202610141615.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアのサーバーが、第三者による不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "10月11日は事業者が不審な挙動を確認した日。日付は更新日のみ。nは最大の単独数値。"
+    },
+    "湖北地域消防組合消防本部（火災情報メール）": {
+      officialUrl: "https://www.shiga-kohokuarea119.jp/wp-sys/wp-content/uploads/2026/10/%E5%B8%82%E6%B0%91%E5%91%A8%E7%9F%A5%E6%96%87.pdf",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：令和８年 10 月 14 日", "@")
+      ],
+      causes: ["vendor"], causeText: "メール配信システム (SpeeCAN RAIDEN)が第三者からの不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "日付は更新日のみ。"
+    },
+    "下関市消防局（NET119）": {
+      officialUrl: "https://www.city.shimonoseki.lg.jp/site/fire/164337.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "システム業者が不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "記者発表資料。50人は登録者数。"
+    },
+    "長門市消防本部（NET119）": {
+      officialUrl: "https://www.city.nagato.yamaguchi.jp/uploaded/attachment/39638.pdf",
+      events: [
+        E("incident", "2026-10-11", "不正アクセス：令和８年 10 月 11 日（日）16 時 30 分", "@"),
+        E("disclosed", "2026-10-14", "発信年月日：令和８年 10 月 14 日", "@")
+      ],
+      causes: ["vendor"], causeText: "システム業者が不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "記者配布資料（PDF）。業者名の記載はないがNET119。11人は登録者数。"
+    },
+    "札幌市（避難情報等電話サービス）": {
+      officialUrl: "https://www.city.sapporo.jp/kikikanri/huseiakusesu.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアが運営するSpeeCANRAIDENが不正アクセスを受けました",
+      certainty: "possible",
+      dataNote: "更新日のみ記載のため更新日をdisclosedとした。"
+    },
+    "上砂川町（登録制メール）": {
+      officialUrl: "https://town.kamisunagawa.hokkaido.jp/kurashi_tetsuzuki/bosai/2639.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@"),
+        E("access_confirmed", "2026-10-13", "令和8年10月13日、…外部から不正アクセスを受けたことが判明", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN（運営元・株式会社アルカディア）」が、外部から不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "更新日のみ記載のため更新日をdisclosedとした。"
+    },
+    "田野畑村（タノくんメール等）": {
+      officialUrl: "https://www.vill.tanohata.iwate.jp/docs/2026101400011/",
+      events: [
+        E("disclosed", "2026-10-14", "2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "運営事業者（株式会社アルカディア）において、第三者による不正アクセスが発生",
+      certainty: "possible"
+    },
+    "矢巾町（わたまるメール）": {
+      officialUrl: "https://www.town.yahaba.iwate.jp/soshiki/kikaku/chousei/17919357673068275/",
+      events: [
+        E("disclosed", "2026-10-14", "10月14日午前10時20分 …町ホームページで公表", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアが不正アクセスを受けたことにより",
+      certainty: "possible"
+    },
+    "岩沼市（iあいメール等）": {
+      officialUrl: "https://www.city.iwanuma.miyagi.jp/shisei/policy/kojinjouhoutaiou.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディア）のシステムに対して第三者による不正アクセスが行われ",
+      certainty: "possible",
+      dataNote: "更新日のみ記載のため更新日をdisclosedとした。ページ記載のアルカディア側の日時は「2026年10月12日16時30分」となっており他自治体の記載（10月11日）と異なる。アルカディア側日時のため記録せず。"
+    },
+    "宮城県（職員安否確認システム）": {
+      officialUrl: "https://www.pref.miyagi.jp/site/chiji-kaiken/kk-261014.html",
+      events: [
+        E("disclosed", "2026-10-14", "宮城県知事記者会見（令和8年10月14日）", "@"),
+        E("vendor_notified", null, "昨日連絡があったのですけれども", "@")
+      ],
+      causes: ["vendor"], causeText: null,
+      certainty: "possible",
+      dataNote: "知事記者会見録（掲載日2026年10月16日）。disclosedは会見日。「昨日連絡」の日付は推定せずnull。漏洩対象の情報種別・件数の記載なし。"
+    },
+    "由利本荘市（NET119）": {
+      officialUrl: "https://www.city.yurihonjo.lg.jp/1001576/1001986/1013930.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日 2026年10月14日", "@"),
+        E("vendor_notified", "2026-10-14", "令和8年10月14日（水曜日）夕方、委託会社より", "@"),
+        E("leak_possible", "2026-10-14", "外部に漏えいした可能性があることを、10月14日（水曜日）に確認", "@")
+      ],
+      causes: ["vendor"], causeText: "運用管理委託業者において第三者による不正アクセスが確認され",
+      certainty: "possible",
+      dataNote: "更新日のみ記載のため更新日をdisclosedとした。消防本部ページ。「昨日公表」の「消防、防災メール」の件は別ページ（本バッチ対象外）。"
+    },
+    "にかほ市（NET119）": {
+      officialUrl: "https://www.city.nikaho.akita.jp/soshikikarasagasu/shobohonbu/gyomuannai/3/6959.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@"),
+        E("vendor_notified", "2026-10-14", "令和8年10月14日（水曜日）夕方、委託会社より", "@"),
+        E("leak_possible", "2026-10-14", "外部に漏えいした可能性があることを、10月14日（水曜日）に確認", "@")
+      ],
+      causes: ["vendor"], causeText: "運用管理委託業者において第三者による不正アクセスが確認され",
+      certainty: "possible",
+      dataNote: "更新日のみ記載のため更新日をdisclosedとした。消防本部ページ。氏名・生年月日・性別・住所・電話番号・メールアドレス・FAX番号。"
+    },
+    "戸沢村（防災行政情報メール）": {
+      officialUrl: "https://www.vill.tozawa.yamagata.jp/pages/401?detail=1&b_id=2269&r_id=1192#block2269-1192",
+      events: [
+        E("disclosed", "2026-10-14", "2026-10-14", "@"),
+        E("leak_possible", "2026-10-13", "漏えいした可能性があることを、同月13日（火曜日）に確認", "@")
+      ],
+      causes: ["vendor"], causeText: "運用管理委託業者において第三者による不正アクセスが確認され",
+      certainty: "possible",
+      dataNote: "ページ内の「令和8年10月11日（日曜日）16時30分…不正アクセスが確認」は委託業者側の確認日時のため記録せず。"
+    },
+    "福島市（防災と災害情報メールマガジン）": {
+      officialUrl: "https://www.city.fukushima.fukushima.jp/bosai-anzen/20632.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@"),
+        E("leak_possible", "2026-10-13", "外部に漏えいした可能性があることを、10月13日（火曜日）に確認", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN」において、第三者による不正アクセスが行われ",
+      certainty: "possible",
+      dataNote: "更新日のみ記載のため更新日をdisclosedとした。ページ内の10月11日16時30分の記載は運営会社側の確認日時のため記録せず。"
+    },
+    "昭和村（福島県）": {
+      officialUrl: "https://www.vill.showa.fukushima.jp/news/7797/",
+      events: [
+        E("disclosed", "2026-10-14", "2026 10 14", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアにおいて、第三者による不正アクセスが確認されました",
+      certainty: "possible",
+      dataNote: "村が確認した該当は職員個人・担当係・システム関係事業者・連携用の各メールアドレス計4件。住民分は確認されていないとしている。"
+    },
+    "郡山市（防災メールマガジン）": {
+      officialUrl: "https://www.city.koriyama.lg.jp/soshiki/5/195747.html",
+      events: [
+        E("disclosed", "2026-10-14", "(令和8年10月14日掲載分)", "@"),
+        E("update", "2026-10-15", "(令和8年10月15日掲載分)", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN」が第三者による不正アクセスを受",
+      certainty: "possible",
+      dataNote: "郡山地方広域消防組合（既掲載）とは別団体。"
+    },
+    "磐梯町（お知らせメール）": {
+      officialUrl: "https://www.town.bandai.fukushima.jp/site/bousai-anzen/20261014huseiaruka.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "運営システムにおいて、第三者による不正アクセスが行われ",
+      certainty: "possible",
+      dataNote: "更新日のみ記載のため更新日をdisclosedとした。本文にアルカディアの名称はないがURL・候補元からアルカディア案件。漏洩可能性のある情報の種別は記載なし。"
+    },
+    "潮来市（防災メール）": {
+      officialUrl: "https://www.city.itako.lg.jp/di-em-information/dis-information/page009180.html",
+      events: [
+        E("disclosed", "2026-10-14", "2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアから不正アクセスにより個人情報が漏えいした可能性があるとの連絡",
+      certainty: "possible",
+      dataNote: "ページ末尾の日付（2026年10月14日、更新日か掲載日かの表記なし）をdisclosedとした。"
+    },
+    "鹿沼市（防災情報メール）": {
+      officialUrl: "https://www.city.kanuma.tochigi.jp/0566/info-0000011583-0.html",
+      events: [
+        E("disclosed", "2026-10-14", "掲載日 令和8年10月14日", "@"),
+        E("update", "2026-10-21", "更新日 令和8年10月21日", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN」が不正アクセスを受けたことに伴い",
+      certainty: "possible"
+    },
+    "前橋市（まちの安全ひろメール等）": {
+      officialUrl: "https://www.city.maebashi.gunma.jp/taisetsu/51475.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "運営している事業者（株式会社アルカディア）への第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日のみのため、それを公表日として記録。"
+    },
+    "伊勢崎市（火災情報メール）": {
+      officialUrl: "https://www.city.isesaki.lg.jp/kurashi_tetsuzuki/anzen_anshin/shobo_kyukyu/kasaitaisaku/16337.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスにより、同メールサービスで取り扱うメールアドレスが漏洩した可能性",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日のみのため、それを公表日として記録。本文の「令和8年10月13日」は事業者が発表した日。"
+    },
+    "高崎市（災害時電話・FAXサービス）": {
+      officialUrl: "https://www.city.takasaki.gunma.jp/page/98884.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "「災害時電話・FAXサービス」…のシステムに対し第三者からの不正アクセスがありました",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日のみのため、それを公表日として記録。安心ほっとメール等その他の配信媒体には影響なしと記載。"
+    },
+    "蕨市（メール配信サービス・電話/ファクス配信）": {
+      officialUrl: "https://www.city.warabi.saitama.jp/anzen/bousai/1012477/1013329.html",
+      events: [
+        E("vendor_notified", "2026-10-13", "10⽉13⽇（火曜日）14時12分、アルカディアより…報告のメールを受信", "@"),
+        E("disclosed", "2026-10-14", "令和8年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "アルカディア…のネットワークが外部から不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "10月11日は事業者（アルカディア）側の事象としてページに記載された日時。"
+    },
+    "本庄市（防災行政無線メール・ファクス配信）": {
+      officialUrl: "https://www.city.honjo.lg.jp/kurashi_tetsuzuki/anzen_anshin/bosai/22763.html",
+      events: [
+        E("access_confirmed", "2026-10-11", "10月11日（日曜日）午後4時30分 運営会社において…不正アクセスを確認", "@"),
+        E("vendor_notified", "2026-10-13", "10月13日（火曜日）午後2時12分 運営会社から本庄市に対し…メールを受信", "@"),
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@"),
+        E("update", "2026-10-19", "（令和8年10月19日追記）", "@")
+      ],
+      causes: ["vendor"], causeText: "システムへの不正アクセスがあり",
+      certainty: "possible",
+      dataNote: "更新日（2026年10月14日）を公表日として記録。10月11日の不正アクセス確認は運営会社側の事象。"
+    },
+    "東金市（防災メール）": {
+      officialUrl: "https://www.city.togane.chiba.jp/emergencyinfo/0000000206.html",
+      events: [
+        E("disclosed", "2026-10-14", "[2026年10月14日 13時01分]", "@")
+      ],
+      causes: ["vendor"], causeText: "(株)アルカディアに対して、第三者による不正アクセスが行われ",
+      certainty: "possible"
+    },
+    "市川市（電話等一斉配信サービス）": {
+      officialUrl: "https://www.city.ichikawa.lg.jp/page/80942.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアへの不正アクセスが行われ",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日のみのため、それを公表日として記録。171人は登録者数。市川市メール情報配信サービスは別事業者で影響なしと記載。"
+    },
+    "大網白里市（防災メール）": {
+      officialUrl: "https://www.city.oamishirasato.lg.jp/0000015702.html",
+      events: [
+        E("disclosed", "2026-10-14", "[公開日：2026年10月14日]", "@")
+      ],
+      causes: ["vendor"], causeText: "業務を委託しているシステム会社に対して、第三者による不正アクセスが行われ",
+      certainty: "possible",
+      dataNote: "ページ本文では委託先名を記載していない（SpeeCAN RAIDEN関連としてpiyologに掲載）。"
+    },
+    "長生村（防災メール）": {
+      officialUrl: "https://www.vill.chosei.chiba.jp/0000002841.html",
+      events: [
+        E("vendor_notified", "2026-10-13", "令和8年10月13日（火曜日）夕方に委託事業者から…連絡がありました", "@"),
+        E("disclosed", "2026-10-14", "[公開日：2026年10月14日]", "@")
+      ],
+      causes: ["vendor"], causeText: "委託している事業者に対し、第三者による不正アクセスが確認され",
+      certainty: "possible",
+      dataNote: "ページ本文では委託先名を記載していない（SpeeCAN RAIDEN関連としてpiyologに掲載）。"
+    },
+    "千葉県（職員参集システム等）": {
+      officialUrl: "https://www.pref.chiba.lg.jp/dejisui/press/2026/20261014incident.html",
+      events: [
+        E("vendor_notified", "2026-10-13", "10月13日（火曜日） 午前10時50分 …不正アクセス事案の報告を受けた", "@"),
+        E("disclosed", "2026-10-14", "発表日：令和8年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "サービス提供事業者（株式会社アルカディア）から、第三者による不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "このほか災害時支援協力員約40名、委託業者社員6名、水道事業関係団体組合員約220名。10月11日は事業者（アルカディア）側の事象としてページに記載された日時。"
+    },
+    "松戸市（災害時防災情報テレフォン・FAXサービス）": {
+      officialUrl: "https://www.city.matsudo.chiba.jp/kurashi/anzen_anshin/oshirase/accessjian.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "利用しているシステムについて、第三者による不正アクセスがあり",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日のみのため、それを公表日として記録。10月11日は事業者（アルカディア）側の事象としてページに記載された日時。"
+    },
+    "佐倉市（防災情報架電サービス）": {
+      officialUrl: "https://www.city.sakura.lg.jp/soshiki/kikikanrika/oshirase/22935.html",
+      events: [
+        E("vendor_notified", "2026-10-13", "令和8年10月13日…漏えいした可能性があるとの報告を受けました", "@"),
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN  RAIDEN」に対して、第三者による不正アクセスが確認され",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日のみのため、それを公表日として記録。市民の個人情報が漏えいした事実は確認されていないと記載。"
+    },
+    "三鷹市（SpeeCAN RAIDEN利用の情報配信）": {
+      officialUrl: "https://www.city.mitaka.lg.jp/c_anzen/121/121660.html",
+      events: [
+        E("disclosed", "2026-10-14", "公開日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアのシステムに、第三者による不正アクセスがあり",
+      certainty: "possible"
+    },
+    "世田谷区（災害・防犯情報メール配信サービス）": {
+      officialUrl: "https://www.city.setagaya.lg.jp/02049/36404.html", listedDate: "2026-10-14",
+      events: [
+        E("vendor_notified", "2026-10-13", "令和8年10月13日…不審な挙動が確認されたと事業者より報告を受けています", "@"),
+        E("update", "2026-10-14", "（令和８年１０月１４日１２時更新）", "@"),
+        E("update", "2026-10-29", "最終更新日 2026年10月29日", "@")
+      ],
+      causes: ["vendor"], causeText: "SpeeCAN RAIDENにおいて、第三者による不正アクセスが疑われる不審な挙動が確認された",
+      certainty: "possible",
+      dataNote: "初回公表日は印字されていないためdisclosedは記録しない（表題に10月14日12時更新、最終更新日10月29日）。件数は「想定影響範囲」として記載。"
+    },
+    "江東区（こうとう安全・安心メール）": {
+      officialUrl: "https://www.city.koto.lg.jp/056100/bosai/20261014.html",
+      events: [
+        E("access_confirmed", "2026-10-13", "令和8年10月13日…第三者による不正アクセスがあったことを確認いたしました", "@"),
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "委託している事業者に対して、第三者による不正アクセスがあった",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日のみのため、それを公表日として記録。本文では委託先名を記載していない。区登録者に関する情報漏えいは確認されていないと記載。"
+    },
+    "中央区（東京都）（ちゅうおう安全・安心メール等）": {
+      officialUrl: "https://www.city.chuo.lg.jp/a0003/kusei/kouhoukouchou/press/261014.html",
+      events: [
+        E("disclosed", "2026-10-14", "掲載日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "提供元業者のネットワークに対し、第三者による不正アクセスが行われ",
+      certainty: "possible",
+      dataNote: "件数は登録者数。本区システムで被害は確認されていないと記載。10月11日は事業者（アルカディア）側の事象としてページに記載された日時。"
+    },
+    "町田市（職員メール配信システム）": {
+      officialUrl: "https://www.city.machida.tokyo.jp/kurashi/bouhan/bousai/Fuseiakusesunitsuite.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアにおいて、第三者による不正アクセスが確認されました",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日のみのため、それを公表日として記録。"
+    },
+    "葉山町（防災情報メール）": {
+      officialUrl: "https://www.town.hayama.lg.jp/soshiki/bousaianzen/2/4/17670.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスを受けたことに伴い",
+      certainty: "possible",
+      dataNote: "公表日は更新日のみ。8,850人は登録者数で、漏洩した可能性のある情報は登録者名・メールアドレス・電話番号・ファクス番号（登録情報は個々に異なる）。"
+    },
+    "横浜市磯子区（緊急時情報伝達システム）": {
+      officialUrl: "https://www.city.yokohama.lg.jp/isogo/bosai_bohan/saigai/sonota/20261014.html",
+      events: [
+        E("disclosed", "2026-10-14", "最終更新日 2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN」が不正アクセスを受けたことに伴い",
+      certainty: "possible",
+      dataNote: "公表日は最終更新日のみ。漏洩の可能性はアルカディアの公表を引用する形で記載。サービス停止（10月13日11時から）の告知を兼ねる。"
+    },
+    "二宮町（防災メール）": {
+      officialUrl: "https://www.town.ninomiya.kanagawa.jp/0000003632.html",
+      events: [
+        E("incident", "2026-10-11", "事業発生日 令和8年10月11日", "@"),
+        E("vendor_notified", "2026-10-13", "二宮町には13日に報告あり", "@"),
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが行われ",
+      certainty: "possible",
+      dataNote: "公表日は更新日のみ。"
+    },
+    "神奈川県（大気汚染情報メール・テレホン配信サービス）": {
+      officialUrl: "https://www.pref.kanagawa.jp/docs/pf7/r4075583.html",
+      events: [
+        E("vendor_notified", "2026-10-13", "10月13日（火曜日）に、アルカディアから…漏えいした可能性があるとの連絡", "@"),
+        E("vendor_notified", "2026-10-14", "14日に…テレホンサービス利用者の電話番号も漏えいした可能性があるとの連絡", "@"),
+        E("disclosed", "2026-10-14", "2026年10月14日 記者発表資料", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "第１報。6321件は光化学スモッグ注意報情報メールの登録件数（2026年3月末時点）で、他のメール配信・テレホンサービスの件数は確認中。テレホンサービスの令和7年度利用件数は277件・275件と記載。"
+    },
+    "大磯町（防災生活情報メール）": {
+      officialUrl: "https://www.town.oiso.kanagawa.jp/kinkyu/25377.html",
+      events: [
+        E("incident", "2026-10-11", "事象発生日 令和８年10月11日（日曜日）", "@"),
+        E("vendor_notified", "2026-10-13", "大磯町には13日に報告あり", "@"),
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者からの不正アクセスにより",
+      certainty: "possible",
+      dataNote: "公表日は更新日のみ。氏名や住所等は含まれないと記載。"
+    },
+    "長岡市（ながおかＤメールプラス等）": {
+      officialUrl: "https://www.bousai.city.nagaoka.niigata.jp/news/2026/2026-1014-0858-9.html",
+      events: [
+        E("disclosed", "2026-10-14", "2026.10.14", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスにより",
+      certainty: "possible",
+      dataNote: "本文はアルカディア／SpeeCAN RAIDENの名称を出さず、事業者のお知らせページ（arcadia.co.jp/info/4076）へリンク。電話配信サービスの氏名・電話番号、市職員の氏名・メールアドレスも対象。"
+    },
+    "三条市（メール配信サービス）": {
+      officialUrl: "https://www.city.sanjo.niigata.jp/soshiki/somubu/dxsuishinka/security/21283.html",
+      events: [
+        E("vendor_notified", "2026-10-13", "10月13日（火曜日）午後2時12分 メールにより運営事業者から三条市に連絡", "@"),
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが確認され",
+      certainty: "possible",
+      dataNote: "公表日は更新日のみ。小中学校用・保育所/児童クラブ用の登録者情報も対象。"
+    },
+    "湯沢町（緊急情報メール）": {
+      officialUrl: "https://www.town.yuzawa.lg.jp/kurashinojoho/kurashi_tetsuzuki/2/3/3/1/8104.html",
+      events: [
+        E("vendor_notified", "2026-10-13", "令和8年10月13日、…サービス提供事業者（株式会社アルカディア）より…発表", "@"),
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "不正アクセスによる",
+      certainty: "possible",
+      dataNote: "公表日は更新日のみ。一部登録者へ不審なメールが届いていると記載。"
+    },
+    "新潟市（にいがた防災メール等）": {
+      officialUrl: "https://www.city.niigata.lg.jp/kurashi/bosai/oshirase_ichiran/20261014bousaijouhou.html",
+      events: [
+        E("disclosed", "2026-10-14", "令和８年 10 月 14 日 新潟市報道資料", "https://www.city.niigata.lg.jp/kurashi/bosai/oshirase_ichiran/20261014bousaijouhou.files/bousaijouhoufusei.pdf"),
+        E("update", "2026-10-15", "最終更新日：2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスにより",
+      certainty: "possible",
+      dataNote: "件数はページからリンクされた報道資料PDF（10月14日）の表による（PDF抽出テキストのため行と件数の対応は掲載順で解釈）。n はにいがた防災メールの42,472件。"
+    },
+    "志賀町（防災メール）": {
+      officialUrl: "https://www.town.shika.lg.jp/page/10885.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスを受けた可能性",
+      certainty: "possible",
+      dataNote: "公表日は更新日のみ。10月14日13時00分から配信停止と記載。"
+    },
+    "上野原市（行政防災うえのはらメール・NET119等）": {
+      officialUrl: "https://www.city.uenohara.yamanashi.jp/page/1027600.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "同社のサーバーに対して第三者による不正アクセスが行われ",
+      certainty: "possible",
+      dataNote: "公表日は更新日のみ。n は行政防災うえのはらメールの1,855件。"
+    },
+    "各務原市消防本部（119RAIDEN・NET119）": {
+      officialUrl: "https://www.city.kakamigahara.lg.jp/life/bousai/1001268/1001319/1029647.html",
+      events: [
+        E("vendor_notified", "2026-10-13", "令和8年10月13日、…株式会社アルカディアから…発表がありました", "@"),
+        E("disclosed", "2026-10-14", "更新日 令和8年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "同社のサーバーに対して第三者による不正アクセスが発生",
+      certainty: "possible",
+      dataNote: "disclosedはページの更新日（ページ上の唯一の日付）。nは2サービスのうち大きい方（約930件）。合算せず。"
+    },
+    "羽島市消防（119RAIDEN）": {
+      officialUrl: "https://www.city.hashima.lg.jp/7008.html",
+      events: [
+        E("disclosed", "2026-10-14", "2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者からのシステムへの不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "同市は別ページで「NET119緊急通報システムへの不正アクセスによる個人情報漏えいの可能性」も掲載（本バッチ対象外）。"
+    },
+    "美濃市（防災・あんしんメール）": {
+      officialUrl: "https://www.city.mino.gifu.jp/docs/3134978.html",
+      events: [
+        E("disclosed", "2026-10-14", "2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアが、外部から不正アクセスを受けた",
+      certainty: "possible"
+    },
+    "三島市（みしまるホッとメール）": {
+      officialUrl: "https://www.city.mishima.shizuoka.jp/page/37885.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日更新", "@")
+      ],
+      causes: ["vendor"], causeText: null,
+      certainty: "possible",
+      dataNote: "disclosedはページの更新日（ページ上の唯一の日付）。本文は「運営会社／管理会社」とのみ記載（SpeeCAN RAIDEN公式ブログへリンク）。"
+    },
+    "松崎町（防災メール）": {
+      officialUrl: "https://www.town.matsuzaki.shizuoka.jp/docs/2026101400011/",
+      events: [
+        E("disclosed", "2026-10-14", "公開日 2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "管理会社（株式会社アルカディア）に、不正アクセスが確認されました",
+      certainty: "possible"
+    },
+    "西尾市（SpeeCAN RAIDEN）": {
+      officialUrl: "https://www.city.nishio.aichi.jp/kurashi/bosai/1008157/1012456.html",
+      events: [
+        E("disclosed", "2026-10-14", "2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN…」（運営：株式会社アルカディア）に第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "件数は重複登録や無効データを含む登録件数。合計は市の記載。"
+    },
+    "北名古屋市（児童クラブ緊急連絡メール）": {
+      officialUrl: "https://www.city.kitanagoya.lg.jp/kosodate/1007714.html",
+      events: [
+        E("vendor_notified", "2026-10-13", "10月13日14時12分 本市への情報提供", "@"),
+        E("disclosed", "2026-10-14", "2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "運営する事業者への第三者による不正アクセスが行われ",
+      certainty: "possible",
+      dataNote: "incidentは事業者が不審な挙動を確認した日時。"
+    },
+    "多気町（おかえりSOSネットワーク）": {
+      officialUrl: "https://www.town.taki.mie.jp/life/soshiki/kenko_fukushi/koreishafukushi_kaigo/1/5547.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが確認され",
+      certainty: "possible",
+      dataNote: "disclosedはページの更新日（ページ上の唯一の日付）。松阪市・明和町・大台町との共同運営（所管は松阪市）。"
+    },
+    "津市（防災情報メール・職員参集メール・徘徊SOS）": {
+      officialUrl: "https://www.info.city.tsu.mie.jp/kurashi/bousai_kyuukyuu_shoubou/1003370/1003406/1003428/1014020.html",
+      events: [
+        E("disclosed", "2026-10-14", "2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "SpeeCAN RAIDENへ不正アクセスが行われ",
+      certainty: "possible",
+      dataNote: "市は報道を受けて10月14日に事業者へ確認。件数はSpeeCAN RAIDENへの登録数で、閲覧の可能性は否定できないとの記載。nは最大の単一区分。"
+    },
+    "鈴鹿市（災害メールシステム・職員参集システム）": {
+      officialUrl: "https://www.city.suzuka.lg.jp/kurashi/safe/1001523/1018091.html",
+      events: [
+        E("disclosed", "2026-10-14", "2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "運営会社（株式会社アルカディア）に対する第三者による不正アクセスが確認されました",
+      certainty: "possible",
+      dataNote: "旧メルモニ登録者も対象。"
+    },
+    "多賀町（総合情報配信システム）": {
+      officialUrl: "https://www.town.taga.lg.jp/important/2788.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "委託している業者(株式会社アルカディア)のメール配信システム(SpeeCAN RAIDEN)が不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "disclosedは更新日。"
+    },
+    "豊郷町（メール配信システム）": {
+      officialUrl: "https://www.town.toyosato.shiga.jp/0000004049.html",
+      events: [
+        E("disclosed", "2026-10-14", "公開日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "委託している業者(株式会社アルカディア)のメール配信システム(SpeeCAN RAIDEN)が不正アクセスを受けた",
+      certainty: "possible"
+    },
+    "愛荘町（あいしょうタウンめーる）": {
+      officialUrl: "https://www.town.aisho.shiga.jp/soshiki/keiei/1/1/1/15483.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "委託先事業者のメール配信システム（SpeeCANRAIDEN）が不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "disclosedは更新日。"
+    },
+    "福知山市消防本部（消防メール）": {
+      officialUrl: "https://www.city.fukuchiyama.lg.jp/site/syoubou/89846.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "消防メール配信システムを運営する事業者への第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "disclosedは更新日。"
+    },
+    "城陽市（安心・安全メール）": {
+      officialUrl: "https://www.city.joyo.kyoto.jp/0000012712.html",
+      events: [
+        E("disclosed", "2026-10-14", "2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "安心・安全メール配信サービスを運営する事業者への第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "「現時点での情報の流出は確認されていません」と併記。"
+    },
+    "綾部市（行方不明者早期発見SOSメール）": {
+      officialUrl: "https://www.city.ayabe.lg.jp/0000004720.html",
+      events: [
+        E("disclosed", "2026-10-14", "初版公開日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "SOSメール配信サービスを運営する事業者への第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "「現時点での情報の流出は確認されておりません」と併記。"
+    },
+    "宮津市（みやづ情報メール）": {
+      officialUrl: "https://www.city.miyazu.kyoto.jp/site/press/31537.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日更新（題名に令和8年10月14日）", "@")
+      ],
+      causes: ["vendor"], causeText: "メール配信サービスを運営する事業者への第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "「現時点での情報の流出は確認されていません」と併記。"
+    },
+    "向日市（防災・防犯メール）": {
+      officialUrl: "https://www.city.muko.kyoto.jp/soshiki/11/19422.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "事業者（株式会社アルカディア）のシステムに対し第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "「現時点での情報の流出は確認されていません」と併記。disclosedは更新日。"
+    },
+    "長岡京市（防災情報メール等8サービス）": {
+      officialUrl: "https://www.city.nagaokakyo.lg.jp/0000013962.html",
+      events: [
+        E("vendor_notified", "2026-10-13", "令和8年10月13日（火曜日）…運営事業者…から…報告", "@"),
+        E("disclosed", "2026-10-14", "2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "同社のサーバーに対して第三者による不正アクセスが発生",
+      certainty: "possible",
+      dataNote: "「現時点では個人情報の流出や悪用は確認されていません」と併記。"
+    },
+    "木津川市（防災情報メール）": {
+      officialUrl: "https://www.city.kizugawa.lg.jp/0000003468.html",
+      events: [
+        E("disclosed", "2026-10-14", "公開日：2026年10月14日", "@"),
+        E("update", "2026-10-15", "更新日：2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアのシステムに対し第三者による不正アクセス",
+      certainty: "possible"
+    },
+    "豊能町（たんぽぽメール）": {
+      officialUrl: "https://www.town.toyono.osaka.jp/gyousei/about/ippanjouhou/page008411.html",
+      events: [
+        E("vendor_notified", "2026-10-13", "アルカディアより令和8年10月13日（火）に受けました", "@"),
+        E("disclosed", "2026-10-14", "令和8年10月14日付けで報道提供", "@"),
+        E("update", "2026-10-19", "【更新日】2026年10月19日", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN」において、第三者による不正アクセスが行われ",
+      certainty: "possible",
+      dataNote: "disclosedはページに記載された報道提供日。"
+    },
+    "泉佐野市（防災情報配信サービス）": {
+      officialUrl: "https://www.city.izumisano.lg.jp/kakuka/kikikanri/bousai/menu/bou/osirase/19241.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN」（運営会社・株式会社アルカディア）が不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "10月11日はアルカディア側の検知。disclosedは更新日。"
+    },
+    "高槻市（緊急・災害情報伝達サービス等）": {
+      officialUrl: "https://www.city.takatsuki.osaka.jp/soshiki/6/187835.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "不正アクセスにより情報漏洩の可能性があることが発表されています",
+      certainty: "possible",
+      dataNote: "サービス別の個別ページへのリンクあり（本エントリは利用状況まとめページ）。disclosedは更新日。"
+    },
+    "忠岡町（ただおかメール等）": {
+      officialUrl: "https://www.town.tadaoka.osaka.jp/soshiki/jichi_bosai/2/6147.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN」が不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "disclosedは更新日。"
+    },
+    "神戸市（職員情報伝達メール）": {
+      officialUrl: "https://www.city.kobe.lg.jp/a95474/496502948727.html",
+      events: [
+        E("vendor_notified", "2026-10-13", "2026年10月13日10時50分頃に株式会社アルカディアから神戸市へ連絡", "@"),
+        E("disclosed", "2026-10-14", "記者資料提供（2026年10月14日）", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディア（システム運営事業者）が運営する職員情報伝達メールシステム（SpeeCAN RAIDEN）において不正アクセス",
+      certainty: "possible",
+      dataNote: "事業者側の不審挙動確認時刻（10月11日16時30分）をincidentとして記録。対象は職員情報。"
+    },
+    "豊岡市": {
+      officialUrl: "https://www.city.toyooka.lg.jp/_res/projects/default_project/_page_/001/039/180/20261014-3.pdf",
+      events: [
+        E("vendor_notified", "2026-10-13", "10月13日（火）14時12分…アルカディアより豊岡市宛てにメールで連絡", "@"),
+        E("disclosed", "2026-10-14", "2026年10月14日（記者配布資料）", "@")
+      ],
+      causes: ["vendor"], causeText: "サービス提供者（株式会社アルカディア）…第三者における不正アクセス",
+      certainty: "possible",
+      dataNote: "事業者側の不審挙動確認時刻（10月11日16時30分）をincidentとして記録。nは業務別最大の消防団参集約2,000件。児童の生年月日、NET119の既往症等も含む。"
+    },
+    "西宮市（要配慮者利用施設向け防災情報配信）": {
+      officialUrl: "https://www.nishi.or.jp/kurashi/anshin/bosaijoho/oshirase/fusei_access.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "同社のシステムが外部から不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "事業者側の不審挙動確認時刻（10月11日16時30分）をincidentとして記録。disclosedは更新日。登録は施設・事業者（一部個人名含む）。市民向け「にしのみや防災ネット」は影響なし。"
+    },
+    "相生市": {
+      officialUrl: "https://www.city.aioi.lg.jp/soshiki/kikikanri/fusei-access.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "「防災情報一斉送信サービス（スピーキャン・ライデン）」におきまして、第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "事業者側の不審挙動確認時刻（10月11日16時30分）をincidentとして記録。disclosedは更新日。"
+    },
+    "小野市": {
+      officialUrl: "https://www.city.ono.hyogo.jp/soshikikarasagasu/shiminanzembu_bosaigroup/15269.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "運営会社（株式会社アルカディア）が第三者による不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "disclosedは更新日。小野市安全安心メール・ひょうご防災ネットは影響なし。"
+    },
+    "広陵町（防災メール）": {
+      officialUrl: "https://www.town.koryo.nara.jp/0000008174.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアから…不正アクセスにより個人情報が漏えいした可能性があるとの発表",
+      certainty: "possible",
+      dataNote: "disclosedは更新日。町への影響は事業者の発表を引用する形。"
+    },
+    "三郷町（奈良県）": {
+      officialUrl: "https://www.town.sango.nara.jp/soshiki/2/14708.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "防災情報配信サービス「SpeeCAN RAIDEN」が不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "disclosedは更新日。氏名・住所・電話番号は保有していないとのこと。"
+    },
+    "奈良市（防災情報メール）": {
+      officialUrl: "https://www.city.nara.lg.jp/site/bousai-saigai/276922.html",
+      events: [
+        E("vendor_notified", "2026-10-13", "10月13日（火曜日）：提供元事業者から…公表・報告", "@"),
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "提供元事業者（株式会社アルカディア）のシステムに対し、第三者からの不正アクセス",
+      certainty: "possible",
+      dataNote: "事業者側の不審挙動確認時刻（10月11日16時30分）をincidentとして記録。disclosedは更新日。"
+    },
+    "九度山町": {
+      officialUrl: "https://www.town.kudoyama.lg.jp/bousai/bousai/huseiakusesu.html",
+      events: [
+        E("disclosed", "2026-10-14", "最終更新日:2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN（運営元：株式会社アルカディア）」が、外部からの不正アクセス",
+      certainty: "possible",
+      dataNote: "disclosedは最終更新日。"
+    },
+    "上富田町": {
+      officialUrl: "https://www.town.kamitonda.lg.jp/soshiki/soumu/gyosei/5406.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "同社サーバーに対して第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "disclosedは更新日。"
+    },
+    "すさみ町": {
+      officialUrl: "https://www.town.susami.lg.jp/bousai/01/2026-1014-1613-9.html",
+      events: [
+        E("disclosed", "2026-10-14", "最終更新日:2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "同社サーバに対し不正アクセスが行われ",
+      certainty: "possible",
+      dataNote: "disclosedは最終更新日。"
+    },
+    "和歌山市（防災情報メール）": {
+      officialUrl: "https://www.city.wakayama.wakayama.jp/kurashi/bousai_bouhan_koutsu/1000032/1036580/1068840.html",
+      events: [
+        E("vendor_notified", "2026-10-13", "10月13日 14時12分 個人情報漏洩の可能性がある報告メールを受信", "@"),
+        E("disclosed", "2026-10-14", "市長定例記者会見資料（令和8年10月14日）", "@"),
+        E("update", "2026-10-19", "更新日 令和8年10月19日", "@")
+      ],
+      causes: ["vendor"], causeText: "防災情報配信システム提供元業者のネットワークが外部から不正アクセス",
+      certainty: "possible",
+      dataNote: "disclosedは掲載の記者会見資料の日付（10月14日）。本文「令和8年10月13日…不正アクセスが行われ…報告を受けた」は報告受領日の文脈のため事件日としては記録せず。"
+    },
+    "那智勝浦町": {
+      officialUrl: "https://www.town.nachikatsuura.wakayama.jp/info/1841",
+      events: [
+        E("leak_possible", "2026-10-13", "令和８年10月13日…漏えいした可能性があることが判明", "@"),
+        E("disclosed", "2026-10-14", "更新日2026年10月14日 更新", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN（運営：株式会社アルカディア）」が外部からの不正アクセス",
+      certainty: "possible",
+      dataNote: "disclosedは更新日。"
+    },
+    "印南町": {
+      officialUrl: "https://www.town.wakayama-inami.lg.jp/0000001916.html",
+      events: [
+        E("disclosed", "2026-10-14", "[公開日：2026年10月14日]", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN（運営会社：株式会社アルカディア）」が、外部から不正アクセス",
+      certainty: "possible"
+    },
+    "米子市（緊急情報FAX等配信サービス）": {
+      officialUrl: "https://www.city.yonago.lg.jp/item/62900.htm",
+      events: [
+        E("disclosed", "2026-10-14", "掲載日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "運営する事業者への第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "ページに事業者名の明記なし（piyologでアルカディア関連として掲載）。障がい者支援課の告知。"
+    },
+    "鳥取市": {
+      officialUrl: "https://www.city.tottori.lg.jp/jikenjiko/50577.html",
+      events: [
+        E("disclosed", "2026-10-14", "提供年月日2026年10月14日", "@"),
+        E("update", "2026-10-15", "更新日：2026年10月15日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "Speecanraiden（事業者：(株)アルカディア）への第三者による不正アクセス",
+      certainty: "possible"
+    },
+    "島根県（道路規制情報システム）": {
+      officialUrl: "https://www.pref.shimane.lg.jp/press_release/2026/tliih22sqpum.html",
+      events: [
+        E("disclosed", "2026-10-14", "掲載日令和8年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアのメール配信システム（SpeeCAN RAIDEN）の一部サービスに対し第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "県システムへの直接的な不正アクセスは確認されていないと記載。件数は19市町村ごとの延べ登録数。"
+    },
+    "江津市（ごうつ防災メール）": {
+      officialUrl: "https://www.city.gotsu.lg.jp/soshiki/4/42638.html",
+      events: [
+        E("disclosed", "2026-10-14", "掲載日：2026年10月14日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "運営会社である株式会社アルカディアにおいて、第三者の不正アクセスが確認されました",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日（掲載日）のみのため、それを公表日として記録。"
+    },
+    "松江市消防本部（NET119緊急通報システム）": {
+      officialUrl: "https://www.city.matsue.lg.jp/kurashi_tetsuzuki/anzen_anshin/7/26695.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "NET119緊急通報システムにおいて、第三者による不正アクセスを受けた形跡が確認され",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日（掲載日）のみのため、それを公表日として記録。"
+    },
+    "玉野市（玉野市防災メールマガジン）": {
+      officialUrl: "https://www.city.tamano.lg.jp/site/bousai/59190.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "防災情報等発信システム「SpeeCAN RAIDEN」が第三者による不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日（掲載日）のみのため、それを公表日として記録。件数は登録者数。"
+    },
+    "廿日市市（はつかいちし安全・安心メール）": {
+      officialUrl: "https://www.city.hatsukaichi.hiroshima.jp/soshiki/3/145721.html",
+      events: [
+        E("disclosed", "2026-10-14", "掲載日：2026年10月14日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアが運営するSpeeCAN RAIDEN）が不正アクセスを受けました",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日（掲載日）のみのため、それを公表日として記録。"
+    },
+    "福山市（ふくやま防災メール）": {
+      officialUrl: "https://www.city.fukuyama.hiroshima.jp/site/bosai/415082.html",
+      events: [
+        E("disclosed", "2026-10-14", "掲載日：2026年10月14日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN（運営元・株式会社アルカディア）」が、外部から不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日（掲載日）のみのため、それを公表日として記録。"
+    },
+    "府中市（広島県）（災害時情報配信サービス）": {
+      officialUrl: "https://www.city.fuchu.hiroshima.jp/shisei/11961.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN」システムにおいて、外部からの不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日（掲載日）のみのため、それを公表日として記録。"
+    },
+    "府中町（防災情報メール）": {
+      officialUrl: "https://www.town.fuchu.hiroshima.jp/site/kikikannrika/57853.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアが運営する「SpeeCAN RAIDEN」）のシステムが不正アクセスを受けました",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日（掲載日）のみのため、それを公表日として記録。"
+    },
+    "三次市（三次市防災一斉メール）": {
+      officialUrl: "https://www.city.miyoshi.hiroshima.jp/site/bousai/42206.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアが運営するSpeecan Raiden）が不正アクセスを受けました",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日（掲載日）のみのため、それを公表日として記録。"
+    },
+    "海田町（海田町防災メール）": {
+      officialUrl: "https://www.town.kaita.lg.jp/soshiki/8/148670.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "運営する事業者（(株)アルカディア）への第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日（掲載日）のみのため、それを公表日として記録。"
+    },
+    "大竹市（防災メール・保育所/児童クラブ連絡メール・NET119等）": {
+      officialUrl: "https://www.city.otake.hiroshima.jp/soshiki/somu/kikikanri/gyoumukiki/5/jyouhoudentatu/9508.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "配信サービス運営事業者への第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日（掲載日）のみのため、それを公表日として記録。「現時点での情報の流出は確認されていません」とも記載。"
+    },
+    "周南市（しゅうなんメール（災害情報）・職員参集システム）": {
+      officialUrl: "https://www.city.shunan.lg.jp/soshiki/9/153516.html",
+      events: [
+        E("disclosed", "2026-10-14", "サービス緊急停止について(令和8年10月14日）", "@"),
+        E("update", "2026-10-15", "再開について(令和8年10月15日）", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "10月11日は事業者側で不審な挙動が発生した日時（ページ記載）。同一ページに第1報（10月14日）と再開の続報（10月15日）を掲載。"
+    },
+    "山口市（防災情報配信サービス）": {
+      officialUrl: "https://www.city.yamaguchi.lg.jp/soshiki/4/201461.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアにおいて、不正アクセス事案が発生し",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日（掲載日）のみのため、それを公表日として記録。"
+    },
+    "光市（メール配信サービス）": {
+      officialUrl: "https://www.city.hikari.lg.jp/soshiki/2/bosai/kurashi/1/16756.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "システム業者のサーバーが不正アクセスを受けたもの",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日（掲載日）のみのため、それを公表日として記録。漏洩可能性のある情報は業者発表の引用で、「光市民の皆様の個人情報の漏洩は確認されていません」と記載。"
+    },
+    "鳴門市（防災行政無線メール配信サービス）": {
+      officialUrl: "https://www.city.naruto.lg.jp/news/2026101400042/",
+      events: [
+        E("disclosed", "2026-10-14", "公開日 2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが行われたため",
+      certainty: "possible",
+      dataNote: "個人情報保護委員会へ報告したと記載。"
+    },
+    "つるぎ町（つるぎ町情報配信メール・電話）": {
+      officialUrl: "https://www.town.tokushima-tsurugi.lg.jp/docs/6435254.html",
+      events: [
+        E("disclosed", "2026-10-14", "2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアのシステムに対し、第三者による不正アクセスが行われ",
+      certainty: "possible"
+    },
+    "那賀町（認知症高齢者等SOSネットワークシステム）": {
+      officialUrl: "https://www.town.tokushima-naka.lg.jp/news_kinkyu/5013.html",
+      events: [
+        E("vendor_notified", "2026-10-13", "個人情報漏えいの可能性がある旨の連絡が令和8年10月13日（火曜日）にありました", "@"),
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "委託先である株式会社アルカディアより、第三者による不正アクセスが行われた",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日（掲載日）のみのため、それを公表日として記録。"
+    },
+    "三木町（香川県）（防災行政メール）": {
+      officialUrl: "https://www.town.miki.lg.jp/life/dtl.php?hdnKey=8880",
+      events: [
+        E("disclosed", "2026-10-14", "総務課 ： 2026/10/14", "@")
+      ],
+      causes: ["vendor"], causeText: "システムを運営する事業者に対し、第三者による不正アクセスが行われ",
+      certainty: "possible"
+    },
+    "八幡浜市（消防団連絡メール等）": {
+      officialUrl: "https://www.city.yawatahama.ehime.jp/doc/2026101400035/",
+      events: [
+        E("leak_possible", "2026-10-14", "個人情報が漏えいした可能性があることを本日確認", "@"),
+        E("disclosed", "2026-10-14", "公開日 2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアのシステムに対し第三者による不正アクセスが行われ",
+      certainty: "possible",
+      dataNote: "「本日確認」は公開日（10月14日）を指すものとして記録。"
+    },
+    "久万高原町（防災情報メール・職員参集メール）": {
+      officialUrl: "https://www.kumakogen.jp/soshiki/2/27258.html",
+      events: [
+        E("vendor_notified", "2026-10-13", "令和8年10月13日(火曜日)…運営事業者から…メールで報告", "@"),
+        E("disclosed", "2026-10-14", "2026年10月14日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "運営事業者（株式会社アルカディア）において、第三者による不正アクセスが発生し",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日（掲載日）のみのため、それを公表日として記録。"
+    },
+    "安芸市（防災行政無線メール・FAX配信）": {
+      officialUrl: "https://www.city.aki.kochi.jp/life/dtl.php?hdnKey=8910",
+      events: [
+        E("leak_possible", "2026-10-13", "令和8年10月13日…登録されている情報が漏洩した可能性があることが判明", "@"),
+        E("disclosed", "2026-10-14", "危機管理課 ： 2026/10/14", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアのネットワークが外部から不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "「漏洩した可能性のある情報が不特定多数に公開された事実や、不正利用された事実は確認されておりません」とも記載。"
+    },
+    "南国市（南国市防災メール）": {
+      officialUrl: "https://www.city.nankoku.lg.jp/life/life_dtl.php?hdnKey=10204",
+      events: [
+        E("leak_possible", "2026-10-13", "漏えいした可能性があることを、同月13日（火曜日）に確認", "@"),
+        E("disclosed", "2026-10-14", "掲載日 ： 2026/10/14", "@")
+      ],
+      causes: ["vendor"], causeText: "運用管理業者において第三者による不正アクセスが確認され",
+      certainty: "possible"
+    },
+    "大牟田市（災害情報テレホン・FAX、職員参集システム等）": {
+      officialUrl: "https://www.city.omuta.lg.jp/kiji00321868/index.html",
+      events: [
+        E("disclosed", "2026-10-14", "最終更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアに対し第三者による不正アクセスが行われ",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日（掲載日）のみのため、それを公表日として記録。合計の記載はないため最大の単一値を n とした。"
+    },
+    "久留米市（防災メール・職員参集メール）": {
+      officialUrl: "https://www.city.kurume.fukuoka.jp/1500soshiki/9096bousai/3010oshirase/2026-1014-1307-87.html",
+      events: [
+        E("disclosed", "2026-10-14", "令和８年１０月１４日（第一報）", "https://www.city.kurume.fukuoka.jp/1500soshiki/9096bousai/3010oshirase/files/dai1ppou1.pdf")
+      ],
+      causes: ["vendor"], causeText: "運営事業者が第三者による不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "件数は登録者数。第一報PDFでは「情報漏洩については調査中であり、現在のところ確認されていません」と記載。"
+    },
+    "広川町（広川町情報（防災）配信メール）": {
+      officialUrl: "https://www.town.hirokawa.fukuoka.jp/kurashi_tetsuzuki/anzen_anshin/2/7266.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "システムへ第三者の不正アクセスが疑われ",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日（掲載日）のみのため、それを公表日として記録。"
+    },
+    "福津市（防災行政情報メール）": {
+      officialUrl: "https://www.city.fukutsu.lg.jp/information/21183.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "防災行政情報メールを配信するために使用しているシステムが不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日（掲載日）のみのため、それを公表日として記録。"
+    },
+    "宇美町（宇美町防災メール）": {
+      officialUrl: "https://www.town.umi.lg.jp/soshiki/59/72189.html",
+      events: [
+        E("vendor_notified", "2026-10-13", "令和8年10月13日…運営事業者…から、不正なアクセスを受けた旨の報告", "@"),
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "運営事業者（株式会社アルカディア）のサーバーに対し、第三者による不正アクセスが確認されました",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日（掲載日）のみのため、それを公表日として記録。"
+    },
+    "水巻町（災害情報等配信サービス）": {
+      officialUrl: "https://www.town.mizumaki.lg.jp/s026/20261014100340.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "アルカディアのネットワークが外部からの不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日（掲載日）のみのため、それを公表日として記録。"
+    },
+    "宗像市（緊急情報伝達システム）": {
+      officialUrl: "https://www.city.munakata.lg.jp/kiji00310490/index.html",
+      events: [
+        E("vendor_notified", "2026-10-13", "令和８年１０月１３日１４時１２分に株式会社アルカディアから宗像市へ連絡", "@"),
+        E("disclosed", "2026-10-14", "最終更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "災害時一斉情報配信サービス運営事業者への第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日のみのため、それを公表日として記録。10月11日16時30分は事業者（アルカディア）側で不審な挙動を確認した日時（ページ記載）。"
+    },
+    "飯塚市（防災情報配信サービス）": {
+      officialUrl: "https://www.city.iizuka.lg.jp/site/bousai/23691.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN(運用元：株式会社アルカディア）」が、外部から不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日のみのため、それを公表日として記録。"
+    },
+    "古賀市（防災メール）": {
+      officialUrl: "https://www.city.koga.fukuoka.jp/news/d/6738",
+      events: [
+        E("disclosed", "2026-10-14", "2026/10/14危機管理課", "@")
+      ],
+      causes: ["vendor"], causeText: "防災メールを配信するために使用しているシステムが、外部から不正アクセスを受け",
+      certainty: "possible"
+    },
+    "岡垣町（職員参集システム）": {
+      officialUrl: "https://www.town.okagaki.lg.jp/s019/20261014091949.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN」への不正アクセス",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日のみのため、それを公表日として記録。住民の個人情報は登録していないと記載。"
+    },
+    "北九州市（災害情報配信サービス）": {
+      officialUrl: "https://www.city.kitakyushu.lg.jp/contents/13801401_00003.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日 : 2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアが運営する一斉配信サービス「SpeeCAN RAIDEN」において、不正アクセス",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日のみのため、それを公表日として記録。10月11日16時30分は事業者（アルカディア）側で不審な挙動を確認した日時（ページ記載）。災害情報自動配信サービス・もらって安心災害情報配信サービスの登録者が対象。"
+    },
+    "中間市（SpeeCAN RAIDEN・RAIDEN119・NET119）": {
+      officialUrl: "https://www.city.nakama.lg.jp/site/bousai/21210.html",
+      events: [
+        E("disclosed", "2026-10-14", "令和8年10月14日 中間市総務部安全安心まちづくり課", "@"),
+        E("update", "2026-10-15", "10月15日現在の情報", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN」において、個人情報が漏洩している可能性があるとの報告を運営元であります株式会社アルカディアから受けました",
+      certainty: "possible",
+      dataNote: "件数は10月15日更新分。サービス別の件数であり合算しない（nはSpeeCAN RAIDEN分）。"
+    },
+    "武雄市（防災メール等）": {
+      officialUrl: "https://www.city.takeo.lg.jp/information/2026/10/016140.html",
+      events: [
+        E("disclosed", "2026-10-14", "投稿日：2026年10月14日(水)", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアのシステムに対して、第三者による不正アクセスが確認",
+      certainty: "possible",
+      dataNote: "件数はサービス別（合算しない）。防災アプリ「たけぼう」は対象外。"
+    },
+    "基山町（防災情報電話配信サービス）": {
+      officialUrl: "https://www.town.kiyama.lg.jp/kiji0036743/index.html",
+      events: [
+        E("disclosed", "2026-10-14", "最終更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "運用会社（株式会社アルカディア）が不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日のみのため、それを公表日として記録。"
+    },
+    "上峰町（防災メール マモル）": {
+      officialUrl: "https://www.town.kamimine.lg.jp/kiji0031658/index.html",
+      events: [
+        E("disclosed", "2026-10-14", "最終更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "運用会社（株式会社アルカディア）が不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日のみのため、それを公表日として記録。"
+    },
+    "伊万里市（防災メール）": {
+      officialUrl: "https://www.city.imari.lg.jp/item/39179.htm#pagetop",
+      events: [
+        E("disclosed", "2026-10-14", "(2026年10月14日更新)", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN（運営元・株式会社アルカディア）」が、外部から不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日のみのため、それを公表日として記録。漏えい対象項目の記載なし。"
+    },
+    "吉野ヶ里町（吉野ヶ里メール）": {
+      officialUrl: "https://www.town.yoshinogari.lg.jp/lifeinfo/soshiki/somu/1/2/5595.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "運用会社（株式会社アルカディア）が不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日のみのため、それを公表日として記録。"
+    },
+    "諫早市（防災メール）": {
+      officialUrl: "https://www.city.isahaya.nagasaki.jp/soshiki/3/50411.html",
+      events: [
+        E("vendor_notified", "2026-10-13", "令和8年10月13日…株式会社アルカディアから本市に対し…報告", "@"),
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN」に対し、第三者による不正アクセスがあった",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日のみのため、それを公表日として記録。"
+    },
+    "大村市（防災情報メールマガジン）": {
+      officialUrl: "https://www.city.omura.nagasaki.jp/bousai/kurashi/anzen/bosai/fusei-access.html",
+      events: [
+        E("vendor_notified", "2026-10-13", "令和8年10月13日（火曜日）…報告を受けました", "@"),
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN」に対し第三者による不正アクセスがあり",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日のみのため、それを公表日として記録。10月11日16時30分は事業者（アルカディア）側で不審な挙動を確認した日時（ページ記載）。"
+    },
+    "佐々町（防災行政無線メール配信システム）": {
+      officialUrl: "https://www.sazacho-nagasaki.jp/kiji0036435/index.html",
+      events: [
+        E("vendor_notified", "2026-10-13", "令和8年10月13日…連絡がありました", "@"),
+        E("disclosed", "2026-10-14", "最終更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアの「SpeeCANRAIDEN」において、第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日のみのため、それを公表日として記録。"
+    },
+    "壱岐市（メールサービス）": {
+      officialUrl: "https://www.city.iki.nagasaki.jp/shisei/oshirase/16500.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "同社サーバーが第三者による不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日のみのため、それを公表日として記録。10月11日16時30分は事業者（アルカディア）側で不審な挙動を確認した日時（ページ記載）。"
+    },
+    "合志市（防災情報お知らせメール）": {
+      officialUrl: "https://www.city.koshi.lg.jp/kiji00325893/index.html",
+      events: [
+        E("disclosed", "2026-10-14", "最終更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "システム会社（株式会社アルカディア)が、第三者による不正アクセスを受けました",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日のみのため、それを公表日として記録。"
+    },
+    "南小国町（防災情報システム）": {
+      officialUrl: "https://www.town.minamioguni.lg.jp/news/2026/2969.html",
+      events: [
+        E("disclosed", "2026-10-14", "2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "情報システムを運営する事業者への第三者による不正アクセス",
+      certainty: "possible"
+    },
+    "嘉島町（一斉配信メールシステム）": {
+      officialUrl: "https://www.town.kumamoto-kashima.lg.jp/q/aview/55/6362.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "システム会社が、第三者による不正アクセスを受けました",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日のみのため、それを公表日として記録。"
+    },
+    "大分市（防災メール等）": {
+      officialUrl: "https://www.city.oita.oita.jp/o009/fuseiaccess20261013.html",
+      events: [
+        E("disclosed", "2026-10-14", "更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアのシステムに対し第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日のみのため、それを公表日として記録。防災メール・電話FAX配信・職員参集システム・自治委員連絡メールの登録者が対象。"
+    },
+    "日田市（ひた防災メール等）": {
+      officialUrl: "https://www.city.hita.oita.jp/site/bousai/19172.html",
+      events: [
+        E("leak_possible", "2026-10-13", "令和8年10月13日…個人情報が漏洩した可能性があることを確認", "@"),
+        E("disclosed", "2026-10-14", "令和8年10月14日（水曜日）漏洩した可能性がある個人情報を周知", "@"),
+        E("update", "2026-10-16", "令和8年10月16日（金曜日）…ひた防災メールの配信再開", "@")
+      ],
+      causes: ["vendor"], causeText: "サービス提供事業者（株式会社アルカディア）…第三者による不正アクセス",
+      certainty: "possible"
+    },
+    "九重町（消防団一斉メール配信システム）": {
+      officialUrl: "https://www.town.kokonoe.oita.jp/docs/2026101400042/",
+      events: [
+        E("disclosed", "2026-10-14", "公開日 2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "運営事業者に対し、第三者による不正アクセス",
+      certainty: "possible"
+    },
+    "佐伯市（さいき防災メール）": {
+      officialUrl: "https://www.city.saiki.oita.jp/kiji00312043/index.html",
+      events: [
+        E("disclosed", "2026-10-14", "最終更新日：2026年10月14日", "@")
+      ],
+      causes: ["vendor"], causeText: "委託事業者である株式会社アルカディアに対し第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日のみのため、それを公表日として記録。"
+    },
+    "中津市（緊急情報の電話・FAX配信、職員等参集システム）": {
+      officialUrl: "https://www.city-nakatsu.jp/doc/2026102300020/",
+      events: [
+        E("disclosed", "2026-10-14", "公開日 2026年10月14日", "@"),
+        E("update", "2026-10-23", "更新日 2026年10月23日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアのシステムに対し、第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "piyolog掲載のURL（kinkyudocs）は404のため、現行ページを使用。"
+    },
+    "帯広市（緊急情報一斉伝達システム）": {
+      officialUrl: "https://www.city.obihiro.hokkaido.jp/kurashi/bousai/1007325/1025071.html",
+      events: [
+        E("disclosed", "2026-10-15", "更新日 2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN」が不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "ページは復旧告知に更新済み。公表日の記載がなく、ページの更新日を disclosed として記録。"
+    },
+    "日高町（北海道）（防災情報配信サービス）": {
+      officialUrl: "https://www.town.hidaka.hokkaido.jp/prevention/?content=4435",
+      events: [
+        E("disclosed", "2026-10-15", "更新日 2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN」が不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "漏洩対象の項目は記載なし。公表日の記載がなく、ページの更新日を disclosed として記録。"
+    },
+    "中頓別町（防災情報提供メールサービス）": {
+      officialUrl: "https://www.town.nakatombetsu.hokkaido.jp/bunya/143483/",
+      events: [
+        E("disclosed", "2026-10-15", "令和8年10月15日掲載分", "@"),
+        E("update", "2026-10-19", "令和8年10月19日掲載分", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセス",
+      certainty: "possible"
+    },
+    "八雲町（NET119）": {
+      officialUrl: "https://www.town.yakumo.lg.jp/soshiki/seisaku/261015001.html",
+      events: [
+        E("leak_possible", "2026-10-14", "令和8年10月14日（水曜日）に判明", "@"),
+        E("disclosed", "2026-10-15", "更新日：2026年10月15日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが確認され",
+      certainty: "possible",
+      dataNote: "公表日の記載がなく、ページの更新日を disclosed として記録。"
+    },
+    "名寄市（防災情報配信システム）": {
+      officialUrl: "http://www.city.nayoro.lg.jp/section/bousai/vdh2d1000000cjsw.html",
+      events: [
+        E("disclosed", "2026-10-15", "最終更新日：2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "運営委託先（株式会社アルカディア）が不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "公表日の記載がなく、ページの更新日を disclosed として記録。"
+    },
+    "中標津町（緊急情報メール キキボウ）": {
+      officialUrl: "https://www.nakashibetsu.jp/topics/6333/",
+      events: [
+        E("disclosed", "2026-10-15", "2026年10月15日(木)", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN」に対し、第三者による不正アクセスがあった",
+      certainty: "possible",
+      dataNote: "令和８年１０月１３日には不審メールへの注意喚起を掲載済み（漏えいの記載はその後の本告知）。個人情報保護委員会へ報告済みと記載。"
+    },
+    "玖珠町（消防団一斉メール配信システム）": {
+      officialUrl: "https://www.town.kusu.oita.jp/soshiki/kichi_bosaitaisakuka/1/1/2/6415.html",
+      events: [
+        E("disclosed", "2026-10-15", "更新日：2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "運営事業者において、第三者による不正アクセスが発生",
+      certainty: "possible",
+      dataNote: "日付は更新日のみ。SpeeCAN RAIDEN公式ブログへのリンクあり。"
+    },
+    "竹田市消防本部（119RAIDEN・NET119）": {
+      officialUrl: "https://www.city.taketa.oita.jp/shobo/syoubouosirase/2026/13286.html",
+      events: [
+        E("disclosed", "2026-10-15", "更新日：2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアのシステムに対し第三者による不正アクセスが行われ",
+      certainty: "possible",
+      dataNote: "日付は更新日のみ。"
+    },
+    "阿久根地区消防組合（NET119・119RAIDEN）": {
+      officialUrl: "https://www.city.akune.lg.jp/soshikikarasagasu/akunechikushoboukumiai/2320.html",
+      events: [
+        E("disclosed", "2026-10-15", "令和8年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "サービス提供事業者（株式会社アルカディア）に対する不正アクセス",
+      certainty: "possible",
+      dataNote: "同文のお知らせが阿久根市サイトの「重要なお知らせ」にも掲載（https://www.city.akune.lg.jp/important/7312.html、更新日2026年10月15日）。候補「阿久根市」と同一事案のため1件に統合。"
+    },
+    "薩摩川内市消防局（NET119）": {
+      officialUrl: "https://www.city.satsumasendai.lg.jp/gyoseijoho/johokokai/21393.html",
+      events: [
+        E("leak_possible", "2026-10-15", "漏えいした可能性があることが、10月15日に判明", "@"),
+        E("disclosed", "2026-10-15", "更新日：2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "「NET119緊急通報システム」に対する不正アクセス事案",
+      certainty: "possible",
+      dataNote: "disclosedは更新日。判明日の年はページ上明記なし（10月15日）。"
+    },
+    "下北地域広域行政事務組合消防本部（NET119）": {
+      officialUrl: "http://shimoko.e-shimokita.jp/syobo/17051/",
+      events: [
+        E("leak_possible", "2026-10-14", "令和８年10月14日（水）15時00分…ホームページに記載され判明", "@"),
+        E("disclosed", "2026-10-15", "2026年10月15日 更新", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアのネットワークが外部から不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "disclosedは更新日。"
+    },
+    "鯖江・丹生消防組合消防本部（NET119・119RAIDEN）": {
+      officialUrl: "https://www.fd-sabaenyu.jp/%E5%A7%94%E8%A8%97%E5%85%88%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%B8%E3%81%AE%E4%B8%8D%E6%AD%A3%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%81%AB%E4%BC%B4%E3%81%86%E5%80%8B%E4%BA%BA%E6%83%85%E5%A0%B1/",
+      events: [
+        E("disclosed", "2026-10-15", "令和８年１０月１５日", "@")
+      ],
+      causes: ["vendor"], causeText: "外部からの不正アクセスによる個人情報流出の可能性",
+      certainty: "possible",
+      dataNote: "「流出が認められた個人情報：現時点でありません」とも記載。nは最大の単独数値（119RAIDEN 783名）。"
+    },
+    "泉州南消防組合（NET119・消防団員等招集システム）": {
+      officialUrl: "https://www.senshu-minami119.jp/articles/9187.html",
+      events: [
+        E("disclosed", "2026-10-15", "令和８年１０月１５日 １１時００分提供", "@")
+      ],
+      causes: ["vendor"], causeText: "外部から不正アクセスがあり、個人情報が漏洩した可能性",
+      certainty: "possible",
+      dataNote: "本文は添付PDF（報道提供資料）。10月14日に対象利用者へ注意喚起と記載。ページは2026年10月15日公開。"
+    },
+    "根室市（ねむろメール）": {
+      officialUrl: "https://www.city.nemuro.hokkaido.jp/lifeinfo/kakuka/soumubu/kikikanri/kiki_JOHO/9340.html",
+      events: [
+        E("disclosed", "2026-10-15", "令和8年10月15日掲載", "@")
+      ],
+      causes: ["vendor"], causeText: "配信に利用しているシステムについて、不正アクセスがあり",
+      certainty: "possible",
+      dataNote: "ページ内の10月11日16時30分（不審な挙動確認）・10月12日3時頃（応急措置）はアルカディア側の日時のため本団体のイベントとして記録していない。"
+    },
+    "森町消防本部（NET119）": {
+      officialUrl: "https://www.town.hokkaido-mori.lg.jp/soshiki/morimachishobohonbu/4690.html",
+      events: [
+        E("disclosed", "2026-10-15", "更新日：2026年10月15日", "@"),
+        E("vendor_notified", "2026-10-14", "株式会社アルカディア）より、2026年10月14日（水曜日）", "@")
+      ],
+      causes: ["vendor"], causeText: "システムの運用先で、第三者による不正アクセスが行われ",
+      certainty: "possible",
+      dataNote: "更新日のみ記載のため更新日をdisclosedとした。氏名・生年月日・性別・住所・電話番号・メールアドレス等。"
+    },
+    "むつ市（防災情報電話・FAX配信サービス）": {
+      officialUrl: "https://www.city.mutsu.lg.jp/government/bousai/telfax_johorouei.html", listedDate: "2026-10-15",
+      events: [
+        E("update", "2026-10-15", "10月15日15時10分更新", "@")
+      ],
+      causes: ["vendor"], causeText: "アルカディア…のネットワークが外部から不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "初回掲載日の記載なし（10月15日の更新時刻のみ）のためdisclosedは省略。10月13日のアルカディア発表・サービス停止の記載あり。ページ内の10月11日16時30分（不審な挙動確認）・10月12日3時頃（応急措置）はアルカディア側の日時のため本団体のイベントとして記録していない。"
+    },
+    "青森市（防災情報自動配信サービス）": {
+      officialUrl: "https://www.city.aomori.aomori.jp/anzen_kinkyu/bousai_shoubou/1002609/1002610/1011518.html", listedDate: "2026-10-15",
+      events: [
+        E("vendor_notified", "2026-10-13", "令和8年10月13日10時48分、株式会社アルカディアから本市に対しメールにて", "@"),
+        E("update", "2026-10-15", "復旧のお知らせ（10月15日更新）", "@"),
+        E("update", "2026-10-16", "更新日 2026年10月16日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが行われ、個人情報が漏えいした可能性",
+      certainty: "possible",
+      dataNote: "初回掲載日の記載なしのためdisclosedは省略。nは最大の単一数値（メルマガ登録者約4,900人）。ページ内の10月11日16時30分（不審な挙動確認）・10月12日3時頃（応急措置）はアルカディア側の日時のため本団体のイベントとして記録していない。"
+    },
+    "藤崎町": {
+      officialUrl: "https://www.town.fujisaki.lg.jp/news/index.cfm/detail.9.23600.html",
+      events: [
+        E("disclosed", "2026-10-15", "更新日: 2026年10月15日", "@"),
+        E("vendor_notified", "2026-10-13", "令和8年10月13日14時12分、…アルカディアからの報告により", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが行われ、個人情報が漏洩した可能性",
+      certainty: "possible",
+      dataNote: "更新日のみ記載のため更新日をdisclosedとした（登録日2018年はページ登録日）。"
+    },
+    "北上市（防災情報メール）": {
+      officialUrl: "https://www.city.kitakami.iwate.jp/life/emergency/30209.html",
+      events: [
+        E("disclosed", "2026-10-15", "更新日：2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN」に、第三者による不正アクセスがあり",
+      certainty: "possible",
+      dataNote: "更新日のみ記載のため更新日をdisclosedとした。"
+    },
+    "花巻市（SOSネットワーク）": {
+      officialUrl: "https://www.city.hanamaki.iwate.jp/kenko_iryo_fukushi/koureinokata/1019854/1026159.html",
+      events: [
+        E("disclosed", "2026-10-15", "更新日 令和8年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアのシステムに対して第三者による不正アクセスが行われ",
+      certainty: "possible",
+      dataNote: "更新日のみ記載のため更新日をdisclosedとした。nは最大の単一数値（捜索協力者1,222件）。ページ内の10月11日16時30分（不審な挙動確認）・10月12日3時頃（応急措置）はアルカディア側の日時のため本団体のイベントとして記録していない。"
+    },
+    "真室川町（防災メール等）": {
+      officialUrl: "https://www.town.mamurogawa.yamagata.jp/kinkyu/5806.html",
+      events: [
+        E("disclosed", "2026-10-15", "公開日：2026年10月15日", "@"),
+        E("leak_possible", "2026-10-13", "漏洩した可能性があることが10月13日（火曜日）に判明", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアのシステムに対し、第三者による不正アクセスが行われ",
+      certainty: "possible"
+    },
+    "会津若松市（災害時電話発信サービス）": {
+      officialUrl: "https://www.city.aizuwakamatsu.fukushima.jp/docs/2026101400011/",
+      events: [
+        E("disclosed", "2026-10-15", "（令和8年10月15日掲載分）", "@"),
+        E("update", "2026-10-16", "更新日 2026年10月16日", "@")
+      ],
+      causes: ["vendor"], causeText: "「株式会社アルカディア」のシステムが不正アクセスを受けた",
+      certainty: "possible"
+    },
+    "古河市（防災・防犯メール）": {
+      officialUrl: "https://www.city.ibaraki-koga.lg.jp/soshiki/shobou/oshirase/22875.html",
+      events: [
+        E("disclosed", "2026-10-15", "更新日：2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "「古河市防災・防犯メール」が不正アクセスを受けたことが判明",
+      certainty: "possible",
+      dataNote: "更新日のみ記載のため更新日をdisclosedとした。"
+    },
+    "常陸太田市（電話一斉配信システム）": {
+      officialUrl: "https://www.city.hitachiota.ibaraki.jp/shobo-bosai/news/page011463.html",
+      events: [
+        E("disclosed", "2026-10-15", "【更新日】2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアの電話一斉配信システムにおいて、第三者による不正アクセスが確認され",
+      certainty: "possible",
+      dataNote: "更新日のみ記載のため更新日をdisclosedとした。"
+    },
+    "桐生市（防災アプリHAZARDON）": {
+      officialUrl: "https://www.city.kiryu.lg.jp/anzen/bousai/1027750.html",
+      events: [
+        E("disclosed", "2026-10-15", "令和8年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN」に対して、不正アクセスが行われたことにより",
+      certainty: "possible"
+    },
+    "太田市（おおた安全安心メール・Net119）": {
+      officialUrl: "https://www.city.ota.gunma.jp/page/1065504.html",
+      events: [
+        E("access_confirmed", "2026-10-13", "（1）発覚日時 令和8年10月13日（火曜日）11時30分頃", "@"),
+        E("disclosed", "2026-10-15", "更新日：2026年10月15日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "サービス提供事業者から第三者による不正アクセスの可能性があることが発表されました",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日のみのため、それを公表日として記録。件数は登録者数。「個人情報が実際に漏えいした事実および不正利用の事実は確認されていません」と記載。発覚日時の主体は明記されていない。10月11日は事業者（アルカディア）側の事象としてページに記載された日時。"
+    },
+    "寄居町（メール配信サービス）": {
+      officialUrl: "https://www.town.yorii.saitama.jp/soshiki/28/mailteishi.html",
+      events: [
+        E("access_confirmed", "2026-10-11", "令和8年10月11日（日曜日）…第三者による不正アクセスが確認された", "@"),
+        E("vendor_notified", "2026-10-13", "令和8年10月13日（火曜日）、「株式会社アルカディア」から町へ…報告", "@"),
+        E("disclosed", "2026-10-15", "更新日：2026年10月15日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN」において、第三者による不正アクセスがあり",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日のみのため、それを公表日として記録。不正アクセス確認時点の正確な人数は確認中と記載。10月11日の確認は事業者側の事象。"
+    },
+    "蓮田市消防本部（NET119・119RAIDEN）": {
+      officialUrl: "https://www.city.hasuda.saitama.jp/shobo/documents/documents/jouhou.html",
+      events: [
+        E("disclosed", "2026-10-15", "更新日：2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "(株)アルカディア社のサービスにおいて、不正アクセスが疑われる不審な挙動を確認",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日のみのため、それを公表日として記録。漏洩可能性は表題で示され、本文は対象サービスと件数のみ記載。漏洩し得る情報項目は記載なし。10月11日は事業者（アルカディア）側の事象としてページに記載された日時。"
+    },
+    "柏市（かしわメール配信サービス）": {
+      officialUrl: "https://www.city.kashiwa.lg.jp/kohokocho/anshinanzen/security_notice/20261013.html",
+      events: [
+        E("disclosed", "2026-10-15", "更新日令和8(2026)年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN（ライデン）」に第三者による不正アクセスが発生し",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日のみのため、それを公表日として記録。件数は推計登録者数。個別の漏えい有無は確認できていないと記載。10月11日は事業者（アルカディア）側の事象としてページに記載された日時。"
+    },
+    "浦安市（電話・ファクス災害時緊急情報配信サービス）": {
+      officialUrl: "https://www.city.urayasu.lg.jp/todokede/anzen/bousai/1049604.html",
+      events: [
+        E("disclosed", "2026-10-15", "更新日 令和8年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアへの不正アクセスが行われ",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日のみのため、それを公表日として記録。"
+    },
+    "東久留米市（安心くるめーる等）": {
+      officialUrl: "https://www.city.higashikurume.lg.jp/kurashi/anzen/bousai/1028208/1029881/index.html",
+      events: [
+        E("disclosed", "2026-10-15", "更新日 令和8年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアのシステムに、第三者による不正アクセスがあり",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日のみのため、それを公表日として記録。"
+    },
+    "国分寺市（消防団指令システム）": {
+      officialUrl: "https://www.city.kokubunji.tokyo.jp/bousai/shouboudan/1038579/index.html",
+      events: [
+        E("disclosed", "2026-10-15", "令和8年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "委託先事業者（…SpeeCAN RAIDEN）が第三者による不正アクセスを受け",
+      certainty: "possible"
+    },
+    "福生市（消防団員参集メール）": {
+      officialUrl: "https://www.city.fussa.tokyo.jp/life/disaster/emergency/1021825.html",
+      events: [
+        E("leak_possible", "2026-10-15", "利用者の個人情報が漏えいした可能性があることを本日確認しました", "@"),
+        E("disclosed", "2026-10-15", "令和8年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアのシステム（119RAIDEN）に対して、第三者による不正アクセスが行われ",
+      certainty: "possible",
+      dataNote: "「本日確認」の本日はページの日付（令和8年10月15日）として記録。"
+    },
+    "秦野市（緊急情報メール）": {
+      officialUrl: "https://www.city.hadano.kanagawa.jp/soshiki/3/1016/14264.html",
+      events: [
+        E("vendor_notified", "2026-10-13", "令和8年10月13日、…株式会社アルカディア…から…報告がありました", "@"),
+        E("disclosed", "2026-10-15", "更新日：2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが行われたため",
+      certainty: "possible",
+      dataNote: "公表日は更新日（2026年10月15日）のみ記載。件数は漏えいの可能性がある登録者数で、漏えい件数は未確定と記載。"
+    },
+    "横浜市港南区（緊急時情報伝達システム）": {
+      officialUrl: "https://www.city.yokohama.lg.jp/konan/bosai_bohan/saigai/bousai-oshirase.html",
+      events: [
+        E("leak_possible", "2026-10-13", "個人情報が漏えいした可能性があると令和８年10月13日に判明しました", "@"),
+        E("disclosed", "2026-10-15", "最終更新日 2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "運営事業者において、第三者による不正アクセスが発生し",
+      certainty: "possible",
+      dataNote: "公表日は最終更新日のみ。港南区が利用するサービスは侵入経路となったサービスとは別で、通常どおり稼働と記載。"
+    },
+    "小田原市（災害情報配信システム）": {
+      officialUrl: "https://www.city.odawara.kanagawa.jp/field/disaster/disaster/topics/p42964.html",
+      events: [
+        E("disclosed", "2026-10-15", "最終更新日：2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "不正アクセスがあり",
+      certainty: "possible",
+      dataNote: "公表日は最終更新日のみ（見出しに【10月15日（木）】）。検知は事業者側の日時として本文に記載。n は防災メールの約21,600件。"
+    },
+    "横浜市戸塚区（とつか緊急時情報伝達システム）": {
+      officialUrl: "https://www.city.yokohama.lg.jp/totsuka/bosai_bohan/saigai/sonota/kinkyuujijyoho.html",
+      events: [
+        E("leak_possible", "2026-10-13", "個人情報が漏えいした可能性があることが、令和8年10月13日に", "@"),
+        E("disclosed", "2026-10-15", "最終更新日 2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが発生し",
+      certainty: "possible",
+      dataNote: "公表日は最終更新日のみ。漏えい項目の記載なし。"
+    },
+    "横浜市瀬谷区（緊急情報伝達システム）": {
+      officialUrl: "https://www.city.yokohama.lg.jp/seya/bosai_bohan/saigai/dentatsusystemseya.html",
+      events: [
+        E("access_confirmed", "2026-10-11", "10月11日16時30分に…システムへの不正アクセスが確認されました", "@"),
+        E("leak_possible", "2026-10-13", "10月13日に、当該不正アクセスによる影響が、瀬谷区…に及ぶことが分かりました", "@"),
+        E("disclosed", "2026-10-15", "最終更新日 2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者によるシステムへの不正アクセス",
+      certainty: "possible",
+      dataNote: "公表日は最終更新日のみ。10月11日の確認はアルカディア側の事象。"
+    },
+    "鎌倉市（NET119緊急通報システム）": {
+      officialUrl: "https://www.city.kamakura.kanagawa.jp/kisya/data/2026/20261015.html",
+      events: [
+        E("vendor_notified", "2026-10-14", "令和8年（2026年）10月14日、…提供事業者（株式会社アルカディア）より…報告", "@"),
+        E("disclosed", "2026-10-15", "記者発表資料発表日：2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "同社サーバーに対して外部からの不正アクセスが行われた形跡があり",
+      certainty: "possible",
+      dataNote: "18名は登録者数。本文中に「SpeeCAN RAIDEN」の名称はなく、提供事業者アルカディアのサーバーへの不正アクセスとして記載。"
+    },
+    "新発田市（あんしんメール）": {
+      officialUrl: "https://www.city.shibata.lg.jp/kurashi/iza/anshin/1032874.html",
+      events: [
+        E("leak_possible", "2026-10-11", "判明日：令和8年10月11日（日曜日）16時30分", "@"),
+        E("disclosed", "2026-10-15", "更新日 令和8年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアのシステムに対する第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "候補リンクは一覧ページで、本文は個別ページ（1032874）。「判明日」10月11日16時30分はアルカディア側の検知時刻と同じ。公表日は更新日のみ。漏えい項目の記載なし。"
+    },
+    "小千谷市（緊急情報メール）": {
+      officialUrl: "https://www.city.ojiya.niigata.jp/soshiki/bousai/raiden-jyouhou.html",
+      events: [
+        E("vendor_notified", "2026-10-13", "10月13日（火曜日）、…株式会社アルカディアから情報提供がありました", "@"),
+        E("disclosed", "2026-10-15", "10月15日（木曜日）発表", "@"),
+        E("update", "2026-10-16", "10月16日（金曜日）追記", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN」が不正アクセスを受けたことに伴い",
+      certainty: "possible"
+    },
+    "魚沼市消防本部（NET119・119ライデン）": {
+      officialUrl: "https://www.city.uonuma.lg.jp/site/shoubou-honbu/1044499.html",
+      events: [
+        E("disclosed", "2026-10-15", "令和 8 年 10 月 15 日 報道資料", "https://www.city.uonuma.lg.jp/uploaded/attachment/30745.pdf")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスがあり",
+      certainty: "possible",
+      dataNote: "ページの更新日も2026年10月15日。10月11日の検知はアルカディア側の事象。個人情報保護委員会へ報告済みと記載。"
+    },
+    "燕市（おかえりつばめ～ル）": {
+      officialUrl: "https://www.city.tsubame.niigata.jp/kenko/fukushi_kaigo/2/23142.html",
+      events: [
+        E("disclosed", "2026-10-15", "令和8年10月15日（木曜日）付けにて、…お知らせいたしました", "@"),
+        E("update", "2026-10-19", "更新日：2026年10月19日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアに対する不正アクセス",
+      dataNote: "10月19日の続報で「個人情報は、漏洩していないことが本日確認されました」と記載。初報日は続報本文の記載による。防災つばめ～ルは別会社のシステム。"
+    },
+    "高岡市（防災情報一斉配信システム）": {
+      officialUrl: "https://www.city.takaoka.toyama.jp/soshiki/kikikanrika/2/1/1/3/14408.html",
+      events: [
+        E("disclosed", "2026-10-15", "更新日：2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "運営事業者（株式会社アルカディア）への不正アクセスの影響により",
+      certainty: "possible",
+      dataNote: "サービス復旧のお知らせで、漏洩の可能性は「公表されています」と事業者発表を引用する形。漏洩項目の記載なし。"
+    },
+    "小諸市（登山防災情報メール）": {
+      officialUrl: "https://www.city.komoro.lg.jp/official/tyui_kanki/18618.html",
+      events: [
+        E("vendor_notified", "2026-10-13", "株式会社アルカディア…から10月13日に連絡がありました", "@"),
+        E("disclosed", "2026-10-15", "更新日：2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN」において、第三者による不正アクセスが行われ",
+      certainty: "possible",
+      dataNote: "disclosedはページの更新日（ページ上の唯一の日付）。"
+    },
+    "軽井沢町（防災行政無線電話・Faxサービス）": {
+      officialUrl: "https://www.town.karuizawa.lg.jp/site/bousai/25656.html",
+      events: [
+        E("vendor_notified", "2026-10-13", "運営会社から…連絡が10月13日にありました", "@"),
+        E("disclosed", "2026-10-15", "更新日：2026年10月15日更新", "@"),
+        E("update", "2026-10-20", "【10月20日現在】", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが確認された可能性",
+      certainty: "possible",
+      dataNote: "disclosedはページの更新日（ページ上の唯一の日付）。本文に「10月20日現在」の追記があるが更新日は10月15日のまま。"
+    },
+    "飛騨市消防本部（NET119・119RAIDEN）": {
+      officialUrl: "https://www.city.hida.gifu.jp/soshiki/33/88217.html",
+      events: [
+        E("vendor_notified", "2026-10-14", "令和8年10月14日、…株式会社アルカディアから…発表がありました", "@"),
+        E("disclosed", "2026-10-15", "掲載日：2026年10月15日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "同社のサーバーに対して第三者による不正アクセスが発生",
+      certainty: "possible",
+      dataNote: "disclosedはページの更新日（ページ上の唯一の日付）。"
+    },
+    "笠松町（あんしんかさまつメール）": {
+      officialUrl: "https://www.town.kasamatsu.gifu.jp/docs/2026101400011/",
+      events: [
+        E("disclosed", "2026-10-15", "公開日 2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "委託先事業者である株式会社アルカディアが外部から不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "サービス停止は令和8年10月13日午前11時から（本文記載）。"
+    },
+    "下呂市（119Raiden・Net119）": {
+      officialUrl: "https://www.city.gero.lg.jp/soshiki/48/40876.html",
+      events: [
+        E("disclosed", "2026-10-15", "更新日：2026年10月15日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "Speecan Raidenについて、不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "disclosedはページの更新日（ページ上の唯一の日付）。1,722件は同一人の重複登録を含む登録件数（10月14日時点）。"
+    },
+    "海津市消防（NET119緊急通報システム）": {
+      officialUrl: "https://www.city.kaizu.lg.jp/kurashi/0000003529.html",
+      events: [
+        E("disclosed", "2026-10-15", "2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアのネットワークが外部から不正アクセスを受けた",
+      certainty: "possible"
+    },
+    "多治見市消防本部（NET119緊急通報システム）": {
+      officialUrl: "https://www.city.tajimi.lg.jp/kurashi_tetsuduzuki/shobo/1006022/1011138.html",
+      events: [
+        E("vendor_notified", "2026-10-14", "令和8年10月14日、…株式会社アルカディアから…発表がありました", "@"),
+        E("disclosed", "2026-10-15", "令和8年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "同社のサーバーに対して第三者による不正アクセスが発生",
+      certainty: "possible"
+    },
+    "瑞浪市消防（NET119緊急通報システム）": {
+      officialUrl: "https://www.city.mizunami.lg.jp/bousai_saigai/bousai/1011965.html",
+      events: [
+        E("disclosed", "2026-10-15", "令和8年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが行われた形跡があり",
+      certainty: "possible"
+    },
+    "恵那市消防本部（NET119緊急通報システム）": {
+      officialUrl: "https://www.city.ena.lg.jp/soshikiichiran/shobohombu/annai/21372.html",
+      events: [
+        E("disclosed", "2026-10-15", "更新日：2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアにおいて、第三者による不正アクセスが発生",
+      certainty: "possible",
+      dataNote: "disclosedはページの更新日（ページ上の唯一の日付）。"
+    },
+    "中津川市消防本部（NET119緊急通報システム）": {
+      officialUrl: "https://www.city.nakatsugawa.lg.jp/life/fire/kyukyu/40832.html",
+      events: [
+        E("disclosed", "2026-10-15", "更新日：2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアにおいて、第三者による不正アクセスが発生",
+      certainty: "possible",
+      dataNote: "disclosedはページの更新日（ページ上の唯一の日付）。項目に既往歴・かかりつけ病院・緊急連絡先を含む。"
+    },
+    "島田市（防災メール）": {
+      officialUrl: "https://www.city.shimada.shizuoka.jp/kurashi-docs/kikitaisakumail.html",
+      events: [
+        E("disclosed", "2026-10-15", "不審なメールにご注意ください（令和8年10月15日）", "@"),
+        E("update", "2026-10-20", "メール配信の再開について（令和８年10月20日）", "@")
+      ],
+      causes: ["vendor"], causeText: "管理会社において、不正アクセスが確認されました",
+      certainty: "possible",
+      dataNote: "本文は「管理会社」とのみ記載（アルカディアのお知らせへリンク、配信元はraiden.ktaiwork.jp）。本文の10月13日は管理会社が不正アクセスを確認した日。"
+    },
+    "御前崎市（防災メール）": {
+      officialUrl: "https://www.city.omaezaki.shizuoka.jp/soshiki/kikikanri/saigaijijohoteikyo/11566.html",
+      events: [
+        E("disclosed", "2026-10-15", "更新日：2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "運営会社への不正アクセスが確認され",
+      certainty: "possible",
+      dataNote: "disclosedはページの更新日（ページ上の唯一の日付）。本文の令和8年10月13日は運営会社への不正アクセスが確認された日。本文は「運営会社」とのみ記載（アルカディアのお知らせへリンク）。"
+    },
+    "浜松市消防局（119RAIDEN・Net119）": {
+      officialUrl: "https://www.city.hamamatsu.shizuoka.jp/hfdjoho/1.html",
+      events: [
+        E("incident", "2026-10-11", "10月11日（日曜日）午後4時30分に同社の他システムへの不正アクセスが疑われた", "@"),
+        E("vendor_notified", "2026-10-14", "消防局が事業者から報告を受けた時刻：同日午後4時00分", "@"),
+        E("disclosed", "2026-10-15", "更新日：2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "運営する事業者（株式会社アルカディア）への第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "disclosedはページの更新日（ページ上の唯一の日付）。事業者が漏えい可能性を把握したのは10月14日午後3時（事業者側）。nは最大の単一区分（メール登録者2,159人）。"
+    },
+    "亀山市（職員参集メール）": {
+      officialUrl: "https://www.city.kameyama.mie.jp/docs/2026101500216/",
+      events: [
+        E("disclosed", "2026-10-15", "公開日 2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアより、外部からの不正アクセスを受けたとの報告",
+      certainty: "possible",
+      dataNote: "市職員専用サービスで、市民の個人情報は含まれないとしている。disclosedはページの公開日。"
+    },
+    "菰野町消防本部（NET119）": {
+      officialUrl: "https://www2.town.komono.mie.jp/soshiki/18/11471.html",
+      events: [
+        E("leak_possible", "2026-10-14", "令和8年10月14日…登録されている情報が漏洩した可能性があることが判明", "@"),
+        E("disclosed", "2026-10-15", "更新日：2026年10月15日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "システム提供元業者である株式会社アルカディアのネットワークが外部から不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "四日市市・桑名市・菰野町の3消防本部で構成する三重北消防指令センターのシステム。44件は菰野町の登録者数。disclosedは更新日（他の日付表示なし）。"
+    },
+    "御浜町（防災行政無線メール）": {
+      officialUrl: "http://www.town.mihama.mie.jp/soshikikarasagasu/somuka/kurashinojoho/3/1829.html",
+      events: [
+        E("vendor_notified", "2026-10-13", "令和8年10月13日14時頃…報告がありました", "@"),
+        E("disclosed", "2026-10-15", "更新日：2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "同社が運営するSpeeCAN RAIDENにおきまして、第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "10月11日はアルカディア側の検知日時。disclosedは更新日。"
+    },
+    "大台町（おかえりSOSネットワークまつさか）": {
+      officialUrl: "https://www.odaitown.jp/kenko_fukushi/koreishafukushi_kaigo/4/3345.html",
+      events: [
+        E("disclosed", "2026-10-15", "更新日：2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアから、第三者による不正アクセスが確認され",
+      certainty: "possible",
+      dataNote: "明和町・松阪市・多気町との共同運営システム。disclosedは更新日。"
+    },
+    "大津市（防災メール）": {
+      officialUrl: "https://www.city.otsu.lg.jp/bosai/b/ji/info/76164.html",
+      events: [
+        E("disclosed", "2026-10-15", "更新日：2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "サービス提供事業者より、第三者からの不正アクセスを受けたとの報告",
+      certainty: "possible",
+      dataNote: "disclosedは更新日（令和8年10月15日更新の追記あり、初報日の表示なし）。"
+    },
+    "滋賀県（環境放射線テレメータ一斉通報）": {
+      officialUrl: "https://www.pref.shiga.lg.jp/as00/press-release/34227.html",
+      events: [
+        E("disclosed", "2026-10-15", "提供年月日：2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアが情報が漏えいした可能性があると公表しているサービスの一覧において、このサービスが含まれている",
+      certainty: "possible",
+      dataNote: "県民の個人情報は扱っていないとしている。"
+    },
+    "久御山町（登録型戸別受信システム）": {
+      officialUrl: "https://www.town.kumiyama.lg.jp/0000006770.html",
+      events: [
+        E("disclosed", "2026-10-15", "公開日：2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "SpeeCAN RAIDEN）が外部から不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "町使用サービスは「不正アクセスを受けた可能性は低い」との報告も併記。"
+    },
+    "大山崎町（防災・防犯メール）": {
+      officialUrl: "http://www.town.oyamazaki.kyoto.jp/annai/somuka/kikikanri/saigainosonae/11692.html",
+      events: [
+        E("disclosed", "2026-10-15", "更新日：2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "事業者（株式会社アルカディア）のシステムに対し第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "「現時点での情報の流出は確認されていません」と併記。disclosedは更新日。"
+    },
+    "京丹後市（メール配信サービス・119RAIDEN）": {
+      officialUrl: "https://www.city.kyotango.lg.jp/top/soshiki/somu/digital/1/23416.html",
+      events: [
+        E("vendor_notified", "2026-10-13", "令和8年10月13日…漏洩の可能性があるとの情報提供", "@"),
+        E("update", "2026-10-14", "令和8年10月14日…「119RAIDEN」において…漏洩の可能性", "@"),
+        E("disclosed", "2026-10-15", "更新日：2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "メール配信サービスを運営する事業者へ第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "10月11日はアルカディア側の検知。第1報・第2報の報道資料PDFもあるが、記録した日付はページ本文と更新日のみ。disclosedは更新日。"
+    },
+    "和泉市（いずみメール等）": {
+      officialUrl: "https://www.city.osaka-izumi.lg.jp/topics/23976.html",
+      events: [
+        E("disclosed", "2026-10-15", "更新日：2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアのネットワークが第三者から不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "disclosedは更新日。"
+    },
+    "岬町（徘徊高齢者等SOSメール）": {
+      officialUrl: "https://www.town.misaki.osaka.jp/soshiki/shiawase/koureifukushi2/oshirase1/nintishou/6307.html",
+      events: [
+        E("disclosed", "2026-10-15", "更新日：2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "事業者（株式会社アルカディア）への第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "disclosedは更新日。"
+    },
+    "交野市（災害・避難情報等の電話・FAX通知サービス）": {
+      officialUrl: "https://www.city.katano.osaka.jp/important_docs/2026101500018/",
+      events: [
+        E("disclosed", "2026-10-15", "公開日 2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN」が不正アクセスを受けた",
+      certainty: "possible"
+    },
+    "岸和田市（ライデン・ライデンスクール・119ライデン・NET119）": {
+      officialUrl: "https://www.city.kishiwada.lg.jp/page/20261015-arcadia.html",
+      events: [
+        E("vendor_notified", "2026-10-13", "令和8年10月13日（火曜日） ：サービス提供事業者から…本市に連絡", "@"),
+        E("disclosed", "2026-10-15", "更新日：2026年10月15日掲載", "@")
+      ],
+      causes: ["vendor"], causeText: "SpeeCAN RAIDEN、119ライデン、ＮＥＴ119緊急通報システム）に対する、第三者からの不正アクセスによるもの",
+      certainty: "possible",
+      dataNote: "nは最大の単一数値（約1,300件）。合計値の記載なし。119ライデン245名は市職員210・消防団員33・関係機関2の内訳から。個人情報保護委員会へ報告するとしている。"
+    },
+    "貝塚市消防本部（NET119・119RAIDEN）": {
+      officialUrl: "https://www.city.kaizuka.lg.jp/juyona_oshirase/illegalaccess20261015.html",
+      events: [
+        E("disclosed", "2026-10-15", "更新日：2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "「防災・減災ソリューション 119 RAIDEN」への不正アクセス",
+      certainty: "possible",
+      dataNote: "登録者数は10月14日現在。disclosedは更新日。"
+    },
+    "泉大津市消防本部（Net119）": {
+      officialUrl: "https://www.city.izumiotsu.lg.jp/syoubou/osirase/16482.html",
+      events: [
+        E("disclosed", "2026-10-15", "更新日：2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "不正アクセスにより個人情報が漏えいした可能性がある旨の公表",
+      certainty: "possible",
+      dataNote: "disclosedは更新日。"
+    },
+    "猪名川町（防災情報配信・自治会電子回覧板）": {
+      officialUrl: "https://www.town.inagawa.lg.jp/important_news/10375.html", listedDate: "2026-10-15",
+      events: [
+        E("disclosed", null, "現時点（令和8年10月14日9時現在）の状況をお知らせ", "@"),
+        E("update", "2026-10-15", "令和8年10月15日午後6時更新", "@"),
+        E("update", "2026-10-27", "追記（令和8年10月27日現在）", "@")
+      ],
+      causes: ["vendor"], causeText: "サービス提供事業者（株式会社アルカディア）において、外部からの不正アクセス",
+      certainty: "possible",
+      dataNote: "初回掲載日の印字なし（本文に「令和8年10月14日9時現在」の状況とあるのみ）。電話723名、FAX99名、LINE情報2,544名も記載。合計の記載なし。"
+    },
+    "大和高田市": {
+      officialUrl: "https://www.city.yamatotakada.nara.jp/oshirase_top/10607.html",
+      events: [
+        E("disclosed", "2026-10-15", "更新日：2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN」において、第三者による不正アクセスが確認され",
+      certainty: "possible",
+      dataNote: "disclosedは更新日。"
+    },
+    "野迫川村（のせ川村メール）": {
+      officialUrl: "https://www.vill.nosegawa.nara.jp/top/village_government/pr/1071.html",
+      events: [
+        E("disclosed", "2026-10-15", "更新日：2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "委託事業者(株式会社アルカディア)が運営する一斉配信システム「SpeeCAN RAIDEN」が第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "disclosedは更新日。"
+    },
+    "河合町（奈良県）": {
+      officialUrl: "https://www.town.kawai.nara.jp/kakuka/somu/1_1/2/bousaizyouhousabisu/7805.html",
+      events: [
+        E("disclosed", "2026-10-15", "更新日：2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアの防災情報配信サービス「SpeeCAN RAIDEN」が不正アクセス",
+      certainty: "possible",
+      dataNote: "再開告知ページで、日付は更新日のみ。"
+    },
+    "海南市": {
+      officialUrl: "https://www.city.kainan.lg.jp/important/8601.html",
+      events: [
+        E("disclosed", "2026-10-15", "更新日：2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "システム提供事業者が不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "復旧告知ページで、日付は更新日のみ。個人情報保護委員会へ報告と記載。FAX3人、電話1人、職員情報も対象。"
+    },
+    "有田川町": {
+      officialUrl: "https://www.town.aridagawa.lg.jp/top/oshirase/10265.html",
+      events: [
+        E("disclosed", "2026-10-15", "更新日：2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN（運営会社：株式会社アルカディア）」について不正アクセス",
+      certainty: "possible",
+      dataNote: "disclosedは更新日。"
+    },
+    "奥出雲町（防災メール）": {
+      officialUrl: "https://www.town.okuizumo.shimane.jp/bosaijoho/bosai-info/bousaimail.html",
+      events: [
+        E("access_confirmed", "2026-10-13", "令和8年10月13日…運営会社への不正アクセスが確認され", "@"),
+        E("disclosed", "2026-10-15", "最終更新日：2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "防災メールシステムの運営会社への不正アクセス",
+      certainty: "possible",
+      dataNote: "disclosedは最終更新日。"
+    },
+    "松山市（まつやま防災メール）": {
+      officialUrl: "https://www.city.matsuyama.ehime.jp/kurashi/bosai/bousai/all/syusyuhouhou/20261014.html",
+      events: [
+        E("disclosed", "2026-10-15", "更新日：2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN」で第三者の不正アクセスが確認され",
+      certainty: "possible",
+      dataNote: "ページの日付は更新日（10月15日）のみのため、それを公表日として記録。初出はこれより前の可能性がある。URLに20261014の文字列あり。"
+    },
+    "土佐清水市（防災行政無線メッセージ・消防本部の防災情報配信）": {
+      officialUrl: "https://www.city.tosashimizu.kochi.jp/kurashi/section/kikikanri/24080.html",
+      events: [
+        E("anomaly", null, "10⽉11⽇（日曜日）16時30分、アルカディアが…不審な挙動を確認", "@"),
+        E("access_confirmed", null, "10月14日（水曜日）12時50分頃…不正アクセスが行われたことを覚知", "@"),
+        E("disclosed", "2026-10-15", "2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "アルカディアのネットワークが外部から不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "冒頭に「漏洩したことが判明しました」とあるが本文は「漏洩した可能性」のため possible とした。経緯の日付は年の記載がないため date は null（10月11日は事業者側の検知）。"
+    },
+    "福岡市（避難情報配信システム）": {
+      officialUrl: "https://www.city.fukuoka.lg.jp/bousai/bousaikojinjohorouei.html",
+      events: [
+        E("vendor_notified", "2026-10-13", "10月13日午後２時13分、同社から本市へ連絡", "@"),
+        E("disclosed", "2026-10-15", "更新日：2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "一斉情報配信サービスを運営する事業者において、第三者による不正アクセスが確認",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日のみのため、それを公表日として記録。10月11日16時30分は事業者（アルカディア）側で不審な挙動を確認した日時（ページ記載）。対象は視覚・聴覚に障がいがある方等の登録者。"
+    },
+    "太宰府市（災害情報等配信サービス V-net）": {
+      officialUrl: "https://www.city.dazaifu.lg.jp/soshiki/5/2928.html",
+      events: [
+        E("disclosed", "2026-10-15", "更新日：2026年10月15日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "運営会社（株式会社アルカディア）が第三者による不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日のみのため、それを公表日として記録。"
+    },
+    "福岡県（土砂災害危険度情報配信システム）": {
+      officialUrl: "https://www.pref.fukuoka.lg.jp/contents/dosyasystemannounce.html",
+      events: [
+        E("disclosed", "2026-10-15", "更新日：2026年10月15日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアが運営する一斉配信サービス「SpeeCAN RAIDEN」において、不正アクセス",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日のみのため、それを公表日として記録。10月11日16時30分は事業者（アルカディア）側で不審な挙動を確認した日時（ページ記載）。"
+    },
+    "島原市（防災メール）": {
+      officialUrl: "https://www.city.shimabara.lg.jp/page21247.html?type=top", listedDate: "2026-10-15",
+      events: [
+        E("update", "2026-10-15", "最終更新日：2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "(株)アルカディアのメール配信システム（SpeeCAN RAIDEN）が不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "ページは配信再開のお知らせ（最終更新日2026年10月15日）で、初報の日付は不明のためdisclosedは記録せず。"
+    },
+    "佐世保市（防災情報メール・道路冠水情報メール）": {
+      officialUrl: "https://www.city.sasebo.lg.jp/bousai/20261013_arcadia.html",
+      events: [
+        E("vendor_notified", "2026-10-13", "市覚知日時は令和8年10月13日11時44分", "@"),
+        E("update", "2026-10-15", "（10.15追記）不審なメールが届いたと複数の市民の方から連絡", "@"),
+        E("disclosed", "2026-10-15", "更新日：2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアの「SpeeCANRAIDEN」において、第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日（10.15追記を含む）のみ。発生日時はページ記載どおり（内容は事業者側での不審挙動確認）。"
+    },
+    "宇土市（お知らせメール）": {
+      officialUrl: "https://www.city.uto.lg.jp/article/view/1310/17200.html",
+      events: [
+        E("disclosed", "2026-10-15", "2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "「株式会社 アルカディア」のシステム（SpeeCAN RAIDEN ）において、第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "ページは注意喚起が主で「個人情報の漏洩や不審なアクセス等の二次被害が懸念されます」との表現。漏えい対象項目の記載なし。"
+    },
+    "長洲町（防災行政メール配信サービス）": {
+      officialUrl: "https://www.town.nagasu.lg.jp/bousai/bousai/bousai_mail/17920251033194033/",
+      events: [
+        E("disclosed", "2026-10-15", "最終更新日：2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "同社サーバーに対して第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日のみのため、それを公表日として記録。"
+    },
+    "御船町（防災メール）": {
+      officialUrl: "https://www.town.mifune.kumamoto.jp/page9504.html",
+      events: [
+        E("disclosed", "2026-10-15", "最終更新日：2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "システム会社から、第三者による不正アクセスを受けたと報告",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日のみのため、それを公表日として記録。"
+    },
+    "津久見市消防本部（119RAIDEN・NET119）": {
+      officialUrl: "https://www.city.tsukumi.oita.jp/soshiki/27/33530.html",
+      events: [
+        E("disclosed", "2026-10-15", "更新日：2026年10月15日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアのシステムに対し第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日のみのため、それを公表日として記録。"
+    },
+    "臼杵市消防本部（119RAIDEN・NET119）": {
+      officialUrl: "https://www.city.usuki.oita.jp/article/2026101500018/",
+      events: [
+        E("leak_possible", "2026-10-14", "10月14日に確認いたしました", "@"),
+        E("disclosed", "2026-10-15", "公開日 2026年10月15日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアのシステム（119RAIDENおよびNET119）に対し、第三者による不正アクセス",
+      certainty: "possible"
+    },
+    "石狩市（メール配信サービス）": {
+      officialUrl: "https://www.city.ishikari.hokkaido.jp/shisei/shiseiunei/1001910/1003581.html",
+      events: [
+        E("disclosed", "2026-10-16", "更新日 2026年10月16日", "@")
+      ],
+      causes: ["vendor"], causeText: "運営する事業者への第三者による不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "公表日の記載がなく、ページの更新日を disclosed として記録。"
+    },
+    "いちき串木野市（防災情報メール・NET119）": {
+      officialUrl: "https://www.city.ichikikushikino.lg.jp/densan1/r8/261013_info.html",
+      events: [
+        E("disclosed", "2026-10-16", "更新日：2026年10月16日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者の不正アクセスにより個人情報が外部に流出した可能性",
+      certainty: "possible",
+      dataNote: "日付は更新日のみ。防災情報メールは令和6年度まで運用（過去の登録者が対象）。"
+    },
+    "秋田市（防災ネットあきた）": {
+      officialUrl: "https://www.city.akita.lg.jp/bosai-kinkyu/1011678/1053554.html",
+      events: [
+        E("disclosed", "2026-10-16", "更新日 令和8年10月16日", "@"),
+        E("leak_possible", "2026-10-13", "漏えいした可能性があることを、同月13日（火曜日）に確認", "@")
+      ],
+      causes: ["vendor"], causeText: "運用管理委託業者において第三者による不正アクセスが確認され",
+      certainty: "possible",
+      dataNote: "更新日のみ記載のため更新日をdisclosedとした。ページ内の「令和8年10月11日（日曜日）16時30分…不正アクセスが確認」は委託業者側の確認日時のため記録せず。"
+    },
+    "和光市（防災・防犯情報メール）": {
+      officialUrl: "https://www.city.wako.lg.jp/kurashi/anshin/1010199/1014124.html", listedDate: "2026-10-16",
+      events: [
+        E("update", "2026-10-16", "（2026年10月16日 更新）", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN（ライデン）」に第三者による不正アクセスが発生し",
+      certainty: "possible",
+      dataNote: "ページ上の日付は2026年10月16日（配信再開の更新）のみで、初回掲載日は印字されていないためdisclosedは記録しない。個人情報保護委員会へ報告済みと記載。10月11日は事業者（アルカディア）側の事象としてページに記載された日時。"
+    },
+    "新座市（一斉情報伝達・収集システム）": {
+      officialUrl: "https://www.city.niiza.lg.jp/soshiki/17/speecanraiden-oshirase.html",
+      events: [
+        E("disclosed", "2026-10-16", "（以下、10月16日に掲載した内容です。）", "@"),
+        E("update", "2026-10-20", "更新日：2026年10月20日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "同サービスに対して第三者による不正アクセスが発生し",
+      certainty: "possible",
+      dataNote: "公表日は本文の「10月16日に掲載」による（年は更新日から）。個人情報保護委員会へ報告済みと記載。10月11日は事業者（アルカディア）側の事象としてページに記載された日時。"
+    },
+    "千葉市（ちばし安全・安心メール等）": {
+      officialUrl: "https://www.city.chiba.jp/shimin/shimin/chiikianzen/chiba-an_oshirase1.html",
+      events: [
+        E("disclosed", "2026-10-16", "更新日：2026年10月16日", "@")
+      ],
+      causes: ["vendor"], causeText: "利用しているシステムについて、第三者による不正アクセスがあり",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日のみのため、それを公表日として記録。10月11日は事業者（アルカディア）側の事象としてページに記載された日時。"
+    },
+    "印西市（電話・ファクス災害等緊急情報配信サービス）": {
+      officialUrl: "https://www.city.inzai.lg.jp/0000022714.html",
+      events: [
+        E("leak_possible", "2026-10-14", "10月14日 …事業者から不正アクセスによる影響が当市にもある可能性を確認", "@"),
+        E("disclosed", "2026-10-16", "[2026年10月16日]", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアのネットワークが外部からの不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "ページ上の日付は2026年10月16日（復旧完了の掲載）のみで、これを公表日として記録。印西市防災メールは別事業者で影響なしと記載。"
+    },
+    "八千代市（やちよ情報メール）": {
+      officialUrl: "https://www.city.yachiyo.lg.jp/soshiki/11/87422.html",
+      events: [
+        E("disclosed", "2026-10-16", "更新日：2026年10月16日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "配信サービス「SpeeCAN RAIDEN」が不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日のみのため、それを公表日として記録。掲載中の版は運用再開の更新後のもの。"
+    },
+    "立川市（立川見守りメール）": {
+      officialUrl: "https://www.city.tachikawa.lg.jp/bosai/bohan/1008439/1028484.html",
+      events: [
+        E("disclosed", "2026-10-16", "2026年10月16日", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN」が不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "ページ上の日付は2026年10月16日のみで、これを公表日として記録。職員参集システム・出火報等指令システムも同事業者を利用と記載。"
+    },
+    "昭島市（メール配信サービス）": {
+      officialUrl: "https://www.city.akishima.lg.jp/kurashi/bosai/1008247/1002358/1009244/1002308.html",
+      events: [
+        E("disclosed", "2026-10-16", "2026年10月16日", "@")
+      ],
+      causes: ["vendor"], causeText: "一斉同報サービス「SpeeCAN RAIDEN」が、不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "ページ上の日付は2026年10月16日のみで、これを公表日として記録。"
+    },
+    "台東区（たいとうメールマガジン）": {
+      officialUrl: "https://www.city.taito.lg.jp/kusei/sanka/sns/taitomail/teishi20261013.html", listedDate: "2026-10-16",
+      events: [
+        E("vendor_notified", "2026-10-13", "10月13日（火曜日）10時50分ごろに、運用会社から…区へ連絡がありました", "@"),
+        E("update", "2026-10-16", "更新日：2026年10月16日", "@")
+      ],
+      causes: ["vendor"], causeText: "運用会社が不正アクセスを確認した",
+      certainty: "possible",
+      dataNote: "ページは10月16日更新版で初回公表日は印字されていないためdisclosedは記録しない。6,922人は登録者数。10月11日は事業者（アルカディア）側の事象としてページに記載された日時。"
+    },
+    "座間市（いさまメール・職員安否参集確認システム）": {
+      officialUrl: "https://www.city.zama.kanagawa.jp/kurashi/bousai/1014143.html",
+      events: [
+        E("disclosed", "2026-10-16", "令和8年10月16日", "@")
+      ],
+      causes: ["vendor"], causeText: "委託先事業者（…SpeeCAN RAIDEN）が不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "件数は登録者数で、漏洩件数は確定していないと記載。個人情報保護委員会へ報告済み。"
+    },
+    "厚木市（多言語防災行政無線メールサービス）": {
+      officialUrl: "https://www.city.atsugi.kanagawa.jp/material/files/group/3/tagengokojinjoho.pdf",
+      events: [
+        E("incident", "2026-10-11", "11 日 16 時 30 分ごろ、…「SpeeCAN RAIDEN…」が第三者からの不正アクセスを受けました", "@"),
+        E("leak_possible", "2026-10-15", "15 日 14 時ごろ…４人分の個人情報が流出した可能性があることが分かりました", "@"),
+        E("disclosed", "2026-10-16", "令和８年 10 月 16 日 厚木市報道資料", "@"),
+        E("update", "2026-10-16", "更新日：2026年10月16日", "https://www.city.atsugi.kanagawa.jp/bousai/oshirase/55105.html")
+      ],
+      causes: ["vendor"], causeText: "サービス提供事業者への不正アクセス",
+      certainty: "possible",
+      dataNote: "候補リンク（サービス再開のお知らせ、公開日2026年10月13日）自体は停止・注意喚起のみで、個人情報漏えいの可能性は同ページからリンクされた市報道資料PDF（10月16日）に記載。PDFには応急措置を「11 日３時ごろ」と記載。一般向け「あつぎメールマガジン」（登録者数10672人）は別サービスと記載。"
+    },
+    "池田町（福井県）（ご近助防災メール）": {
+      officialUrl: "https://www.town.ikeda.fukui.jp/toplink/emergency/p003018.html",
+      events: [
+        E("disclosed", "2026-10-16", "最終更新日 2026年10月16日", "@")
+      ],
+      causes: ["vendor"], causeText: "不正アクセスを受けたことに伴い",
+      certainty: "possible",
+      dataNote: "日付は最終更新日（配信再開のお知らせ）のみで、初報日は不明。"
+    },
+    "白馬村（防災メール）": {
+      officialUrl: "https://www.vill.hakuba.lg.jp/gyosei/soshikikarasagasu/somuka/osirase_ibennto_kouhoumusenntou/15345.html",
+      events: [
+        E("incident", "2026-10-11", "令和8年（2026年）10月11日（日曜日）午後4時30分ごろ、運営会社が…不正アクセスの疑いがある動きを確認", "@"),
+        E("vendor_notified", "2026-10-13", "10月13日（火曜日）に運営会社から報告を受けました", "@"),
+        E("disclosed", "2026-10-16", "更新日：2026年10月16日", "@")
+      ],
+      causes: ["vendor"], causeText: "同社のシステムが受けた第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "disclosedはページの更新日（ページ上の唯一の日付）。incidentは運営会社が不審な動きを確認した日時。防災アプリのみの利用者は対象外。"
+    },
+    "上田市（メール配信サービス）": {
+      officialUrl: "https://www.city.ueda.nagano.jp/soshiki/uedapr/138236.html",
+      events: [
+        E("vendor_notified", "2026-10-13", "運営会社である株式会社アルカディア…から10月13日に連絡", "@"),
+        E("disclosed", "2026-10-16", "更新日：2026年10月16日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが行われたことにより発生",
+      certainty: "possible",
+      dataNote: "disclosedはページの更新日（ページ上の唯一の日付）。件数は登録者数（約24,800件）。"
+    },
+    "名張市（NET119緊急通報システム）": {
+      officialUrl: "https://www.city.nabari.lg.jp/s071/020/010/010/NET119/20261015125415.html",
+      events: [
+        E("disclosed", "2026-10-16", "更新日：2026年10月16日", "@")
+      ],
+      causes: ["vendor"], causeText: "委託事業者（株式会社アルカディア）のサーバーに対し、外部からの不正アクセス",
+      certainty: "possible",
+      dataNote: "disclosedは更新日（他の日付表示なし）。"
+    },
+    "湖南市（メール配信システム）": {
+      officialUrl: "https://www.city.shiga-konan.lg.jp/information/41923.html", listedDate: "2026-10-16",
+      events: [
+        E("update", "2026-10-16", "更新日：2026年10月16日", "@")
+      ],
+      causes: ["vendor"], causeText: "当市が契約している会社のメール配信システム(SpeeCAN RAIDEN)が不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "第一報〜第三報を同一ページに掲載。日付表示は更新日（第三報時点）のみで初報日不明のためdisclosedは記録せず。"
+    },
+    "栗東市（防災・防犯情報システム）": {
+      officialUrl: "https://www.city.ritto.lg.jp/important/18762.html", listedDate: "2026-10-16",
+      events: [
+        E("update", "2026-10-16", "更新日：2026年10月16日", "@")
+      ],
+      causes: ["vendor"], causeText: "運用事業者（株式会社アルカディア）が不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "市は「直接侵入を受けたシステムではありません」が「漏えいの可能性が完全に否定できない」としている。日付表示は更新日のみで初報日不明のためdisclosedは記録せず。"
+    },
+    "枚方市（自動音声配信電話サービス）": {
+      officialUrl: "https://www.city.hirakata.osaka.jp/kikikanri/0000054451.html", listedDate: "2026-10-16",
+      events: [
+        E("update", "2026-10-16", "公開日：2026年10月16日（サービス再開のお知らせ）", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアのネットワークにおいて、第三者による不正アクセスが確認された",
+      certainty: "possible",
+      dataNote: "サービス再開を知らせるページ（公開日10月16日）。休止を知らせた初報の日付は不明のためdisclosedは記録せず。80名は登録者数。"
+    },
+    "島本町（登録制メール・ライデン・スクール・NET119）": {
+      officialUrl: "https://www.town.shimamoto.lg.jp/soshiki/5/37877.html", listedDate: "2026-10-16",
+      events: [
+        E("update", "2026-10-16", "更新日：2026年10月16日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "運営する事業者が第三者による不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "日付表示は更新日のみ（10月16日の追記あり）で初報日不明のためdisclosedは記録せず。"
+    },
+    "宍粟市（情報配信サービス）": {
+      officialUrl: "https://www.city.shiso.lg.jp/soshiki/shichokoshitsu/hishokoho/oshirase/22489.html", listedDate: "2026-10-16",
+      events: [
+        E("update", "2026-10-16", "更新日：2026年10月16日", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN」が不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "復旧のお知らせページ（10月19日追記あり）。初報日の表示がなくdisclosedは記録せず。対象者に10月15日付で通知を送付。"
+    },
+    "芦屋市（職員情報）": {
+      officialUrl: "https://www.city.ashiya.lg.jp/bousai/jouhou/documents/system.html",
+      events: [
+        E("disclosed", "2026-10-16", "更新日：2026年10月16日", "@")
+      ],
+      causes: ["vendor"], causeText: "本市の防災情報配信システムを運用する事業者において、外部からの不正アクセス",
+      certainty: "possible",
+      dataNote: "【更新】版のページで、表示されている日付は更新日のみ（初報日不明）。市民の個人情報の漏洩事実はないと記載。"
+    },
+    "高砂市（高齢者等見守り・SOSネットワーク）": {
+      officialUrl: "https://www.city.takasago.lg.jp/soshikikarasagasu/chiikifukushika/koreishafukushi_kaigo/2/2/14357.html",
+      events: [
+        E("disclosed", "2026-10-16", "更新日：2026年10月16日", "@")
+      ],
+      causes: ["vendor"], causeText: "委託先から「第三者による不正アクセスを受けたことにより…漏洩した可能性がある」",
+      certainty: "possible",
+      dataNote: "disclosedは更新日。履歴本文に記載の8人は住所・氏名・年齢・身体的特徴等。"
+    },
+    "斑鳩町": {
+      officialUrl: "https://www.town.ikaruga.nara.jp/0000003413.html",
+      events: [
+        E("disclosed", "2026-10-16", "[公開日：2026年10月16日]", "@")
+      ],
+      causes: ["vendor"], causeText: "防災情報配信サービス「SpeeCAN RAIDEN」が不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "掲載ページは再開のお知らせ（公開日10月16日）で、それ以前の告知を統合した内容。"
+    },
+    "生駒市": {
+      officialUrl: "https://www.city.ikoma.lg.jp/0000042931.html",
+      events: [
+        E("disclosed", "2026-10-16", "[更新日：2026年10月16日]", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアの防災情報配信サービス「SpeeCAN RAIDEN」が不正アクセス",
+      certainty: "possible",
+      dataNote: "disclosedは更新日。市は登録件数（概数）が全て漏洩した可能性と記載、ただし市関係の件数は未確定とも記載。"
+    },
+    "新宮市": {
+      officialUrl: "https://www.city.shingu.lg.jp/info/3086",
+      events: [
+        E("update", "2026-10-15", "10月15日 更新", "@"),
+        E("disclosed", "2026-10-16", "更新日2026年10月16日 更新", "@")
+      ],
+      causes: ["vendor"], causeText: "「株式会社アルカディア」のシステムに対し第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "印字日付は更新日（10/16）と本文の「10月15日 更新」のみで初報日不明。個人情報保護委員会へ速報済み。"
+    },
+    "岡山市（災害時一斉情報配信サービス）": {
+      officialUrl: "https://www.city.okayama.jp/kurashi/0000086126.html",
+      events: [
+        E("vendor_notified", "2026-10-13", "10月13日10時48分 同社から岡山市へ連絡があった", "https://www.city.okayama.jp/kurashi/cmsfiles/contents/0000086/86126/kouhourennraku_2.pdf"),
+        E("disclosed", "2026-10-16", "令和8年10月16日（広報連絡資料）", "https://www.city.okayama.jp/kurashi/cmsfiles/contents/0000086/86126/kouhourennraku_2.pdf")
+      ],
+      causes: ["vendor"], causeText: "事業者への第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "確認できたのはサービス再開を知らせる10月16日付の広報資料（PDF）のみで、これより前の第一報があったかは不明。個人情報漏洩の可能性は添付PDFの経緯欄に記載。10月11日は事業者側で不審な挙動を確認した日時。"
+    },
+    "竹原市（防災情報等メール・一斉電話サービス等）": {
+      officialUrl: "https://www.city.takehara.lg.jp/soshikikarasagasu/kikikanrika/gyomuannai/4_1/4/8494.html",
+      events: [
+        E("disclosed", "2026-10-16", "更新日：2026年10月16日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアで、第三者による不正アクセスが一部サーバーで発生し",
+      certainty: "possible",
+      dataNote: "ページの日付は更新日（10月16日、サービス復旧の追記後）のみのため、それを公表日として記録。初出はこれより前の可能性がある。"
+    },
+    "柳井市（防災メール）": {
+      officialUrl: "https://www.city-yanai.jp/soshiki/6/bousaimailoshirase.html",
+      events: [
+        E("vendor_notified", "2026-10-13", "令和8年10月13日（火）午後2時12分 事業者からのメールを受信", "@"),
+        E("disclosed", "2026-10-16", "更新日：2026年10月16日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "事業者（株式会社アルカディア）が不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "ページの日付は更新日（10月16日）のみのため、それを公表日として記録。初出はこれより前の可能性がある。10月11日は事業者側の検知日時。「現時点での情報流出は確認されていません」とも記載。"
+    },
+    "美馬市（防災行政情報発信システム連携の電話・FAX・メール配信）": {
+      officialUrl: "https://www.city.mima.lg.jp/gyosei/docs/3131999.html",
+      events: [
+        E("disclosed", "2026-10-16", "2026年10月16日公開", "@")
+      ],
+      causes: ["vendor"], causeText: "事業者（(株)アルカディア（大阪府箕面市））のサーバが第三者による不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "確認できたのは配信再開を知らせる10月16日公開のページで、これより前の第一報があったかは不明。"
+    },
+    "遠賀町（災害情報等配信サービス）": {
+      officialUrl: "https://www.town.onga.lg.jp/soshiki/4/95381.html",
+      events: [
+        E("disclosed", "2026-10-16", "更新日：2026年10月16日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディア…のネットワークが外部からの不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日のみのため、それを公表日として記録。対象者には個別通知予定と記載。"
+    },
+    "東武動物公園（東武レジャー企画）": {
+      officialUrl: "https://www.tobuzoo.com/pdf/QjpbetCbcKMJCaMb.pdf", listedDate: "2026-10-16",
+      events: [
+        E("update", "2026-10-16", "（続報）…お問い合わせフォーム…個人情報について、漏えいはなかったものと判断", "@")
+      ],
+      causes: ["vendor"], causeText: null,
+      dataNote: "初報PDF（https://www.tobuzoo.com/pdf/sS3zHUaAFnwIDQTkpLlXiGbgPc.pdf）は削除済み（404）で確認できず、公表日・件数は登録していません。確認できたのは10月16日の続報のみで、IDCフロンティアが外部へのデータ流出はなかったと判断したことを踏まえ、お問い合わせフォームの個人情報は漏えいはなかったものと判断したとしています。ホームページは引き続き閲覧障害。"
+    },
+    "諫早市（道の駅251いいもりじゃがーロード）": {
+      officialUrl: "https://www.city.isahaya.nagasaki.jp/soshiki/43/50518.html",
+      events: [
+        E("vendor_notified", "2026-10-16", "令和8年10月16日、…Studio株式会社から本市に対し…報告を受けており", "@"),
+        E("disclosed", "2026-10-16", "更新日：2026年10月16日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "Studio株式会社から…同社が利用するクラウド環境に対し、第三者による不正アクセスがあった",
+      certainty: "possible",
+      dataNote: "漏洩の可能性がある項目は氏名、フリガナ、メールアドレス、住所、電話番号。件数の記載なし。"
+    },
+    "糸魚川市（移住ポータル「わたしのいと」・ワーケーションサイト）": {
+      officialUrl: "https://www.city.itoigawa.lg.jp/page/28776.html", listedDate: "2026-10-16",
+      events: [
+        E("update", "2026-10-16", "（第2報）更新日：2026年10月16日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "ホームページ制作サービスへの不正アクセスにより",
+      certainty: "possible",
+      dataNote: "確認できたのは第2報のページ（10月16日公表の件数23件に7件追加と記載）。第1報のURLは特定できず、disclosedは記録していない。合計の記載なし。"
+    },
+    "くふうカンパニー（グループ各社のStudio利用サイト）": {
+      officialUrl: "https://kufu.co.jp/2026/10/16/kufu-announce-3/",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日から10月1日にかけて、同社クラウド環境に第三者による不正アクセス", "@"),
+        E("disclosed", "2026-10-16", "2026.10.16", "@")
+      ],
+      causes: ["vendor"], causeText: "Studio株式会社が、同社クラウド環境への第三者による不正アクセスにより…公表",
+      dataNote: "グループ会社のくふう住まい（https://kufusumai.co.jp/news/5d_1p9gp4）、くふうウェディング（https://wedding.kufu.co.jp/news/40duo1Hl）、Seven Signatures International（https://mgh.sevensignatures.com/posts/xMLHbTM_）も同日付で同じ文面の第一報を出しているため、1件にまとめた。いずれも個人情報漏えいの有無は確認中。くふう住まいの一覧表示は2026.10.15だが、本文は2026年10月16日付。"
+    },
+    "Make Care（訪問看護ステーションくるみ採用サイト／Studio経由）": {
+      officialUrl: "https://kurumi.makecare.co.jp/2026/10/16/security-incident/",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日〜10月1日：第三者による不正アクセス", "@"),
+        E("disclosed", "2026-10-16", "2026.10.16", "@")
+      ],
+      causes: ["vendor"], causeText: "「Studio」への不正アクセス",
+      certainty: "possible"
+    },
+    "タレントブック（コーポレート・サービスサイト／Studio経由）": {
+      officialUrl: "https://talentbook.co.jp/news/topics261016",
+      events: [
+        E("disclosed", "2026-10-16", "2026/10/16", "@")
+      ],
+      causes: ["vendor"], causeText: "同社のクラウド環境への不正アクセス",
+      certainty: "possible"
+    },
+    "SIGQ（コーポレート・Incident Lakeサイト／Studio経由）": {
+      officialUrl: "https://note.com/sigq/n/n8a557b8140f2",
+      events: [
+        E("disclosed", "2026-10-16", "2026年10月16日 14:40", "@")
+      ],
+      causes: ["vendor"], causeText: "一部機能の脆弱性を悪用した不正アクセス",
+      certainty: "possible",
+      dataNote: "公式noteでの公表。"
+    },
+    "全力優（LPサイト／Studio経由）": {
+      officialUrl: "https://z-suguru.co.jp/news/studio/",
+      events: [
+        E("disclosed", "2026-10-16", "2026/10/16", "@")
+      ],
+      causes: ["vendor"], causeText: "クラウド環境への不正アクセス",
+      certainty: "possible"
+    },
+    "かるがもクリニック（Studio経由）": {
+      officialUrl: "https://www.karugamo-cl.jp/news/studio-unauthorized-access",
+      events: [
+        E("disclosed", "2026-10-16", "2026年10月16日", "@")
+      ],
+      causes: ["vendor"], causeText: "一部機能の脆弱性が第三者に悪用され",
+      certainty: "possible"
+    },
+    "アルビレックス新潟レディース（公式サイト／Studio経由）": {
+      officialUrl: "https://albirex-niigata-ladies.com/news/2026-10-26-1930",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日〜10月1日（日本時間）：第三者による不正アクセス", "@"),
+        E("disclosed", "2026-10-16", "2026/10/16", "@")
+      ],
+      causes: ["vendor"], causeText: "Studioの一部機能の脆弱性を悪用",
+      certainty: "possible",
+      dataNote: "運営は株式会社新潟レディースフットボールクラブ。URLに2026-10-26を含むが、ページ掲載日は2026/10/16。"
+    },
+    "琉球新報社（コーポレートサイト／Studio経由）": {
+      officialUrl: "https://corp.ryukyushimpo.jp/news/posts/Er2BSBOp",
+      events: [
+        E("incident", "2026-09-30", "2026 年 9 月 30 日～10 月 1 日にかけて", "@"),
+        E("disclosed", "2026-10-16", "2026/10/16 公開", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセス",
+      certainty: "possible"
+    },
+    "フラー（コーポレートサイト・高専キャラバン／Studio経由）": {
+      officialUrl: "https://www.fuller-inc.com/news/202610-studio-unauthorized-access",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日～10月1日（日本時間）", "@"),
+        E("vendor_notified", "2026-10-16", "2026年10月16日にStudio社より受けました", "@"),
+        E("disclosed", "2026-10-16", "2026年10月16日", "@")
+      ],
+      causes: ["vendor"], causeText: "Studioの一部機能の脆弱性を悪用して第三者がStudio社のクラウド環境に不正アクセス",
+      certainty: "possible",
+      dataNote: "件数はフォーム送信件数で個人の人数とは一致しない場合あり。合計値は記載なし。"
+    },
+    "Fukuoka Growth Next（Studio経由）": {
+      officialUrl: "https://growth-next.com/news/studio-incident-form-data-notice-1",
+      events: [
+        E("incident", "2026-09-30", "同年9月30日（水）から10月1日（木）まで（日本時間）", "@"),
+        E("vendor_notified", "2026-10-16", "2026年10月16日（金）、Studio社から", "@"),
+        E("disclosed", "2026-10-16", "2026.10.16", "@"),
+        E("update", "2026-10-21", "2026年10月21日追記：…第2報にて訂正", "@")
+      ],
+      causes: ["vendor"], causeText: "同社の一部機能の脆弱性を悪用した第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "フォーム別件数のみで合計の記載なし（nは最大のフォーム件数）。10月21日に第2報で対象期間を訂正（第2報ページは未確認）。"
+    },
+    "書店在庫情報プロジェクト（Studio経由）": {
+      officialUrl: "https://info.openbs.jp/news/unauthorized-access-2026-10",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日から10月1日にかけて", "@"),
+        E("vendor_notified", "2026-10-16", "10:42 Studio株式会社からメールにて不正アクセスの報告を受領", "@"),
+        E("disclosed", "2026-10-16", "2026/10/16", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "サイト管理は株式会社カーリル。vendor_notifiedの日付は「2026年10月16日に以下の対応を実施」の対応記録による。"
+    },
+    "LastResort（コーポレートサイト／Studio経由）": {
+      officialUrl: "https://1astresort.com/news-releases/20261016-01",
+      events: [
+        E("disclosed", "2026-10-16", "公開日：2026.10.16", "@"),
+        E("update", "2026-10-28", "2026年10月28日：お問い合わせフォームをご利用いただいた方への通知を実施", "@")
+      ],
+      causes: ["vendor"], causeText: "一部機能の脆弱性を悪用した第三者による不正アクセス",
+      certainty: "possible"
+    },
+    "waypoint venture partners（Studio経由）": {
+      officialUrl: "https://waypoint-vp.com/news_detail/kNnhdhcL",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日〜10月1日：同社のクラウド環境に第三者が不正にアクセス", "@"),
+        E("vendor_notified", "2026-10-16", "2026年10月16日に同社からの連絡を受け", "@"),
+        E("disclosed", "2026-10-16", "2026/10/16 21:47", "@")
+      ],
+      causes: ["vendor"], causeText: "同社のクラウド環境に第三者が不正にアクセス",
+      certainty: "possible"
+    },
+    "Zero-Ten Park（Studio経由）": {
+      officialUrl: "https://zerotenpark.jp/news/unauthorized-access-info",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日から10月1日（日本時間）にかけて", "@"),
+        E("vendor_notified", "2026-10-16", "2026年10月16日、Studio社より当社に本件の連絡がありました", "@"),
+        E("disclosed", "2026-10-16", "2026.10.16", "@")
+      ],
+      causes: ["vendor"], causeText: "Studioの一部機能の脆弱性を悪用した第三者",
+      certainty: "possible",
+      dataNote: "採用応募フォームを含む。履歴書等の添付ファイル本文は対象外（ファイル名のみ）。"
+    },
+    "コミュニティオ（コーポレート・製品紹介サイト／Studio経由）": {
+      officialUrl: "https://communitio.jp/news/studio-unauthorized-access-form-data-leak-1",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日から10月1日（日本時間）にかけて", "@"),
+        E("disclosed", "2026-10-16", "2026年10月16日", "@")
+      ],
+      causes: ["vendor"], causeText: "同社サービスの一部機能の脆弱性を悪用した第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "漏えいの有無・範囲は確認中。TeamSticker等のサービス内データは対象外。"
+    },
+    "シンプルフォーム（Studio経由）": {
+      officialUrl: "https://www.simpleform.co.jp/news/384Piuke",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日〜10月1日に第三者による不正アクセスを受けた", "@"),
+        E("vendor_notified", "2026-10-16", "2026年10月16日、当社が利用するWeb制作プラットフォーム「Studio」", "@"),
+        E("disclosed", "2026-10-16", "2026/10/16", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが発生",
+      certainty: "possible",
+      dataNote: "公開日はページのスクリプトで描画される表示日付（ブラウザで確認）。件数はStudio社調査による2026年10月16日時点の情報。SimpleCheck等のサービスは対象外。"
+    },
+    "静岡新聞社（Studio経由）": {
+      officialUrl: "https://shizushinsbs.co.jp/posts/vFHmnxKp",
+      events: [
+        E("vendor_notified", "2026-10-16", "2026年10月16日、サービス提供元であるStudio株式会社より", "@"),
+        E("disclosed", "2026-10-16", "2026/10/16", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが発生",
+      certainty: "possible",
+      dataNote: "公開日はページのスクリプトで描画される表示日付（ブラウザで確認）。"
+    },
+    "永和システムマネジメント（Studio経由）": {
+      officialUrl: "https://esm.co.jp/news/security-notice-studio-202610",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日〜10月1日：Studio株式会社のクラウド環境に対する", "@"),
+        E("vendor_notified", "2026-10-16", "2026年10月16日：同社が本件を公表し、弊社にも連絡", "@"),
+        E("disclosed", "2026-10-16", "2026年10月16日 第一報を掲載", "@"),
+        E("update", "2026-10-23", "2026年10月23日 第二報として更新", "@"),
+        E("update", "2026-10-26", "2026年10月26日 記載内容の一部を修正", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが発生",
+      certainty: "possible",
+      dataNote: "同一URLが第二報に更新されており、第一報（10月16日）の本文は確認できない。件数は第二報の記載。"
+    },
+    "つなぐる": {
+      officialUrl: "https://tsunagle.co.jp/news/important-info-20261016",
+      events: [
+        E("disclosed", "2026-10-16", "2026.10.16", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者が同社サービスの脆弱性を悪用し、同社が利用するクラウド環境へ不正にアクセス",
+      certainty: "possible"
+    },
+    "Recamp（ハックの隠れ家）": {
+      officialUrl: "https://www.recamp.co.jp/20261016-info",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日から10月1日（日本時間）に行われた", "@"),
+        E("disclosed", "2026-10-16", "2026.10.16", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者が同社サービスの一部機能の脆弱性を悪用し、クラウド環境に不正アクセス",
+      certainty: "possible"
+    },
+    "いちのいち": {
+      officialUrl: "https://ichinoichi.jp/info/Eki4r3t8",
+      events: [
+        E("disclosed", "2026-10-16", "2026/10/16", "@")
+      ],
+      causes: ["vendor"], causeText: "Studio株式会社が提供するサービスの一部機能の脆弱性を第三者が悪用し、同社のクラウド環境へ不正にアクセス",
+      certainty: "possible",
+      dataNote: "対象は2025年2月1日以降のお問い合わせフォーム送信分。"
+    },
+    "イメージ・マジック（3DME）": {
+      officialUrl: "https://3dme.jp/news/studio-incident",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日から10月1日にかけて、第三者が…不正アクセス", "@"),
+        E("disclosed", "2026-10-16", "2026年10月16日 株式会社イメージ・マジック", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者がStudioの一部機能の脆弱性を悪用して同社のクラウド環境に不正アクセス",
+      certainty: "possible",
+      dataNote: "件数はサイト別（合計の記載なし）のフォーム送信件数。nは大きい方の3DME分。"
+    },
+    "事業人": {
+      officialUrl: "https://jigyojin.com/news/P5GrSkfm",
+      events: [
+        E("incident", "2026-09-30", "不正アクセスが確認された期間は2026年9月30日から10月1日", "@"),
+        E("disclosed", "2026-10-16", "2026.10.16", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者が同社サービスの脆弱性を悪用してクラウド環境にアクセス",
+      certainty: "possible",
+      dataNote: "対象期間は2022年2月2日〜2026年10月14日。"
+    },
+    "音楽によるまちづくり推進実行委員会（KURUME MUSIC FES.）": {
+      officialUrl: "https://kurume-mf.com/news-1-1/5J7MndhQ",
+      events: [
+        E("disclosed", "2026-10-16", "2026/10/16", "@")
+      ],
+      causes: ["vendor"], causeText: null,
+      certainty: "possible",
+      dataNote: "事務局は久留米市市民文化部文化振興課。"
+    },
+    "ペンギンカフェ": {
+      officialUrl: "https://x.com/PenguinCafeASGY/status/2111044844554702992",
+      events: [
+        E("disclosed", "2026-10-16", "19:41 · 2026年10月16日", "@")
+      ],
+      causes: ["vendor"], causeText: null,
+      certainty: "possible",
+      dataNote: "公式Xアカウントでの公表。X投稿の日時は閲覧時の表示（日本時間と想定）による。"
+    },
+    "クロカワリュート": {
+      officialUrl: "https://ryutokurokawa.tokyo/notice-20261016",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日〜10月1日　第三者がStudio社のクラウド環境に不正アクセス", "@"),
+        E("vendor_notified", "2026-10-16", "2026年10月16日に同社からの通知により判明", "@"),
+        E("disclosed", "2026-10-16", "2026年10月16日　公開", "@")
+      ],
+      causes: ["vendor"], causeText: null,
+      certainty: "possible",
+      dataNote: "piyologのリンクはXの告知投稿（2026年10月16日15:23）で、詳細は同投稿からリンクされた公式サイトのお知らせによる。対象は2022年5月以降のフォーム利用者。"
+    },
+    "飛企画": {
+      officialUrl: "https://x.com/tobi_kikaku/status/2111041371243164066",
+      events: [
+        E("disclosed", "2026-10-16", "19:27 · 2026年10月16日", "@")
+      ],
+      causes: ["vendor"], causeText: null,
+      certainty: "possible",
+      dataNote: "公式Xアカウントでの公表。X投稿の日時は閲覧時の表示（日本時間と想定）による。"
+    },
+    "泉翔嵐の行政書士事務所": {
+      officialUrl: "https://x.com/fons_izumi/status/2110968415330742708",
+      events: [
+        E("disclosed", "2026-10-16", "14:37 · 2026年10月16日", "@")
+      ],
+      causes: ["vendor"], causeText: null,
+      certainty: "possible",
+      dataNote: "行政書士本人のXアカウントでの公表。個人情報保護委員会へ報告済みとしている。X投稿の日時は閲覧時の表示（日本時間と想定）による。"
+    },
+    "AI彼氏くん（Pictoria）": {
+      officialUrl: "https://ikebo.ai/news/IuqjKOhY",
+      events: [
+        E("disclosed", "2026-10-16", "2026/10/16 20:09", "@")
+      ],
+      causes: ["vendor"], causeText: null,
+      certainty: "possible",
+      dataNote: "piyologのリンクはXの告知投稿（2026年10月17日0:32）。公式サイトのお知らせ（10月16日20:09）を初報とした。アプリ内の会話内容・決済情報は対象外。"
+    },
+    "増田直生のデザイン事務所": {
+      officialUrl: "https://x.com/naokimsd/status/2110917693448806572",
+      events: [
+        E("disclosed", "2026-10-16", "11:16 · 2026年10月16日", "@")
+      ],
+      causes: ["vendor"], causeText: null,
+      certainty: "possible",
+      dataNote: "代表者のXアカウントでの公表（投稿には編集後の新しいバージョンがある）。X投稿の日時は閲覧時の表示（日本時間と想定）による。"
+    },
+    "たかしお": {
+      officialUrl: "https://x.com/takashi_okb313/status/2111027768326795630",
+      events: [
+        E("disclosed", "2026-10-16", "18:33 · 2026年10月16日", "@")
+      ],
+      causes: ["vendor"], causeText: null,
+      certainty: "possible",
+      dataNote: "合同会社たかしお代表者のXアカウントでの公表。X投稿の日時は閲覧時の表示（日本時間と想定）による。"
+    },
+    "OpenStreet（HELLO CYCLING問い合わせフォーム／Studio経由）": {
+      officialUrl: "https://www.openstreet.co.jp/news/usLRgR7Y",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日から10月1日にかけて第三者による不正アクセスが確認", "@"),
+        E("vendor_notified", "2026-10-16", "2026年10月16日、Studio社より…通知を受けました", "@"),
+        E("disclosed", "2026-10-17", "2026年10月17日", "@")
+      ],
+      causes: ["vendor"], causeText: "同社が利用するクラウド環境に第三者による不正アクセスが発生",
+      certainty: "possible",
+      dataNote: "件数は暫定のフォーム保存回答数で、実際の流出件数・人数ではない。"
+    },
+    "スマートラウンド（コーポレートサイト／Studio経由）": {
+      officialUrl: "https://jp.smartround.com/corporate/news/posts/Ab4Kkfrj", listedDate: "2026-10-17",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日から10月1日（日本時間）にかけて", "@"),
+        E("vendor_notified", "2026-10-16", "当社は10月16日にStudio社から連絡を受け", "@"),
+        E("update", "2026-10-17", "更新日 2026/10/17", "@")
+      ],
+      causes: ["vendor"], causeText: "Studioの一部機能の脆弱性を悪用した第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "ページには「更新日 2026/10/17」のみ表示され、初回公開日の記載がないためdisclosedは省略。"
+    },
+    "スマートキャンプ（コーポレート・サービスサイト／Studio経由）": {
+      officialUrl: "https://smartcamp.co.jp/news/information/article/20261017",
+      events: [
+        E("disclosed", "2026-10-17", "2026/10/17", "@"),
+        E("vendor_notified", null, "2026年10月16日10時30分頃、Studio株式会社より", "@")
+      ],
+      causes: ["vendor"], causeText: "同社のクラウド環境において第三者による不正アクセスが発生",
+      certainty: "possible"
+    },
+    "動物園学会（Studio経由）": {
+      officialUrl: "https://zoostudy.jp/news/202610-news-hp",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日から10月1日にかけて、同社のシステムに第三者が不正に入り込みました", "@"),
+        E("disclosed", "2026-10-17", "2026年10月17日", "@")
+      ],
+      causes: ["vendor"], causeText: "同社のシステムに第三者が不正に入り込みました",
+      certainty: "possible"
+    },
+    "YOURBODY（ピラティススタジオ／Studio経由）": {
+      officialUrl: "https://yourbody.jp/news/Bx0bWvsj",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日から10月1日にかけて、同社のシステムに第三者が不正に入り込みました", "@"),
+        E("disclosed", "2026-10-17", "2026年10月17日", "@")
+      ],
+      causes: ["vendor"], causeText: "同社のシステムに第三者が不正に入り込みました",
+      certainty: "possible",
+      dataNote: "運営会社はFLOTO Inc.（フッター表記）。"
+    },
+    "REIONE（Studio経由）": {
+      officialUrl: "https://reione.fun/news/202610incident",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日〜10月1日：Studio株式会社のクラウド環境への第三者による不正アクセスが発生", "@"),
+        E("leak_possible", "2026-10-16", "2026年10月16日：…REIONEが情報流出の可能性を認識", "@"),
+        E("disclosed", "2026-10-17", "2026/10/17", "@")
+      ],
+      causes: ["vendor"], causeText: "Studio株式会社のクラウド環境への第三者による不正アクセス",
+      certainty: "possible"
+    },
+    "MAPPA EXPO運営事務局（公式サイト／Studio経由）": {
+      officialUrl: "https://expo.mappa.co.jp/infomation/QVIAWjFu",
+      events: [
+        E("vendor_notified", "2026-10-16", "Studio株式会社…より、2026年10月16日に報告を受けました", "@"),
+        E("disclosed", "2026-10-17", "2026/10/17", "@")
+      ],
+      causes: ["vendor"], causeText: "同社が利用するクラウド環境への第三者による不正アクセス",
+      certainty: "possible"
+    },
+    "eatas（Studio経由）": {
+      officialUrl: "https://eatas-inc.com/news/466/",
+      events: [
+        E("disclosed", "2026-10-17", "2026/10/17", "@")
+      ],
+      causes: ["vendor"], causeText: "同社の一部機能の脆弱性を悪用した不正アクセス",
+      certainty: "possible",
+      dataNote: "eat+アプリ等の登録情報は対象外。「当社の対応」欄にテンプレートの記載指示文が残ったまま掲載されている。"
+    },
+    "ナッジ（コーポレートサイト／Studio経由）": {
+      officialUrl: "https://nudge.works/news/20261017",
+      events: [
+        E("incident", "2026-09-30", "不正アクセスが確認された期間は、2026年9月30日〜10月1日", "@"),
+        E("vendor_notified", "2026-10-16", "2026年10月16日、Studio株式会社（以下、Studio社）から", "@"),
+        E("disclosed", "2026-10-17", "2026/10/17", "@")
+      ],
+      causes: ["vendor"], causeText: "同社の一部機能の脆弱性を悪用した第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "公開日はページのスクリプトで描画される表示日付（ブラウザで確認）。件数はフォーム別で合計の記載なし（nは最大のフォーム件数）。採用応募は添付ファイル（履歴書等）を含む。"
+    },
+    "FES Global Education（Studio経由）": {
+      officialUrl: "https://fesglobaledu.com/posts/studio-unauthorized-access-2026-10",
+      events: [
+        E("disclosed", "2026-10-17", "2026年10月17日", "@")
+      ],
+      causes: ["vendor"], causeText: "Studio株式会社のシステムに第三者による不正アクセスがあった",
+      certainty: "possible",
+      dataNote: "対象は2026年1月14日〜6月2日の送信分。項目に留学希望の子どもの生年月日を含む。"
+    },
+    "AndGo（Studio経由）": {
+      officialUrl: "https://andgo.co.jp/posts/C6kNHoGC",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日から10月1日にかけて第三者による不正アクセス", "@"),
+        E("disclosed", "2026-10-17", "2026年10月17日", "@")
+      ],
+      causes: ["vendor"], causeText: "「Studio」（運営：Studio株式会社）において、第三者による不正アクセスが発生",
+      certainty: "possible",
+      dataNote: "対象は2022年1月〜2024年1月の問い合わせ。"
+    },
+    "STATION Ai（Studio経由）": {
+      officialUrl: "https://stationai.co.jp/news/mhv1CXpZ",
+      events: [
+        E("vendor_notified", "2026-10-16", "流出した可能性があるとの通知を26年10月16日に受けました", "@"),
+        E("disclosed", "2026-10-17", "2026年10月17日", "@")
+      ],
+      causes: ["vendor"], causeText: null,
+      certainty: "possible",
+      dataNote: "対象はSKIP Focus、Physical AI、開業前のお問い合わせフォーム。通知日は原文で「26年10月16日」と表記。"
+    },
+    "Zenmetry（旧ウェブサイト）": {
+      officialUrl: "https://zenmetry.net/news/studio-unauthorized-access-20261017",
+      events: [
+        E("incident", "2026-09-30", "不正アクセスが確認されている期間は2026年9月30日から10月1日（日本時間）", "@"),
+        E("disclosed", "2026-10-17", "2026年10月17日 株式会社Zenmetry", "@")
+      ],
+      causes: ["vendor"], causeText: "Studio社が利用するクラウド環境への第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "Studioは利用停止済みだが過去の送信情報がStudio環境に保存されていたと記載。"
+    },
+    "アルク社会保険労務士法人": {
+      officialUrl: "https://arcsr.jp/info/024",
+      events: [
+        E("incident", "2026-09-30", "不正アクセスが確認された期間は2026年9月30日～10月1日", "@"),
+        E("vendor_notified", "2026-10-16", "2026年10月16日、…運営会社から、…報告を受けました", "@"),
+        E("disclosed", "2026-10-17", "2026.10.17", "@")
+      ],
+      causes: ["vendor"], causeText: null,
+      certainty: "possible",
+      dataNote: "対象期間・情報はStudioに照会中。"
+    },
+    "YOTA SAKI（ポートフォリオサイト）": {
+      officialUrl: "https://x.com/YOTASAKI_LOG/status/2111458588128674154",
+      events: [
+        E("disclosed", "2026-10-17", "23:05 · 2026年10月17日", "@")
+      ],
+      causes: ["vendor"], causeText: null,
+      certainty: "possible",
+      dataNote: "本人のXアカウントでの公表。X投稿の日時は閲覧時の表示（日本時間と想定）による。"
+    },
+    "ムーサ楽芸室 ときどき喫茶": {
+      officialUrl: "https://x.com/musagakugeicafe/status/2111231828938113355",
+      events: [
+        E("vendor_notified", null, "昨日ムーサのHPを運営しているstudio株式会社へ不正アクセスがあり", "@"),
+        E("disclosed", "2026-10-17", "8:04 · 2026年10月17日", "@")
+      ],
+      causes: ["vendor"], causeText: null,
+      certainty: "possible",
+      dataNote: "公式Xアカウントでの公表。「昨日」連絡があったとするが日付の明記はない。X投稿の日時は閲覧時の表示（日本時間と想定）による。"
+    },
+    "MEDPER（メドパー）": {
+      officialUrl: "https://x.com/medper_maeda/status/2111334110333633006",
+      events: [
+        E("disclosed", "2026-10-17", "14:50 · 2026年10月17日", "@")
+      ],
+      causes: ["vendor"], causeText: null,
+      certainty: "possible",
+      dataNote: "代表取締役のXアカウントでの公表。X投稿の日時は閲覧時の表示（日本時間と想定）による。"
+    },
+    "ごきげん社": {
+      officialUrl: "https://x.com/gokigensha/status/2111230710690550234",
+      events: [
+        E("disclosed", "2026-10-17", "8:00 · 2026年10月17日", "@")
+      ],
+      causes: ["vendor"], causeText: null,
+      certainty: "possible",
+      dataNote: "公式Xアカウントでの公表。X投稿の日時は閲覧時の表示（日本時間と想定）による。"
+    },
+    "渋谷動物医療センター（SAMC／Studio経由）": {
+      officialUrl: "https://samc.co.jp/news/UYq7eT4D",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日から10月1日にかけて、同社のシステムに第三者が不正に入り込みました", "@"),
+        E("disclosed", "2026-10-18", "2026年10月18日", "@")
+      ],
+      causes: ["vendor"], causeText: "同社のシステムに第三者が不正に入り込みました",
+      certainty: "possible"
+    },
+    "THE CLUB golf village": {
+      officialUrl: "https://tcgv.jp/news/sjaxJ6DW",
+      events: [
+        E("disclosed", "2026-10-18", "2026/10/18", "@")
+      ],
+      causes: ["vendor"], causeText: "同社のクラウド環境への第三者による不正アクセス",
+      certainty: "possible"
+    },
+    "秋田県里親支援センターTOMONY": {
+      officialUrl: "https://tomo-ny.com/news/typZnqZQ",
+      events: [
+        E("disclosed", "2026-10-18", "2026/10/18", "@")
+      ],
+      causes: ["vendor"], causeText: null,
+      certainty: "possible"
+    },
+    "江別市（防災情報提供サービス）": {
+      officialUrl: "https://www.city.ebetsu.hokkaido.jp/soshiki/kikitaisaku/157244.html",
+      events: [
+        E("disclosed", "2026-10-19", "掲載日：2026年10月19日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN」のサーバーが不正アクセスを受けました",
+      certainty: "possible",
+      dataNote: "市民への実在カード会社を名乗る不審メール到達を確認。10月16日12時から運用再開。公表日の記載がなく、ページの更新日を disclosed として記録。"
+    },
+    "鹿沼市消防本部（119ライデン・ネット119）": {
+      officialUrl: "https://www.city.kanuma.tochigi.jp/0566/info-0000011589-0.html",
+      events: [
+        E("vendor_notified", "2026-10-19", "令和8年10月19日（月曜日）17時39分 （株）アルカディアより…メール連絡を受ける", "@"),
+        E("disclosed", "2026-10-19", "掲載日 令和8年10月19日", "@")
+      ],
+      causes: ["vendor"], causeText: "不正アクセスによる個人情報漏えいの可能性",
+      certainty: "possible",
+      dataNote: "システム登録者数は119ライデン819人、ネット119 48人（10月19日現在）。"
+    },
+    "加美町（防災メール）": {
+      officialUrl: "https://www.town.kami.miyagi.jp/information/6056.html", listedDate: "2026-10-19",
+      events: [
+        E("update", "2026-10-19", "更新日：2026年10月19日", "@")
+      ],
+      causes: ["vendor"], causeText: "「SPeeCANRAIDEN」が不正アクセスを受けたことが確認されました",
+      certainty: "possible",
+      dataNote: "更新日（10月19日、配信再開の追記後）のみ記載のため初回掲載日不明、disclosedは省略。漏洩可能性のある情報の種別は記載なし。"
+    },
+    "小金井市（安全・安心メール等）": {
+      officialUrl: "https://www.city.koganei.lg.jp/kurashi/472/bohan/bohanservice/anzennansinmail.html", listedDate: "2026-10-19",
+      events: [
+        E("update", "2026-10-19", "更新日：2026年10月19日", "@")
+      ],
+      causes: ["vendor"], causeText: "委託先事業者（…SpeeCAN RAIDEN）が第三者による不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日2026年10月19日のみで、本文に10月15日の報告に基づく配信再開が含まれるため、初回公表日ではないとみなしdisclosedは記録しない。"
+    },
+    "横浜市鶴見区（緊急時情報一斉伝達システム）": {
+      officialUrl: "https://www.city.yokohama.lg.jp/tsurumi/bosai_bohan/saigai/sonae/bousai2026.html",
+      events: [
+        E("disclosed", "2026-10-19", "最終更新日 2026年10月19日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが確認されたため",
+      certainty: "possible",
+      dataNote: "日付は最終更新日（2026年10月19日・運用再開の更新）のみで、初報の日付は不明。"
+    },
+    "横浜市西区（緊急時情報伝達システム）": {
+      officialUrl: "https://www.city.yokohama.lg.jp/nishi/bosai_bohan/saigai/joho/oshirase.html",
+      events: [
+        E("disclosed", "2026-10-19", "最終更新日 2026年10月19日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスを受けたことに伴い",
+      certainty: "possible",
+      dataNote: "日付は最終更新日（2026年10月19日・運用再開の更新）のみで、初報の日付は不明。対象者には個別に通知と記載。"
+    },
+    "佐久市（さくネット電話・FAX配信）": {
+      officialUrl: "https://www.city.saku.nagano.jp/kurashi/iza/bousai_apri/20261014_sakunetto.html",
+      events: [
+        E("disclosed", "2026-10-19", "更新日：2026年10月19日", "@")
+      ],
+      causes: ["vendor"], causeText: "業務委託先である「株式会社アルカデイア」のネットワークが、第三者による不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "disclosedはページの更新日（ページ上の唯一の日付）。incidentは委託先が不審な挙動を確認した日時。"
+    },
+    "橋本市（防災はしもとメール）": {
+      officialUrl: "https://www.city.hashimoto.lg.jp/guide/kikikanri/osirase/23612.html",
+      events: [
+        E("disclosed", "2026-10-19", "更新日：2026年10月19日", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN（運営元・株式会社アルカディア）」が、外部から不正アクセス",
+      certainty: "possible",
+      dataNote: "印字日付は更新日（10月19日追記）のみ。"
+    },
+    "美祢市（NET119緊急通報システム）": {
+      officialUrl: "https://www2.city.mine.lg.jp/information/13766.html",
+      events: [
+        E("disclosed", "2026-10-19", "更新日：2026年10月19日", "@")
+      ],
+      causes: ["vendor"], causeText: "システム業者が不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "ページの日付は更新日（10月19日、新規登録再開の追記後）のみのため、それを公表日として記録。初出はこれより前の可能性がある。"
+    },
+    "小豆島町（防災行政無線メール配信サービス）": {
+      officialUrl: "https://www.town.shodoshima.lg.jp/gyousei/kakuka/somu/2_1/3/9684.html",
+      events: [
+        E("disclosed", "2026-10-19", "更新日：2026年10月19日", "@")
+      ],
+      causes: ["vendor"], causeText: "「Speecan RAIDEN」（株式会社アルカディア提供）が第三者による不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "ページの日付は更新日（10月19日、配信再開予定の追記後）のみのため、それを公表日として記録。初出はこれより前の可能性がある。"
+    },
+    "志摩市（志摩市民病院）": {
+      officialUrl: "https://www.city.shima.mie.jp/kakuka/byoinjigyobu/shimashiminbyoin/9828.html",
+      events: [
+        E("disclosed", "2026-10-19", "更新日：2026年10月19日", "@")
+      ],
+      causes: ["vendor"], causeText: "「Studio」（運営会社：Studio株式会社）において、同社のクラウド環境が第三者による不正アクセスを受けました",
+      certainty: "possible",
+      dataNote: "氏名、メールアドレス、問い合わせ内容。診療業務・電子カルテへの影響はないとしている。"
+    },
+    "福岡市（福岡コンベンションセンター）": {
+      officialUrl: "https://www.city.fukuoka.lg.jp/shisei/kouhou-hodo/hodo-happyo/2026/documents/261019webseisakujigyousyahenofuseiakusesukojinnjyouhourouei.pdf",
+      events: [
+        E("incident", "2026-09-30", "環境内のデータを外部から取得できる状態（９月30日～10月１日）", "@"),
+        E("vendor_notified", "2026-10-16", "当財団は2026年10月16日（金）、Studio株式会社より…連絡を受けた", "@"),
+        E("disclosed", "2026-10-19", "令和8年10月19日 経済観光文化局観光コンベンション部 MICE推進課", "@")
+      ],
+      causes: ["vendor"], causeText: "Studio株式会社は、同社のクラウド環境に第三者が不正アクセスし",
+      certainty: "possible",
+      dataNote: "内訳：施設利用問い合わせ288件、落とし物問い合わせ1,185件、身障者駐車スペース予約766件（いずれも2026年3月10日～10月14日分）。暗号化保存だったが復号鍵も読み出されたとStudio側が説明。福岡市報道資料に財団のお知らせが添付。"
+    },
+    "和歌山市（デジタル人材育成事業・移住プロモーションサイト）": {
+      officialUrl: "https://www.city.wakayama.wakayama.jp/shisei/1022414/1068899/1068855.html",
+      events: [
+        E("disclosed", "2026-10-19", "令和8年10月19日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者がStudioの一部機能の脆弱性を悪用してクラウド環境に不正にアクセスし",
+      certainty: "possible",
+      dataNote: "piyologのリンク先（/shisei/1022414/1068855.html）は404。同じページ番号1068855の現行URLで確認。項目はメールアドレス（移住サイトは居住エリアも）。合計の記載なし。"
+    },
+    "見附市（移住定住サイト「ハピネスみつけ」）": {
+      officialUrl: "https://www.city.mitsuke.niigata.jp/soshiki/19/59434.html",
+      events: [
+        E("incident", "2026-09-30", "令和8年9月30日から10月1日の間、不正アクセスがあり", "@"),
+        E("vendor_notified", "2026-10-16", "令和8年10月16日に、システム運営事業者から見附市に連絡がありました", "@"),
+        E("disclosed", "2026-10-19", "更新日：2026年10月19日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "利用していた外部サービスの運営事業者に対する第三者からの不正アクセスにより",
+      certainty: "possible",
+      dataNote: "令和7年7月16日～令和8年10月5日の問い合わせ分。氏名、会社名、メールアドレス、電話番号、住所、問い合わせ内容。個人13件と企業57件の合計は記載なし。"
+    },
+    "青森市（公民連携ポータル）": {
+      officialUrl: "https://www.city.aomori.aomori.jp/_res/projects/default_project/_page_/001/006/866/1019_01_huseiakusesu.pdf",
+      events: [
+        E("incident", "2026-09-30", "令和8年9月30日〜10月1日：第三者による不正アクセス", "@"),
+        E("disclosed", "2026-10-19", "令和8年10月19日 青森市企画部連携推進課長", "@")
+      ],
+      causes: ["vendor"], causeText: "同社が利用するクラウド環境に第三者による不正アクセスがあり",
+      certainty: "possible",
+      dataNote: "令和5年7月～令和6年1月の提案分。企業・団体名、担当者名、所在地、電話番号、メールアドレス、提案内容等（添付ファイルの中身は含まず）。"
+    },
+    "府中市（広島県）（道の駅びんご府中・移住応援サイトふふふちゅう）": {
+      officialUrl: "https://www.city.fuchu.hiroshima.jp/soshiki/keizaikanko/syokokanko/osirase/11981.html",
+      events: [
+        E("disclosed", "2026-10-19", "更新日：2026年10月19日", "@")
+      ],
+      causes: ["vendor"], causeText: "HP作成プラットフォーム「Studio」への 不正アクセス",
+      dataNote: "このページは道の駅びんご府中分の追加報告で、先に「ふふふちゅう」への影響を知らせていたと記載されているが、その初報ページは見つからなかった。disclosedは道の駅分ページの日付。件数はフォーム利用件数で、漏えいの有無・範囲は調査中。"
+    },
+    "湯沢町（移住定住ポータルサイト・YuzaWork）": {
+      officialUrl: "https://www.town.yuzawa.lg.jp/soshikikarasagasu/kikkakusangyoukankoubu/kikakukankouka/4/4/8110.html",
+      events: [
+        E("vendor_notified", "2026-10-16", "令和8年10月16日、…サービス提供事業者（Studio株式会社）より…発表がありました", "@"),
+        E("disclosed", "2026-10-19", "更新日：2026年10月19日", "@")
+      ],
+      causes: ["vendor"], causeText: "サービス提供事業者（Studio株式会社）より不正アクセスによる個人情報漏えいの可能性がある旨の発表",
+      certainty: "possible",
+      dataNote: "氏名、性別、住所、生年月日、電話番号、メールアドレス、職業、家族構成、管理者用アカウントのパスワード。"
+    },
+    "長崎市（長崎満喫！アウェイ遠征応援キャンペーン）": {
+      officialUrl: "https://www.city.nagasaki.lg.jp/uploaded/life/93532_627532_misc.pdf",
+      events: [
+        E("incident", "2026-09-30", "発生日：令和８年９月３０日", "@"),
+        E("leak_possible", "2026-10-18", "発覚日：令和８年１０月１８日", "@"),
+        E("disclosed", "2026-10-19", "10月19日 公表（市政記者への情報提供）", "@")
+      ],
+      causes: ["vendor"], causeText: "Studio 株式会社に不正アクセスがあり",
+      certainty: "possible",
+      dataNote: "氏名、メールアドレス、問い合わせ内容。市は10月18日に報道でStudioの件を知り、通知メールで該当を確認。"
+    },
+    "新潟市（業務効率専門家派遣事業・在宅テレワーカー育成事業）": {
+      officialUrl: "https://www.city.niigata.lg.jp/shisei/koho/houdou/202610.files/261019_4.pdf",
+      events: [
+        E("disclosed", "2026-10-19", "新潟市報道資料 令和 8 年 10 月 19 日", "@")
+      ],
+      causes: ["vendor"], causeText: "運営会社（Studio 株式会社）が、第三者による不正アクセスにより個人情報等が漏えいした可能性があると発表",
+      certainty: "possible",
+      dataNote: "合計の記載なし。"
+    },
+    "長岡市（移住体験ツアー特設サイト）": {
+      officialUrl: "https://www.city.nagaoka.niigata.jp/shisei/cate02/houdou-shiryou/file/20261019-05.pdf",
+      events: [
+        E("vendor_notified", "2026-10-16", "10月16日（金）午後２時42分…受託事業者から報告を受けました", "@"),
+        E("disclosed", "2026-10-19", "令和８年１０月１９日 長岡市地方創生推進部 政策企画課長", "@")
+      ],
+      causes: ["vendor"], causeText: "ウェブサイト制作サービス提供事業者（Studio 株式会社）のクラウド環境への不正アクセス",
+      certainty: "possible",
+      dataNote: "令和8年9月5日～10月13日の入力分。氏名、メールアドレス、住所（4件は市区町村まで）、家族構成。"
+    },
+    "神奈川県（成長期ベンチャー交流拠点事業）": {
+      officialUrl: "https://www.pref.kanagawa.jp/docs/sr4/prs/r9000706.html",
+      events: [
+        E("vendor_notified", "2026-10-16", "同日21時30分頃、株式会社eiiconから産業振興課あて…報告", "@"),
+        E("disclosed", "2026-10-19", "委託事業における個人情報の漏えいの可能性について（第１報） 2026年10月19日", "@")
+      ],
+      causes: ["vendor"], causeText: "受託事業者が使用していたサービスを運営する事業者が外部から不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "受託事業者はパーソルイノベーション（現在は事業継承した株式会社eiicon）。ページの初期公開日は2026年10月20日、資料日付は10月19日。"
+    },
+    "アクティブリテック（Studio経由）": {
+      officialUrl: "https://active-rt.com/news/unauthorized-access-to-the-website-creation-service-studio/",
+      events: [
+        E("disclosed", "2026-10-19", "2026-10-19", "@")
+      ],
+      causes: ["vendor"], causeText: "同社サービスの一部機能の脆弱性を悪用した第三者による不正アクセス",
+      certainty: "possible"
+    },
+    "シミックHD（CMIC Trust・harmo／Studio経由）": {
+      officialUrl: "https://www.cmicgroup.com/news/notice/2026/20261019/",
+      events: [
+        E("disclosed", "2026-10-19", "2026年10月19日", "@"),
+        E("update", "2026-10-20", "【10月20日更新】…harmo株式会社について調査の結果", "@"),
+        E("update", "2026-10-20", "2026/10/20 Studio株式会社への不正アクセスに伴う個人情報漏えいの可能性について", "https://www.harmo.biz/posts/studio")
+      ],
+      causes: ["vendor"], causeText: "外部サービスにおいて不正アクセスが発生",
+      certainty: "possible",
+      dataNote: "対象はCMIC Trust株式会社とharmo株式会社。harmoは2026/10/20に自社ページ（https://www.harmo.biz/posts/studio）で運輸向け健康支援事業サイトのお問い合わせフォームが対象と公表。piyologでは2社別掲載だが初報が同一のため1件に統合。"
+    },
+    "クラウドワークス（アカデミー・クラウドタウン等／Studio経由）": {
+      officialUrl: "https://crowdworks.co.jp/news/v-2z1klpkvd/",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日から10月1日の間", "@"),
+        E("vendor_notified", "2026-10-16", "当社は2026年10月16日に同社から連絡を受け", "@"),
+        E("disclosed", "2026-10-19", "2026.10.19", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者が同社のクラウド環境に不正にアクセス",
+      certainty: "possible",
+      dataNote: "件数はフォーム送信件数で人数と一致しない場合あり。合計値の記載なし。"
+    },
+    "Voicy（パーソナリティ応募・法人問い合わせ／Studio経由）": {
+      officialUrl: "https://corp.voicy.jp/2026/10/19/11746/",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日から10月1日にかけて", "@"),
+        E("vendor_notified", "2026-10-16", "当社は10月16日に同社から報告を受け", "@"),
+        E("disclosed", "2026-10-19", "2026.10.19", "@"),
+        E("update", "2026-10-20", "(10月20日更新)", "@")
+      ],
+      causes: ["vendor"], causeText: "同社サービスの一部機能の脆弱性が悪用され",
+      certainty: "possible",
+      dataNote: "件数はフォーム送信件数で人数とは一致しない。"
+    },
+    "JIJ（Studio経由）": {
+      officialUrl: "https://www.j-ij.com/ja/news/ImportantNotice-20261019",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日から10月1日（日本時間）", "@"),
+        E("vendor_notified", "2026-10-16", "当社は2026年10月16日、Studioから", "@"),
+        E("disclosed", "2026-10-19", "2026/10/19", "@")
+      ],
+      causes: ["vendor"], causeText: "同サービスが利用するクラウド環境に対し…不正アクセス",
+      certainty: "possible"
+    },
+    "メディアリンク（AIto・DXでんわ等サイト／Studio経由）": {
+      officialUrl: "https://www.medialink-ml.co.jp/news/2026/important-notice-20261019/",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日〜10月1日に発生", "@"),
+        E("vendor_notified", "2026-10-16", "当社は10月16日に同社から連絡を受け", "@"),
+        E("disclosed", "2026-10-19", "2026年10月19日", "@")
+      ],
+      causes: ["vendor"], causeText: "Studioの一部機能の脆弱性を悪用した第三者による不正アクセス",
+      certainty: "possible"
+    },
+    "建設物価調査会（Web建設物価受付／Studio経由）": {
+      officialUrl: "https://kensetu-bukka.studio.site/notice/20261019",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日から10月1日にかけて", "@"),
+        E("disclosed", "2026-10-19", "2026年10月19日", "@")
+      ],
+      causes: ["vendor"], causeText: "クラウドサービス「Studio」が第三者による不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "piyolog掲載URL（https://www.kensetu-bukka.or.jp/notice/18878/）はPHP脆弱性対応で公開停止中のため、同会の暫定サイト（studio.site）上の同日付お知らせで確認。"
+    },
+    "トドケール（コーポレートサイト／Studio経由）": {
+      officialUrl: "https://todoker.com/news/Jrv65COB",
+      events: [
+        E("disclosed", "2026-10-19", "2026年10月19日", "@")
+      ],
+      causes: ["vendor"], causeText: "Studio株式会社のクラウド環境が第三者による不正アクセスを受けた",
+      certainty: "possible"
+    },
+    "Ubie（コーポレートサイト／Studio経由）": {
+      officialUrl: "https://ubie.life/news/notice-20261019",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日から10月1日にかけて", "@"),
+        E("disclosed", "2026-10-19", "2026年10月19日", "@")
+      ],
+      causes: ["vendor"], causeText: "同社が提供するシステムへの不正アクセス",
+      certainty: "possible",
+      dataNote: "件数はフォーム送信件数で人数ではない（コーポレート最大15,243件、サービス最大762件）。"
+    },
+    "スペイシー（GYYM・THE POINT／Studio経由）": {
+      officialUrl: "https://www.spacee.co.jp/news/3050",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日〜10月1日：第三者による不正アクセス", "@"),
+        E("vendor_notified", "2026-10-16", "2026年10月16日、Studio株式会社より本件について報告を受けました", "@"),
+        E("disclosed", "2026-10-19", "2026年10月19日", "@")
+      ],
+      causes: ["vendor"], causeText: "「Studio」（Studio株式会社）への第三者による不正アクセス",
+      certainty: "possible"
+    },
+    "mikan（Studio経由）": {
+      officialUrl: "https://mikan.link/posts/vw-yTBy1",
+      events: [
+        E("incident", "2026-09-30", "不正アクセスが確認されている期間は2026年9月30日〜10月1日", "@"),
+        E("disclosed", "2026-10-19", "2026/10/19", "@")
+      ],
+      causes: ["vendor"], causeText: "Webサイト制作ツール「Studio」が、第三者から不正アクセスを受けました",
+      certainty: "possible",
+      dataNote: "公開日はページのスクリプトで描画される表示日付（ブラウザで確認）。件数は回答件数で人数とは異なる。mikanアプリのシステムは対象外。"
+    },
+    "南房タクシー（Studio経由）": {
+      officialUrl: "https://nanboutaxi.com/news/l-Nq0gAz",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日〜10月1日（現時点で確認されている期間）", "@"),
+        E("vendor_notified", "2026-10-16", "（以下「Studio社」）より、2026年10月16日に", "@"),
+        E("disclosed", "2026-10-19", "2026年10月19日", "@")
+      ],
+      causes: ["vendor"], causeText: "一部機能の脆弱性を悪用した不正アクセスが発生",
+      certainty: "possible"
+    },
+    "X Mile（Studio経由）": {
+      officialUrl: "https://www.xmile.co.jp/news/release328",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日〜10月1日：第三者による不正アクセス", "@"),
+        E("disclosed", "2026-10-19", "公表日：2026年10月19日", "@"),
+        E("update", "2026-10-21", "更新日：2026年10月21日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者が同サービスの一部機能の脆弱性を悪用して同社のクラウド環境に不正にアクセス",
+      certainty: "possible",
+      dataNote: "クロスワーク、ロジポケ等の各サービスの登録情報は対象外。10月16日はStudio社の公表を受けて把握した日。"
+    },
+    "フーディソン（コーポレートサイト／Studio経由）": {
+      officialUrl: "https://foodison.jp/news/202610privacy",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日～10月1日：第三者がStudio社のサービスの脆弱性を悪用", "@"),
+        E("vendor_notified", "2026-10-16", "2026年10月16日：弊社がStudio社から連絡を受領", "@"),
+        E("disclosed", "2026-10-19", "2026/10/19", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者がStudio社のサービスの脆弱性を悪用し、同社のクラウド環境に不正アクセス",
+      certainty: "possible",
+      dataNote: "公開日はページのスクリプトで描画される表示日付（ブラウザで確認）。対象は2023年10月24日〜2026年10月14日の送信分。魚ポチ等の各サービスの顧客情報は対象外。"
+    },
+    "YAMAGATA（コーポレートサイト／Studio経由）": {
+      officialUrl: "https://yamagata-corp.jp/news/20261019",
+      events: [
+        E("incident", "2026-09-30", "不正アクセスを確認できている期間は、2026年9月30日〜10月1日", "@"),
+        E("vendor_notified", "2026-10-16", "2026年10月16日（日本時間）、同社が利用するクラウド環境へ", "@"),
+        E("disclosed", "2026-10-19", "2026.10.19", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者がCMSの一部機能の脆弱性を悪用",
+      certainty: "possible",
+      dataNote: "対象は2025年2月21日〜2026年10月14日の「ご相談・お問い合せ」利用分。項目に住所を含む。人材サービス部サイトは情報漏えいのおそれなしとしている。"
+    },
+    "羅針盤（Studio経由）": {
+      officialUrl: "https://compasscorp.jp/news/1225/",
+      events: [
+        E("vendor_notified", "2026-10-16", "2026年10月16日に運営会社Studio株式会社より連絡を受ける", "@"),
+        E("disclosed", "2026-10-19", "2026年10月19日", "@")
+      ],
+      causes: ["vendor"], causeText: "外部CMSツール「Studio」のシステムの一部脆弱性を悪用した第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "COMPASS STAYは2025年1月15日までの取得分。"
+    },
+    "TRUSTART（Studio経由）": {
+      officialUrl: "https://www.trustart.co.jp/news/20261019",
+      events: [
+        E("incident", "2026-09-30", "不正アクセスが確認されている期間は2026年9月30日〜10月1日", "@"),
+        E("vendor_notified", "2026-10-16", "2026年10月16日、Studio株式会社から当社に対し", "@"),
+        E("disclosed", "2026-10-19", "2026-10-19", "@")
+      ],
+      causes: ["vendor"], causeText: "Studio株式会社のクラウド環境に、第三者による不正アクセスがあった",
+      certainty: "possible",
+      dataNote: "送信期間は2021年12月〜2026年5月。R.E.DATA Plus等の利用者情報は対象外。"
+    },
+    "フィードフォース（アナグラム「TATE-PRO」含む／Studio経由）": {
+      officialUrl: "https://www.feedforce.jp/information/20261019",
+      events: [
+        E("vendor_notified", "2026-10-16", "2026年10月16日（金）、Studio社より", "@"),
+        E("disclosed", "2026-10-19", "2026.10.19", "@")
+      ],
+      causes: ["vendor"], causeText: "同社のクラウド環境が第三者による不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "公開日はページのスクリプトで描画される表示日付（ブラウザで確認）。アナグラム社「TATE-PRO」の顧客分を含む（案内はアナグラム社から）。親会社フィードフォースグループも同日付でまとめのお知らせを掲載（https://feedforcegroup.jp/news/1681/）。"
+    },
+    "リワイア（App Unity／Studio経由）": {
+      officialUrl: "https://rewired.jp/blogs/news/20261019",
+      events: [
+        E("vendor_notified", "2026-10-16", "2026年10月16日（金）、Studio社より", "@"),
+        E("disclosed", "2026-10-19", "2026/10/19", "@")
+      ],
+      causes: ["vendor"], causeText: "同社のクラウド環境が第三者による不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "フィードフォースと共同運営。フォームは2024年2月〜4月頃に利用。"
+    },
+    "アジケ（コーポレートサイト／Studio経由）": {
+      officialUrl: "https://ajike.co.jp/news/notice-studio-unauthorized-access-2026-10",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日〜10月1日：Studio社のクラウド環境への不正アクセス", "@"),
+        E("vendor_notified", "2026-10-16", "当社にも、フォームの送信内容が影響を受けている旨の連絡があり", "@"),
+        E("disclosed", "2026-10-19", "2026-10-19", "@")
+      ],
+      causes: ["vendor"], causeText: "一部機能の脆弱性を悪用した不正アクセスが発生",
+      certainty: "possible",
+      dataNote: "公開日はページのスクリプトで描画される表示日付（ブラウザで確認）。件数は送信件数で人数とは一致しない場合がある。"
+    },
+    "Qand（Studio経由）": {
+      officialUrl: "https://www.qand.co.jp/news/studio-incident-2026",
+      events: [
+        E("incident", "2026-09-30", "不正アクセスが2026年9月30日〜10月1日に確認され", "@"),
+        E("disclosed", "2026-10-19", "公開日 2026.10.19", "@")
+      ],
+      causes: ["vendor"], causeText: "同社の一部機能の脆弱性を悪用した不正アクセス",
+      certainty: "possible",
+      dataNote: "ページはクライアント描画のためブラウザで本文を確認。"
+    },
+    "バイタルリード（TAKUZOサイト）": {
+      officialUrl: "https://takuzo.vitallead.co.jp/posts/YkJmU-8b",
+      events: [
+        E("incident", "2026-09-30", "不正アクセスが確認された期間：2026年9月30日～10月1日（日本時間）", "@"),
+        E("disclosed", "2026-10-19", "2026年10月19日", "@")
+      ],
+      causes: ["vendor", "human"], causeText: "自社としてお問い合わせ対応が終了した段階で、データを速やかに削除していなかったことが、今回の事態を招いた原因",
+      certainty: "possible",
+      dataNote: "自社のデータ未削除を原因として明記（Studio社側の脆弱性悪用による不正アクセスと併記）。配車システム「TAKUZO」への影響はないと記載。"
+    },
+    "Awarefy（コーポレートサイト）": {
+      officialUrl: "https://www.awarefy.com/news/corporate-261019",
+      events: [
+        E("incident", "2026-09-30", "不正アクセスが確認されている期間は2026年9月30日〜10月1日", "@"),
+        E("vendor_notified", "2026-10-16", "2026年10月16日、同サービスを提供するStudio株式会社より", "@"),
+        E("disclosed", "2026-10-19", "【2026年10月19日(月)発表】", "@")
+      ],
+      causes: ["vendor"], causeText: "Studioの一部機能の脆弱性を、第三者に悪用されたことにより生じたもの",
+      certainty: "possible"
+    },
+    "八千代町（防災情報メール）": {
+      officialUrl: "https://www.town.ibaraki-yachiyo.lg.jp/page/page012699.html", listedDate: "2026-10-20",
+      events: [
+        E("update", "2026-10-20", "2026年10月20日", "@")
+      ],
+      causes: ["vendor"], causeText: "「八千代町防災情報メール配信サービス」が不正アクセスを受けたことが判明",
+      certainty: "possible",
+      dataNote: "現在のページは再開のお知らせ（末尾日付2026年10月20日）で初回掲載日不明のためdisclosedは省略。"
+    },
+    "横浜市栄区（緊急時情報伝達システム）": {
+      officialUrl: "https://www.city.yokohama.lg.jp/sakae/bosai_bohan/saigai/bousai/kinnkyujiteishi.html",
+      events: [
+        E("disclosed", "2026-10-20", "最終更新日 2026年10月20日", "@")
+      ],
+      causes: ["vendor"], causeText: "運営する事業者（株式会社アルカディア）が不正アクセスを受けたことに伴い",
+      certainty: "possible",
+      dataNote: "日付は最終更新日（2026年10月20日）のみで、初報の日付は不明。漏洩項目の記載なし。"
+    },
+    "新居浜市（職員参集システム・消防の災害時等メール配信システム）": {
+      officialUrl: "https://www.city.niihama.lg.jp/soshiki/soumu/kojinjyouhou.html",
+      events: [
+        E("disclosed", "2026-10-20", "更新日：2026年10月20日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "運営事業者（株式会社アルカディア）が第三者による不正アクセスを受けました",
+      certainty: "possible",
+      dataNote: "ページの日付は更新日（10月20日、漏えい可能性情報の追加後）のみのため、それを公表日として記録。初出はこれより前の可能性がある。"
+    },
+    "玄海町（災害メールサービス）": {
+      officialUrl: "https://www.town.genkai.lg.jp/soshiki/18/96255.html",
+      events: [
+        E("disclosed", "2026-10-20", "更新日：2026年10月20日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "委託事業者である株式会社アルカディアに対し第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "ページ上の日付は更新日（2026年10月20日、新規登録再開の追記あり）のみ。初報日は不明。"
+    },
+    "埼玉県（ぷらっとさいたま -スマート農業導入ナビ-）": {
+      officialUrl: "https://www.pref.saitama.lg.jp/a0903/news/page/news2026102001.html",
+      events: [
+        E("vendor_notified", "2026-10-20", "令和8年10月20日、株式会社ナレッジクライマーから", "@"),
+        E("leak_possible", "2026-10-20", "個人情報が流出した可能性があると県に報告がありました", "@"),
+        E("disclosed", "2026-10-20", "発表日：2026年10月20日18時", "@")
+      ],
+      causes: ["vendor"], causeText: "ユミルリンク株式会社のサーバーに不正アクセスがあり",
+      certainty: "possible",
+      dataNote: "再委託構造（県→ナレッジクライマー→ユミルリンク）。ページには「Cuenote」の名称はなく「ユミルリンク株式会社のサーバー」と記載。"
+    },
+    "カクヤス（飲食店向けメールマガジン）": {
+      officialUrl: "https://pro-navi.kakuyasu.co.jp/news/261020/unauthorizedaccess/",
+      events: [
+        E("disclosed", "2026-10-20", "2026.10.20（更新日 2026.10.22）", "@"),
+        E("update", "2026-10-22", "更新日 2026.10.22", "@")
+      ],
+      causes: ["vendor"], causeText: null,
+      certainty: "possible",
+      dataNote: "「被害対象に含まれているとの情報は確認できていません」としつつ、「漏えいした可能性がある情報」として項目を列挙した予防的な注意喚起。"
+    },
+    "草津市（草津川跡地公園）": {
+      officialUrl: "https://www.city.kusatsu.shiga.jp/kurashi/toshikeikaku/kusatsugawaatochi/oshirase/kusatsu_river221019.html",
+      events: [
+        E("vendor_notified", "2026-10-16", "令和8年10月16日（金曜日）、草津川跡地公園の指定管理者から市に対して…報告", "@"),
+        E("leak_possible", "2026-10-19", "10月19日（月曜日）に…情報が外部に流出した可能性があることが判明", "@"),
+        E("disclosed", "2026-10-20", "更新日：2026年10月20日", "@")
+      ],
+      causes: ["vendor"], causeText: "「Studio株式会社」のクラウド環境へ第三者が不正アクセスし",
+      certainty: "possible",
+      dataNote: "氏名、住所、電話番号、メールアドレス。"
+    },
+    "新潟県（チャレンジ新潟ポータルサイト）": {
+      officialUrl: "https://www.pref.niigata.lg.jp/sec/sangyoritchi/challenge-niigata-husei.html",
+      events: [
+        E("vendor_notified", "2026-10-19", "10月19日午後3時10分頃、受託事業者から…報告がありました", "@"),
+        E("disclosed", "2026-10-20", "（第1報） 更新日：2026年10月20日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "外部クラウドサービス「Studio」において、不正アクセスが発生し",
+      certainty: "possible",
+      dataNote: "会社名、所属、担当者氏名、メールアドレス、電話番号、問い合わせ本文。"
+    },
+    "千葉県（ちば部ほか委託4事業）": {
+      officialUrl: "https://www.pref.chiba.lg.jp/dejisui/press/2026/20261020incident.html",
+      events: [
+        E("vendor_notified", null, "10月16日（金曜日）から19日（月曜日） 各委託事業者から県に対し、不正アクセスの報告", "@"),
+        E("disclosed", "2026-10-20", "発表日：令和8年10月20日", "@")
+      ],
+      causes: ["vendor"], causeText: "クラウドサービス「Studio」…が、第三者による不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "合計の記載なし。nは最大の単一件数（ちば部の法人登録78事業者）。委託事業者からの報告は10月16日～19日にまたがるため日付はnull。"
+    },
+    "飛騨市（飛騨まんが王国）": {
+      officialUrl: "https://www.city.hida.gifu.jp/soshiki/5/88316.html",
+      events: [
+        E("vendor_notified", "2026-10-16", "令和8年10月16日、…Studio株式会社より…報告がありました", "@"),
+        E("disclosed", "2026-10-20", "掲載日：2026年10月20日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "Studio株式会社より、同社のクラウド環境へ第三者が不正アクセスし",
+      certainty: "possible",
+      dataNote: "氏名、メールアドレス、電話番号。"
+    },
+    "TVer（TVer広告サイト／Studio経由）": {
+      officialUrl: "https://tver.co.jp/news/20261020",
+      events: [
+        E("vendor_notified", "2026-10-16", "2026年10月16日、Studio株式会社より、同社が利用するクラウド環境", "@"),
+        E("disclosed", "2026-10-20", "2026.10.20", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者が「Studio」の一部機能の脆弱性を悪用してクラウド環境に不正アクセス",
+      certainty: "possible",
+      dataNote: "公開日はページのスクリプトで描画される表示日付（ブラウザで確認）。動画配信サービス「TVer」のユーザー情報は含まれない。"
+    },
+    "ガモウ（サービスサイト各種／Studio経由）": {
+      officialUrl: "https://www.gamo.co.jp/news/37855/",
+      events: [
+        E("disclosed", "2026-10-20", "2026.10.20", "@")
+      ],
+      causes: ["vendor"], causeText: "Studio株式会社のシステムに第三者による不正アクセスがあった",
+      certainty: "possible",
+      dataNote: "対象はTokyo Hairdressing Awards、cetera app、OLAPLEX等のサービスサイト。オフィシャルサイトは対象外。"
+    },
+    "リプロネクスト（旧採用サイト・ゴーグルLP／Studio経由）": {
+      officialUrl: "https://lipronext.com/news/release/%E3%80%8Cstudio%E3%80%8D%E3%81%B8%E3%81%AE%E4%B8%8D%E6%AD%A3%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%81%AB%E4%BC%B4%E3%81%86%E6%83%85%E5%A0%B1%E6%B5%81%E5%87%BA%E3%81%AE%E5%8F%AF%E8%83%BD%E6%80%A7/",
+      events: [
+        E("vendor_notified", "2026-10-16", "2026年10月16日に提供元のStudio株式会社から報告を受けました", "@"),
+        E("disclosed", "2026-10-20", "2026.10.20", "@")
+      ],
+      causes: ["vendor"], causeText: "「Studio」において、不正アクセスによる情報流出の可能性がある",
+      certainty: "possible",
+      dataNote: "2025年から利用のGoogleフォーム経由の応募情報は対象外。添付ファイルはファイル名のみ。"
+    },
+    "NTT DXパートナー（Studio経由）": {
+      officialUrl: "https://www.nttdxpn.co.jp/information/notice/l_jurre04u/",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日から10月1日（現時点で確認されている期間）にかけて", "@"),
+        E("disclosed", "2026-10-20", "2026.10.20", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者がStudio株式会社のサービスの一部機能の脆弱性を悪用して同社のクラウド環境に不正にアクセス",
+      certainty: "possible",
+      dataNote: "対象期間は過去送信分すべて。添付ファイルはファイル名のみ。"
+    },
+    "MEME（Studio経由）": {
+      officialUrl: "https://memetech.co.jp/posts/yfeJtJkb",
+      events: [
+        E("disclosed", "2026-10-20", "2026年10月20日（火）", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが発生し、フォームに入力された情報が外部に流出した可能性",
+      certainty: "possible",
+      dataNote: "運営会社は株式会社MEME（memetech.co.jp）。当社における具体的な影響範囲は未確定で、Studio社に調査・確認を依頼中としている。"
+    },
+    "HYPE（TOKIO TOKYOほか／Studio経由）": {
+      officialUrl: "https://tokio.world/contents/webstudio",
+      events: [
+        E("incident", "2026-09-30", "不正アクセスは2026年9月30日から10月1日にかけて発生", "@"),
+        E("disclosed", "2026-10-20", "2026-10-20", "@"),
+        E("update", "2026-10-24", "2026-10-24", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが発生",
+      certainty: "possible",
+      dataNote: "払い戻し受付フォーム（247件）は振込先口座情報（金融機関名・口座番号・名義）を含む。TOKIO TOKYO、CHIC HALL SHIBUYA等11フォーム。"
+    },
+    "Relic（Innovator’s101ほか各サービスサイト／Studio経由）": {
+      officialUrl: "https://relic.co.jp/news/notice/63588/",
+      events: [
+        E("disclosed", "2026-10-20", "2026年10月20日19:00", "@")
+      ],
+      causes: ["vendor"], causeText: "「Studio」（Studio株式会社運営）への第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "対象サービスは20サービス超。件数は2026年10月20日18時時点で、今後追加の可能性があると記載。"
+    },
+    "ポケットサイン": {
+      officialUrl: "https://pocketsign.co.jp/news/130",
+      events: [
+        E("disclosed", "2026-10-20", "2026-10-20", "@")
+      ],
+      causes: ["vendor"], causeText: "外部サービス「Studio」（Studio株式会社提供）において第三者による不正アクセスが発生",
+      certainty: "possible",
+      dataNote: "対象は通常は表示されていなかった非表示フォームの送信情報。通常のお問い合わせフォームや自治体向けアプリの利用者情報は対象外と記載。"
+    },
+    "鹿児島テレビ（KTS住宅フェア）": {
+      officialUrl: "https://www.kts-tv.co.jp/plus/single.html?id=277",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日〜10月1日：Studio株式会社のシステムの脆弱性を悪用し", "@"),
+        E("disclosed", "2026-10-20", "2026年10月20日", "@")
+      ],
+      causes: ["vendor"], causeText: "Studioの一部機能の脆弱性を突いた不正アクセス",
+      certainty: "possible"
+    },
+    "LayerX（コーポレートサイト）": {
+      officialUrl: "https://layerx.co.jp/news/202610201500/",
+      events: [
+        E("incident", "2026-09-30", "不正アクセスは2026年9月30日〜10月1日（現時点で確認されている期間）に発", "@"),
+        E("vendor_notified", "2026-10-16", "2026年10月16日、提供元のStudio株式会社（以下「Studio社」）よ", "@"),
+        E("disclosed", "2026-10-20", "2026.10.20", "@")
+      ],
+      causes: ["vendor"], causeText: "同社のクラウド環境への不正アクセスにより情報が外部に漏えいした可能性",
+      certainty: "possible"
+    },
+    "リヴァ（Google広告LP）": {
+      officialUrl: "https://liva.co.jp/news/25827",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日〜10月1日に第三者による不正アクセスを受けた", "@"),
+        E("vendor_notified", "2026-10-16", "2026年10月16日、弊社が利用するWeb制作プラットフォーム「Studio」", "@"),
+        E("disclosed", "2026-10-20", "2026.10.20", "@")
+      ],
+      causes: ["vendor"], causeText: "Webサイト制作プラットフォーム「Studio」において第三者による不正アクセスが発生",
+      certainty: "possible",
+      dataNote: "ページ表記は「2026.10.20 | 最終更新日:2026.10.21」。"
+    },
+    "Jitera（旧コーポレートサイト）": {
+      officialUrl: "https://jitera.com/ja/news/20261019/",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日から10月1日の間、第三者が同社のクラウド環境に不正にアクセ", "@"),
+        E("vendor_notified", "2026-10-16", "10月16日に同社から連絡を受け", "@"),
+        E("disclosed", "2026-10-20", "2026年10月20日", "@")
+      ],
+      causes: ["vendor"], causeText: "「Studio」において、第三者による不正アクセスが発生",
+      certainty: "possible",
+      dataNote: "URLは20261019だがページの日付表記は2026年10月20日。対象者には個別連絡済みで、連絡が届かない人向けに掲載したと記載。"
+    },
+    "エムクロスエンジニアリング（カバーグリップ）": {
+      officialUrl: "https://storage.googleapis.com/studio-design-asset-files/projects/d7WlJe9ZqV/s-1x1_bfd9131c-304b-4bad-bd4f-f82f3835e114.pdf",
+      events: [
+        E("vendor_notified", "2026-10-16", "2026年10月16日、当社が同ウェブサイトで利用しているウェブサイト制作", "@"),
+        E("disclosed", "2026-10-20", "2026年10月20日", "@")
+      ],
+      causes: ["vendor"], causeText: "同社のクラウド環境において第三者による不正アクセスが発生",
+      certainty: "possible"
+    },
+    "エクサウィザーズ（wellwiz・リハwizほか）": {
+      officialUrl: "https://exawizards.com/archives/33142/",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日から10月1日にかけて、同社のシステムの脆弱性を悪用した不正", "@"),
+        E("disclosed", "2026-10-20", "2026.10.20", "@")
+      ],
+      causes: ["vendor"], causeText: "同社のシステムの脆弱性を悪用した不正アクセス",
+      certainty: "possible",
+      dataNote: "対象者には10月19日に個別通知済みと記載。"
+    },
+    "Amazing Day（DM Boosterほか）": {
+      officialUrl: "https://www.amazingday.co.jp/news/20261020-security-notice.html",
+      events: [
+        E("incident", "2026-09-30", "Studio株式会社のクラウド環境に2026年9月30日〜10月1日に不正アクセ", "@"),
+        E("vendor_notified", "2026-10-16", "弊社は10月16日に同社からの連絡で本件を把握", "@"),
+        E("disclosed", "2026-10-20", "2026年10月20日", "@")
+      ],
+      causes: ["vendor"], causeText: "Studioの一部機能の脆弱性が悪用されたもの",
+      certainty: "possible"
+    },
+    "Medii": {
+      officialUrl: "https://medii.jp/news/20261020",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日〜10月1日：…不正アクセスが発生", "@"),
+        E("vendor_notified", "2026-10-16", "同日、…流出した可能性がある旨の連絡を同社より受領", "@"),
+        E("disclosed", "2026-10-20", "2026/10/20", "@")
+      ],
+      causes: ["vendor"], causeText: null,
+      certainty: "possible",
+      dataNote: "対象は2023年2月20日〜2024年12月27日のお問い合わせフォーム送信分。Medii Eコンサル・Medii Qの会員情報は対象外。"
+    },
+    "ふるさと全国県人会まつり実行委員会": {
+      officialUrl: "https://kenjinkai-matsuri.com/NnfhWpxP/1u2nmIA1",
+      events: [
+        E("disclosed", "2026-10-20", "2026/10/20 07:00", "@")
+      ],
+      causes: ["vendor"], causeText: null,
+      certainty: "possible",
+      dataNote: "事務局の問い合わせ先は読売新聞中部支社総務部。"
+    },
+    "平田タイル": {
+      officialUrl: "https://www.hiratatile.co.jp/news/2O1MHuzy",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日〜10月1日（現時点で確認されている期間）", "@"),
+        E("vendor_notified", "2026-10-16", "2026年10月16日に…報告を受けました", "@"),
+        E("disclosed", "2026-10-20", "2026.10.20", "@")
+      ],
+      causes: ["vendor"], causeText: "一部機能の脆弱性を悪用した不正アクセス",
+      certainty: "possible",
+      dataNote: "対象は2025年1月1日〜2026年10月1日の問い合わせフォーム入力分。"
+    },
+    "船橋市消防局（NET119）": {
+      officialUrl: "https://www.city.funabashi.lg.jp/emergency/news/attention1/p150975.html",
+      events: [
+        E("leak_possible", "2026-10-14", "2026年10月14日15時00分…漏えいした可能性があることを確認いたしました", "@"),
+        E("disclosed", "2026-10-21", "更新日：令和8(2026)年10月21日（水曜日）", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが行われ",
+      certainty: "possible",
+      dataNote: "日付は更新日のみ（初回掲載日は不明）。10月14日15時00分は委託業者からの情報の時刻とも読め、主体がやや曖昧。"
+    },
+    "日野市（メール配信サービス）": {
+      officialUrl: "https://www.city.hino.lg.jp/kurashi/annzen/bousai/mail/1032174.html",
+      events: [
+        E("disclosed", "2026-10-21", "令和8年10月21日", "@")
+      ],
+      causes: ["vendor"], causeText: "サービス提供事業者（事業者名：株式会社アルカディア）に対し、第三者からの不正アクセスが確認されました",
+      certainty: "possible",
+      dataNote: "ページ上の日付は令和8年10月21日のみで、これを公表日として記録。"
+    },
+    "アイ・コミュニケーション（アイ・メール）": {
+      officialUrl: "https://www.sc-p.jp/news/20261021/",
+      events: [
+        E("disclosed", "2026-10-21", "2026.10.21", "@"),
+        E("update", "2026-10-28", "最終更新：2026年10月28日（水）13時00分", "@")
+      ],
+      causes: ["vendor"], causeText: "外部の第三者による不正アクセスが発生しました",
+      certainty: "possible",
+      dataNote: "配信先リストの漏えいは内部調査では未確認だが外部調査継続中としている。"
+    },
+    "大分県（おおいた子育て応援パスポート）": {
+      officialUrl: "https://www.pref.oita.jp/soshiki/12520/kosodateouen-passport.html",
+      events: [
+        E("disclosed", "2026-10-21", "本日（令和８年１０月２１日）", "@"),
+        E("leak_confirmed", null, "「ブラストメール」に保管されていたメールアドレスが外部に漏えいしたことが判明", "https://www.pref.oita.jp/soshiki/12520/kosodateouen-passport2.html"),
+        E("update", "2026-10-23", "更新日：2026年10月23日更新", "https://www.pref.oita.jp/soshiki/12520/kosodateouen-passport2.html")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスを受け",
+      certainty: "confirmed",
+      dataNote: "漏えい判明の日付は第2報に明記なし。"
+    },
+    "香美市（登録制メール）": {
+      officialUrl: "https://www.city.kami.lg.jp/soshiki/10/tourokumail-rouei.html", listedDate: "2026-10-21",
+      events: [
+        E("update", "2026-10-21", "更新日：2026年10月21日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "システムに対する不審なアクセスにより",
+      certainty: "confirmed",
+      dataNote: "公式ページに初回掲載日の記載がないため disclosed は未記録。"
+    },
+    "BS11（BS11マガジン）": {
+      officialUrl: "https://www.bs11.jp/info/",
+      events: [
+        E("disclosed", "2026-10-21", "2026年10月21日（水）", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不審なアクセスが検知され",
+      certainty: "possible",
+      dataNote: "お知らせ一覧ページ内の項目。"
+    },
+    "山梨市（防災防犯メール）": {
+      officialUrl: "https://www.city.yamanashi.yamanashi.jp/soshiki/7/21187.html", listedDate: "2026-10-21",
+      events: [
+        E("update", "2026-10-21", "更新日：2026年10月21日", "@")
+      ],
+      causes: ["vendor"], causeText: "10月21日に第三者による不正アクセスが行われ",
+      certainty: "possible",
+      dataNote: "アルカディア（10月13日発生）の件とは別案件と明記。サービス名の記載はなく運営会社名のみ。公式ページに初回掲載日の記載がないため disclosed は未記録。"
+    },
+    "江戸川区（農の風景コンテスト）": {
+      officialUrl: "https://www.city.edogawa.tokyo.jp/e004/kuseijoho/kohokocho/press/2026/10/1021.html",
+      events: [
+        E("incident", "2026-09-30", "9月30日から10月1日にStudio株式会社が不正アクセスを受ける", "@"),
+        E("vendor_notified", "2026-10-20", "10月20日、受託事業者より区に…連絡があった", "@"),
+        E("disclosed", "2026-10-21", "2026年10月21日 区の委託事業における個人情報漏えいの可能性", "@")
+      ],
+      causes: ["vendor"], causeText: "Studio株式会社が不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "氏名、生年月日、住所、メールアドレス、電話番号。区は10月23日にも同名の発表をしている（別事業か続報かは未確認）。"
+    },
+    "須崎市（釣りバカシティSUSAKI）": {
+      officialUrl: "https://www.city.susaki.lg.jp/life/detail.php?hdnKey=6134",
+      events: [
+        E("incident", "2026-09-30", "令和8年9月30日～10月1日、Studio社のクラウド環境に第三者の不正アクセス", "@"),
+        E("vendor_notified", "2026-10-16", "令和8年10月16日（金）に運営管理事業者より本市に第一報", "@"),
+        E("disclosed", "2026-10-21", "掲載日 ： 2026/10/21", "@")
+      ],
+      causes: ["vendor"], causeText: "サービス提供事業者のクラウド環境に第三者の不正アクセスがあり",
+      certainty: "possible",
+      dataNote: "運営管理事業者は株式会社アイムービック。サイトは非公開化。"
+    },
+    "名古屋市（ICTを活用した禁煙支援事業）": {
+      officialUrl: "https://www.city.nagoya.jp/houdou/3003942/3003949/3006141.html",
+      events: [
+        E("disclosed", "2026-10-21", "報道発表日時：2026年10月21日 午後4時00分", "@")
+      ],
+      causes: ["vendor", "vuln"], causeText: "第三者にStudioの一部機能の脆弱性を悪用され、不正にアクセスされました",
+      certainty: "possible",
+      dataNote: "2025年7月14日～2026年8月31日の申込分。氏名、性別、生年月日、連絡先、住所のほか喫煙・服薬・通院状況、既往歴、アレルギー、妊娠の有無等を含む。"
+    },
+    "山梨県（やまなしキャリアアップ・ユニバーシティ）": {
+      officialUrl: "https://www.pref.yamanashi.jp/release/san-jin/0810/cuu0810.html",
+      events: [
+        E("disclosed", "2026-10-21", "発表日：2026年10月21日", "@")
+      ],
+      causes: ["vendor"], causeText: "Webサイト作成サービス「Studio」の運営会社において、不正アクセスによる情報漏洩の可能性",
+      certainty: "possible",
+      dataNote: "運営受託者はNTT DXパートナー（委託元：山梨県職業能力開発協会）。氏名、電話番号、メールアドレスなど。同県は在宅医療研修会、県政情報の配信、社会人基礎力養成講座でも情報漏洩の可能性を別途発表しているが、本エントリはCUUのみ。"
+    },
+    "Payke（コーポレートサイト）": {
+      officialUrl: "https://payke.co.jp/news/20261021",
+      events: [
+        E("incident", "2026-09-30", "不正アクセスが確認されている期間は2026年9月30日〜10月1日（日本時間）", "@"),
+        E("vendor_notified", "2026-10-16", "当社は同日、Studio社からの連絡を受け", "@"),
+        E("disclosed", "2026-10-21", "2026年10月21日", "@")
+      ],
+      causes: ["vendor"], causeText: "「Studio」の一部機能の脆弱性が第三者に悪用されたもの",
+      certainty: "possible"
+    },
+    "Acompany（コーポレートサイト）": {
+      officialUrl: "https://www.acompany.tech/news/26-1021-2",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日〜10月1日：第三者による不正アクセス", "@"),
+        E("vendor_notified", "2026-10-16", "2026年10月16日：Studio社による公表を受け、当社が本件を把握", "@"),
+        E("disclosed", "2026-10-21", "2026/10/21", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者が同サービスの一部機能の脆弱性を悪用して同社のクラウド環境に不正にアクセス",
+      certainty: "possible"
+    },
+    "たかの橋中央病院": {
+      officialUrl: "https://www.takanobashichuo-hp.jp/news/r_6Pj386",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日〜10月1日（現時点で確認されている期間）", "@"),
+        E("vendor_notified", "2026-10-16", "2026年10月16日に同社のクラウド環境への不正アクセスに伴い", "@"),
+        E("disclosed", "2026-10-21", "2026.10.21", "@")
+      ],
+      causes: ["vendor"], causeText: "一部機能の脆弱性を悪用した不正アクセス",
+      certainty: "possible"
+    },
+    "SODEN（コーポレートサイト）": {
+      officialUrl: "https://soden-inc.jp/news/lvJ1UIly",
+      events: [
+        E("incident", "2026-09-30", "不正アクセスが確認されている期間：2026年9月30日〜10月1日（日本時間）", "@"),
+        E("vendor_notified", "2026-10-16", "2026年10月16日、Studio社より、同社のクラウド環境に不正アクセス", "@"),
+        E("disclosed", "2026-10-21", "2026.10.21", "@")
+      ],
+      causes: ["vendor"], causeText: "Studioの一部機能の脆弱性を、第三者に悪用されたもの",
+      certainty: "possible"
+    },
+    "ベイジ（採用サイト）": {
+      officialUrl: "https://baigie.me/news/20261021-9254/",
+      events: [
+        E("incident", "2026-09-30", "不正アクセスが確認された期間：2026年9月30日〜10月1日", "@"),
+        E("disclosed", "2026-10-21", "2026年10月21日", "@")
+      ],
+      causes: ["vendor"], causeText: "外部サービス「Studio」（提供：Studio株式会社）において、第三者による",
+      certainty: "possible",
+      dataNote: "当社データが実際に流出したかは確認中と記載。対象の可能性がある人へ2026年10月20日にメール連絡。"
+    },
+    "Sally（コーポレートサイト）": {
+      officialUrl: "https://sally-inc.jp/news/2026-10-incident",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日から10月1日にかけて不正アクセスが発生", "@"),
+        E("vendor_notified", "2026-10-16", "10月16日に報告を受けました", "@"),
+        E("disclosed", "2026-10-21", "2026年10月21日 株式会社Sally", "@")
+      ],
+      causes: ["vendor"], causeText: "Studio株式会社のクラウド環境に、2026年9月30日から10月1日にかけて不正アクセスが発生",
+      certainty: "possible",
+      dataNote: "同じお知らせで別件（2026年10月14日に社員メールアカウントが不正利用され、ウズのお問い合わせ管理システムにログインされた件、544名）も公表。本エントリはStudio関連分のみ。"
+    },
+    "クレシード（テリロジーHD子会社）": {
+      officialUrl: "https://www.terilogy-hd.com/news/8147.html",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日から10月1日の間、第三者が…不正にアクセス", "@"),
+        E("vendor_notified", "2026-10-16", "2026年10月16日、…Studio株式会社から、…連絡を受けました", "@"),
+        E("disclosed", "2026-10-21", "2026年10月21日", "@")
+      ],
+      causes: ["vendor"], causeText: null,
+      certainty: "possible",
+      dataNote: "親会社テリロジーホールディングスがPDFで公表。求人応募フォームでは生年月日・住所・学歴・経歴等を含む。"
+    },
+    "美唄市消防本部（参集メール・Net119）": {
+      officialUrl: "https://www.city.bibai.hokkaido.jp/soshiki/35/32677.html",
+      events: [
+        E("vendor_notified", "2026-10-13", "令和8年10月13日…運営事業者から…報告", "@"),
+        E("disclosed", "2026-10-22", "更新日：2026年10月22日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "同社のサーバーに対して第三者による不正アクセスが発生",
+      certainty: "possible",
+      dataNote: "10月22日追記で33名を公表。初報の掲載日記載なし。公表日の記載がなく、ページの更新日を disclosed として記録。"
+    },
+    "牧之原市（まきのはらTeaメール）": {
+      officialUrl: "https://www.city.makinohara.shizuoka.jp/soshiki/4/63180.html",
+      events: [
+        E("disclosed", "2026-10-22", "更新日：2026年10月22日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "管理会社において、不正アクセスが確認されました",
+      certainty: "possible",
+      dataNote: "disclosedはページの更新日（ページ上の唯一の日付）。本文は「管理会社」とのみ記載（アルカディアのお知らせへリンク）。10月22日に登録者へ架空請求メールが届いた事案の記載あり。"
+    },
+    "富山県（とやま出会い応援ポータル）": {
+      officialUrl: "https://www.pref.toyama.jp/101721/20261022press.html",
+      events: [
+        E("disclosed", "2026-10-22", "発表日 2026年10月22日（木曜日）", "@")
+      ],
+      causes: ["vendor"], causeText: "外部の第三者による不正アクセスが行われ、個人情報が漏洩した可能性があります",
+      certainty: "possible"
+    },
+    "2027年国際園芸博覧会協会（GREEN×EXPO 2027 ボランティア）": {
+      officialUrl: "https://expo2027yokohama.or.jp/assets/docs/news/3a26bed2389e543c368d5e74a069eaf1b7ff0369.pdf",
+      events: [
+        E("disclosed", "2026-10-22", "2026年10月22日", "@")
+      ],
+      causes: ["vendor"], causeText: "不正アクセス及び情報の持ち出しが確認されたとの報告",
+      certainty: "possible",
+      dataNote: "ボランティア登録者が漏えい対象かは未確認としている。神奈川県も同件を記者発表しているが県保有情報ではないとしている。"
+    },
+    "名取市（なとりコイン・アンケート回答者向けメール配信）": {
+      officialUrl: "https://www.city.natori.miyagi.jp/uploaded/attachment/26494.pdf",
+      events: [
+        E("vendor_notified", "2026-10-21", "令和 8 年 10 月 21 日、システム提供元から…報告を受けました", "@"),
+        E("disclosed", "2026-10-22", "令和 8 年 10 月 22 日", "@")
+      ],
+      causes: ["vendor"], causeText: "同社システムのクラウド環境への不正アクセスにより",
+      certainty: "possible",
+      dataNote: "HTML版: https://www.city.natori.miyagi.jp/page/46938.html 。第2報あり。"
+    },
+    "鹿児島市（子育て情報配信メール「すくすくメール」）": {
+      officialUrl: "https://www.city.kagoshima.lg.jp/soumu/soumu/soumu/documents/roueikouhyou31_1.pdf",
+      events: [
+        E("vendor_notified", "2026-10-22", "令和８年１０月２２日（木）１４時３７分…委託先（渕上印刷株式会社）を通じて", "@"),
+        E("disclosed", "2026-10-22", "【公表年月日】： 令和８年１０月２２日", "@")
+      ],
+      causes: ["vendor"], causeText: "システム運営会社に第三者による不正アクセスが行われたもの",
+      certainty: "possible",
+      dataNote: "公表資料にサービス名「ブラストメール」の記載はなく運営会社名のみ。お知らせページ: https://www.city.kagoshima.lg.jp/ribonkan/sukusuku.html"
+    },
+    "紀宝町（移住定住サポートデスク）": {
+      officialUrl: "https://www.town.kiho.lg.jp/news/54025/", listedDate: "2026-10-22",
+      events: [
+        E("update", "2026-10-22", "更新日付：2026年10月22日", "@")
+      ],
+      causes: ["vendor"], causeText: "外部の第三者が同社のAPI用サーバー2台に侵入してコマンドを実行し",
+      certainty: "possible",
+      dataNote: "公式ページに初回掲載日の記載がないため disclosed は未記録。"
+    },
+    "ギフティ（旅先納税ID・giftee Benefitほか）": {
+      officialUrl: "https://giftee.co.jp/press/news/info20261026/",
+      events: [
+        E("disclosed", "2026-10-22", "【2026年10 月22日（木）公開】", "@"),
+        E("update", "2026-10-23", "【2026年10 月23日（ 金）公開】", "@"),
+        E("update", "2026-10-26", "2026年10月26日（月）追記", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが発生し",
+      certainty: "possible",
+      dataNote: "第1報URL(info20261022)は現在404のため第3報ページ（第1報本文を含む）を採用。288件・344件に同社契約は含まれないとしている。"
+    },
+    "京都府・京都市（WMG2027関西 京都エリアボランティア）": {
+      officialUrl: "https://www.pref.kyoto.jp/press/documents/2026102211.pdf",
+      events: [
+        E("disclosed", "2026-10-22", "令和 8 年 10 月 22 日", "@")
+      ],
+      causes: ["vendor"], causeText: "外部の第三者から不正アクセスされ",
+      certainty: "possible",
+      dataNote: "府・市の実行委員会による同時資料配付。京都市版: https://www.city.kyoto.lg.jp/bunshi/page/0000359579.html"
+    },
+    "和歌山県（わかやま移住PRマガジン）": {
+      officialUrl: "https://www.pref.wakayama.lg.jp/chiji/press/08/d00223176_d/fil/1021_2.pdf",
+      events: [
+        E("vendor_notified", "2026-10-22", "10/22 9:15頃 委託事業者より、県あて…報告あり", "@"),
+        E("disclosed", "2026-10-22", "令和８年１０月２２日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者の不正アクセス",
+      certainty: "possible"
+    },
+    "周南市（周南市ファンクラブメールマガジン）": {
+      officialUrl: "https://www.city.shunan.lg.jp/soshiki/101/153883.html", listedDate: "2026-10-22",
+      events: [
+        E("update", "2026-10-22", "更新日：2026年10月22日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスを受け、個人情報が漏洩しました",
+      certainty: "possible",
+      dataNote: "本文冒頭は「漏洩しました」、登録情報の項は「漏洩の可能性が疑われる」と記載。公式ページに初回掲載日の記載がないため disclosed は未記録。"
+    },
+    "埼玉県（保育士応援ポータル「埼玉保育ナビ」）": {
+      officialUrl: "https://www.pref.saitama.lg.jp/b0616/news/page/news2026102202.html",
+      events: [
+        E("vendor_notified", "2026-10-21", "令和8年10月21日（水曜日）、埼玉県社会福祉協議会から", "@"),
+        E("disclosed", "2026-10-22", "発表日：2026年10月22日16時", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社ラクスライトクラウドのサーバーに不正アクセスがあり",
+      certainty: "possible",
+      dataNote: "公表文にサービス名の記載はなく運営会社名のみ。"
+    },
+    "仙台こども財団": {
+      officialUrl: "https://sendai-kodomo.jp/news/detail---id-453.html",
+      events: [
+        E("vendor_notified", "2026-10-21", "2026年10月21日（水）、ブラストメールの運営会社から", "@"),
+        E("disclosed", "2026-10-22", "2026.10.22", "@")
+      ],
+      causes: ["vendor"], causeText: "外部の第三者による不正アクセスが発生し",
+      certainty: "possible"
+    },
+    "クラシコム（北欧、暮らしの道具店）": {
+      officialUrl: "https://hokuohkurashi.com/note/1000001058",
+      events: [
+        E("vendor_notified", "2026-10-22", "本日10月22日、ブラストメールの運営会社より続報で…外部に漏えいしたとの報告", "@"),
+        E("disclosed", "2026-10-22", "同日19時07分：…公表（本お知らせ）", "@"),
+        E("update", "2026-10-29", "【2026年10/29 17:45  追記】", "@")
+      ],
+      causes: ["vendor"], causeText: "ブラストメール」で不審なアクセスが検知され",
+      certainty: "confirmed",
+      dataNote: "10月21日にメルマガ一時停止のお知らせ（https://kurashi.com/news/16903 ほか）あり。"
+    },
+    "茨城県（移住に係るメールマガジン）": {
+      officialUrl: "https://iju-ibaraki.jp/information/news/35001.html",
+      events: [
+        E("disclosed", "2026-10-22", "2026.10.22", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスを受け",
+      certainty: "possible"
+    },
+    "医書ジェーピー（メールニュース）": {
+      officialUrl: "https://isho.jp/maintenance/news.html",
+      events: [
+        E("disclosed", "2026-10-22", "2026年10月22日（第一報）", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスがあり",
+      certainty: "possible"
+    },
+    "マヒトデザイン（メールマガジン）": {
+      officialUrl: "https://mhtdesign.net/news/20261022",
+      events: [
+        E("disclosed", "2026-10-22", "※以下は、2026年10月22日にお知らせした内容です。", "@"),
+        E("update", "2026-10-30", "【2026年10月30日 9時15分更新】", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスがあり",
+      certainty: "possible",
+      dataNote: "10月30日時点で流出は確認されていないとしている。"
+    },
+    "テクノル（MR-EPメールニュース）": {
+      officialUrl: "https://mrb-security.jp/outline/newslist/mr-epweb202610220956",
+      events: [
+        E("disclosed", "2026-10-22", "投稿日 : 2026.10.22", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセ",
+      certainty: "possible",
+      dataNote: "社名はページのコピーライト表記（株式会社テクノル）による。"
+    },
+    "サンライズプロモーション（メールマガジン）": {
+      officialUrl: "https://sunrisetokyo.com/news/37741/",
+      events: [
+        E("disclosed", "2026-10-22", "2026/10/22", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが発生いたしました",
+      certainty: "possible"
+    },
+    "UDS（コーポレートニュースレター）": {
+      officialUrl: "https://uds-net.co.jp/news/blastmail-1/",
+      events: [
+        E("vendor_notified", "2026-10-21", "10月21日(水)…株式会社ラクスライトクラウドより", "@"),
+        E("disclosed", "2026-10-22", "2026.10.22", "@")
+      ],
+      causes: ["vendor"], causeText: "同社システムに対する不審なアクセスを検知し",
+      certainty: "possible",
+      dataNote: "自社アカウントの個人情報漏えいの報告は受けていないとしている。"
+    },
+    "BICSI日本支部（メールマガジン）": {
+      officialUrl: "https://www.bicsi.jp/news/20261022",
+      events: [
+        E("disclosed", "2026-10-22", "2026.10.22", "@"),
+        E("update", "2026-10-27", "【2026.10.27追記】", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが発生し",
+      certainty: "possible",
+      dataNote: "10月27日追記で現時点では漏えい対象に含まれていないとしている。"
+    },
+    "延岡市（商工観光文化部メール配信）": {
+      officialUrl: "https://www.city.nobeoka.miyazaki.jp/soshiki/43/52675.html", listedDate: "2026-10-22",
+      events: [
+        E("update", "2026-10-22", "更新日：2026年10月22日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者よる不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "公式ページに初回掲載日の記載がないため disclosed は未記録。"
+    },
+    "コグニビジョン（コグニソフト部品情報配信）": {
+      officialUrl: "https://www.cognivision.jp/news/2026/post_284/",
+      events: [
+        E("disclosed", "2026-10-22", "2026/10/22", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが発生し",
+      certainty: "possible"
+    },
+    "えちごトキめき鉄道": {
+      officialUrl: "https://www.echigo-tokimeki.co.jp/information/detail?id=2673",
+      events: [
+        E("vendor_notified", "2026-10-21", "2026年10月21日（水）、ブラストメールの運営会社から", "@"),
+        E("disclosed", "2026-10-22", "2026-10-22", "@")
+      ],
+      causes: ["vendor"], causeText: "外部の第三者による不正アクセスが発生し",
+      certainty: "possible"
+    },
+    "鹿児島市スポーツ振興協会（かごスポ）": {
+      officialUrl: "https://www.kago-spo.or.jp/important/29890/",
+      events: [
+        E("disclosed", "2026-10-22", "2026年10月22日", "@")
+      ],
+      causes: ["vendor"], causeText: "外部の第三者による不正アクセスが発生し",
+      certainty: "possible"
+    },
+    "ナレッジリーン（エコ・プラネットメーリングマガジン）": {
+      officialUrl: "https://www.kmri.co.jp/column/news/blastmail-security-notice",
+      events: [
+        E("disclosed", "2026-10-22", "2026.10.22", "@"),
+        E("update", "2026-10-29", "【第２報】2026年10月29日現在", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "第2報時点で個別連絡は受けていないとしている。"
+    },
+    "ラプラス・システム（メールマガジン・障害通知）": {
+      officialUrl: "https://www.lapsys.co.jp/topics/2026/10/post-379.html",
+      events: [
+        E("disclosed", "2026-10-22", "2026/10/22", "@"),
+        E("update", "2026-10-26", "※※2026/10/26 10:00更新※※", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが発生いたしました",
+      certainty: "possible",
+      dataNote: "10月26日更新で漏えいは確認されていないとしている。"
+    },
+    "私のアクション！未来のNAGANO創造県民会議": {
+      officialUrl: "https://www.nagano-action.jp/topics/710/",
+      events: [
+        E("disclosed", "2026-10-22", "2026.10.22", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスを受け",
+      certainty: "possible"
+    },
+    "日本経営協会（事業情報配信）": {
+      officialUrl: "https://www.noma.or.jp/news/detail.html?dispmid=528&itemid=103",
+      events: [
+        E("disclosed", "2026-10-22", "2026年10月22日", "@")
+      ],
+      causes: ["vendor"], causeText: "不正アクセスを受け、個人情報が漏洩した可能性",
+      certainty: "possible"
+    },
+    "デイトナ（DIOS取引先・出展社向けメール）": {
+      officialUrl: "https://www.release.tdnet.info/inbs/140120261022554714.pdf",
+      events: [
+        E("disclosed", "2026-10-22", "2026 年 10 月 22 日", "@")
+      ],
+      causes: ["vendor"], causeText: "メール配信サービスへの不正アクセス",
+      certainty: "possible",
+      dataNote: "登録情報の漏洩は確認されていないとしている。"
+    },
+    "大阪中小企業投資育成（メールマガジン）": {
+      officialUrl: "https://www.sbic-wj.co.jp/news/2026/26557/",
+      events: [
+        E("disclosed", "2026-10-22", "2026.10.22", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "登録者の個人情報漏洩の連絡は受けていないとしている。"
+    },
+    "ときわ総合サービス（メールマガジン）": {
+      officialUrl: "https://www.tokiwa-ss.co.jp/journal/news/post-77.html",
+      events: [
+        E("vendor_notified", "2026-10-21", "2026年10月21日、ラクスライトクラウド社から", "@"),
+        E("disclosed", "2026-10-22", "26.10.22", "@")
+      ],
+      causes: ["vendor"], causeText: "同社システムのクラウド環境への不正アクセスにより",
+      certainty: "possible"
+    },
+    "岡山県（天神山文化プラザ）": {
+      officialUrl: "https://www.pref.okayama.jp/site/presssystem/1062550.html",
+      events: [
+        E("vendor_notified", "2026-10-16", "令和８年１０月１６日（金）、…指定管理者…から県に対し…報告", "https://www.pref.okayama.jp/uploaded/life/1062550_10298808_misc.pdf"),
+        E("disclosed", "2026-10-22", "2026年10月22日更新／文化振興課", "@")
+      ],
+      causes: ["vendor"], causeText: "Studio株式会社（東京都）のクラウド環境において、第三者による不正アクセスが発生した",
+      certainty: "possible",
+      dataNote: "氏名、メールアドレス、電話番号、問い合わせ内容等。添付PDFの日付も令和8年10月22日。"
+    },
+    "広島県（スポーツ能力発見会）": {
+      officialUrl: "https://www.pref.hiroshima.lg.jp/uploaded/attachment/686793.pdf",
+      events: [
+        E("incident", "2026-09-30", "9 月 30 日(水)～10 月１日(木) 【事案発生】", "@"),
+        E("vendor_notified", "2026-10-21", "10 月 21 日(水)17:30 …受託者から広島県（当課）に対し…報告", "@"),
+        E("disclosed", "2026-10-22", "資料提供 令和８年 10 月 22 日", "@")
+      ],
+      causes: ["vendor"], causeText: "同サービスの一部機能の脆弱性を悪用した不正アク セスが発生",
+      certainty: "possible",
+      dataNote: "県事業分は2件。受託者HP全体で流出の可能性がある件数は59件。"
+    },
+    "田村市（地域おこし協力隊・お試し移住ほか）": {
+      officialUrl: "https://www.city.tamura.lg.jp/soshiki/2/assets/10%E6%9C%8822%E6%97%A5%E3%80%80%E5%8F%97%E8%A8%97%E4%BA%8B%E6%A5%AD%E8%80%85%E3%81%8C%E5%88%A9%E7%94%A8%E3%81%97%E3%81%9F%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%B8%E3%81%AE%E4%B8%8D%E6%AD%A3%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%81%AB%E4%BC%B4%E3%81%86%E5%80%8B%E4%BA%BA%E6%83%85%E5%A0%B1%E6%BC%8F%E3%81%88%E3%81%84%E3%81%AE%E5%8F%AF%E8%83%BD%E6%80%A7%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6.pdf",
+      events: [
+        E("vendor_notified", null, "受託事業者からの報告を受けた日：令和８年 10 月 19 日、20 日", "@"),
+        E("disclosed", "2026-10-22", "2026 年 10 月 22 日", "@")
+      ],
+      causes: ["vendor"], causeText: "ウェブサイト作成サービス「Studio」に不正アクセスがあり",
+      certainty: "possible",
+      dataNote: "報告受領日は10月19日と20日の2日に分かれるため、vendor_notifiedの日付はnull。項目は氏名、住所、メールアドレス、電話番号、問合せ内容。"
+    },
+    "スカイディスク（採用ページ）": {
+      officialUrl: "https://skydisc.jp/information/4968/",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日〜10月1日に同社サービスの脆弱性を悪用した不正アクセス", "@"),
+        E("vendor_notified", "2026-10-16", "2026年10月16日、当社が採用ページで利用しているWebサイト制作サービス", "@"),
+        E("disclosed", "2026-10-22", "2026.10.22", "@")
+      ],
+      causes: ["vendor"], causeText: "同社サービスの脆弱性を悪用した不正アクセス",
+      certainty: "possible"
+    },
+    "RECEPTIONIST（旧コーポレートサイト）": {
+      officialUrl: "https://receptionist.co.jp/news/20261022-notice",
+      events: [
+        E("incident", "2026-09-30", "不正アクセスの期間は2026年9月30日から10月1日（日本時間）", "@"),
+        E("vendor_notified", "2026-10-16", "2026年10月16日、Studio株式会社より", "@"),
+        E("disclosed", "2026-10-22", "2026.10.22", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者が同社サービスの一部機能の脆弱性を悪用して不正にアクセス",
+      certainty: "possible"
+    },
+    "ユウクリ（e-Create Space）": {
+      officialUrl: "https://www.y-create.co.jp/blog/recruitment/1990.html",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日から10月1日の間、第三者が同社のクラウド環境に不正にアクセ", "@"),
+        E("vendor_notified", "2026-10-16", "当社は2026年10月16日に同社から連絡を受け", "@"),
+        E("disclosed", "2026-10-22", "2026年10月22日", "@")
+      ],
+      causes: ["vendor"], causeText: "ウェブサイト制作サービス「Studio」への第三者による不正アクセス",
+      certainty: "possible"
+    },
+    "MCAT（コワーキングスペースarica）": {
+      officialUrl: "https://www.mcat.co.jp/%E3%81%8A%E8%A9%AB%E3%81%B3%E3%81%A8%E3%81%94%E5%A0%B1%E5%91%8A%EF%BC%9Aweb%E3%82%B5%E3%82%A4%E3%83%88%E5%88%B6%E4%BD%9C%E3%83%84%E3%83%BC%E3%83%AB%E3%80%8Cstudio%E3%80%8D%E3%81%B8%E3%81%AE%E4%B8%8D/",
+      events: [
+        E("incident", "2026-09-30", "2026 年9月30日〜10月1日 ：第三者による不正アクセス（Studioが確", "@"),
+        E("disclosed", "2026-10-22", "2026年10月22日", "@")
+      ],
+      causes: ["vendor"], causeText: "外部サービス「Studio」（運営：Studio株式会社）において、第三者による",
+      certainty: "possible",
+      dataNote: "個人会員515件はStudio上のデータを事前削除済みのため流出の可能性は極めて低いとし、流出の可能性を否定できないのは法人会員5件と記載。"
+    },
+    "イネサス（ウェルサポート）": {
+      officialUrl: "https://www.ymfg.co.jp/files/51baf416c479188a7536d0d163cd6551f441d20d7e9db3f9a4d65aa77afceb7e",
+      events: [
+        E("vendor_notified", "2026-10-19", "２０２６年１０月１９日、…Ｌｅａｆｅａ社を通じて…報告を受けました", "@"),
+        E("disclosed", "2026-10-22", "２０２６年１０月２２日", "@")
+      ],
+      causes: ["vendor"], causeText: "Ｓｔｕｄｉｏ社システムの脆弱性を悪用したクラウド環境への不正アクセス",
+      certainty: "possible",
+      dataNote: "山口フィナンシャルグループ・山口銀行・もみじ銀行・北九州銀行・イネサスの連名で公表。アプリ開発会社Leafea経由の連鎖。アプリと新規申込を一時停止。当社顧客情報が含まれるかは確認中。"
+    },
+    "稚内市（子ども安全育成センター不審者情報メール）": {
+      officialUrl: "https://www.city.wakkanai.hokkaido.jp/kyoiku/seishonenikusei/ikuseikatsudo/haishinstop.html?u=1791972971",
+      events: [
+        E("disclosed", "2026-10-23", "更新日：2026年10月23日", "@")
+      ],
+      causes: ["vendor"], causeText: "委託事業者（株式会社アルカディア）が運営する配信サービスに不正アクセス",
+      certainty: "possible",
+      dataNote: "配信停止は令和８年10月14日から、10月23日再開。公表日の記載がなく、ページの更新日を disclosed として記録。"
+    },
+    "南魚沼市（防災メール）": {
+      officialUrl: "https://www.city.minamiuonuma.niigata.jp/docs/86988.html",
+      events: [
+        E("vendor_notified", "2026-10-13", "10月13日(火曜日)、…株式会社アルカディアから情報提供がありました", "@"),
+        E("disclosed", "2026-10-23", "掲載日:令和8年10月23日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN」が不正アクセスを受けたことに伴い",
+      certainty: "possible",
+      dataNote: "ページの日付は「令和8年10月23日更新」（配信再開）のみで、初報日は不明。"
+    },
+    "長浜市（防災コール）": {
+      officialUrl: "https://www.city.nagahama.lg.jp/0000017317.html", listedDate: "2026-10-23",
+      events: [
+        E("update", "2026-10-23", "公開日：2026年10月23日（第2報）", "@")
+      ],
+      causes: ["vendor"], causeText: "サービス提供事業者である株式会社アルカディアにおいて、不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "第2報ページ（公開日10月23日）に第1報を併載。第1報の日付は表示なしのためdisclosedは記録せず。"
+    },
+    "紀の川市（メール配信サービス）": {
+      officialUrl: "https://www.city.kinokawa.lg.jp/003/mailhaishin.html",
+      events: [
+        E("disclosed", "2026-10-23", "最終更新日:2026年10月23日", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN（運営会社：株式会社アルカディア）」が不正アクセス",
+      certainty: "possible",
+      dataNote: "印字日付は最終更新日のみ（再開告知を追記後）。"
+    },
+    "田辺市（NET119緊急通報システム）": {
+      officialUrl: "https://www.city.tanabe.lg.jp/kinkyu/7728.html",
+      events: [
+        E("disclosed", "2026-10-23", "更新日：2026年10月23日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社アルカディアにおいて、第三者による不正アクセスが発生",
+      certainty: "possible",
+      dataNote: "disclosedは更新日。SpeeCAN RAIDENと119RAIDENについては漏えいなしを確認済みと記載。"
+    },
+    "山梨日日新聞社（山日YBS企業ガイダンス）": {
+      officialUrl: "https://www2.sannichi.co.jp/GUIDANCE/2028/info/cd/90001/seq/12",
+      events: [
+        E("vendor_notified", "2026-10-23", "株式会社ラクスライトクラウド（本社東京）から10月23日、個人情報漏えい事実の判", "@"),
+        E("disclosed", "2026-10-23", "2026.10.23", "@")
+      ],
+      causes: ["vendor"], causeText: "メール配信サービスの委託会社に不正アクセスがあり",
+      certainty: "confirmed",
+      dataNote: "2027年卒向けサイト（GUIDANCE/2027）にも同文・同件数のお知らせが掲載されている。"
+    },
+    "富山県（Smart Lab TOYAMA）": {
+      officialUrl: "https://www.pref.toyama.jp/130331/20261023sumarabo.html",
+      events: [
+        E("disclosed", "2026-10-23", "発表日 2026年10月23日（金曜日）", "@")
+      ],
+      causes: ["vendor"], causeText: "外部の第三者による不正アクセスが行われ、個人情報が漏洩した可能性があります",
+      certainty: "possible"
+    },
+    "鹿児島市（鹿児島ふれあいスポーツランド）": {
+      officialUrl: "https://www.city.kagoshima.lg.jp/soumu/soumu/soumu/documents/roueikouhyou32_1.pdf",
+      events: [
+        E("vendor_notified", "2026-10-23", "令和 8 年 10 月 23 日（金）11：00 指定管理者（南国殖産株式会社）", "@"),
+        E("disclosed", "2026-10-23", "【公表年月日】：令和８年１０月２３日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが行われたもの",
+      certainty: "possible",
+      dataNote: "公表資料にサービス名の記載はなく運営会社名のみ。"
+    },
+    "日本赤十字社東京都支部（NT NEWS）": {
+      officialUrl: "https://www.jrc.or.jp/chapter/tokyo/news/2026/1023_056631.html",
+      events: [
+        E("disclosed", "2026-10-23", "2026年10月23日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスを受け、登録情報が漏洩した可能性",
+      certainty: "possible",
+      dataNote: "登録者が対象かは調査中としている。"
+    },
+    "下関市（雇用対策事業）": {
+      officialUrl: "https://www.city.shimonoseki.lg.jp/site/kisya/164876.html",
+      events: [
+        E("disclosed", "2026-10-23", "令和8年（2026年）10月 23日", "@")
+      ],
+      causes: ["vendor"], causeText: "外部の第三者による不正ア",
+      certainty: "possible"
+    },
+    "下関市（インクルーシブ推進事業）": {
+      officialUrl: "https://www.city.shimonoseki.lg.jp/site/kisya/140361.html", listedDate: "2026-10-23",
+      events: [
+        E("update", "2026-10-23", "更新日：2026年10月23日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "外部の第三者による不正ア",
+      certainty: "possible",
+      dataNote: "公式ページに初回掲載日の記載がないため disclosed は未記録。"
+    },
+    "ホビージャパン（ホビージャパンウェブ）": {
+      officialUrl: "https://hjweb.jp/news/2867395/",
+      events: [
+        E("vendor_notified", "2026-10-21", "2026年10月21日、ラクスライトクラウド社より…報告を受けました", "@"),
+        E("disclosed", "2026-10-23", "2026.10.23", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが発生し",
+      certainty: "possible"
+    },
+    "タミヤ（イベント案内メール）": {
+      officialUrl: "https://www.tamiya.com/japan/newstopics/news_1982",
+      events: [
+        E("vendor_notified", "2026-10-21", "2026年10月21日、同社より…報告を受けました", "@"),
+        E("disclosed", "2026-10-23", "2026年10月23日", "@"),
+        E("update", "2026-10-26", "(10/26 18時追記)", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが発生し",
+      certainty: "possible",
+      dataNote: "10月26日の追記時点でタミヤは漏えい対象者に含まれていないとしている。"
+    },
+    "東邦ホールディングス（子会社eヘルスケア）": {
+      officialUrl: "https://www2.jpx.co.jp/disc/81290/140120261023555469.pdf",
+      events: [
+        E("disclosed", "2026-10-23", "2026 年 10 月 23 日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが発生しました",
+      certainty: "possible",
+      dataNote: "288契約のリストにeヘルスケアのIDは含まれていないが漏洩なしは確定していないとしている。同文: https://www.tohohd.co.jp/news/files/261023.pdf"
+    },
+    "MAGUS（ARTnews JAPAN）": {
+      officialUrl: "https://artnewsjapan.com/article/90648",
+      events: [
+        E("vendor_notified", "2026-10-21", "2026年10月21日…運営会社より…報告を受けました", "@"),
+        E("leak_confirmed", "2026-10-23", "10月23日朝、当メディアのメールマガジン登録者のメールアドレスが漏えい", "@"),
+        E("disclosed", "2026-10-23", "2026.10.23", "@")
+      ],
+      causes: ["vendor"], causeText: "外部の第三者がAPI用サーバーに侵入し",
+      certainty: "confirmed"
+    },
+    "先端教育機構（出版部メールマガジン）": {
+      officialUrl: "https://www.sentankyo.jp/articles/d7cb4acc-34ad-4698-a51e-b5d07a72718d",
+      events: [
+        E("vendor_notified", "2026-10-23", "当方配信リスト漏えいの連絡（10月23日）", "@"),
+        E("disclosed", "2026-10-23", "2026年10月23日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社ラクスライトクラウドのシステムに対する、第三者による不正アクセスです。",
+      certainty: "confirmed",
+      dataNote: "事業構想オンラインにも同文掲載: https://www.projectdesign.jp/articles/news/df304f2c-22fc-4ae1-b40e-7a17d9e63959"
+    },
+    "名古屋銀行（企業型DC／損保ジャパンDC証券経由）": {
+      officialUrl: "https://www.meigin.com/news/files/20261023_oshirase_2.pdf",
+      events: [
+        E("disclosed", "2026-10-23", "2026 年 10 月 23 日", "@")
+      ],
+      causes: ["vendor"], causeText: "同サービスに対する不正アクセスが発生したとの報告",
+      certainty: "possible",
+      dataNote: "現時点で漏えいは確認されていないとしている。損保ジャパンDC証券は別掲。"
+    },
+    "京都市・京都府（京の食文化ミュージアム・あじわい館）": {
+      officialUrl: "https://www.city.kyoto.lg.jp/sankan/page/0000359632.html",
+      events: [
+        E("vendor_notified", "2026-10-22", "リーフより令和8年10月22日午後6時に、京都府及び京都市に連絡", "@"),
+        E("disclosed", "2026-10-23", "発表日 令和8年10月23日", "@")
+      ],
+      causes: ["vendor"], causeText: "外部の第三者から不正アクセスされ",
+      certainty: "possible"
+    },
+    "名古屋市（シティプロモーション推進事業 ブランドパートナー）": {
+      officialUrl: "https://www.city.nagoya.jp/houdou/3003942/3003949/3006181.html",
+      events: [
+        E("disclosed", "2026-10-23", "報道発表日時：2026年10月23日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスを受け",
+      certainty: "possible"
+    },
+    "名古屋市（イーブルなごや）": {
+      officialUrl: "https://www.city.nagoya.jp/houdou/3003942/3003949/3006162.html",
+      events: [
+        E("disclosed", "2026-10-23", "報道発表日時：2026年10月23日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスを受け",
+      certainty: "possible"
+    },
+    "大分県（健康アプリ「あるとっく」協力店）": {
+      officialUrl: "https://www.pref.oita.jp/site/kenkozyumyo-nipponichi-oita/altokoita-kyoryokutenn2.html", listedDate: "2026-10-23",
+      events: [
+        E("update", "2026-10-23", "更新日：2026年10月23日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "アプリ登録者の情報は漏えいしていないとしている。公式ページに初回掲載日の記載がないため disclosed は未記録。"
+    },
+    "大分県（おおいたボランティア・NPOセンター「メルマガ週イチくん」）": {
+      officialUrl: "https://www.pref.oita.jp/soshiki/13110/onnpo20261023.html",
+      events: [
+        E("disclosed", "2026-10-23", "本日（令和８年１０月２３日）", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスを受けました",
+      certainty: "possible"
+    },
+    "宇都宮市（市民応援団「teamNEXT」）": {
+      officialUrl: "https://www.city.utsunomiya.lg.jp/kurashi/kotsu/lrt/1028857/1050022.html", listedDate: "2026-10-23",
+      events: [
+        E("update", "2026-10-23", "更新日 令和8年10月23日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "公式ページに初回掲載日の記載がないため disclosed は未記録。"
+    },
+    "福岡県（福岡キャリア・カフェ）": {
+      officialUrl: "https://www.pref.fukuoka.lg.jp/contents/careercafe-attention.html", listedDate: "2026-10-23",
+      events: [
+        E("vendor_notified", "2026-10-22", "令和8年10月22日（木曜日）、株式会社オフィスatから", "@"),
+        E("update", "2026-10-23", "更新日：2026年10月23日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社ラクスライトクラウドのサーバーに不正アクセスがあり",
+      certainty: "possible",
+      dataNote: "公表文にサービス名の記載はなく運営会社名のみ。公式ページに初回掲載日の記載がないため disclosed は未記録。"
+    },
+    "埼玉県（ねんりんピック彩の国さいたま2026ボランティア）": {
+      officialUrl: "https://www.pref.saitama.lg.jp/b0617/nenrin-saitama2026/1022hodohappyo.html",
+      events: [
+        E("vendor_notified", "2026-10-22", "令和8 年10 月22 日（木曜日）、受託事業者から", "@"),
+        E("disclosed", "2026-10-23", "発表日：2026年10月23日", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社ラクスライトクラウドのサーバーに不正アクセスがあり",
+      certainty: "possible"
+    },
+    "国立環境研究所（NIESメールマガジンほか）": {
+      officialUrl: "https://www.nies.go.jp/pr/news-and-updates/2026/20261023.html",
+      events: [
+        E("disclosed", "2026-10-23", "2026年10月23日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者からの不正アクセスが発生し",
+      certainty: "possible",
+      dataNote: "現時点で漏えいは確認されていないとしている。"
+    },
+    "SHIFT（福利厚生サービス「まん福」）": {
+      officialUrl: "https://www.shiftinc.jp/news/20261023/",
+      events: [
+        E("vendor_notified", "2026-10-22", "2026年10月22日：…当社のメール配信担当者の情報が漏洩したことについての報", "@"),
+        E("vendor_notified", "2026-10-23", "2026年10月23日：同社より…「配信先リスト」の情報についても漏洩", "@"),
+        E("disclosed", "2026-10-23", "2026/10/23", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが発生したと",
+      certainty: "confirmed",
+      dataNote: "実際に漏洩した範囲・正確な件数は調査中としている。"
+    },
+    "鹿児島音楽文化協会（鹿児島音協メルマガ）": {
+      officialUrl: "https://kagoshima-onkyo.rgr.jp/topinfo/attention202610/",
+      events: [
+        E("disclosed", "2026-10-23", "2026年10月23日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが行われ",
+      dataNote: "自会の会員が対象かは明記なし。"
+    },
+    "サンフェア（メールニュース）": {
+      officialUrl: "https://sunfair.jp/info/1953/",
+      events: [
+        E("disclosed", "2026-10-23", "2026.10.23", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスがあり",
+      certainty: "possible"
+    },
+    "ブロードリーフ（ものづくりドットコム）": {
+      officialUrl: "https://www.broadleaf.co.jp/company/news/news_detail/?dispmid=1001&itemid=371",
+      events: [
+        E("disclosed", "2026-10-23", "2026年10月23日（金）15時", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが行われ",
+      certainty: "confirmed",
+      dataNote: "リストの項目・対象者は確認中としている。"
+    },
+    "セルズ（メールマガジン等配信先）": {
+      officialUrl: "https://www.cells.co.jp/news/115953",
+      events: [
+        E("disclosed", "2026-10-23", "2026年10月23日", "@"),
+        E("update", "2026-10-26", "【2026年10月26日11時00分追記】", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが発生し",
+      certainty: "possible",
+      dataNote: "10月26日追記で現時点では漏えい対象に含まれていないとしている。"
+    },
+    "湯沢市（緊急・防災メール）": {
+      officialUrl: "https://www.city-yuzawa.jp/soshiki/8/6580.html", listedDate: "2026-10-23",
+      events: [
+        E("update", "2026-10-23", "更新日：2026年10月23日", "@")
+      ],
+      causes: ["vendor"], causeText: "システムに対する不審なアクセスを検知",
+      certainty: "confirmed",
+      dataNote: "漏洩確認は契約者情報（市担当者名・電話番号・メールアドレス）。配信者の情報漏えいは確認されていないとしている。公式ページに初回掲載日の記載がないため disclosed は未記録。"
+    },
+    "経済同友会": {
+      officialUrl: "https://www.doyukai.or.jp/newsrelease/2026/261023.html",
+      events: [
+        E("vendor_notified", "2026-10-22", "10月22日午後に同社から連絡を受け", "@"),
+        E("disclosed", "2026-10-23", "2026年10月23日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが発生し",
+      certainty: "possible"
+    },
+    "ECOMMIT（法人向け案内メール）": {
+      officialUrl: "https://www.ecommit.jp/news/j3gta0dzcs/",
+      events: [
+        E("vendor_notified", "2026-10-21", "当社は、2026年10月21日に同社から本件の報告を受けました。", "@"),
+        E("disclosed", "2026-10-23", "2026.10.23", "@")
+      ],
+      causes: ["vendor"], causeText: "外部の第三者が同社のAPI用サーバー2台に侵入してコマンドを実行し",
+      certainty: "possible",
+      dataNote: "288件の個別連絡対象には含まれていないとしている。"
+    },
+    "ファブリカコミュニケーションズ（BP事業部 業務管理システム配信先）": {
+      officialUrl: "https://www.fabrica-com.co.jp/news/press/5215/",
+      events: [
+        E("vendor_notified", "2026-10-23", "2026年10月23日　同社より…メール配信先リストの全件が漏えいしたとの個別報", "@"),
+        E("disclosed", "2026-10-23", "2026年10月23日にお知らせいたしました", "@"),
+        E("update", "2026-10-27", "2026/10/27", "@")
+      ],
+      causes: ["vendor"], causeText: "メール配信委託先への不正アクセスに伴う情報漏えい",
+      certainty: "confirmed",
+      dataNote: "第1報（10月23日）のURLは未確認のため第2報URLを採用。第1報時点の件数は最大2,816件。"
+    },
+    "フロールエバー（Florever News）": {
+      officialUrl: "https://www.florever.co.jp/news/2026/10/18569/",
+      events: [
+        E("disclosed", "2026-10-23", "2026/10/23", "@"),
+        E("update", "2026-10-27", "【2026年10月27日更新】", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが発生しました",
+      certainty: "possible",
+      dataNote: "10月27日更新で内部調査では漏えい未確認としている。"
+    },
+    "株式会社人事部（メールマガジン）": {
+      officialUrl: "https://www.jinjibu-inc.co.jp/notice/1347/",
+      events: [
+        E("disclosed", "2026-10-23", "2026年10月23日(金)", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが発生し",
+      certainty: "confirmed",
+      dataNote: "漏えい確認は契約に関する情報。配信先情報（会社名・氏名・メールアドレス等）は漏えい有無を確認中。"
+    },
+    "日本語教育振興協会": {
+      officialUrl: "https://www.nisshinkyo.org/news/detail.php?f=news&id=3566",
+      events: [
+        E("disclosed", "2026-10-23", "令和8年10月23日掲載", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが発生しました",
+      certainty: "confirmed",
+      dataNote: "配信先情報の漏えい有無は確認されていないとしている。"
+    },
+    "日本消防協会（メールマガジン）": {
+      officialUrl: "https://www.nissho.or.jp/info/news20261023.html",
+      events: [
+        E("disclosed", "2026-10-23", "2026年10月23日", "@")
+      ],
+      causes: ["vendor"], causeText: "情報漏えいが発生した可能性があることを確認",
+      certainty: "possible"
+    },
+    "オカムラ（スマートロジテック メールマガジン）": {
+      officialUrl: "https://www.okamura.co.jp/corporate/info/2026/20261023.html",
+      events: [
+        E("disclosed", "2026-10-23", "2026年10月23日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスによる情報漏えい事案が発生",
+      certainty: "possible"
+    },
+    "アップリンク（UPLINK メールマガジン）": {
+      officialUrl: "https://www.uplink.co.jp/news/2026/55017", listedDate: "2026-10-23",
+      events: [
+        E("update", "2026-10-23", "2026年10月23日 更新", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが発生し",
+      certainty: "possible",
+      dataNote: "個別連絡は受けていないとしている。公式ページに初回掲載日の記載がないため disclosed は未記録。"
+    },
+    "WEBX（side bizz）": {
+      officialUrl: "https://www.web-x.co.jp/news/unauthorized-access/",
+      events: [
+        E("vendor_notified", "2026-10-23", "メール送付先リストが外部に漏洩したとの報告を2026年10月23日に受領", "@"),
+        E("disclosed", "2026-10-23", "2026.10.23", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者からの不正アクセスが発生いたしました",
+      certainty: "confirmed"
+    },
+    "Be ACTO亀戸（会員・登録者向けメール）": {
+      officialUrl: "https://be-acto-kameido.net/event/16276",
+      events: [
+        E("disclosed", "2026-10-23", "2026/10/23", "@")
+      ],
+      causes: ["vendor"], causeText: "外部の第三者がサービス提供会社のサーバーに不正アクセス",
+      certainty: "possible"
+    },
+    "郡山市（鯉に恋する郡山プロジェクトほか委託3事業）": {
+      officialUrl: "https://www.city.koriyama.lg.jp/uploaded/attachment/132275.pdf",
+      events: [
+        E("vendor_notified", "2026-10-16", "同日 Studio 株式会社及び各委託事業者から市に対し、不正アクセスの報告", "@"),
+        E("disclosed", "2026-10-23", "2026 年 10 月 23 日", "@")
+      ],
+      causes: ["vendor"], causeText: "クラウドサービス「Studio」…が、第三者による不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "合計の記載なし。nは最大の単一件数（55件）。"
+    },
+    "モニクルリサーチ（旧サイト／Studio経由）": {
+      officialUrl: "https://monicleresearch.co.jp/news/20261023",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日から10月1日までにかけて", "@"),
+        E("vendor_notified", "2026-10-16", "2026年10月16日、同社から当社の旧サイトが本件の対象である旨の連絡", "@"),
+        E("disclosed", "2026-10-23", "2026.10.23", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者が同社サービスの脆弱性を悪用して同社のクラウド環境に不正にアクセス",
+      certainty: "possible"
+    },
+    "モニクルフィナンシャル（旧サイト／Studio経由）": {
+      officialUrl: "https://moniclefinancial.co.jp/news/20261023",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日から10月1日までにかけて", "@"),
+        E("disclosed", "2026-10-23", "2026.10.23", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者が同社サービスの脆弱性を悪用して同社のクラウド環境に不正にアクセス",
+      certainty: "possible",
+      dataNote: "旧サイトのフォーム送信内容がStudio上に保存されていたことを確認し、対象となるかStudio社に確認中（確定的な回答なし）としている。"
+    },
+    "モニクル（旧サイト／Studio経由）": {
+      officialUrl: "https://monicle.co.jp/news/mo/20261023",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日から10月1日までにかけて", "@"),
+        E("disclosed", "2026-10-23", "2026.10.23", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者が同社サービスの脆弱性を悪用して同社のクラウド環境に不正にアクセス",
+      certainty: "possible",
+      dataNote: "旧サイトのフォーム送信内容がStudio上に保存されていたことを確認し、対象となるかStudio社に確認中（確定的な回答なし）としている。"
+    },
+    "Mizkan（Mizkan Asia Pacificサイト／Studio経由）": {
+      officialUrl: "https://www.mizkan.co.jp/file.jsp?id=2021_Renewal%2Ffiles%2Fpdf%2Femg%2Fnews%2Foshirase15.pdf",
+      events: [
+        E("incident", "2026-09-30", "2026 年 9 月 30 日（水）から 10 月 1 日（木）にかけて", "@"),
+        E("vendor_notified", "2026-10-16", "2026 年 10 月 16 日（金） 、Studio 社より", "@"),
+        E("disclosed", "2026-10-23", "2026 年 10 月 23 日", "@")
+      ],
+      causes: ["vendor"], causeText: "同社サービスの一部機能の脆弱性を悪用した第三者による不正アクセス",
+      certainty: "possible"
+    },
+    "渋谷ボッチャ協会": {
+      officialUrl: "https://note.com/dandy_dove8780/n/n25c4e2e952ed",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日～10月1日…第三者による不正アクセス", "@"),
+        E("disclosed", "2026-10-23", "2026年10月23日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者がStudio社の一部機能の脆弱性を悪用してクラウド環境に不正アクセス",
+      certainty: "possible",
+      dataNote: "公式noteでの公表。具体的な影響範囲はStudio社へ個別調査を依頼中としている。"
+    },
+    "ボートレースまるがめ（Bカード会員メールマガジン）": {
+      officialUrl: "https://www.marugameboat.jp/asp/marugame/00info/info.php?type=4", listedDate: "2026-10-25",
+      events: [
+        E("vendor_notified", "2026-10-21", "報告を受けました(令和8年10月21日)", "@"),
+        E("update", "2026-10-25", "(令和8年10月25日)", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスを受け、個人情報…が漏洩した可能性",
+      certainty: "possible",
+      dataNote: "お知らせ一覧の表示日は2026/10/25（追加情報の日付）。10月25日時点で漏洩は確認されていないとしている。公式ページに初回掲載日の記載がないため disclosed は未記録。"
+    },
+    "eJudo（eJudo会員ニュースレター）": {
+      officialUrl: "https://ejudo.info/articles/34272",
+      events: [
+        E("disclosed", "2026-10-25", "公開:2026.10.25", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが発生し",
+      certainty: "confirmed"
+    },
+    "TOAST（海外大学進学サポート）": {
+      officialUrl: "https://note.com/toast_edu/n/n39aa811b9dba",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日～10月1日の間、Studioの一部機能の脆弱性を悪用して", "@"),
+        E("disclosed", "2026-10-25", "2026年10月25日 11:11", "@")
+      ],
+      causes: ["vendor"], causeText: "Studioの一部機能の脆弱性を悪用して第三者がStudio社のクラウド環境に不",
+      certainty: "possible",
+      dataNote: "発表はnote上の団体公式アカウント。"
+    },
+    "ログラス（Loglass障害告知メール）": {
+      officialUrl: "https://loglass.co.jp/news/press-20261023", listedDate: "2026-10-26",
+      events: [
+        E("update", "2026-10-26", "2026年10月26日 14:30更新", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "URLは2026年10月23日付。ページ上の初回掲載日の表記が判読できないため disclosed は未記録。"
+    },
+    "中部電力・中電クラビス（みんなの美尻フェスタin掛川メルマガ）": {
+      officialUrl: "https://www.chuden.co.jp/publicity/press/1218551_3273.html",
+      events: [
+        E("vendor_notified", "2026-10-21", "2026年10月21日、中電クラビスの再委託先より", "@"),
+        E("disclosed", "2026-10-26", "2026年10月26日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "中部電力の別件（1218169）は既掲載。同日中電クラビスが一部訂正を公表。"
+    },
+    "南城市（尚巴志ハーフマラソン ランナーアンケート配信）": {
+      officialUrl: "https://www.city.nanjo.okinawa.jp/topics/1792646187/", listedDate: "2026-10-26",
+      events: [
+        E("update", "2026-10-26", "最終更新日：2026年10月26日", "@")
+      ],
+      causes: ["vendor"], causeText: "不正アクセスによる情報漏洩の可能性",
+      certainty: "possible",
+      dataNote: "第2報・第3報で、漏洩判明対象にランナーのメールアドレスは該当していないとしている。公式ページに初回掲載日の記載がないため disclosed は未記録。"
+    },
+    "日本カノマックス（メールマガジン）": {
+      officialUrl: "https://www.kanomax.co.jp/wordp/wp-content/uploads/2026/10/107d845671c2483803cd866f1d0f7e87.pdf",
+      events: [
+        E("vendor_notified", "2026-10-24", "2026 年 10 月 24 日、…株式会社ラクスライトクラウドから…個別通知を", "@"),
+        E("disclosed", "2026-10-26", "2026 年 10 月 26 日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが発生し",
+      certainty: "confirmed",
+      dataNote: "お知らせページ: https://www.kanomax.co.jp/info/news/14942/ （2026年10月27日掲載）"
+    },
+    "Polimill（QommonsAI お知らせ配信）": {
+      officialUrl: "https://www.polimill.jp/261026-3/",
+      events: [
+        E("disclosed", "2026-10-26", "2026.10.26", "@")
+      ],
+      causes: ["vendor"], causeText: "不正アクセスが発生し",
+      certainty: "possible",
+      dataNote: "個別連絡は受けていないとしている。"
+    },
+    "せんだい男女共同参画財団（メール de えるなびっ）": {
+      officialUrl: "https://www.sendai-l.jp/information/19786.html", listedDate: "2026-10-26",
+      events: [
+        E("update", "2026-10-26", "（2026年10月26日16時00分更新）", "@")
+      ],
+      causes: ["vendor"], causeText: "外部の第三者による不正アクセスが発生し",
+      certainty: "possible",
+      dataNote: "10月26日時点で漏えい対象者に含まれていないとしている。公式ページに初回掲載日の記載がないため disclosed は未記録。"
+    },
+    "サイボウズ（各種お知らせ配信）": {
+      officialUrl: "https://topics.cybozu.co.jp/news/2026/10/26-19556.html",
+      events: [
+        E("vendor_notified", "2026-10-20", "当社は対象外であることの回答を受けました", "@"),
+        E("vendor_notified", "2026-10-26", "2026年10月26日（月）13:15、ユミルリンク株式会社より", "@"),
+        E("leak_possible", "2026-10-26", "一部のメールアドレス等が漏えいした可能性が高いとの連絡を受けました", "@"),
+        E("disclosed", "2026-10-26", "2026.10.26", "@"),
+        E("leak_confirmed", "2026-10-28", "23,392件のメールアドレス等が漏えいしたとの報告を受けました", "https://topics.cybozu.co.jp/news/2026/10/28-19557.html"),
+        E("update", "2026-10-28", "（第二報）2026.10.28", "https://topics.cybozu.co.jp/news/2026/10/28-19557.html")
+      ],
+      causes: ["vendor"], causeText: "「Cuenote FC」において不正アクセスが発生し",
+      certainty: "confirmed",
+      dataNote: "第一報（10/26）は「可能性が高い」、第二報（10/28）で23,392件の漏えいを報告。第二報は10/28 21:43に件数を修正、10/29に対象者へ個別連絡済みと追記。kintone等のサービスデータへの影響はないとしている。"
+    },
+    "日本能率協会マネジメントセンター（Cuenote）": {
+      officialUrl: "https://www.jmam.co.jp/assets/images/topics/cuenote_20261026.pdf",
+      events: [
+        E("vendor_notified", "2026-10-20", "10月20日時点では、当社の利用環境における情報漏洩は確認されていない", "@"),
+        E("vendor_notified", "2026-10-26", "10月26日、同社から当社が同サービスを通じて取り扱っていた情報の一部が漏洩", "@"),
+        E("leak_confirmed", "2026-10-26", "情報の一部が外部に漏洩したことが判明いたしました", "@"),
+        E("disclosed", "2026-10-26", "2026年10月26日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが発生し",
+      certainty: "confirmed",
+      dataNote: "PDFはテキスト抽出不可のため画像で確認。10/18にユミルリンクからサーバー停止の連絡。項目・件数は確認中。既収録のtoki-labo事案（10/9公表）とは別。"
+    },
+    "ZEN大学": {
+      officialUrl: "https://zen.ac.jp/news/202610_announcement_studio",
+      events: [
+        E("vendor_notified", "2026-10-16", "報告が、2026年10月16日にございました", "@"),
+        E("disclosed", "2026-10-26", "2026/10/26", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者が同社のクラウド環境に不正アクセス",
+      certainty: "possible"
+    },
+    "パンハウス（旧Webサイト）": {
+      officialUrl: "https://panhouse.jp/news/2026-10-notice-001/",
+      events: [
+        E("incident", "2026-09-30", "2026年9月30日から10月1日にかけて、同社サービスの脆弱性が悪用され", "@"),
+        E("disclosed", "2026-10-26", "2026.10.26", "@")
+      ],
+      causes: ["vendor"], causeText: "同社サービスの脆弱性が悪用され",
+      certainty: "possible"
+    },
+    "久喜市（緊急情報架電サービス）": {
+      officialUrl: "https://www.city.kuki.lg.jp/kurashi/bosai/bosaijoho/1002152/1013704.html",
+      events: [
+        E("leak_possible", "2026-10-14", "令和8年10月14日（水曜）…対象サービスに含まれていることを確認", "@"),
+        E("disclosed", "2026-10-27", "2026年10月27日", "@")
+      ],
+      causes: ["vendor"], causeText: "アルカディア…のネットワークが外部から不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "ページ上の日付は2026年10月27日のみで、これを公表日として記録（初回公表日かは不明）。10月11日は事業者（アルカディア）側の事象としてページに記載された日時。"
+    },
+    "西東京市（職員等向け情報伝達サービス）": {
+      officialUrl: "https://www.city.nishitokyo.lg.jp/kurasi/iza/bosai/josei/shokuinsanshuu.html", listedDate: "2026-10-27",
+      events: [
+        E("update", "2026-10-27", "最終更新日 2026年10月27日", "@")
+      ],
+      causes: ["vendor"], causeText: "情報伝達サービス提供事業者（株式会社アルカディア）サーバが不正アクセスを受けた",
+      certainty: "possible",
+      dataNote: "ページ上の日付は最終更新日2026年10月27日のみ（表題は【10月15日午後3時現在】）で、初回公表日が不明なためdisclosedは記録しない。"
+    },
+    "五條市（防災メール）": {
+      officialUrl: "https://www.city.gojo.lg.jp/moshimo/bousai/19871.html",
+      events: [
+        E("disclosed", "2026-10-27", "更新日：2026年10月27日", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN（運営元・株式会社アルカディア）」が、外部から不正アクセス",
+      certainty: "possible",
+      dataNote: "第1報ページだが印字日付は更新日（10月27日）のみ。初報日は不明。"
+    },
+    "十日町市（農業情報メール）": {
+      officialUrl: "https://www.city.tokamachi.lg.jp/soshiki/sangyokankobu/norinka/1/gyomu/11410.html", listedDate: "2026-10-27",
+      events: [
+        E("vendor_notified", "2026-10-21", "10月21日（水曜日）…株式会社ラクスライトクラウドから…サービスを停止するとの", "@"),
+        E("update", "2026-10-27", "更新日：2026年10月27日", "@")
+      ],
+      causes: ["vendor"], causeText: "外部の第三者がシステム管理会社のサーバーに侵入したことによる。",
+      certainty: "possible",
+      dataNote: "ページは更新日（2026年10月27日）のみ記載。報道では599人分とされるが公式ページに件数の記載なし。公式ページに初回掲載日の記載がないため disclosed は未記録。"
+    },
+    "千歳市（メール配信サービス）": {
+      officialUrl: "https://www.city.chitose.lg.jp/c70/1002860/1007035.html", listedDate: "2026-10-27",
+      events: [
+        E("update", "2026-10-27", "更新日 2026年10月27日", "@")
+      ],
+      causes: ["vendor"], causeText: "外部の第三者が同社のAPI 用のサーバー2台に侵入してコマンドを実行し",
+      certainty: "confirmed",
+      dataNote: "公式ページに初回掲載日の記載がないため disclosed は未記録。"
+    },
+    "伊奈町（ふれあい活動センター「ゆめくる」）": {
+      officialUrl: "https://www.town.saitama-ina.lg.jp/0000009853.html",
+      events: [
+        E("disclosed", "2026-10-27", "[2026年10月27日]", "@")
+      ],
+      causes: ["vendor"], causeText: "外部からの不正アクセスを受け",
+      certainty: "confirmed",
+      dataNote: "漏洩確認は契約者情報。登録者185件は可能性で、10月27日時点で漏洩の事実は未確認。サービス名の記載はなく運営会社名のみ。"
+    },
+    "じげん（ミナオシ）": {
+      officialUrl: "https://3naoshi.com/announcements/20261027",
+      events: [
+        E("vendor_notified", "2026-10-23", "2026年10月23日：配信委託先より、当社が配信のために登録していた情報が漏え", "@"),
+        E("disclosed", "2026-10-27", "2026年10月27日　本件のお知らせを掲載しました", "@")
+      ],
+      causes: ["vendor"], causeText: "外部の第三者が同社のサーバーに侵入し、データベースから情報を持ち出した",
+      certainty: "confirmed",
+      dataNote: "運営会社名はページのコピーライト（ZIGExN Co., Ltd.）による。"
+    },
+    "Earthwatch Japan": {
+      officialUrl: "https://www.earthwatch.jp/news/news_10_27_2026/", listedDate: "2026-10-27",
+      events: [
+        E("vendor_notified", "2026-10-21", "2026年10月21日（水）、ブラストメールの運営会社から", "@"),
+        E("update", "2026-10-27", "2026年10月27日12時00分更新", "@")
+      ],
+      causes: ["vendor"], causeText: "外部の第三者による不正アクセスが発生し",
+      certainty: "possible",
+      dataNote: "配信先の個人情報は漏えいが確認されていないとしている。公式ページに初回掲載日の記載がないため disclosed は未記録。"
+    },
+    "フジッコ（フジッコ通信）": {
+      officialUrl: "https://www.fujicco.co.jp/upload/pr_261027.pdf",
+      events: [
+        E("disclosed", "2026-10-27", "2026 年 10 月 27 日", "@")
+      ],
+      causes: ["vendor"], causeText: "不正アクセスによる個人情報の漏えいが判明しました",
+      certainty: "possible"
+    },
+    "三光電業（メールマガジン）": {
+      officialUrl: "https://www.sumnet.co.jp/news/5025.html",
+      events: [
+        E("disclosed", "2026-10-27", "2026年10月27日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが発生し",
+      certainty: "confirmed",
+      dataNote: "購読者の情報は流出していないとの報告を受けているとしている。"
+    },
+    "ソースネクスト（Cuenote FC）": {
+      officialUrl: "https://www.sourcenext.com/support/i/2026/1027_info/",
+      events: [
+        E("vendor_notified", "2026-10-26", "2026年10月26日、ユミルリンク株式会社より", "@"),
+        E("leak_possible", "2026-10-26", "データが外部に出力された形跡が確認されたとの報告を受けました", "@"),
+        E("disclosed", "2026-10-27", "2026年10月27日", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが発生し",
+      certainty: "possible",
+      dataNote: "10月15日公表の同社サイトへの不正アクセス（既収録）とは別事案と明記。パスワード・クレジットカード情報は含まれないとしている。"
+    },
+    "伊勢市消防本部（災害情報メール・NET119）": {
+      officialUrl: "https://www.city.ise.mie.jp/syoubou/gaiyo/1012086/1020958.html", listedDate: "2026-10-28",
+      events: [
+        E("update", "2026-10-28", "更新日 令和8年10月28日", "@")
+      ],
+      causes: ["vendor"], causeText: "システム運営会社である株式会社アルカディアから、第三者による不正アクセスにより",
+      certainty: "possible",
+      dataNote: "ページの日付は更新日（令和8年10月28日）のみ。本文に「令和8年10月15日時点」の状況記載があり初報はそれ以前とみられるが、初報日の表示がないためdisclosedは記録せず。"
+    },
+    "長岡市（メールマガジン「Gekkanながおか」）": {
+      officialUrl: "https://www.city.nagaoka.niigata.jp/kurashi/life01/gekkan.html", listedDate: "2026-10-28",
+      events: [
+        E("update", "2026-10-28", "最終更新日　2026年10月28日", "@")
+      ],
+      causes: ["vendor"], causeText: "「ブラストメール」運営会社（株式会社ラクスライトクラウド）が第三者よる不正アクセスを受け",
+      certainty: "possible",
+      dataNote: "10月28日時点で登録者情報の流出は確認されていないとしている。公式ページに初回掲載日の記載がないため disclosed は未記録。"
+    },
+    "宮城県（みやぎ移住・交流ガイドメールマガジン）": {
+      officialUrl: "https://www.pref.miyagi.jp/soshiki/sinkou/zyouhourouei-miyagiizyuukouryuugaido.html",
+      events: [
+        E("vendor_notified", "2026-10-27", "受託事業者から県に、メルマガ配信のためブラストメールを利用している旨の報告", "@"),
+        E("disclosed", "2026-10-28", "令和8年10月28日", "@")
+      ],
+      causes: ["vendor"], causeText: "サーバーが第三者による不正アクセスを受け",
+      certainty: "possible"
+    },
+    "太田市（ふるさと納税／さとふる経由）": {
+      officialUrl: "https://www.city.ota.gunma.jp/site/furusato/1065936.html", listedDate: "2026-10-28",
+      events: [
+        E("leak_possible", null, "本市のふるさと納税に係る寄附者の情報についても外部流出している恐れ", "@"),
+        E("update", "2026-10-28", "更新日：2026年10月28日更新", "@")
+      ],
+      causes: ["vendor"], causeText: null,
+      certainty: "possible",
+      dataNote: "本市寄附者の情報も外部流出の恐れと明記。 さとふる経由の自治体告知（さとふる公表内容の転載が中心）。漏えい項目・対象者・件数は確認中で、当該自治体の寄附者が含まれるかは未記載。10/29以降、さとふるから「対象外」との報告を受けたと追記する自治体が多数あり、続報で対象外となる可能性がある。日付は更新日表記のみのページが多く、その場合disclosedは記録していない。さとふる自身の公式ページ（satofull.jp）は接続できず未確認。"
+    },
+    "松阪地区広域消防組合（SpeeCAN RAIDEN）": {
+      officialUrl: "https://www.mie-matsusaka119.jp/%E7%81%BD%E5%AE%B3%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%BC%E3%83%AB%E9%85%8D%E4%BF%A1%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%81%B8%E3%81%AE%E4%B8%8D%E6%AD%A3%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%81%AB/",
+      events: [
+        E("vendor_notified", "2026-10-13", "10月13日、…株式会社アルカディアから…報告を受けました", "@"),
+        E("disclosed", "2026-10-30", "2026 10.30", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスが確認され",
+      certainty: "possible",
+      dataNote: "ページの日付は2026.10.30のみ（10/16運用再開の追記があり、更新後の日付の可能性）。件数は事業者が調査中。"
+    },
+    "上越市（安全メール）": {
+      officialUrl: "https://www.city.joetsu.niigata.jp/soshiki/shimin-anzen/bouhan-mail-teishi.html",
+      events: [
+        E("vendor_notified", "2026-10-13", "10月13日（火曜日）、…(株)アルカディアから情報提供がありました", "@"),
+        E("disclosed", "2026-10-30", "掲載日：2026年10月30日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "「SpeeCAN RAIDEN」が不正アクセスを受けたことに伴い",
+      certainty: "possible",
+      dataNote: "ページの日付は「掲載日：2026年10月30日更新」のみで、初報日は不明（disclosed は更新日）。候補URL（bouhan-mail-teishi.html）は本ページを表示。消防団員・市職員の氏名等も対象。"
+    },
+    "松阪市（防災情報メール・防災電話サービス）": {
+      officialUrl: "https://www.city.matsusaka.mie.jp/site/bousai/info.html",
+      events: [
+        E("disclosed", "2026-10-30", "更新日：2026年10月30日更新", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセス",
+      certainty: "possible",
+      dataNote: "disclosedはページの更新日（ページ上の唯一の日付）。初報の掲載日はページに記載なく、更新日のみ。officialUrlは防災カテゴリページ（記事ID 0201954）。"
+    },
+    "下松市（くだまつメール）": {
+      officialUrl: "https://www.city.kudamatsu.lg.jp/chiiki/kouhou/osirase_kudamatumail.html", listedDate: "2026-10-30",
+      events: [
+        E("update", "2026-10-30", "更新日：2026年10月30日（第3報 全面再開）", "@")
+      ],
+      causes: ["vendor"], causeText: "第三者による不正アクセスがあり",
+      certainty: "possible",
+      dataNote: "ページの日付は第3報時点の更新日（10月30日）のみで、第1報の日付は印字なし。そのため公表日は未記録。第3報では「本市の登録者情報が漏えいしたとの報告は受けておりません」と記載。"
+    },
+    "埼玉県（シニア活躍推進宣言企業メールマガジン）": {
+      officialUrl: "https://www.pref.saitama.lg.jp/a0816/news/page/news2026103001.html",
+      events: [
+        E("vendor_notified", "2026-10-30", "令和8年10月30日（金曜日）、受託事業者から", "@"),
+        E("disclosed", "2026-10-30", "発表日：2026年10月30日17時", "@")
+      ],
+      causes: ["vendor"], causeText: "株式会社ラクスライトクラウドのサーバーに不正アクセスがあり",
+      certainty: "possible"
     }
   };
 
