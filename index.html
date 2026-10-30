@@ -6,95 +6,108 @@
 <title>漏洩カミングアウトタイムライン</title>
 <meta name="description" content="Claude Fable 5 リリース（2026年6月10日）以降に公表された、日本の組織の情報漏洩・不正アクセス事案を時系列でまとめたタイムライン。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f6f4ef; --surface:#ffffff; --ink:#1c1b19; --muted:#6b675f; --line:#e2ded5;
+  --bg:#f4f2ed; --surface:#ffffff; --ink:#151513; --muted:#6b675f; --line:#e2ded5; --dot:#dcd8cf;
   --accent:#d94f2b; --accent-soft:#fbe7e0; --mile:#4a5bd6; --mile-soft:#e6e9fb; --mile-cn:#0f8a7e; --mile-cn-soft:#dcf2ee;
   --c-access:#d94f2b; --c-ransom:#8a3fd1; --c-config:#c98a00; --c-human:#2f8f6b; --c-vendor:#2f6fb5;
+  --k-solo:#eb6834; --k-arcadia:#2a78d6; --k-studio:#1baf7a; --k-blastmail:#6250d6; --k-idcf:#eda100; --k-other:#a9a59c;
+  --cert-possible:#8f8a80; --hero-bg:#151513; --hero-ink:#f4f2ed; --shadow:0 1px 2px rgba(20,18,14,.04),0 8px 24px -12px rgba(20,18,14,.12);
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --bg:#131312; --surface:#1d1c1a; --ink:#ece9e2; --muted:#a19c92; --line:#33312d;
+    --bg:#0f0f0e; --surface:#191917; --ink:#f0ede6; --muted:#a19c92; --line:#2f2d29; --dot:#24221f;
     --accent:#ff7a52; --accent-soft:#3a221a; --mile:#8a98ff; --mile-soft:#22264a; --mile-cn:#4fd1c0; --mile-cn-soft:#12302d;
     --c-access:#ff7a52; --c-ransom:#b98bf0; --c-config:#e8b33a; --c-human:#5cc79c; --c-vendor:#6aa6ec;
+    --k-solo:#d95926; --k-arcadia:#3987e5; --k-studio:#199e70; --k-blastmail:#9085e9; --k-idcf:#c98500; --k-other:#6b6860;
+    --cert-possible:#77736a; --shadow:none; --hero-bg:#1b1916; --hero-ink:#f0ede6;
   }
 }
 :root[data-theme="dark"]{
-  --bg:#131312; --surface:#1d1c1a; --ink:#ece9e2; --muted:#a19c92; --line:#33312d;
+  --bg:#0f0f0e; --surface:#191917; --ink:#f0ede6; --muted:#a19c92; --line:#2f2d29; --dot:#24221f;
   --accent:#ff7a52; --accent-soft:#3a221a; --mile:#8a98ff; --mile-soft:#22264a; --mile-cn:#4fd1c0; --mile-cn-soft:#12302d;
   --c-access:#ff7a52; --c-ransom:#b98bf0; --c-config:#e8b33a; --c-human:#5cc79c; --c-vendor:#6aa6ec;
+  --k-solo:#d95926; --k-arcadia:#3987e5; --k-studio:#199e70; --k-blastmail:#9085e9; --k-idcf:#c98500; --k-other:#6b6860;
+  --cert-possible:#77736a; --shadow:none; --hero-bg:#1b1916; --hero-ink:#f0ede6;
 }
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP",system-ui,sans-serif;line-height:1.7}
-.wrap{max-width:880px;margin:0 auto;padding:0 16px}
-header{padding:56px 0 24px}
-.kicker{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.12em;color:var(--accent);text-transform:uppercase}
-h1{font-size:clamp(30px,6vw,52px);font-weight:900;line-height:1.15;margin:8px 0 12px;letter-spacing:-.01em}
-.lead{color:var(--muted);max-width:640px;margin:0}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:28px 0 8px}
-.stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
-.stat b{display:block;font-size:28px;font-weight:900;font-variant-numeric:tabular-nums}
-.stat span{font-size:12px;color:var(--muted)}
-.chart{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;margin:12px 0 0}
-.chart h2{font-size:13px;margin:0 0 10px;color:var(--muted);font-weight:500}
-.bars{display:flex;align-items:flex-end;gap:10px;height:120px}
-.bar{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;gap:4px}
-.bar i{display:block;width:100%;max-width:64px;background:var(--accent);border-radius:6px 6px 2px 2px;min-height:2px}
-.bar em{font-style:normal;font-size:12px;font-weight:700;font-variant-numeric:tabular-nums}
-.bar small{font-size:11px;color:var(--muted)}
-.controls{position:sticky;top:0;z-index:5;background:var(--bg);padding:14px 0;margin-top:20px;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-.controls input{flex:1 1 200px;min-width:0;padding:9px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);font:inherit;font-size:14px}
-.chip{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:5px 12px;font:inherit;font-size:13px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
-.chip[aria-pressed="false"]{opacity:.45}
-.dot{width:8px;height:8px;border-radius:50%;display:inline-block}
-select.chip{padding:5px 10px}
-.month{margin:36px 0 8px;display:flex;align-items:baseline;gap:10px}
-.month h3{margin:0;font-size:20px;font-weight:900}
-.month span{color:var(--muted);font-size:13px}
-.tl{position:relative;padding-left:22px;border-left:2px solid var(--line);margin-left:6px}
-.item{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:12px 0}
-.item::before{content:"";position:absolute;left:-30px;top:20px;width:12px;height:12px;border-radius:50%;background:var(--tc);border:3px solid var(--bg)}
-.item .top{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline}
-.date{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--muted)}
-.org{font-weight:700;font-size:17px}
-.tag{font-size:11px;padding:1px 8px;border-radius:999px;color:var(--tc);border:1px solid var(--tc)}
-.sum{margin:6px 0 4px;font-size:14px}
-.count{font-size:14px;font-weight:700;color:var(--tc)}
-.src{font-size:12px;color:var(--muted)}
-.src a{color:inherit}
-.flow{margin:8px 0 6px;font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;align-items:center;gap:2px 6px}
-.flow .st{color:var(--ink);min-width:0;overflow-wrap:anywhere}
-.flow .st small{color:var(--muted)}
-.flow .arr{font-family:"JetBrains Mono",monospace;white-space:nowrap}
-.flow .arr b{color:var(--ink)}
-.flow .key{font-weight:700;color:var(--ink);margin-right:6px}
-.unofficial{font-size:11px;color:var(--muted)}
-.note{margin:4px 0;font-size:12px;color:var(--muted)}
-.item{overflow-wrap:anywhere}
-.item.grp details{margin-top:6px;font-size:13px}
-.item.grp summary{cursor:pointer;color:var(--muted)}
-.glist{margin:6px 0 0;padding-left:18px}
-.glist li{margin:2px 0}
-.glist a{color:var(--muted);font-size:12px}
-.item.mile{background:var(--mile-soft);border-color:transparent}
-.item.mile::before{background:var(--mile);border-radius:3px;transform:rotate(45deg)}
-.item.mile .org{color:var(--mile)}
-.item.mile.cn{--mile:var(--mile-cn);--mile-soft:var(--mile-cn-soft)}
-.empty{color:var(--muted);padding:24px 0}
-footer{color:var(--muted);font-size:12px;padding:40px 0 60px;border-top:1px solid var(--line);margin-top:48px}
-footer p{margin:6px 0}
-.theme{position:absolute;top:16px;right:16px}
-.viz{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;margin:12px 0 0}
-.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px;margin-bottom:12px}
-.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:13px;padding:5px 14px;border-radius:999px;cursor:pointer}
-.seg button[aria-selected="true"]{background:var(--ink);color:var(--bg)}
+html{scroll-padding-top:120px}
+body{margin:0;background-color:var(--bg);background-image:radial-gradient(var(--dot) 1px,transparent 1px);background-size:22px 22px;color:var(--ink);font-family:"Noto Sans JP",system-ui,sans-serif;line-height:1.65}
+.mono{font-family:"JetBrains Mono",monospace}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px 18px 16px;box-shadow:var(--shadow);min-width:0}
+.card h2{display:flex;align-items:baseline;gap:10px;font-size:12px;margin:0 0 12px;color:var(--muted);font-weight:500;font-family:"JetBrains Mono",monospace;letter-spacing:.08em;text-transform:uppercase}
+.card h2 b{font-family:"Noto Sans JP",sans-serif;letter-spacing:0;text-transform:none;font-size:15px;color:var(--ink);font-weight:700}
+.theme{position:fixed;top:12px;right:12px;z-index:20}
+
+/* ヒーロー */
+.hero{display:grid;grid-template-columns:1.25fr 1fr;gap:16px;align-items:stretch;padding:48px 0 16px}
+.kicker{font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.14em;color:var(--accent);text-transform:uppercase}
+h1{font-size:clamp(28px,4.8vw,62px);font-weight:900;line-height:1.08;margin:10px 0 14px;letter-spacing:-.02em}
+h1 span{white-space:nowrap}
+h1 .acc{color:var(--accent)}
+.lead{color:var(--muted);margin:0;font-size:14px;max-width:520px}
+.big{position:relative;overflow:hidden;background:var(--hero-bg);color:var(--hero-ink);border:1px solid var(--line);border-radius:20px;padding:22px 24px;display:flex;flex-direction:column;justify-content:space-between;min-height:220px}
+.big .lbl{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.7;position:relative;z-index:1}
+.big .num{position:relative;z-index:1;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.big .num b{font-family:"JetBrains Mono",monospace;font-weight:700;font-size:clamp(56px,9vw,104px);line-height:1;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.big .num span{font-size:18px;font-weight:700}
+.big .num span span{font-weight:400;opacity:.65;font-size:14px}
+.big svg{position:absolute;left:0;right:0;bottom:0;width:100%;height:70%;z-index:0}
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:0 0 16px}
+.kpi{font:inherit;color:inherit;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px;box-shadow:var(--shadow)}
+button.kpi{cursor:pointer}
+button.kpi:hover{border-color:var(--accent)}
+.kpi b{display:block;font-family:"JetBrains Mono",monospace;font-size:26px;font-weight:700;line-height:1.2;font-variant-numeric:tabular-nums}
+.kpi b small{font-size:15px;margin-left:1px}
+.kpi span{font-size:12px;color:var(--muted)}
+button.kpi span::after{content:" →";color:var(--accent)}
+
+/* グラフ共通 */
 .legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;color:var(--muted);margin-bottom:8px;align-items:center}
-.legend span{display:inline-flex;align-items:center;gap:5px}
-.legend .sep{margin-left:6px;padding-left:12px;border-left:1px solid var(--line)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend .sep{margin-left:4px;padding-left:12px;border-left:1px solid var(--line)}
+.sw{display:inline-block;width:10px;height:10px;border-radius:3px;flex:none}
+.sw.ms{background:var(--mile);transform:rotate(45deg) scale(.8);border-radius:1px}
+.sw.ms.cn{background:var(--mile-cn)}
+.scrollx{overflow-x:auto;-webkit-overflow-scrolling:touch}
+#dailySvg{display:block;width:100%;min-width:640px}
+#dailySvg .grid{stroke:var(--line);stroke-width:1}
+#dailySvg .grid.dim{stroke-dasharray:2 3}
+#dailySvg .tick{font-size:11px;fill:var(--muted);font-family:"JetBrains Mono",monospace}
+#dailySvg .peak{font-size:12px;font-weight:700;fill:var(--ink);font-family:"JetBrains Mono",monospace}
+#dailySvg .hit{fill:transparent;cursor:pointer}
+#dailySvg .hit:hover{fill:var(--ink);fill-opacity:.06}
+#dailySvg .hit.sel{fill:var(--accent);fill-opacity:.14}
+#dailySvg .ms{fill:var(--mile);stroke:var(--surface);stroke-width:1.5;cursor:help}
+#dailySvg .ms.cn{fill:var(--mile-cn)}
+.two{display:grid;grid-template-columns:1.1fr 1fr;gap:16px;margin:16px 0}
+.rk{display:grid;grid-template-columns:150px 1fr 44px;gap:10px;align-items:center;width:100%;font:inherit;color:inherit;background:none;border:0;padding:5px 6px;border-radius:8px;cursor:pointer;text-align:left}
+.rk:hover{background:var(--bg)}
+.rl{font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rb{height:12px;background:var(--bg);border-radius:4px;overflow:hidden}
+.rb i{display:block;height:100%;border-radius:0 4px 4px 0;min-width:3px}
+.rk em{font-style:normal;font-family:"JetBrains Mono",monospace;font-size:13px;font-weight:700;text-align:right}
+.comp + .comp{margin-top:18px}
+.comp h3{font-size:13px;margin:0 0 8px;font-weight:700}
+.cb{display:flex;gap:2px;height:28px;border-radius:6px;overflow:hidden}
+.cb i{min-width:3px}
+.cb i.click{cursor:pointer}
+.cb i:hover{filter:brightness(1.12)}
+.cl{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12px;color:var(--muted);margin-top:8px}
+.cl span{display:inline-flex;align-items:center;gap:6px}
+.cl em{font-style:normal;font-family:"JetBrains Mono",monospace;color:var(--ink);font-weight:700}
+.tip{position:fixed;z-index:50;pointer-events:none;background:var(--ink);color:var(--bg);font-size:12px;line-height:1.5;padding:8px 10px;border-radius:8px;max-width:280px;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.tip .tr{display:flex;align-items:center;gap:6px}
+.tip .tr em{font-style:normal;margin-left:auto;padding-left:12px;font-family:"JetBrains Mono",monospace;font-weight:700}
+.tip .mut{opacity:.65;margin-top:2px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px;margin-bottom:12px;background:var(--bg)}
+.seg button{border:0;background:transparent;color:var(--muted);font:inherit;font-size:13px;padding:5px 14px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.seg button[aria-selected="true"],.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.seg button small{font-family:"JetBrains Mono",monospace;font-size:11px;opacity:.7;margin-left:4px}
 .cv{position:relative;height:340px}
 .vnote{font-size:12px;color:var(--muted);margin:8px 0 0}
-.scrollx{overflow-x:auto}
 #chainSvg{display:block;min-width:600px;width:100%}
 #chainSvg .lh{font-size:13px;font-weight:700;fill:var(--ink)}
 #chainSvg .lo{font-size:12px;fill:var(--ink)}
@@ -108,89 +121,214 @@ footer p{margin:6px 0}
 .single{list-style:none;padding:0;margin:12px 0 0;font-size:13px}
 .single li{padding:6px 0;border-top:1px solid var(--line)}
 .lmh{color:var(--muted);font-size:12px}
+details.vnote summary{cursor:pointer}
+
+/* 一覧 */
+.listwrap{max-width:880px;margin:32px auto 0}
+.controls{position:sticky;top:0;z-index:10;background:var(--bg);padding:12px 0 10px;border-bottom:1px solid var(--line)}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.controls input[type=search]{flex:1 1 200px;min-width:0;padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);font:inherit;font-size:14px}
+.periods{display:flex;overflow-x:auto;margin:8px 0 0;max-width:100%;scrollbar-width:none}
+.periods .seg{margin:0}
+.chip{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:5px 12px;font:inherit;font-size:13px;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.chip[aria-pressed="false"]{opacity:.45}
+.chip.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip.x::after{content:"×";margin-left:2px;opacity:.7}
+.dot{width:8px;height:8px;border-radius:50%;display:inline-block}
+select.chip{padding:5px 10px}
+.panel{margin-top:8px;padding:10px 12px;border:1px dashed var(--line);border-radius:12px}
+.panel .row + .row{margin-top:8px}
+.status{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center;margin:10px 0 0;font-size:13px;color:var(--muted)}
+.status b{font-family:"JetBrains Mono",monospace;color:var(--ink);font-size:15px}
+.day{display:flex;align-items:baseline;gap:8px;margin:28px 0 6px}
+.day b{font-family:"JetBrains Mono",monospace;font-size:20px;font-weight:700}
+.day span{color:var(--muted);font-size:13px}
+.day em{font-style:normal;margin-left:auto;font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--muted)}
+.tl{position:relative;padding-left:20px;border-left:2px solid var(--line);margin-left:6px}
+.item{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 16px;margin:10px 0;overflow-wrap:anywhere;box-shadow:var(--shadow)}
+.item::before{content:"";position:absolute;left:-28px;top:18px;width:12px;height:12px;border-radius:50%;background:var(--tc);border:3px solid var(--bg)}
+.hd{display:flex;gap:12px;align-items:baseline;justify-content:space-between}
+.org{font-weight:700;font-size:16px;line-height:1.4}
+.cnt{flex:none;font-family:"JetBrains Mono",monospace;font-weight:700;font-size:14px;color:var(--tc);text-align:right;max-width:45%}
+.meta{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center;margin-top:4px;font-size:11px;color:var(--muted)}
+.tag{padding:1px 8px;border-radius:999px;color:var(--tc);border:1px solid var(--tc)}
+.cert{display:inline-flex;align-items:center;gap:4px}
+.cert::before{content:"";width:8px;height:8px;border-radius:50%;border:1.5px solid var(--ink)}
+.cert.confirmed::before{background:var(--ink)}
+.sum{margin:6px 0 2px;font-size:13.5px}
+.flow{margin:8px 0 2px;font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px}
+.flow .st{color:var(--ink);background:var(--bg);border-radius:6px;padding:1px 8px;min-width:0;overflow-wrap:anywhere}
+.flow .st small{color:var(--muted)}
+.flow .arr{font-family:"JetBrains Mono",monospace;white-space:nowrap}
+.flow .arr b{color:var(--accent)}
+.flow .key{font-weight:700;color:var(--ink);margin-right:4px;font-family:"JetBrains Mono",monospace}
+.more{margin-top:6px;font-size:12px;color:var(--muted)}
+.more summary{cursor:pointer;width:max-content}
+.more a{color:inherit}
+.more p{margin:4px 0}
+.item.grp{--tc:var(--gc)}
+.gorgs{display:flex;flex-wrap:wrap;gap:4px;margin:8px 0 2px}
+.gorgs span{font-size:12px;background:var(--bg);border-radius:6px;padding:1px 8px}
+.glist{margin:6px 0 0;padding-left:18px}
+.glist li{margin:2px 0}
+.item.mile{background:var(--mile-soft);border-color:transparent;box-shadow:none;padding:8px 14px}
+.item.mile::before{background:var(--mile);border-radius:3px;transform:rotate(45deg)}
+.item.mile .org{color:var(--mile);font-size:14px}
+.item.mile.cn{--mile:var(--mile-cn);--mile-soft:var(--mile-cn-soft)}
+.unofficial{font-size:11px;color:var(--accent)}
+.empty{color:var(--muted);padding:24px 0}
+.moreBtn{display:block;margin:20px auto 0;padding:10px 22px;font-size:14px}
+footer{color:var(--muted);font-size:12px;padding:32px 0 60px;border-top:1px solid var(--line);margin-top:48px}
+footer p{margin:6px 0}
+footer summary{cursor:pointer;color:var(--ink)}
+
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr;padding-top:40px}
+  h1{font-size:clamp(28px,9vw,60px)}
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  .kpis .kpi:first-child{grid-column:span 2}
+  .two{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  .rk{grid-template-columns:96px 1fr 38px;gap:8px}
+  .card{padding:14px 12px}
+  .hd{flex-direction:column;gap:2px}
+  .cnt{text-align:left;max-width:none}
+}
 </style>
 </head>
 <body>
 <button class="chip theme" id="themeBtn" type="button" aria-label="テーマ切替">◐</button>
 <div class="wrap">
-  <header>
-    <div class="kicker">Japan data breach timeline · since Fable 5</div>
-    <h1>漏洩カミングアウトタイムライン</h1>
-    <p class="lead">Claude Fable 5 のリリース（2026年6月10日）以降に公表された、日本の企業・組織の情報漏洩／不正アクセス事案を時系列で並べました。主要なAIモデルの登場（◆。中国系は緑）も同じ時間軸に重ねています。各項目には出典へのリンクを付けています。</p>
-    <div class="stats" id="stats"></div>
-    <div class="chart"><h2>月別の公表件数（本サイト掲載分）</h2><div class="bars" id="bars"></div></div>
-    <section class="viz" aria-label="グラフ">
-      <div class="seg" role="tablist">
-        <button type="button" role="tab" id="tab-count" aria-controls="v-count" aria-selected="true">流出件数</button>
-        <button type="button" role="tab" id="tab-chain" aria-controls="v-chain" aria-selected="false">委託先・連鎖</button>
-      </div>
-      <div id="v-count" role="tabpanel" aria-labelledby="tab-count">
-        <div class="legend" id="countLegend"></div>
-        <div class="cv" id="countCanvasWrap"><canvas id="countChart" role="img" aria-label="公表日ごとの漏洩件数を対数目盛で示した散布図。塗りは漏洩を確認、白抜きは可能性または確認の記載なし。">公表日ごとの漏洩件数の散布図。各事案の件数は下の一覧で確認できます。</canvas></div>
-        <p class="vnote" id="countNote"></p>
-      </div>
-      <div id="v-chain" role="tabpanel" aria-labelledby="tab-chain" hidden>
-        <div class="legend">
-          <span><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="4.5" fill="none" stroke="var(--muted)" stroke-width="1.5"/></svg>委託先で発生</span>
-          <span><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><rect x="1" y="1" width="10" height="10" rx="2" fill="var(--ink)"/></svg>委託先本体の公表</span>
-          <span><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="5" fill="var(--c-vendor)"/></svg>利用企業の公表（+日数は委託先での発生から）</span>
-        </div>
-        <div id="chainPick" class="legend" role="group" aria-label="委託先を選ぶ"></div>
-        <div class="scrollx"><svg id="chainSvg" role="img" xmlns="http://www.w3.org/2000/svg"></svg></div>
-        <ul class="single" id="chainSingle"></ul>
-        <p class="vnote">公式発表で委託先の名前や同じ事案であることが確認できたものだけをつないでいます。東京都小平市は委託先の名前が公式発表にないため含めていません。</p>
-      </div>
-    </section>
+  <header class="hero">
+    <div>
+      <div class="kicker">Japan data breach timeline · since Fable 5</div>
+      <h1><span><span class="acc">漏洩</span>カミングアウト</span><br><span>タイムライン</span></h1>
+      <p class="lead">Claude Fable 5 リリース（2026/6/10）以降に公表された、日本の組織の情報漏洩・不正アクセス。出典は各項目に付けています。</p>
+    </div>
+    <div class="big">
+      <div class="lbl">掲載事案数 · 累積</div>
+      <svg id="cumSvg" preserveAspectRatio="none" aria-hidden="true"></svg>
+      <div class="num"><b id="heroNum"></b><span id="heroSub"></span></div>
+    </div>
   </header>
 
-  <div class="controls">
-    <input id="q" type="search" placeholder="組織名・内容で検索">
-    <select id="sort" class="chip" aria-label="並び順">
-      <option value="asc">古い順</option>
-      <option value="desc">新しい順</option>
-      <option value="size">件数の多い順</option>
-      <option value="disclose">検知→公表の日数順</option>
-    </select>
-    <div id="types" style="display:flex;flex-wrap:wrap;gap:6px"></div>
-    <button class="chip" type="button" id="aiBtn" aria-pressed="true"><span class="dot" style="background:var(--mile);border-radius:2px;transform:rotate(45deg)"></span>AIモデル（米国など）</button>
-    <button class="chip" type="button" id="cnBtn" aria-pressed="true"><span class="dot" style="background:var(--mile-cn);border-radius:2px;transform:rotate(45deg)"></span>AIモデル（中国系）</button>
-    <button class="chip" type="button" id="grpBtn" aria-pressed="true">委託先経由をまとめる</button>
+  <div class="kpis" id="kpis"></div>
+
+  <section class="card" aria-label="日別の公表件数">
+    <h2>Daily <b>日別の公表件数</b></h2>
+    <div class="legend" id="dailyLegend"></div>
+    <div class="scrollx" id="dailyScroll"><svg id="dailySvg" role="img" xmlns="http://www.w3.org/2000/svg"></svg></div>
+  </section>
+
+  <div class="two">
+    <section class="card" aria-label="委託先ランキング">
+      <h2>Vendors <b>委託先ごとの利用組織数</b></h2>
+      <div id="rank"></div>
+    </section>
+    <section class="card" aria-label="内訳">
+      <h2>Breakdown <b>内訳</b></h2>
+      <div class="comp"><h3>種別</h3><div id="compType"></div></div>
+      <div class="comp"><h3>漏洩の確度</h3><div id="compCert"></div></div>
+    </section>
   </div>
 
-  <main id="list"></main>
+  <section class="card viz" aria-label="グラフ">
+    <div class="seg" role="tablist">
+      <button type="button" role="tab" id="tab-count" aria-controls="v-count" aria-selected="true">流出件数</button>
+      <button type="button" role="tab" id="tab-chain" aria-controls="v-chain" aria-selected="false">委託先・連鎖</button>
+    </div>
+    <div id="v-count" role="tabpanel" aria-labelledby="tab-count">
+      <div class="legend" id="countLegend"></div>
+      <div class="cv" id="countCanvasWrap"><canvas id="countChart" role="img" aria-label="公表日ごとの漏洩件数を対数目盛で示した散布図。塗りは漏洩を確認、白抜きは可能性または確認の記載なし。">公表日ごとの漏洩件数の散布図。各事案の件数は下の一覧で確認できます。</canvas></div>
+      <details class="vnote"><summary>グラフに含めていない事案</summary><p id="countNote"></p></details>
+    </div>
+    <div id="v-chain" role="tabpanel" aria-labelledby="tab-chain" hidden>
+      <div class="legend">
+        <span><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="4.5" fill="none" stroke="var(--muted)" stroke-width="1.5"/></svg>委託先で発生</span>
+        <span><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><rect x="1" y="1" width="10" height="10" rx="2" fill="var(--ink)"/></svg>委託先本体の公表</span>
+        <span><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="5" fill="var(--c-vendor)"/></svg>利用組織の公表（+日数は委託先での発生から）</span>
+      </div>
+      <div id="chainPick" class="legend" role="group" aria-label="委託先を選ぶ"></div>
+      <div class="scrollx"><svg id="chainSvg" role="img" xmlns="http://www.w3.org/2000/svg"></svg></div>
+      <ul class="single" id="chainSingle"></ul>
+      <p class="vnote">公式発表で委託先の名前や同じ事案であることが確認できたものだけをつないでいます。</p>
+    </div>
+  </section>
+
+  <section class="listwrap" id="listTop" aria-label="事案の一覧">
+    <div class="controls">
+      <div class="row">
+        <input id="q" type="search" placeholder="組織名・内容で検索">
+        <button class="chip" type="button" id="panelBtn" aria-expanded="false">絞り込み・並び順</button>
+      </div>
+      <div class="periods"><div class="seg" id="periods" role="group" aria-label="期間"></div></div>
+      <div class="panel" id="panel" hidden>
+        <div class="row">
+          <select id="sort" class="chip" aria-label="並び順">
+            <option value="desc">新しい順</option>
+            <option value="asc">古い順</option>
+            <option value="size">件数の多い順</option>
+            <option value="disclose">検知→公表の日数順</option>
+          </select>
+          <button class="chip" type="button" id="grpBtn" aria-pressed="true">委託先経由をまとめる</button>
+          <button class="chip" type="button" id="aiBtn" aria-pressed="true"><span class="dot" style="background:var(--mile);border-radius:2px;transform:rotate(45deg)"></span>AIモデル</button>
+          <button class="chip" type="button" id="cnBtn" aria-pressed="true"><span class="dot" style="background:var(--mile-cn);border-radius:2px;transform:rotate(45deg)"></span>AIモデル（中国系）</button>
+        </div>
+        <div class="row" id="types"></div>
+      </div>
+      <div class="status" id="status"></div>
+    </div>
+    <main id="list"></main>
+    <button class="chip moreBtn" type="button" id="moreBtn" hidden></button>
+  </section>
 
   <footer>
     <p><b>注意：</b>Fable 5 のリリース日は時期の区切りとして使っているだけです。AIモデルの登場日も同様に、掲載事案と Fable 5 を含む AI の悪用との因果関係を示すものではありません。原因はそれぞれの組織が公表した内容（または未公表）に従ってください。</p>
-    <p>「発生」「検知」「公表」の日付は、各組織の公式発表に明記された日付だけを使っています。記載がない・「上旬」など曖昧な場合は日数を計算しません。「検知」は異常の検知、不正アクセスの確認、漏洩の可能性の認識、委託先からの報告のうち最も早い日で、どれに当たるかを括弧内に示しています。設定不備などで情報が「閲覧可能な状態」になった日は、侵入とは意味が違うため「発生」とは区別し、日数計算の起点にしていません。タイムラインは公式の公表日（第1報）で並べています。初報が2026年6月10日より前で続報によって掲載した事案は続報の日付で並べ、「続報」と表示しています。公式の公表日が確認できない事案は報道まとめの日付で並べ、「報道ベース」と表示しています。</p>
-    <p>件数はセキュリティニュースのまとめ記事や報道をもとにした初報ベースの値です。続報で訂正されることがあります。正確な情報は各組織の一次発表を確認してください。掲載は網羅的ではありません。</p>
+    <details>
+      <summary>日付・件数の扱い</summary>
+      <p>「発生」「検知」「公表」の日付は、各組織の公式発表に明記された日付だけを使っています。記載がない・「上旬」など曖昧な場合は日数を計算しません。「検知」は異常の検知、不正アクセスの確認、漏洩の可能性の認識、委託先からの報告のうち最も早い日で、どれに当たるかを括弧内に示しています。設定不備などで情報が「閲覧可能な状態」になった日は、侵入とは意味が違うため「発生」とは区別し、日数計算の起点にしていません。タイムラインは公式の公表日（第1報）で並べています。初報が2026年6月10日より前で続報によって掲載した事案は続報の日付で並べ、「続報」と表示しています。公式の公表日が確認できない事案は報道まとめの日付で並べ、「報道ベース」と表示しています。</p>
+      <p>件数はセキュリティニュースのまとめ記事や報道をもとにした初報ベースの値です。続報で訂正されることがあります。正確な情報は各組織の一次発表を確認してください。掲載は網羅的ではありません。東京都小平市は委託先の名前が公式発表にないため、委託先・連鎖の図に含めていません。</p>
+    </details>
     <p>最終更新: <span id="updated"></span> ／ データは <code>data.js</code> で管理しています。</p>
   </footer>
 </div>
 
-<script src="lib.js?v=20261031a"></script>
-<script src="timelines.js?v=20261031a"></script>
-<script src="data.js?v=20261031a"></script>
+<script src="lib.js?v=20261031b"></script>
+<script src="timelines.js?v=20261031b"></script>
+<script src="data.js?v=20261031b"></script>
 <script>
 (() => {
   const TYPES = {
     access: "不正アクセス", ransom: "ランサムウェア", config: "設定・認証不備",
     human: "人為ミス・内部", vendor: "委託先・連鎖"
   };
+  const CERT = { confirmed: "漏洩を確認", possible: "漏洩の可能性", unstated: "確認の記載なし" };
+  const MAIN = new Set(["arcadia", "studio", "blastmail", "idcf"]);
+  const PAGE = 40;
   const enabled = new Set(Object.keys(TYPES));
-  let showAI = true, showCN = true, grouped = true;
+  let showAI = true, showCN = true, grouped = true, period = "7d", chain = null, limit = PAGE;
   // 利用組織が5つ以上の委託先：同じ日の公表を1枚にまとめる（org → 連鎖）
   const GROUP_MIN = 5;
-  const chainOf = {};
-  (window.CHAINS || []).filter(c => c.members.length >= GROUP_MIN).forEach(c => c.members.forEach(o => { chainOf[o] = c; }));
+  const chainOf = {}, memberOf = {}, chainByKey = {};
+  (window.CHAINS || []).forEach(c => {
+    chainByKey[c.key] = c;
+    c.members.forEach(o => { memberOf[o] = c.key; if (c.members.length >= GROUP_MIN) chainOf[o] = c; });
+    if (c.hubOrg) memberOf[c.hubOrg] = c.key;
+  });
   const $ = id => document.getElementById(id);
   const fmt = n => n.toLocaleString("ja-JP");
   const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
   const L = window.LeakLib;
   // 表示用ビュー：導出した時間軸を付け、タイムライン位置は公式公表日（なければ報道日）
-  const inc = window.INCIDENTS.map(x => { const t = L.derive(x); return { ...x, t, date: t.timelineDate }; });
+  const inc = window.INCIDENTS.map(x => { const t = L.derive(x); return { ...x, t, date: t.timelineDate, cert: L.certaintyOf(x) }; });
   const miles = window.MILESTONES;
+  const END = window.UPDATED;
+  const addDay = (d, n) => new Date(Date.parse(d + "T00:00:00Z") + n * 864e5).toISOString().slice(0, 10);
   const md = d => `${d.startsWith("2026") ? "" : d.slice(0, 4) + "/"}${+d.slice(5, 7)}/${+d.slice(8)}`;
+  const WD = "日月火水木金土";
   const span = d => d === null ? "" : d === 0 ? "当日" : `${d}日`;
+  const gcolor = c => MAIN.has(c.key) ? `var(--k-${c.key})` : "var(--c-vendor)";
 
   // テーマ切替（閲覧者ごとの好みのみ保存）
   const root = document.documentElement;
@@ -202,36 +340,30 @@ footer p{margin:6px 0}
     document.dispatchEvent(new Event("themechange"));
   };
 
-  // 統計
-  const days = Math.round((new Date(window.UPDATED) - new Date("2026-06-10")) / 864e5);
-  const big = inc.filter(x => (x.n || 0) >= 1e6).length;
-  const top = [...inc].sort((a, b) => (b.n || 0) - (a.n || 0))[0];
-  $("stats").innerHTML = [
-    [inc.length, "掲載事案数"],
-    [days, "Fable 5 リリースからの日数"],
-    [(inc.length / days * 7).toFixed(1), "1週間あたりの公表件数"],
-    [big, "100万件超の事案"],
-    ...(() => { const s = L.summarize(inc.map(x => x.t.daysToDisclose));
-      return s.n ? [[`${s.median}日`, `検知→公表の中央値（日付判明 ${s.n}件）`]] : []; })()
-  ].map(([v, l]) => `<div class="stat"><b>${v}</b><span>${l}</span></div>`).join("")
-   + `<div class="stat"><b style="font-size:18px">${esc(top.org)}</b><span>最大規模：${esc(top.count)}</span></div>`;
-
-  // 月別バー
-  const byMonth = {};
-  inc.forEach(x => { const m = x.date.slice(0, 7); byMonth[m] = (byMonth[m] || 0) + 1; });
-  const months = Object.keys(byMonth).sort(), max = Math.max(...Object.values(byMonth));
-  $("bars").innerHTML = months.map(m =>
-    `<div class="bar"><em>${byMonth[m]}</em><i style="height:${byMonth[m] / max * 85}%"></i><small>${+m.slice(5)}月</small></div>`).join("");
+  // 期間ボタン：直近7日・月ごと・全期間（日付は日別グラフのクリックで指定）
+  const months = [...new Set(inc.map(x => x.date.slice(0, 7)))].sort();
+  const inPeriod = (d, p) => p === "all" ? true : p === "7d" ? d > addDay(END, -7) : d.startsWith(p);
+  function periods() {
+    const opts = [["7d", "直近7日"], ...months.slice().reverse().map(m => [m, m < "2026-06" ? `${m.slice(0, 4)}/${+m.slice(5)}月` : `${+m.slice(5)}月`]), ["all", "全期間"]];
+    if (/^\d{4}-\d{2}-\d{2}$/.test(period)) opts.unshift([period, md(period)]);
+    $("periods").innerHTML = opts.map(([k, l]) =>
+      `<button type="button" data-p="${k}" aria-pressed="${k === period}">${l}<small>${inc.filter(x => inPeriod(x.date, k)).length}</small></button>`).join("");
+  }
+  $("periods").onclick = e => { const b = e.target.closest("[data-p]"); if (!b) return; period = b.dataset.p; limit = PAGE; render(); };
 
   // 種別フィルタ
-  $("types").innerHTML = Object.entries(TYPES).map(([k, v]) =>
-    `<button class="chip" type="button" data-t="${k}" aria-pressed="true"><span class="dot" style="background:var(--c-${k})"></span>${v}</button>`).join("");
+  const typeChips = () => {
+    $("types").innerHTML = Object.entries(TYPES).map(([k, v]) =>
+      `<button class="chip" type="button" data-t="${k}" aria-pressed="${enabled.has(k)}"><span class="dot" style="background:var(--c-${k})"></span>${v}</button>`).join("");
+  };
   $("types").onclick = e => {
     const b = e.target.closest("[data-t]"); if (!b) return;
     const t = b.dataset.t;
     enabled.has(t) ? enabled.delete(t) : enabled.add(t);
-    b.setAttribute("aria-pressed", enabled.has(t));
-    render();
+    limit = PAGE; render();
+  };
+  $("panelBtn").onclick = e => {
+    const open = $("panel").hidden; $("panel").hidden = !open; e.currentTarget.setAttribute("aria-expanded", open);
   };
 
   // 発生 → 検知 → 公表 の時間軸。確定日のない区間は日数を出さない
@@ -251,69 +383,120 @@ footer p{margin:6px 0}
       : exposureVague ? `<span class="st">閲覧可能になった時期 <small>「${esc(exposureVague.raw)}」</small></span>`
       : point("発生", incident, ["incident"]);
     const arr = d => `<span class="arr">${d === null ? "→" : `→ <b>${span(d)}</b> →`}</span>`;
-    const key = daysToDisclose === null ? "" : `<span class="key">検知 → 公表：${span(daysToDisclose)}</span>`;
+    const key = daysToDisclose === null ? "" : `<span class="key">検知→公表 ${span(daysToDisclose)}</span>`;
     return `<div class="flow">${key}${start}${arr(daysToDetect)}${point("検知", detected, L.DETECT_TYPES)}${arr(daysToDisclose)}${point("公表", disclosed, ["disclosed"])}</div>`;
   }
 
-  const groupCard = g => `<div class="item grp" style="--tc:var(--c-vendor)"><div class="top"><span class="date">${g.date}</span>
-       <span class="org">${esc(g.chain.label)} 経由の公表</span><span class="tag">${TYPES.vendor}</span></div>
-       <p class="sum">${g.items.length}組織：${esc(g.items.slice(0, 6).map(x => x.org.replace(/（.*?）/g, "")).join("、"))}${g.items.length > 6 ? " ほか" : ""}</p>
-       <details><summary>一覧を開く</summary><ul class="glist">${g.items.map(x =>
-         `<li><b>${esc(x.org)}</b> ${esc(x.count)}${x.officialUrl ? ` <a href="${x.officialUrl}" target="_blank" rel="noopener">公式発表</a>` : ""}</li>`).join("")}</ul></details></div>`;
+  const groupCard = g => `<article class="item grp" style="--gc:${gcolor(g.chain)}"><div class="hd">
+       <span class="org">${esc(g.chain.label)} 経由</span><span class="cnt">${g.items.length}組織</span></div>
+       <div class="meta"><span class="tag">${TYPES.vendor}</span><span class="mono">${md(g.date)}</span></div>
+       <div class="gorgs">${g.items.slice(0, 12).map(x => `<span>${esc(x.org.replace(/（.*?）/g, ""))}</span>`).join("")}${g.items.length > 12 ? `<span>ほか${g.items.length - 12}</span>` : ""}</div>
+       <details class="more"><summary>件数・公式発表</summary><ul class="glist">${g.items.map(x =>
+         `<li><b>${esc(x.org)}</b> ${esc(x.count)}${x.officialUrl ? ` <a href="${x.officialUrl}" target="_blank" rel="noopener">公式発表</a>` : ""}</li>`).join("")}</ul></details></article>`;
 
   const card = x => x.group ? groupCard(x) : x.mile
-    ? `<div class="item mile${x.region === "cn" ? " cn" : ""}"><div class="top"><span class="date">${x.date}</span><span class="org">${esc(x.title)}</span><span class="tag" style="--tc:var(--mile)">${esc(x.vendor)}</span></div>
-       ${x.note ? `<p class="sum">${esc(x.note)}</p>` : ""}<div class="src">出典: <a href="${x.src}" target="_blank" rel="noopener">${esc(x.srcName)}</a></div></div>`
-    : `<div class="item" style="--tc:var(--c-${x.type})"><div class="top"><span class="date">${x.date}${x.t.officialDate ? "" : ` <span class="unofficial">報道ベース</span>`}${x.t.followUp ? ` <span class="unofficial">続報</span>` : ""}</span>
-       <span class="org">${esc(x.org)}</span><span class="tag">${TYPES[x.type]}</span></div>
-       <p class="sum">${esc(x.summary)}</p><div class="count">${esc(x.count)}</div>
+    ? `<article class="item mile${x.region === "cn" ? " cn" : ""}"><div class="hd"><span class="org">◆ ${esc(x.title)}</span><span class="cnt" style="color:var(--mile)">${esc(x.vendor)}</span></div>
+       ${x.note ? `<details class="more"><summary>詳細</summary><p>${esc(x.note)}</p><p>出典: <a href="${x.src}" target="_blank" rel="noopener">${esc(x.srcName)}</a></p></details>` : `<div class="more">出典: <a href="${x.src}" target="_blank" rel="noopener">${esc(x.srcName)}</a></div>`}</article>`
+    : `<article class="item" style="--tc:${memberOf[x.org] && MAIN.has(memberOf[x.org]) ? `var(--k-${memberOf[x.org]})` : `var(--c-${x.type})`}"><div class="hd">
+       <span class="org">${esc(x.org)}</span><span class="cnt">${esc(x.count)}</span></div>
+       <div class="meta"><span class="tag">${TYPES[x.type]}</span><span class="cert ${x.cert}">${CERT[x.cert]}</span><span class="mono">${md(x.date)}</span>${x.t.officialDate ? "" : `<span class="unofficial">報道ベース</span>`}${x.t.followUp ? `<span class="unofficial">続報</span>` : ""}</div>
+       <p class="sum">${esc(x.summary)}</p>
        ${flow(x)}
-       ${x.dataNote ? `<p class="note">${esc(x.dataNote)}</p>` : ""}
-       <div class="src">出典: ${x.officialUrl ? `<a href="${x.officialUrl}" target="_blank" rel="noopener">公式発表</a> ／ ` : ""}<a href="${x.src}" target="_blank" rel="noopener">${esc(x.srcName)}</a></div></div>`;
+       <details class="more"><summary>出典${x.dataNote ? "・注記" : ""}</summary>
+       ${x.dataNote ? `<p>${esc(x.dataNote)}</p>` : ""}
+       <p>${x.officialUrl ? `<a href="${x.officialUrl}" target="_blank" rel="noopener">公式発表</a> ／ ` : ""}<a href="${x.src}" target="_blank" rel="noopener">${esc(x.srcName)}</a></p></details></article>`;
+
+  function status(n) {
+    const f = [];
+    if (chain) f.push(`<button class="chip on x" type="button" data-clear="chain">${esc(chainByKey[chain].label.replace(/（.*?）/g, ""))}</button>`);
+    if (enabled.size < Object.keys(TYPES).length) f.push(`<button class="chip on x" type="button" data-clear="type">${[...enabled].map(k => TYPES[k]).join("・") || "種別なし"}</button>`);
+    if (/^\d{4}-\d{2}-\d{2}$/.test(period)) f.push(`<button class="chip on x" type="button" data-clear="period">${md(period)}</button>`);
+    $("status").innerHTML = `<b>${fmt(n)}</b>件${f.join("")}`;
+  }
+  $("status").onclick = e => {
+    const b = e.target.closest("[data-clear]"); if (!b) return;
+    const k = b.dataset.clear;
+    if (k === "chain") chain = null;
+    if (k === "type") Object.keys(TYPES).forEach(t => enabled.add(t));
+    if (k === "period") period = "7d";
+    limit = PAGE; render();
+  };
 
   function render() {
+    periods(); typeChips();
     const q = $("q").value.trim().toLowerCase(), sort = $("sort").value;
-    let rows = inc.filter(x => enabled.has(x.type) &&
+    let rows = inc.filter(x => enabled.has(x.type) && inPeriod(x.date, period) && (!chain || memberOf[x.org] === chain) &&
       (!q || (x.org + x.summary + x.count).toLowerCase().includes(q)));
+    const n = rows.length;
+    status(n);
+    let html;
     if (sort === "size" || sort === "disclose") {
       const k = sort === "size" ? (x => x.n) : (x => x.t.daysToDisclose);
       rows.sort((a, b) => (k(b) ?? -1) - (k(a) ?? -1));
-      $("list").innerHTML = rows.length ? `<div class="tl">${rows.map(card).join("")}</div>` : `<p class="empty">該当なし</p>`;
-      return;
+      const vis = rows.slice(0, limit);
+      html = vis.length ? `<div class="tl">${vis.map(card).join("")}</div>` : "";
+      more(rows.length - vis.length);
+    } else {
+      const allTypes = enabled.size === Object.keys(TYPES).length;
+      if (!chain && allTypes) rows = rows.concat(miles.filter(m => (m.region === "cn" ? showCN : showAI) && inPeriod(m.date, period))
+        .filter(m => !q || (m.vendor + m.title + m.note).toLowerCase().includes(q)).map(m => ({ ...m, mile: true })));
+      rows.sort((a, b) => a.date.localeCompare(b.date) || (b.mile ? 1 : 0) - (a.mile ? 1 : 0));
+      if (grouped && !q) {
+        const out = [], byKey = {};
+        rows.forEach(x => {
+          const c = !x.mile && chainOf[x.org];
+          if (!c) { out.push(x); return; }
+          const k = c.key + "|" + x.date;
+          if (!byKey[k]) { byKey[k] = { group: true, date: x.date, chain: c, items: [] }; out.push(byKey[k]); }
+          byKey[k].items.push(x);
+        });
+        // 1件だけのまとめは通常のカードに戻す
+        rows = out.map(x => x.group && x.items.length === 1 ? x.items[0] : x);
+      }
+      if (sort === "desc") rows.reverse();
+      const vis = rows.slice(0, limit);
+      more(rows.length - vis.length);
+      const days = {};
+      rows.forEach(x => { if (!x.mile) days[x.date] = (days[x.date] || 0) + (x.group ? x.items.length : 1); });
+      const groups = {};
+      vis.forEach(x => (groups[x.date] ||= []).push(x));
+      html = Object.entries(groups).map(([d, xs]) =>
+        `<div class="day"><b>${md(d)}</b><span>${WD[new Date(d + "T00:00:00Z").getUTCDay()]}</span>${days[d] ? `<em>${days[d]}件</em>` : ""}</div><div class="tl">${xs.map(card).join("")}</div>`).join("");
     }
-    rows = rows.concat(miles.filter(m => (m.region === "cn" ? showCN : showAI)).filter(m => !q || (m.vendor + m.title + m.note).toLowerCase().includes(q)).map(m => ({ ...m, mile: true })));
-    rows.sort((a, b) => a.date.localeCompare(b.date) || (b.mile ? 1 : 0) - (a.mile ? 1 : 0));
-    if (grouped && !q) {
-      const out = [], byKey = {};
-      rows.forEach(x => {
-        const c = !x.mile && chainOf[x.org];
-        if (!c) { out.push(x); return; }
-        const k = c.key + "|" + x.date;
-        if (!byKey[k]) { byKey[k] = { group: true, date: x.date, chain: c, items: [] }; out.push(byKey[k]); }
-        byKey[k].items.push(x);
-      });
-      // 1件だけのまとめは通常のカードに戻す
-      rows = out.map(x => x.group && x.items.length === 1 ? x.items[0] : x);
-    }
-    if (sort === "desc") rows.reverse();
-    const groups = {};
-    rows.forEach(x => (groups[x.date.slice(0, 7)] ||= []).push(x));
-    const html = Object.entries(groups).map(([m, xs]) => {
-      const n = xs.reduce((s, x) => s + (x.mile ? 0 : x.group ? x.items.length : 1), 0);
-      return `<div class="month"><h3>${m.slice(0, 4)}年${+m.slice(5)}月</h3><span>${n}件</span></div><div class="tl">${xs.map(card).join("")}</div>`;
-    }).join("");
     $("list").innerHTML = html || `<p class="empty">該当なし</p>`;
+    document.dispatchEvent(new CustomEvent("leakstate", { detail: { period, chain } }));
   }
+  function more(rest) {
+    $("moreBtn").hidden = rest <= 0;
+    $("moreBtn").textContent = `さらに表示（残り ${fmt(rest)}）`;
+  }
+  $("moreBtn").onclick = () => { limit += PAGE; render(); };
+
+  // ダッシュボードからの絞り込み
+  document.addEventListener("leakfilter", e => {
+    const d = e.detail;
+    if (d.period) { period = d.period; if (/^\d{4}-\d{2}-\d{2}$/.test(d.period)) chain = null; }
+    if (d.chain) { chain = d.chain; period = "all"; }
+    if (d.type) { enabled.clear(); enabled.add(d.type); period = "all"; }
+    limit = PAGE; render();
+    if (d.scroll) $("listTop").scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
   $("grpBtn").onclick = e => { grouped = !grouped; e.currentTarget.setAttribute("aria-pressed", grouped); render(); };
   $("cnBtn").onclick = e => { showCN = !showCN; e.currentTarget.setAttribute("aria-pressed", showCN); render(); };
   $("aiBtn").onclick = e => { showAI = !showAI; e.currentTarget.setAttribute("aria-pressed", showAI); render(); };
-  $("q").oninput = render;
-  $("sort").onchange = render;
+  $("q").oninput = () => { limit = PAGE; if ($("q").value.trim() && period === "7d") period = "all"; render(); };
+  $("sort").onchange = () => { limit = PAGE; render(); };
   $("updated").textContent = window.UPDATED;
   render();
 })();
 </script>
+<script src="dash.js?v=20261031b"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
-<script src="viz.js?v=20261031a"></script>
+<script src="viz.js?v=20261031b"></script>
+<script>
+// 日別グラフはスマホ幅で横スクロールになるため、最新側（右端）を初期表示にする
+(() => { const s = document.getElementById("dailyScroll"); s.scrollLeft = s.scrollWidth; })();
+</script>
 </body>
 </html>
