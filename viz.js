@@ -95,12 +95,20 @@
   }
 
   // ---- 委託先・連鎖（スイムレーン、横軸は暦日） ----
+  let chainPick = null;
   function drawChain() {
     const chains = L.buildChains(window.CHAINS || [], window.INCIDENTS);
-    const lanes = chains.filter(c => c.startDate && c.rows.length >= 2);
-    const singles = chains.filter(c => !(c.startDate && c.rows.length >= 2));
+    // 利用企業が2社以上なら図に載せる（委託先側の発生日が不明でも、公表日だけで描く）
+    const allLanes = chains.filter(c => c.rows.length >= 2).sort((a, b) => b.rows.length - a.rows.length);
+    // 委託先を1つずつ選んで表示する（横軸は全体共通の暦日）
+    if (!chainPick || !allLanes.some(c => c.key === chainPick)) chainPick = allLanes.length ? allLanes[0].key : null;
+    $("chainPick").innerHTML = allLanes.map(c =>
+      `<button type="button" class="chip" data-k="${esc(c.key)}" aria-pressed="${c.key === chainPick}">${esc(c.label)}（${c.rows.length}）</button>`).join("");
+    $("chainPick").onclick = e => { const b = e.target.closest("[data-k]"); if (!b) return; chainPick = b.dataset.k; drawChain(); };
+    const lanes = allLanes.filter(c => c.key === chainPick);
+    const singles = chains.filter(c => c.rows.length < 2);
 
-    const dates = lanes.flatMap(c => [c.startDate, c.hubDisclosed, ...c.rows.map(r => r.date)]).filter(Boolean).sort();
+    const dates = allLanes.flatMap(c => [c.startDate, c.hubDisclosed, ...c.rows.map(r => r.date)]).filter(Boolean).sort();
     if (!dates.length) { $("chainSvg").outerHTML = `<p class="vnote">表示できる連鎖はまだありません。</p>`; return; }
     const d0 = dates[0], d1 = dates[dates.length - 1];
     const span = Math.max(L.daysBetween(d0, d1), 1);
@@ -118,10 +126,10 @@
       y += 10;
       // 委託先本体：発生 → 公表
       y += 22;
-      out.push(T(16, y + 4, "委託先（発生・公表）", "lm"));
-      const xs = xOf(c.startDate);
-      if (c.hubDisclosed) out.push(`<line x1="${xs}" y1="${y}" x2="${xOf(c.hubDisclosed)}" y2="${y}" class="ln"/>`);
-      out.push(`<circle cx="${xs}" cy="${y}" r="5" class="hub-start"><title>委託先で発生 ${md(c.startDate)}</title></circle>`);
+      out.push(T(16, y + 4, c.startDate ? "委託先（発生・公表）" : "委託先（発生日の記載なし）", "lm"));
+      const xs = c.startDate ? xOf(c.startDate) : null;
+      if (xs !== null && c.hubDisclosed) out.push(`<line x1="${xs}" y1="${y}" x2="${xOf(c.hubDisclosed)}" y2="${y}" class="ln"/>`);
+      if (xs !== null) out.push(`<circle cx="${xs}" cy="${y}" r="5" class="hub-start"><title>委託先で発生 ${md(c.startDate)}</title></circle>`);
       if (c.hubDisclosed) {
         const xh = xOf(c.hubDisclosed);
         out.push(`<rect x="${xh - 5}" y="${y - 5}" width="10" height="10" rx="2" class="hub-disc"><title>委託先本体の公表 ${md(c.hubDisclosed)}</title></rect>`);
@@ -132,7 +140,7 @@
         y += 22;
         const xm = xOf(r.date);
         out.push(T(16, y + 4, esc(short(r.org)), "lo"));
-        out.push(`<line x1="${xs}" y1="${y}" x2="${xm}" y2="${y}" class="ln dash"/>`);
+        if (xs !== null) out.push(`<line x1="${xs}" y1="${y}" x2="${xm}" y2="${y}" class="ln dash"/>`);
         out.push(`<circle cx="${xm}" cy="${y}" r="5" class="mem"><title>${esc(r.org)} 公表 ${md(r.date)}${r.lag !== null ? `（発生から${r.lag}日）` : ""}</title></circle>`);
         if (r.lag !== null) out.push(xm > X1 - 40 ? T(xm - 10, y + 4, `+${r.lag}日`, "lm", "end") : T(xm + 10, y + 4, `+${r.lag}日`, "lm"));
       });

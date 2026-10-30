@@ -71,6 +71,7 @@ select.chip{padding:5px 10px}
 .flow .key{font-weight:700;color:var(--ink);margin-right:6px}
 .unofficial{font-size:11px;color:var(--muted)}
 .note{margin:4px 0;font-size:12px;color:var(--muted)}
+.item{overflow-wrap:anywhere}
 .item.mile{background:var(--mile-soft);border-color:transparent}
 .item.mile::before{background:var(--mile);border-radius:3px;transform:rotate(45deg)}
 .item.mile .org{color:var(--mile)}
@@ -129,6 +130,7 @@ footer p{margin:6px 0}
           <span><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><rect x="1" y="1" width="10" height="10" rx="2" fill="var(--ink)"/></svg>委託先本体の公表</span>
           <span><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><circle cx="6" cy="6" r="5" fill="var(--c-vendor)"/></svg>利用企業の公表（+日数は委託先での発生から）</span>
         </div>
+        <div id="chainPick" class="legend" role="group" aria-label="委託先を選ぶ"></div>
         <div class="scrollx"><svg id="chainSvg" role="img" xmlns="http://www.w3.org/2000/svg"></svg></div>
         <ul class="single" id="chainSingle"></ul>
         <p class="vnote">公式発表で委託先の名前や同じ事案であることが確認できたものだけをつないでいます。東京都小平市は委託先の名前が公式発表にないため含めていません。</p>
@@ -159,9 +161,9 @@ footer p{margin:6px 0}
   </footer>
 </div>
 
-<script src="lib.js?v=20261011a"></script>
-<script src="timelines.js?v=20261011a"></script>
-<script src="data.js?v=20261011a"></script>
+<script src="lib.js?v=20261030c"></script>
+<script src="timelines.js?v=20261030c"></script>
+<script src="data.js?v=20261030c"></script>
 <script>
 (() => {
   const TYPES = {
@@ -283,6 +285,6 @@ footer p{margin:6px 0}
 })();
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
-<script src="viz.js?v=20261011a"></script>
+<script src="viz.js?v=20261030c"></script>
 </body>
 </html>
