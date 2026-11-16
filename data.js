@@ -1212,6 +1212,19 @@ window.INCIDENTS = [
   I("2026-11-13", "ヒューマンアジャスト（COMSBI経由）", "利用するCOMSBI（SaaS版）への不正アクセスで、利用者情報とLINE公式アカウントの友だち情報が不正に取得された", "利用者最大58,510人・LINE友だち最大116,518人", 116518, "vendor", S.entamec),
   I("2026-11-14", "京阪ホールディングス（グループ公式LINE／COMSBI経由）", "グループ4社の公式LINEアカウントで利用するCOMSBI（SaaS版）への不正アクセスで、友だち登録者の情報が流出した可能性", "LINE表示名等 最大延べ224,386名分、氏名・住所等 最大延べ64,332件分", 224386, "vendor", S.entamec),
   I("2026-11-14", "産経新聞社（Notion／Fireworks AI経由）", "取引先企業が利用するNotionのAI処理委託先Fireworks AIへの不正アクセスで、自社のシステムに関する情報の一部が流出した可能性", "件数未公表", null, "vendor", S.entamec),
+  // ---- 2026-11-16 追加分（2026-11-16公表分） ----
+  I("2026-11-16", "プレイド（KARTE）", "CXプラットフォーム「KARTE」への不正アクセスで、KARTEアカウントのメールアドレスが漏えい。11月13日に検知・全機能停止を公表し、11月16日のプレスリリースで漏えい確認と規模を公表", "メールアドレス79,249件（連携用認証情報・利用企業の取込データは件数調査中）", 79249, "access", ["https://rocket-boys.co.jp/security-measures-lab/plaid-karte-unauthorized-access-service-suspension-2026/", "セキュリティ対策Lab"]),
+  I("2026-11-16", "ヌーラボ（Cacoo）", "オンラインホワイトボード「Cacoo」の運用環境で認証情報が不正に使用され、Cacooに関するお問い合わせ記録の一部が外部に流出", "約792件", 792, "access", ["https://nulab.com/ja/info/20261116_cacoo_01/", "ヌーラボ"]),
+  I("2026-11-16", "アイキューブドシステムズ（CLOMO MDM）", "CLOMO MDM等のサービスを運用するシステムへの不正アクセスで、顧客がCLOMO MDMに登録していた情報の一部が外部に流出。流出項目と件数は公表されず対象顧客へ個別通知", "件数未公表", null, "access", ["https://rocket-boys.co.jp/security-measures-lab/clomo_mdm_icubedsystems_data_leak_20261116/", "セキュリティ対策Lab"]),
+  I("2026-11-16", "ミツモア", "外部で入手されたとみられるID・パスワードによる不正ログイン（201アカウント）と、事業者の空き状況を表示する機能の脆弱性の悪用で、顧客の住所・電話番号等が漏えいした可能性", "最大36万6,850件", 366850, "access", ["https://rocket-boys.co.jp/security-measures-lab/meetsmore_unauthorized_access_366850_201accounts_202611/", "セキュリティ対策Lab"]),
+  I("2026-11-16", "バンダイロジパル", "物流子会社バンダイロジパルへの不正アクセスで、個人情報が漏えいした可能性。10月に不正アクセス被害を公表済みで、11月16日にバンダイナムコホールディングスが規模を公表", "約41万件", 410000, "access", ["https://www.47news.jp/15239906.html", "共同通信"]),
+  I("2026-11-16", "日清食品（日清食品キャンペーン／COMSBI経由）", "LINE公式アカウント「日清食品キャンペーン」で利用するCOMSBI（SaaS版）への不正アクセスで、友だち登録者のLINEユーザーID・表示名等が漏えい。キャンペーン当選者543件は氏名・住所・電話番号も漏えい", "1,374,157件（当選者情報543件を含む）", 1374157, "vendor", ["https://rocket-boys.co.jp/security-measures-lab/nissin_comsbi_saas_line_data_breach_20261116/", "セキュリティ対策Lab"]),
+  I("2026-11-16", "ピクシブ（Notion AI／Fireworks AI経由）", "NotionのAI処理委託先Fireworks AIへの不正アクセスで、業務で使用していたNotion AIのチャット記録の一部に含まれる取引先・問い合わせ・従業員連絡先等の情報が漏えいしたおそれ", "計19件（調査対象の分類別件数）", 19, "vendor", ["https://rocket-boys.co.jp/security-measures-lab/pixiv_notion_ai_fireworks_19_information_records_20261116/", "セキュリティ対策Lab"]),
+  I("2026-11-16", "ヒビノ（Hibino.com／アララ経由）", "メールマガジン配信に使うMakeRepeaterが利用するアララの「アララメッセージ」への不正アクセスで、メルマガ送信先のメールアドレスが流出", "4,370件", 4370, "vendor", ["https://www.hibino.com/blog/news/important-notice-20261116/", "ヒビノ"]),
+  I("2026-11-16", "大阪府（行政オンラインシステム）", "行政オンラインシステムの提供事業者が利用する外部メール配信サービスへの不正アクセスで、通知メールの送信先メールアドレスが漏えい。11月4日に漏えいのおそれを公表し、11月16日に件数と漏えい確認を公表（府の公表文では事業者名は未記載）", "107,804件", 107804, "vendor", ["https://rocket-boys.co.jp/security-measures-lab/osaka_pref_online_system_email_leak_107804/", "セキュリティ対策Lab"]),
+  I("2026-11-16", "四国電力（よんでんコンシェルジュ／KARTE経由）", "会員制Webサービス「よんでんコンシェルジュ」のお知らせ配信に利用するプレイドの「KARTE」への不正アクセスで、個人・法人会員の氏名・メールアドレス・住所等が外部に流出", "約60万件", 600000, "vendor", ["https://www.sbbit.jp/article/cont1/188450", "ビジネス+IT"]),
+  I("2026-11-16", "コンフィデンス・インターワークス（工場ワークス／KARTE経由）", "求人サイト「工場ワークス」からプレイドの「KARTE」に連携していた会員情報の一部が、KARTEへの不正アクセスで第三者に閲覧・取得された可能性（第一報）", "不明（精査中）", null, "vendor", ["https://rocket-boys.co.jp/security-measures-lab/plaid-karte-unauthorized-access-service-suspension-2026/", "セキュリティ対策Lab"]),
+  I("2026-11-16", "テレビ東京（テレ東BIZ／KARTE経由）", "経済動画配信サービス「テレ東BIZ」のメール配信業務等を委託するプレイドの「KARTE」への不正アクセスで、会員の氏名・メールアドレス・ユーザーID・視聴履歴等が漏えいした可能性", "不明", null, "vendor", ["https://news.yahoo.co.jp/articles/2afca8fc6c92160219d768d88c33644bd10969c0", "Yahoo!ニュース（オリコン）"]),
 ];
 
 // 委託先・連鎖。hubOrg は委託先自身の事案（INCIDENTS の org）、members は影響を公表した利用企業。
@@ -1247,10 +1260,11 @@ window.CHAINS = [
   { key: "amadeus", label: "Amadeus（航空予約システム）", hubOrg: null, members: ["日本航空・日本トランスオーシャン航空（JAL・JTA）", "全日本空輸（ANA／Amadeus旅客サービスシステム）"] },
   { key: "v74447075", label: "ベネフィット・ワン／フォレステック（委託先）", hubOrg: null, members: ["クレディセゾン（トク買）"] },
   { key: "v22065938", label: "コックス（委託先）", hubOrg: null, members: ["ドン・キホーテほか（時計修理委託先コックス）"] },
-  { key: "arara", label: "アララ（メール配信）", hubOrg: "アララ（アララメッセージ）", members: ["鹿児島銀行・南日本銀行・鹿児島相互信用金庫・鹿児島信用金庫（Payどん）", "ワークマン（オンラインストアメールマガジン／アララ経由）", "プレナス（ほっともっと／アララ経由）", "カカクコム（食べログ・価格.com等／アララ経由）", "松井証券（メール配信／アララ経由）", "三井住友銀行（メール配信／アララメッセージ）", "三井不動産（&BIZメールマガジン／アララ経由）"] },
-  { key: "comsbi-saas", label: "ソニックムーブ（COMSBI（SaaS版））", hubOrg: "ソニックムーブ（COMSBI（SaaS版））", members: ["京阪ホールディングス（グループ公式LINE／COMSBI経由）", "近鉄不動産（パラディ学園前／COMSBI経由）", "ヒューマンアジャスト（COMSBI経由）", "鹿児島市（ふるさと納税公式LINE／COMSBI経由）"] },
-  { key: "fireworks-ai", label: "Fireworks AI（Notion AI処理委託先）", hubOrg: null, members: ["ワンキャリア（Notion AI／Fireworks AI経由）", "産経新聞社（Notion／Fireworks AI経由）"] },
-  { key: "securitize", label: "Securitize Japan（委託先）", hubOrg: null, members: ["丸井グループ（デジタル社債／Securitize Japan）", "ソニー銀行（デジタル証券／Securitize Japan）"] }
+  { key: "arara", label: "アララ（メール配信）", hubOrg: "アララ（アララメッセージ）", members: ["鹿児島銀行・南日本銀行・鹿児島相互信用金庫・鹿児島信用金庫（Payどん）", "ワークマン（オンラインストアメールマガジン／アララ経由）", "プレナス（ほっともっと／アララ経由）", "カカクコム（食べログ・価格.com等／アララ経由）", "松井証券（メール配信／アララ経由）", "三井住友銀行（メール配信／アララメッセージ）", "三井不動産（&BIZメールマガジン／アララ経由）", "ヒビノ（Hibino.com／アララ経由）"] },
+  { key: "comsbi-saas", label: "ソニックムーブ（COMSBI（SaaS版））", hubOrg: "ソニックムーブ（COMSBI（SaaS版））", members: ["京阪ホールディングス（グループ公式LINE／COMSBI経由）", "近鉄不動産（パラディ学園前／COMSBI経由）", "ヒューマンアジャスト（COMSBI経由）", "鹿児島市（ふるさと納税公式LINE／COMSBI経由）", "日清食品（日清食品キャンペーン／COMSBI経由）"] },
+  { key: "fireworks-ai", label: "Fireworks AI（Notion AI処理委託先）", hubOrg: null, members: ["ワンキャリア（Notion AI／Fireworks AI経由）", "産経新聞社（Notion／Fireworks AI経由）", "ピクシブ（Notion AI／Fireworks AI経由）"] },
+  { key: "securitize", label: "Securitize Japan（委託先）", hubOrg: null, members: ["丸井グループ（デジタル社債／Securitize Japan）", "ソニー銀行（デジタル証券／Securitize Japan）"] },
+  { key: "karte", label: "プレイド（KARTE）", hubOrg: "プレイド（KARTE）", members: ["四国電力（よんでんコンシェルジュ／KARTE経由）", "コンフィデンス・インターワークス（工場ワークス／KARTE経由）", "テレビ東京（テレ東BIZ／KARTE経由）"] }
 ];
 
-window.UPDATED = "2026-11-15";
+window.UPDATED = "2026-11-16";
