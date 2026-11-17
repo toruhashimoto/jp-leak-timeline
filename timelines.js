@@ -10258,6 +10258,16 @@
       ],
       causes: ["vendor"], causeText: null,
       certainty: "confirmed"
+    },
+    "楽天証券（テスト環境）": {
+      officialUrl: "https://www.rakuten-sec.co.jp/web/info/info20261117-02.html",
+      events: [
+        E("leak_possible", "2026-11-11", "2026年11月11日、テスト環境のシステムで管理していた一部の情報が外部に漏えいしたおそれがある日として、後の調査で判明", "@"),
+        E("anomaly", "2026-11-16", "2026年11月16日、一部のシステムに第三者が不正にアクセスした可能性を検知し、該当箇所へのアクセスを遮断・修正", "@"),
+        E("disclosed", "2026-11-17", "当社お客様の情報漏えいの可能性に関するお詫びとお知らせ 2026年11月17日", "@")
+      ],
+      causes: [], causeText: "原因と詳しい経緯は調査中",
+      certainty: "possible"
     }
   };
 
