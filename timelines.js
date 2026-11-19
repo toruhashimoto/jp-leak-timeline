@@ -10288,6 +10288,57 @@
       ],
       causes: ["vendor"], causeText: null,
       certainty: "confirmed"
+    },
+    "シャープ（COCORO STORE／KARTE経由）": {
+      officialUrl: "https://corporate.jp.sharp/info/notices/261119-a.html",
+      events: [
+        E("vendor_notified", "2026-11-13", "2026年11月13日、プレイド社より、「KARTE」に対する第三者からの不正アクセスが確認され、緊急メンテナンスとしてサービスを停止した旨の連絡を受けました", "@"),
+        E("leak_possible", "2026-11-15", "流出のおそれがあるお客様情報（2026年11月15日判明分）", "@"),
+        E("disclosed", "2026-11-19", "シャープ公式通販「COCORO STORE」で利用する外部マーケティングツール「KARTE」への不正アクセスに関するお詫びとお知らせ 2026年11月19日", "@")
+      ],
+      causes: ["vendor"], causeText: null,
+      certainty: "possible"
+    },
+    "タイミー（KARTE経由）": {
+      officialUrl: "https://corp.timee.co.jp/news/detail-7442/",
+      events: [
+        E("vendor_notified", "2026-11-15", "当社は、2026年11月15日にプレイド社より本事案に関する第一報を受けました", "@"),
+        E("leak_confirmed", "2026-11-17", "その後同年11月17日に、プレイド社による調査結果の報告を受け、影響を受ける可能性のあるお客様は最大で226,662名様（11月17日時点）となっております", "@"),
+        E("disclosed", "2026-11-19", "当社委託先システムへの不正アクセスに伴う、「タイミー」ご利用事業者様の一部情報漏えいについて 2026年11月19日", "@")
+      ],
+      causes: ["vendor"], causeText: null,
+      certainty: "confirmed"
+    },
+    "タカラベルモント（BEAUTY CITY・TB WEB ORDER／KARTE経由）": {
+      officialUrl: "https://prtimes.jp/main/html/rd/p/000000478.000055758.html",
+      events: [
+        E("vendor_notified", "2026-11-13", "2026年11月13日（金）、プレイド社より、同社が提供するサービス「KARTE」に対して第三者による不正アクセスが発生したとの初期報告を受けました", "@"),
+        E("leak_possible", "2026-11-15", "11月15日（日）、当社が「KARTE」に連携していたお客様情報の一部が外部に漏えいした可能性があるとの連絡を受け", "@"),
+        E("leak_confirmed", "2026-11-18", "11月18日（水）、当社が運営する「BEAUTY CITY」および「TB WEB ORDER」のお客様情報の一部が外部に漏えいしたことを確認いたしました", "@"),
+        E("disclosed", "2026-11-19", "「BEAUTY CITY」および「TB WEB ORDER」におけるお客様情報漏えいに関するお詫びとお知らせ 2026年11月19日", "@")
+      ],
+      causes: ["vendor"], causeText: null,
+      certainty: "confirmed"
+    },
+    "Kyash": {
+      officialUrl: "https://www.kyash.co/information/20261119",
+      events: [
+        E("incident", "2026-10-28", "2026年10月28日（水）9時20分頃から11時42分までの間、当社の社内ツールに外部から不正なアクセスがあり、掲載していた社内資料が第三者に取得された可能性があることが判明いたしました", "@"),
+        E("disclosed", "2026-11-19", "社内向けウェブツールへの不正アクセスに関するお詫び 2026年11月19日", "@")
+      ],
+      causes: ["config"], causeText: "社内ツールのアクセス管理に不備があり、外部から不正にアクセスされたことが原因です",
+      certainty: "possible"
+    },
+    "Schoo（Schoo Swing）": {
+      officialUrl: "https://prtimes.jp/main/html/rd/p/000000388.000006391.html",
+      events: [
+        E("incident", "2026-11-14", "2026年11月14日2時30分頃から、第三者による不正なアクセスがありました", "@"),
+        E("anomaly", "2026-11-14", "当社は同日未明に異常なアクセスを検知し、攻撃元からの通信を遮断したうえで、5時30分に本サービスを停止しました", "@"),
+        E("leak_confirmed", null, "1校の教員9名の方の氏名・メールアドレス等と、77校の代表者名、学校の所在地・電話番号（教員9名と代表者77名、合計86名分）が、外部に漏えいしたことを確認いたしました", "@"),
+        E("disclosed", "2026-11-19", "「Schoo Swing」への不正アクセスに関するお詫びとお知らせ 2026年11月19日", "@")
+      ],
+      causes: ["vuln", "credential"], causeText: "原因は、本サービスの一部の機能の不備（脆弱性）です",
+      certainty: "confirmed"
     }
   };
 
