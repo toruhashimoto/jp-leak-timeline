@@ -10339,6 +10339,75 @@
       ],
       causes: ["vuln", "credential"], causeText: "原因は、本サービスの一部の機能の不備（脆弱性）です",
       certainty: "confirmed"
+    },
+    "インフキュリオン（Wallet Station）": {
+      officialUrl: "https://infcurion.com/news/news-20261120_001/",
+      events: [
+        E("access_confirmed", "2026-11-19", "当社は2026年11月19日に不正アクセスを確認した後、11月20日にかけて不審な通信の遮断・該当機能の停止・影響を受けた提供先向けの本システムの提供の一時停止を行いました", "@"),
+        E("disclosed", "2026-11-20", "「Wallet Station」への不正アクセスによる個人情報漏えいに関するお詫びとお知らせ 2026年11月20日", "@")
+      ],
+      causes: ["vuln"], causeText: null,
+      certainty: "confirmed"
+    },
+    "鹿児島銀行・南日本銀行・鹿児島相互信用金庫・鹿児島信用金庫（Payどん／Wallet Station経由）": {
+      officialUrl: "https://www.kagin.co.jp/important/20261120_094.html",
+      events: [
+        E("vendor_notified", "2026-11-19", "11月19日、株式会社インフキュリオンへ委託しているPayどんの決済システムに対し、第三者による不正アクセスが発生していることが判明し、個人情報が漏えいした旨の報告を受けております", "@"),
+        E("disclosed", "2026-11-20", "Payどん外部委託先への不正アクセスによる個人情報の漏えいに関するお詫びとサービスの停止について 2026年11月20日", "@")
+      ],
+      causes: ["vendor"], causeText: null,
+      certainty: "confirmed"
+    },
+    "三井住友銀行（KARTE経由）": {
+      officialUrl: "https://www.smbc.co.jp/news/pdf/j20261120_01.pdf",
+      events: [
+        E("vendor_notified", "2026-11-13", "11月13日（金）：株式会社プレイドより、第三者による不正アクセスが発生し、サービスを停止した旨の報告を受領", "@"),
+        E("leak_confirmed", "2026-11-19", "11月19日（木）：株式会社プレイドより、その後の調査を経て、漏えい範囲について報告を受領し、弊行においてその漏えい範囲を確認", "@"),
+        E("disclosed", "2026-11-20", "業務委託先への不正アクセスによる情報漏えいについて 2026年11月20日", "@")
+      ],
+      causes: ["vendor"], causeText: null,
+      certainty: "confirmed"
+    },
+    "リクルートマネジメントソリューションズ（KARTE経由）": {
+      officialUrl: "https://www.recruit-ms.co.jp/news/information/4943354776/",
+      events: [
+        E("vendor_notified", "2026-11-13", "2026年11月13日、当社は株式会社プレイドより、「KARTE」への不正アクセスがあった旨の連絡を受けたため、一定の調査結果が確認できるまで、「KARTE」の利用を即時停止いたしました", "@"),
+        E("leak_confirmed", "2026-11-15", "11月15日深夜に株式会社プレイドからの情報提供を受け、情報の一部が漏えいしたことを確認", "@"),
+        E("disclosed", "2026-11-20", "外部サービス「KARTE」に対する不正アクセスによる個人情報漏えいに関するお詫びとお知らせ 2026年11月20日", "@")
+      ],
+      causes: ["vendor"], causeText: null,
+      certainty: "confirmed"
+    },
+    "メルカリ（Notion AI／Fireworks AI経由）": {
+      officialUrl: "https://about.mercari.com/press/news/articles/20261120_incidentreport/",
+      events: [
+        E("vendor_notified", "2026-11-10", "2026年11月10日、Notion社より、同社がNotion AIの処理の一部を委託していたFireworks社で不正アクセスが発生し、当社グループの利用記録の一部が影響を受けた可能性があるとの連絡を受けました", "@"),
+        E("update", "2026-11-12", "11月12日、Notion社より、調査の状況について追加の報告を受けました", "@"),
+        E("disclosed", "2026-11-20", "当社グループが利用するクラウドサービスの委託先への不正アクセスによる情報流出の可能性について 2026年11月20日", "@")
+      ],
+      causes: ["vendor"], causeText: null,
+      certainty: "possible"
+    },
+    "デジタル庁（ガバメントソリューションサービス）": {
+      officialUrl: "https://www.digital.go.jp/press/a966ee61-478c-4194-8f13-f97599fae986",
+      events: [
+        E("incident", "2026-07-30", "令和8年7月30日（木）から令和8年11月12日（木）までの間、当該アクセスがあったことを確認しています", "@"),
+        E("anomaly", "2026-11-12", "令和8年11月12日（木）、正規の共有相手先以外の者からのファイルへのアクセスがなされた可能性があることを検知したため、調査を開始しました", "@"),
+        E("disclosed", "2026-11-20", "ガバメントソリューションサービスで提供しているファイル共有サービス上のファイルの漏えいの可能性について 2026年11月20日", "@")
+      ],
+      causes: [], causeText: null,
+      certainty: "possible"
+    },
+    "星槎道都大学": {
+      officialUrl: "https://www.seisadohto.ac.jp/information?detail_no=9541",
+      events: [
+        E("incident", "2026-08-16", "本学の教職員1名の Microsoft 365 のアカウントに対し、2026年8月16日から9月24日までの間、第三者による不正なログインが行われておりました", "@"),
+        E("leak_possible", "2026-08-17", "第三者は2026年8月17日に、当該アカウントのメールを閲覧しておりました", "@"),
+        E("anomaly", "2026-09-22", "2026年9月22日は、本学が事象を把握した日です", "@"),
+        E("disclosed", "2026-11-20", "情報セキュリティインシデント（不正アクセス）の調査結果と個人情報の漏えいのおそれについて 2026年11月20日", "@")
+      ],
+      causes: ["credential"], causeText: "当該教職員が業務に使用していたパソコンが、情報を盗み取るタイプのコンピューターウイルスに感染し、Microsoft 365 のパスワードが盗まれた可能性が高いと考えております",
+      certainty: "possible"
     }
   };
 
