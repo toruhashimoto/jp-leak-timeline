@@ -10418,6 +10418,36 @@
       ],
       causes: ["credential"], causeText: "「リスト型攻撃」とみられる不正ログイン",
       certainty: "possible"
+    },
+    "ペットメディカルサポート（PS保険）": {
+      officialUrl: "https://pshoken.co.jp/imp/261124.html",
+      events: [
+        E("access_confirmed", "2026-11-12", "調査の結果、2026年11月12日に、当該サーバー内のファイルに対する第三者による不正アクセスが確認されました", "@"),
+        E("disclosed", "2026-11-24", "不正アクセスによるお客さま情報漏えいの可能性に関するお詫びとお知らせ [掲載日] 2026年11月24日", "@")
+      ],
+      causes: ["vendor"], causeText: null,
+      certainty: "possible"
+    },
+    "ヴェレダ・ジャパン": {
+      officialUrl: "https://weleda-notice-static-apne1.s3.ap-northeast-1.amazonaws.com/news/20261116.html",
+      events: [
+        E("anomaly", "2026-06-30", "2026年6月30日、警視庁より不正アクセスの可能性があると連絡を受け、7月3日弊社が運営する「ヴェレダ 公式オンラインショップ」でのカード決済を停止いたしました", "@"),
+        E("leak_possible", "2026-08-29", "2026年8月29日、調査機関による調査が完了し、2021年10月1日～2026年6月30日の期間に「ヴェレダ 公式オンラインショップ」をご利用したお客様のクレジットカード情報、ならびに会員データが漏えい懸念対象と結論付けました", "@"),
+        E("disclosed", "2026-11-24", "弊社が運営する「ヴェレダ 公式オンラインショップ」への不正アクセスによる情報漏えいに関するお詫びとお知らせ", "@")
+      ],
+      causes: ["vuln"], causeText: "弊社が運営する「ヴェレダ 公式オンラインショップ」のシステムの一部の脆弱性をついたことによる第三者の不正アクセスにより、改ざんが行われたため",
+      certainty: "possible",
+      dataNote: "公式発表ページ自体に掲載日の明記はなく、公表日はSmartScope・報道（いずれも2026年11月24日公表として掲載）で確認しています。"
+    },
+    "JAXA（地球観測データ配信システム）": {
+      officialUrl: "https://global.jaxa.jp/press/2026/11/20261124-2_e.html",
+      events: [
+        E("anomaly", "2026-11-18", "Shortly after 15:00 (JST) on November 18, JAXA identified the following suspicious activities", "@"),
+        E("access_confirmed", "2026-11-18", "On November 18, 2026, JAXA confirmed unauthorized access by an external third party to a publicly accessible information system", "@"),
+        E("disclosed", "2026-11-24", "Report on Information Leakage Following Unauthorized Access to an Earth Observation Data Distribution System November 24, 2026 (JST)", "@")
+      ],
+      causes: ["vuln"], causeText: "a part of the Web application program contained a command injection vulnerability",
+      certainty: "confirmed"
     }
   };
 
