@@ -10448,6 +10448,47 @@
       ],
       causes: ["vuln"], causeText: "a part of the Web application program contained a command injection vulnerability",
       certainty: "confirmed"
+    },
+    "パルシステム生活協同組合連合会（KARTE経由）": {
+      officialUrl: "https://information.pal-system.co.jp/press/20261125-incident/",
+      events: [
+        E("vendor_notified", "2026-11-13", "2026年11月13日（金）株式会社プレイドより、第三者による不正アクセスが発生し、KARTEの全サービスを停止。同日、同社より報告を受領", "@"),
+        E("vendor_notified", "2026-11-24", "2026年11月24日（火）株式会社プレイドより、当会の漏えい対象者について報告を受領", "@"),
+        E("disclosed", "2026-11-25", "当会委託先が提供するサービスへの不正アクセスに伴う一部情報の漏えいについて 2026年11月25日", "@")
+      ],
+      causes: ["vendor"], causeText: null,
+      certainty: "confirmed"
+    },
+    "サツドラ（サッポロドラッグストアー）": {
+      officialUrl: "https://satudora.co.jp/news/ps_information_1125",
+      events: [
+        E("exposure", "2025-07-16", "公開されていた期間：2025年7月16日2時10分頃から2026年11月18日15時40分頃まで", "@"),
+        E("anomaly", "2026-11-18", "2026年11月18日、外部の脆弱性報告窓口に寄せられた通報により、当該ファイルが外部に公開された状態であることが判明いたしました", "@"),
+        E("leak_confirmed", "2026-11-25", "その後の調査で、第三者が当該ファイルを繰り返し取得していたことを確認し、お客様の個人情報が外部に流出したものと判断いたしました", "@"),
+        E("disclosed", "2026-11-25", "個人情報の流出に関するお詫びとお知らせ", "@")
+      ],
+      causes: ["config"], causeText: "委託先の作業上の誤りにより、ファイルが外部から取得できる状態になっていたものです",
+      certainty: "confirmed",
+      dataNote: "漏えい確認（流出の判断）の日付は公式発表に日付まで明記されていないため、公表日（2026年11月25日）で記録しています。第三者による取得は2026年1月3日から10月31日までに計9回確認されています。"
+    },
+    "渋谷区（区事業のメール配信／アララ経由）": {
+      officialUrl: "https://www.city.shibuya.tokyo.jp/kusei/koho/shibuya-portal/unauthorized_access_20261125.html",
+      events: [
+        E("incident", "2026-10-28", "令和8年10月28日から31日にかけて、アララ株式会社のメール配信サービスが外部による不正アクセスを受け、情報の漏えいが確認されました", "@"),
+        E("disclosed", "2026-11-25", "区事業におけるメール配信サービスへの不正アクセスについて", "@")
+      ],
+      causes: ["vendor"], causeText: null,
+      certainty: "confirmed"
+    },
+    "東北電力（問合せチャット・よりそうeねっと／KARTE経由）": {
+      officialUrl: "https://www.tohoku-epco.co.jp/news/normal/1249387_2558.html",
+      events: [
+        E("vendor_notified", "2026-11-13", "11月13日（金）、プレイド社が不正アクセスを受けた旨を公表し、同サービスを停止しました", "@"),
+        E("leak_confirmed", "2026-11-24", "11月24日（火）にプレイド社より調査完了の連絡を受け、影響範囲およびお客さま情報の漏えいが判明しました", "@"),
+        E("disclosed", "2026-11-25", "当社が利用する外部サービスへの不正アクセスによるお客さま情報の漏えいについて", "@")
+      ],
+      causes: ["vendor"], causeText: null,
+      certainty: "confirmed"
     }
   };
 
